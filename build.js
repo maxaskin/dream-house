@@ -261,7 +261,7 @@ const STR = {
     price: 'Price', area: 'Area', beds: 'Beds', label: 'Label', ground: 'Ground', viewing: 'Viewing',
     grnd: g => g || '—',
     no: 'No', visited: 'Visited', scheduled: 'Scheduled',
-    footer: '<strong>Methodology:</strong> Weighted score out of 10: Price &amp; €/m² vs WOZ (35%), Legal risk (25%), Bike distance to Emmakade 33 (15%), Energy label (15%), Bike distance to Zuidas (10%). Renovation is a deduction: <code>−max(0, 6 − renovation_score) × 0.3</code> applied after the weighted sum (max −1.5 pts for fixers). Scores marked ~ or "est." are estimates and should be verified. WOZ values may be from different years. All data as of ' + GEN_DATE + '.',
+    footer: '<strong>Methodology:</strong> Weighted score out of 10: Price &amp; €/m² vs WOZ (35%), Legal risk (25%), Bike distance to Emmakade 33 (15%), Energy label (15%), Bike distance to Zuidas (10%). Renovation is a deduction: <code>−max(0, 6 − renovation_score) × 0.3</code> applied after the weighted sum (max −1.5 pts for fixers). Scores marked ~ or "est." are estimates and should be verified. WOZ values are the official 2025 Kadaster LV-WOZ assessments. Neighbourhood €/m² averages are May-2026 agent comps (no official register exists for these) — re-check at offer time. All data as of ' + GEN_DATE + '.',
   },
   ru: {
     title: 'Dream House — Сводка по объектам',
@@ -274,7 +274,7 @@ const STR = {
     price: 'Цена', area: 'Площадь', beds: 'Спальни', label: 'Метка', ground: 'Земля', viewing: 'Просмотр',
     grnd: g => g ? (GROUND_RU[g] || g) : '—',
     no: 'Нет', visited: 'Посещён', scheduled: 'Запланирован',
-    footer: '<strong>Методология:</strong> Взвешенный балл из 10: Цена &amp; €/м² vs WOZ (35%), Юр. риск (25%), Велодистанция до Emmakade 33 (15%), Энергометка (15%), Велодистанция до Zuidas (10%). Ремонт — вычет: <code>−max(0, 6 − балл_ремонта) × 0.3</code> после взвешенной суммы (макс −1.5 балла). Значения с ~ или «est.» — оценки, требуют проверки. Значения WOZ могут быть за разные годы. Данные на ' + GEN_DATE + '.',
+    footer: '<strong>Методология:</strong> Взвешенный балл из 10: Цена &amp; €/м² vs WOZ (35%), Юр. риск (25%), Велодистанция до Emmakade 33 (15%), Энергометка (15%), Велодистанция до Zuidas (10%). Ремонт — вычет: <code>−max(0, 6 − балл_ремонта) × 0.3</code> после взвешенной суммы (макс −1.5 балла). Значения с ~ или «est.» — оценки, требуют проверки. Значения WOZ — официальные оценки Kadaster LV-WOZ за 2025 г. Средние €/м² по районам — оценки риелторов (май 2026), официального реестра нет — перепроверьте перед сделкой. Данные на ' + GEN_DATE + '.',
   },
 };
 
