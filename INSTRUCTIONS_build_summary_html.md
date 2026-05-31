@@ -16,7 +16,7 @@ Read from `property_data.json` (the single source of truth). Each property objec
 - `ground` ("Eigen grond" | "Erfpacht afgekocht" | "Erfpacht lopend" | null)
 - `vve_costs` (€/mo or null) · `*_estimated` flags (bool) where a value is an estimate
 - `dist_emmakade_min`, `dist_zuidas_min` (bike minutes, int)
-- `scores`: `{ price, legal, dist_emmakade, location, energy, dist_zuidas }` each 1–10
+- `scores`: `{ price, legal, dist_emmakade, energy, dist_zuidas, renovation }` each 1–10 (`location` was removed from the model)
 - `notes` (string) · optional `heritage` (string) · `date_found`, `source`
 
 ## Scoring model (must match the artifact and the agents)
@@ -72,6 +72,25 @@ Base weights sum to 100%. **Renovation is a deduction, not a positive weight**: 
 - Every `url` is on `funda.nl` (no other domains).
 - Confirm the file renders, then present it to the user with the file-sharing tool.
 
-## Keep in sync
+## Keep in sync — use `build.js`
 
-`property_summary.html` (this page), `property_ranking.html` (the live artifact, with its own `SEED` array + `SEED_VERSION` bump on data changes), and `property_data.json` must all carry the same numbers. When data changes: update the JSON first, then regenerate this summary and bump the artifact's `SEED_VERSION`.
+`property_data.json` is the single source of truth. **Do not hand-edit the HTML** — run the build script:
+
+```
+node build.js            # regenerates ranking SEED (+SEED_VERSION bump), summary.html, summary_ru.html
+BUILD_DATE=2026-06-05 node build.js   # override the "Generated" date
+```
+
+`build.js` defines the weight model in ONE place and recomputes every total, so `property_summary.html`, `property_summary_ru.html`, and `property_ranking.html` (its `SEED` array + `SEED_VERSION`) can no longer drift. Edit `property_data.json`, then rebuild. The RU summary reuses existing Russian note translations keyed by address; a new property shows its English note in RU until a translation is added (build.js logs which are missing). To make RU fully regenerable, add a `notes_ru` field per property and have build.js prefer it.
+
+### Optional `sources` provenance block
+
+Each property may carry an additive `sources` object documenting where each field was verified (back-compatible; the renderer ignores unknown keys):
+
+```json
+"sources": {
+  "energy_label": { "value": "A", "src": "EP-Online", "url": "https://ep-online.nl", "checked": "2026-05-31", "status": "verified" }
+}
+```
+
+`status` ∈ `verified | corrected | unconfirmed | conflict`. Authoritative public registers: **BAG** (bagviewer.kadaster.nl — area + build year), **EP-Online** (ep-online.nl — energy label), **WOZ-waardeloket** (wozwaardeloket.nl — WOZ), **Kadaster**/Amsterdam erfpacht map (ground lease). Note: Funda and most registers are bot-/JS-gated, so automated scraping is unreliable — treat aggregator (kadasterdata/huispedia) figures as a second opinion that can show stale or building-level data, and confirm against the authoritative register before relying on a value.
