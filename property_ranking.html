@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dream House — Property Ranking</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: #f7f8fa; color: #1c2330;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px; line-height: 1.45;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 22px 20px 60px; }
+h1 { font-size: 21px; margin: 0 0 2px; }
+.sub { color: #5b6675; font-size: 13px; margin-bottom: 18px; }
+.sub b { color: #1c2330; }
+.card { background: #fff; border: 1px solid #e6e9ef; border-radius: 12px; padding: 16px 18px; margin-bottom: 16px; }
+.card h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .04em; color: #6b7280; margin: 0 0 12px; }
+/* weights */
+.weights { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.wbox { border: 1px solid #eceef3; border-radius: 9px; padding: 10px 12px; background: #fbfcfe; }
+.wbox .pct { font-size: 19px; font-weight: 700; color: #2563eb; }
+.wbox .nm { font-size: 12px; color: #46505f; margin-top: 2px; }
+/* table */
+#tableWrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; min-width: 1080px; }
+th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #eef0f4; white-space: nowrap; vertical-align: top; }
+th { font-size: 11px; text-transform: uppercase; letter-spacing: .03em; color: #6b7280; cursor: pointer; user-select: none; position: sticky; top: 0; z-index: 2; background: #f4f6f9; box-shadow: inset 0 -1px 0 #dfe3ea; }
+th:hover { color: #2563eb; }
+th.sorted { color: #2563eb; }
+th.sorted::after { content: " \25Bc"; font-size: 9px; }
+th.sorted.asc::after { content: " \25B2"; }
+tbody tr:nth-child(even) td { background: #fbfcfd; }
+tbody tr:hover td { background: #eef2f8; }
+.notecell { min-width: 220px; max-width: 340px; }
+.notecell .notebody { white-space: normal; font-size: 12px; line-height: 1.45; color: #5b6675; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.notecell.open .notebody { -webkit-line-clamp: unset; overflow: visible; }
+.notetoggle { display: inline-block; margin-top: 3px; font-size: 10.5px; font-weight: 600; color: #2563eb; cursor: pointer; }
+.notetoggle:hover { text-decoration: underline; }
+td.addr { white-space: normal; min-width: 170px; font-weight: 600; }
+td.addr a { color: #2563eb; text-decoration: none; }
+td.addr a:hover { text-decoration: underline; }
+.total { font-weight: 700; font-size: 14px; }
+.pill { display: inline-block; min-width: 26px; text-align: center; padding: 2px 6px; border-radius: 6px; font-weight: 600; font-size: 12px; color: #fff; }
+.vw { display: inline-block; padding: 2px 8px; border-radius: 5px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.rank { font-weight: 700; color: #94a0b0; }
+.muted { color: #8a94a3; }
+.act { color: #b2451d; cursor: pointer; font-size: 12px; }
+.act:hover { text-decoration: underline; }
+.editlink { color: #2563eb; cursor: pointer; font-size: 12px; margin-right: 8px; }
+.editlink:hover { text-decoration: underline; }
+/* form */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 10px 14px; }
+label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .03em; color: #7a8494; margin-bottom: 3px; }
+input, select { width: 100%; padding: 7px 8px; border: 1px solid #d6dae1; border-radius: 7px; font-size: 13px; background: #fff; color: #1c2330; }
+input:focus, select:focus { outline: none; border-color: #2563eb; }
+.scoregrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px,1fr)); gap: 10px 14px; margin-top: 12px; }
+.btn { background: #2563eb; color: #fff; border: none; border-radius: 8px; padding: 9px 16px; font-size: 13px; font-weight: 600; cursor: pointer; }
+.btn:hover { background: #1d4ed8; }
+.btn.sec { background: #eef1f6; color: #344054; }
+.btn.sec:hover { background: #e2e6ee; }
+.row-actions { display: flex; gap: 10px; align-items: center; margin-top: 14px; }
+.hint { font-size: 11px; color: #98a1b0; margin-top: 3px; }
+details summary { cursor: pointer; font-weight: 600; color: #344054; }
+.rubric { font-size: 12.5px; color: #46505f; }
+.rubric li { margin-bottom: 5px; }
+.empty { text-align: center; color: #98a1b0; padding: 26px; font-size: 13px; }
+.foot { font-size: 11px; color: #9aa3b2; margin-top: 8px; }
+.scorehdr { font-size: 12px; color: #6b7280; margin: 16px 0 2px; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Dream House — Property Ranking</h1>
+  <div class="sub"><b>Amstelveen</b> + Amsterdam Buitenveldert · all sizes · near <b>Emmakade 33</b> / Zuidas · weighted scoring out of 10</div>
+
+  <div class="card">
+    <h2>Scoring weights</h2>
+    <div class="weights" id="weights"></div>
+    <div class="foot">Each property is scored 1–10 per criterion. Total = Σ(score × weight) − renovation deduction (fixers lose up to ~1.5 pts). Higher = better.</div>
+  </div>
+
+  <div class="card">
+    <h2>Ranked properties</h2>
+    <div id="tableWrap"></div>
+    <div class="row-actions">
+      <button class="btn" id="addBtn">+ Add property</button>
+      <button class="btn sec" id="sampleBtn">Re-import scan data</button>
+      <button class="btn sec" id="exportBtn">Export JSON</button>
+      <button class="btn sec" id="clearBtn">Clear all</button>
+    </div>
+  </div>
+
+  <div class="card" id="formCard" style="display:none;">
+    <h2 id="formTitle">Add property</h2>
+    <div class="grid">
+      <div><label>Address</label><input id="f_address" placeholder="Street 12, Amstelveen"></div>
+      <div><label>Listing URL</label><input id="f_url" placeholder="https://funda.nl/..."></div>
+      <div><label>Asking price (€)</label><input id="f_price" type="number" placeholder="475000"></div>
+      <div><label>Living area (m²)</label><input id="f_area" type="number" placeholder="72"></div>
+      <div><label>Bedrooms</label><input id="f_beds" type="number" min="0" placeholder="2"></div>
+      <div><label>Viewing</label>
+        <select id="f_view_status"><option>No</option><option>Scheduled</option><option>Visited</option></select>
+      </div>
+      <div><label>Viewing date</label><input id="f_view_date" type="date"></div>
+      <div><label>WOZ value (€)</label><input id="f_woz" type="number" placeholder="absent = blank"></div>
+      <div><label>Build year</label><input id="f_year" type="number" placeholder="1998"></div>
+      <div><label>Energy label</label>
+        <select id="f_energy"><option value="">—</option><option>A+++</option><option>A++</option><option>A+</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
+      </div>
+      <div><label>Ground (erfpacht/eigen)</label>
+        <select id="f_ground"><option value="">—</option><option>Eigen grond</option><option>Erfpacht afgekocht</option><option>Erfpacht lopend</option></select>
+      </div>
+      <div><label>VvE service costs (€/mo)</label><input id="f_vve" type="number" placeholder="0 if none"></div>
+      <div><label>Bike to Emmakade 33 (min)</label><input id="f_be" type="number" placeholder="9"></div>
+      <div><label>Bike to Zuidas (min)</label><input id="f_bz" type="number" placeholder="22"></div>
+    </div>
+
+    <div class="scorehdr">Scores (1–10)</div>
+    <div class="scoregrid">
+      <div><label>Price & €/m² (30%)</label><input id="s_price" type="number" min="1" max="10" placeholder="1-10"></div>
+      <div><label>Legal / risk (20%)</label><input id="s_legal" type="number" min="1" max="10" placeholder="1-10"></div>
+      <div><label>Dist. Emmakade (15%)</label><input id="s_dist_emmakade" type="number" min="1" max="10" placeholder="1-10"></div>
+      <div><label>Energy label (15%)</label><input id="s_energy" type="number" min="1" max="10" placeholder="1-10"></div>
+      <div><label>Dist. Zuidas (10%)</label><input id="s_dist_zuidas" type="number" min="1" max="10" placeholder="1-10"></div>
+      <div><label>Renovation (deduction)</label><input id="s_renovation" type="number" min="1" max="10" placeholder="1-10"></div>
+    </div>
+    <div><label style="margin-top:12px;">Notes / risk flags</label><input id="f_notes" placeholder="e.g. erfpacht ends 2031; VvE reserve thin"></div>
+    <div class="hint">Leave any score blank to exclude it (weights renormalize over the criteria you did score). €/m² auto-shows in the table.</div>
+    <div class="row-actions">
+      <button class="btn" id="saveBtn">Save</button>
+      <button class="btn sec" id="cancelBtn">Cancel</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <details>
+      <summary>Scoring rubric — how to assign 1–10</summary>
+      <ul class="rubric" style="margin-top:10px;">
+        <li><b>Price & €/m² (30%)</b> — Compare €/m² to the Amstelveen 2-bed median and to WOZ. Asking at/below WOZ and below median €/m² ≈ 8–10; well above ≈ 1–3.</li>
+        <li><b>Legal / risk (20%)</b> — Eigen grond or erfpacht afgekocht, healthy VvE with solid reserve, no monument/dispute ≈ 8–10. Running erfpacht with near-term revision, thin VvE reserve, or unclear history ≈ 1–4.</li>
+        <li><b>Distance to Emmakade 33 (15%)</b> — ≤8 min bike ≈ 9–10, ~15 min ≈ 6, >20 min ≈ 1–3.</li>
+        <li><b>Energy label (15%)</b> — A/B ≈ 9–10. Lower label but cheap, easy upgrade (e.g. C→A with insulation/HR++) counts as a plus, bump +1–2 vs raw label.</li>
+        <li><b>Distance to Zuidas (10%)</b> — ≤15 min bike/transit ≈ 9–10, ~25 min ≈ 6, >35 ≈ 1–3.</li>
+        <li><b>Renovation (deduction)</b> — Score condition 1–10 (move-in ready ≈ 8–10; cosmetic updating ≈ 5–6; major modernisation ≈ 1–4). Applied as a penalty: deduction = max(0, 6 − score) × 0.3, so decent/move-in-ready places lose nothing and fixers lose up to ~1.5 pts.</li>
+      </ul>
+      <div class="foot">The daily scan writes scored listings to <b>property_data.json</b> in this project folder using these same fields — paste/export between them to keep things in sync.</div>
+    </details>
+  </div>
+</div>
+
+<script>
+const WEIGHTS = [
+  { key: "price",         label: "Price & €/m²",       w: 0.35 },
+  { key: "legal",         label: "Legal / risk",       w: 0.25 },
+  { key: "dist_emmakade", label: "Dist. Emmakade 33",  w: 0.15 },
+  { key: "energy",        label: "Energy label",       w: 0.15 },
+  { key: "dist_zuidas",   label: "Dist. Zuidas",       w: 0.10 },
+];
+// Renovation is a DEDUCTION, not a positive weight: fixers lose points.
+function renoDeduct(p){ const r = p.scores && p.scores.renovation; return (r!=null && !isNaN(r)) ? Math.max(0, 6 - r) * 0.3 : 0; }
+const LS_KEY = "dreamhouse_props_v1";
+let props = load();
+let editIdx = null;
+let sortKey = "total", sortAsc = false;
+
+function load() { try { return JSON.parse(localStorage.getItem(LS_KEY)) || []; } catch { return []; } }
+function save() { localStorage.setItem(LS_KEY, JSON.stringify(props)); }
+
+function weightedTotal(p) {
+  let sum = 0, wsum = 0;
+  for (const c of WEIGHTS) {
+    const v = p.scores && p.scores[c.key];
+    if (v != null && v !== "" && !isNaN(v)) { sum += Number(v) * c.w; wsum += c.w; }
+  }
+  if (!wsum) return null;
+  return sum / wsum - renoDeduct(p);   // renormalize over scored criteria, then deduct renovation
+}
+function colorFor(v) {
+  if (v == null) return "#b6bdc8";
+  if (v >= 8) return "#15803d";
+  if (v >= 6.5) return "#65a30d";
+  if (v >= 5) return "#d97706";
+  return "#dc2626";
+}
+function eurM2(p) {
+  if (p.price && p.area) return Math.round(p.price / p.area);
+  return null;
+}
+function fmt(n) { return n == null ? "" : Number(n).toLocaleString("nl-NL"); }
+function viewingBadge(v) {
+  if (!v || v === "No") return "<span class='muted'>No</span>";
+  const low = v.toLowerCase(), vis = low.startsWith("visited"), sch = low.startsWith("scheduled");
+  const bg = vis ? "#e3f5ea" : sch ? "#fdf0d5" : "#eef2f8", fg = vis ? "#15803d" : sch ? "#92500a" : "#46505f";
+  return `<span class="vw" style="background:${bg};color:${fg}">${v}</span>`;
+}
+
+function renderWeights() {
+  document.getElementById("weights").innerHTML = WEIGHTS.map(c =>
+    `<div class="wbox"><div class="pct">${Math.round(c.w*100)}%</div><div class="nm">${c.label}</div></div>`).join("");
+}
+
+function renderTable() {
+  const wrap = document.getElementById("tableWrap");
+  if (!props.length) { wrap.innerHTML = `<div class="empty">No properties yet. Click <b>+ Add property</b> or <b>Load sample</b>.</div>`; return; }
+  const rows = props.map((p, i) => ({ p, i, total: weightedTotal(p) }));
+  rows.sort((a, b) => {
+    let av, bv;
+    if (sortKey === "total") { av = a.total ?? -1; bv = b.total ?? -1; }
+    else if (sortKey === "eurm2") { av = eurM2(a.p) ?? Infinity; bv = eurM2(b.p) ?? Infinity; }
+    else { av = a.p[sortKey] ?? Infinity; bv = b.p[sortKey] ?? Infinity; }
+    if (typeof av === "string") return sortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
+    return sortAsc ? av - bv : bv - av;
+  });
+  const th = (key, lbl) => `<th data-k="${key}" class="${sortKey===key?'sorted '+(sortAsc?'asc':''):''}">${lbl}</th>`;
+  let html = `<table><thead><tr>
+    <th>#</th>
+    ${th("address","Address")}
+    ${th("total","Score")}
+    ${th("viewing","Viewing")}
+    ${th("price","Price")}
+    ${th("eurm2","€/m²")}
+    ${th("woz","WOZ")}
+    ${th("area","m²")}
+    ${th("bedrooms","Beds")}
+    ${th("energy_label","Label")}
+    ${th("dist_emmakade_min","Emmakade")}
+    ${th("dist_zuidas_min","Zuidas")}
+    <th>Notes <span style="text-transform:none;font-weight:400;color:#9aa3b2">(click ▸ more)</span></th><th></th>
+  </tr></thead><tbody>`;
+  rows.forEach((r, rank) => {
+    const p = r.p, t = r.total;
+    html += `<tr>
+      <td class="rank">${rank+1}</td>
+      <td class="addr">${p.url ? `<a href="${p.url}" target="_blank" rel="noopener">${p.address||"(untitled)"}</a>` : (p.address||"(untitled)")}</td>
+      <td class="total"><span class="pill" style="background:${colorFor(t)}">${t==null?"—":t.toFixed(1)}</span></td>
+      <td>${viewingBadge(p.viewing)}</td>
+      <td>${p.price?"€"+fmt(p.price):"<span class='muted'>—</span>"}</td>
+      <td>${eurM2(p)?"€"+fmt(eurM2(p)):"<span class='muted'>—</span>"}</td>
+      <td>${p.woz?"€"+fmt(p.woz):"<span class='muted'>—</span>"}</td>
+      <td>${p.area||"<span class='muted'>—</span>"}</td>
+      <td>${p.bedrooms||"<span class='muted'>—</span>"}</td>
+      <td>${p.energy_label||"<span class='muted'>—</span>"}</td>
+      <td>${p.dist_emmakade_min!=null?p.dist_emmakade_min+" min":"<span class='muted'>—</span>"}</td>
+      <td>${p.dist_zuidas_min!=null?p.dist_zuidas_min+" min":"<span class='muted'>—</span>"}</td>
+      <td class="notecell">${p.notes ? `<div class="notebody">${p.notes}</div><span class="notetoggle">▸ more</span>` : "<span class='muted'>—</span>"}</td>
+      <td><span class="editlink" data-edit="${r.i}">Edit</span><span class="act" data-del="${r.i}">Del</span></td>
+    </tr>`;
+  });
+  html += `</tbody></table>`;
+  wrap.innerHTML = html;
+  wrap.querySelectorAll("th[data-k]").forEach(el => el.onclick = () => {
+    const k = el.dataset.k;
+    if (sortKey === k) sortAsc = !sortAsc; else { sortKey = k; sortAsc = false; }
+    renderTable();
+  });
+  wrap.querySelectorAll("[data-del]").forEach(el => el.onclick = () => {
+    if (confirm("Delete this property?")) { props.splice(+el.dataset.del,1); save(); renderTable(); }
+  });
+  wrap.querySelectorAll("[data-edit]").forEach(el => el.onclick = () => openForm(+el.dataset.edit));
+  wrap.querySelectorAll(".notetoggle").forEach(el => el.onclick = () => {
+    const cell = el.closest(".notecell"); const open = cell.classList.toggle("open");
+    el.textContent = open ? "▾ less" : "▸ more";
+  });
+}
+
+function openForm(idx) {
+  editIdx = idx ?? null;
+  document.getElementById("formCard").style.display = "block";
+  document.getElementById("formTitle").textContent = editIdx==null ? "Add property" : "Edit property";
+  const p = editIdx==null ? {scores:{}} : props[editIdx];
+  const s = p.scores || {};
+  set("f_address",p.address); set("f_url",p.url); set("f_price",p.price); set("f_area",p.area);
+  set("f_beds",p.bedrooms); set("f_woz",p.woz); set("f_year",p.build_year); set("f_energy",p.energy_label); set("f_ground",p.ground);
+  set("f_vve",p.vve_costs); set("f_be",p.dist_emmakade_min); set("f_bz",p.dist_zuidas_min); set("f_notes",p.notes);
+  set("s_price",s.price); set("s_legal",s.legal); set("s_dist_emmakade",s.dist_emmakade);
+  set("s_renovation",s.renovation); set("s_energy",s.energy); set("s_dist_zuidas",s.dist_zuidas);
+  const vwm = (p.viewing||"No").match(/^(scheduled|visited)\s*(.*)$/i);
+  document.getElementById("f_view_status").value = vwm ? vwm[1][0].toUpperCase()+vwm[1].slice(1).toLowerCase() : "No";
+  set("f_view_date", vwm && vwm[2] ? vwm[2].trim() : "");
+  document.getElementById("formCard").scrollIntoView({behavior:"smooth"});
+}
+function set(id,v){ document.getElementById(id).value = (v==null?"":v); }
+function num(id){ const v=document.getElementById(id).value; return v===""?null:Number(v); }
+function str(id){ const v=document.getElementById(id).value.trim(); return v===""?null:v; }
+
+function saveForm() {
+  const p = {
+    address: str("f_address"), url: str("f_url"), price: num("f_price"), area: num("f_area"), bedrooms: num("f_beds"),
+    woz: num("f_woz"), build_year: num("f_year"), energy_label: str("f_energy"), ground: str("f_ground"),
+    vve_costs: num("f_vve"), dist_emmakade_min: num("f_be"), dist_zuidas_min: num("f_bz"), notes: str("f_notes"),
+    viewing: (() => { const vs = document.getElementById("f_view_status").value, vd = str("f_view_date"); return (vs && vs !== "No") ? (vs + (vd ? " " + vd : "")) : "No"; })(),
+    scores: {
+      price: num("s_price"), legal: num("s_legal"), dist_emmakade: num("s_dist_emmakade"),
+      renovation: num("s_renovation"), energy: num("s_energy"), dist_zuidas: num("s_dist_zuidas")
+    }
+  };
+  if (editIdx==null) props.push(p); else props[editIdx]=p;
+  save(); closeForm(); renderTable();
+}
+function closeForm(){ document.getElementById("formCard").style.display="none"; editIdx=null; }
+
+// Properties — verified line-by-line against official Funda + a second source (Kadasterdata/Huispedia/makelaar), 30 May 2026.
+const SEED_VERSION = 8;
+const SEED = [{"address":"Catharina van Clevepark 40, Amstelveen","url":"https://www.funda.nl/detail/koop/amstelveen/appartement-catharina-van-clevepark-40/44469451/","price":485000,"area":85,"bedrooms":2,"bedrooms_verified":true,"woz":418000,"build_year":1951,"energy_label":"A","ground":"Eigen grond","ground_verified":true,"vve_costs":78,"vve_estimated":false,"dist_emmakade_min":7,"dist_zuidas_min":14,"heritage":"Gemeentelijk beschermd stadsgezicht (municipal). Interior modernisation is free; only street-facing facade/roof are protected. Street-visible changes need a permit via the Erfgoedcommissie — incl. front-roof solar panels and kunststof kozijnen. DUE DILIGENCE: confirm the existing plastic window frames were permitted. Not a monument — no maintenance obligation/subsidy. See heritage_beschermd_stadsgezicht.md.","scores":{"price":8,"legal":7,"dist_emmakade":9,"energy":10,"dist_zuidas":6,"renovation":5},"notes":"VERIFIED via official Funda (id 44469451, Beschikbaar, on Funda since 22 May): HOEKmaisonnette, 85 m² (not 93), 2 bed (3 kamers), label A (roof/wall/double-glazing insulation), 1951, eigen grond, VvE only €78/mo (healthy — reserve fund + maintenance plan). €5,706/m² — below Randwijck-Oost avg €6,613. Beschermd stadsgezicht — interior free, street-facing exterior needs permits (see heritage_beschermd_stadsgezicht.md); verify existing kunststof kozijnen were permitted. Stadshart & Zuidas by bike. Top pick.","date_found":"2026-05-22","source":"funda"},{"address":"Ferdinand Bolweg 35, Amstelveen","url":"https://www.funda.nl/detail/koop/amstelveen/appartement-ferdinand-bolweg-35/44475595/","price":485000,"area":89,"bedrooms":2,"woz":309000,"woz_year":2020,"build_year":1955,"energy_label":"D","ground":"Eigen grond","vve_costs":163,"vve_estimated":false,"dist_emmakade_min":6,"dist_zuidas_min":14,"scores":{"price":7,"legal":8,"dist_emmakade":10,"energy":5,"dist_zuidas":6,"renovation":5},"notes":"CORRECTED via Funda (id 44475595, te koop): 89 m² (not 90), 2 bed not 3 (3rd bedroom converted to bathroom 2023), label D not C, VvE €162.54 confirmed. Stadshart maisonette, eigen grond. €5,449/m².","date_found":"2026-05-29","source":"reaction"},{"address":"Laanhorn 2, Amstelveen","url":"https://www.funda.nl/detail/koop/amstelveen/appartement-laanhorn-2/80810986/","price":525000,"area":76,"bedrooms":2,"bedrooms_verified":true,"woz":398000,"woz_year":2025,"build_year":1930,"energy_label":"A","ground":"Eigen grond","ground_verified":true,"vve_costs":148,"vve_estimated":false,"dist_emmakade_min":9,"dist_zuidas_min":10,"scores":{"price":7,"legal":6,"dist_emmakade":9,"energy":10,"dist_zuidas":8,"renovation":9},"notes":"VERIFIED via Funda (id 80810986, Beschikbaar, on Funda since 13-05-2026): benedenwoning 76 m², 2 bed (3 kamers), label A (zonnepanelen + dubbel glas), 1930, volle eigendom (eigen grond). Fully renovated — new kitchen, bathroom, CV-ketel 2024. Kelder 15 m² (verwarmd, multifunctioneel). Achtertuin 15 m² (NE). €6,908/m² — at Randwijck West avg (€6,942). VvE FLAG: in oprichting — no MJOP, no reservefonds, no opstalverzekering yet; €147.50/mo provisional. Niet-zelfbewoningsclausule + ouderdomsclausule van toepassing. Zuidas ~10 min fietsen (bevestigd). Previously recorded as DATA CONFLICT (sold house); now resolved as confirmed separate apartment unit.","date_found":"2026-05-30","source":"funda"},{"address":"Sint Philipsland 101, Amstelveen","url":"https://www.funda.nl/detail/koop/amstelveen/appartement-sint-philipsland-101/43335184/","price":430000,"area":79,"bedrooms":2,"woz":318000,"woz_year":2020,"build_year":1965,"energy_label":"C","ground":"Eigen grond","vve_costs":269,"vve_estimated":false,"dist_emmakade_min":8,"dist_zuidas_min":13,"scores":{"price":6,"legal":6,"dist_emmakade":8,"energy":7,"dist_zuidas":6,"renovation":5},"notes":"VERIFIED via Funda (id 43335184, te koop, 'Prinses Christina Flat'): 79 m², 2 bed, ~1965, label C, eigen grond, VvE €269/mo (+€80 heating excl.). Note: niet-zelfbewoningsclausule (non-owner-occupancy). 6th floor + lift. €5,443/m².","date_found":"2026-05-18","source":"reaction"},{"address":"Zonnesteinhof 24, Amstelveen","url":"https://www.funda.nl/koop/amstelveen/straat-zonnestein/","price":425000,"area":76,"bedrooms":3,"bedrooms_verified":false,"woz":298000,"build_year":1961,"energy_label":"E","energy_estimated":true,"ground":"Eigen grond","vve_costs":400,"vve_estimated":true,"dist_emmakade_min":7,"dist_zuidas_min":15,"scores":{"price":7,"legal":5,"dist_emmakade":9,"energy":4,"dist_zuidas":6,"renovation":4},"notes":"CORRECTED via Kadasterdata: 76 m² (not 79), built 1961 (not 1968), eigen grond, WOZ €298k (2020). VvE much higher than thought ~€275 service + €125 heat (~€400/mo). Label uncertain — complex comparable shows G; assume E or worse. €425k from reaction (23 May), not currently listed. €5,592/m².","date_found":"2026-05-30","source":"reaction"},{"address":"Bijdorp 11, Amstelveen","url":"https://www.funda.nl/zoeken/koop?selected_area=%5B%22amstelveen/straat-bijdorp%22%5D","price":450000,"area":75,"area_estimated":true,"bedrooms":3,"woz":307000,"build_year":1962,"energy_label":"E","energy_estimated":true,"ground":null,"vve_costs":250,"vve_estimated":true,"dist_emmakade_min":6,"dist_zuidas_min":13,"scores":{"price":5,"legal":5,"dist_emmakade":10,"energy":4,"dist_zuidas":6,"renovation":4},"notes":"CORRECTED via Kadasterdata/Huispedia: ~74–78 m² (was 77), label E (not D), 1962, 3 bed (4-kamer), WOZ €307k (2020). Private/Zelfverkopen sale could NOT be confirmed. Note: Bijdorp 11-E = separate garagebox. €450k from reaction. Central Elsrijk but ~€6,000/m².","date_found":"2026-05-27","source":"reaction"},{"address":"Haya van Somerenlaan 102, Amstelveen","url":"https://www.funda.nl/zoeken/koop?selected_area=%5B%22amstelveen/straat-haya-van-somerenlaan%22%5D","price":500000,"area":91,"bedrooms":3,"bedrooms_verified":false,"woz":306000,"build_year":1991,"energy_label":"B","energy_estimated":true,"ground":null,"vve_costs":225,"vve_estimated":true,"dist_emmakade_min":22,"dist_zuidas_min":32,"scores":{"price":7,"legal":8,"dist_emmakade":3,"energy":9,"dist_zuidas":2,"renovation":6},"notes":"CORRECTED via Kadasterdata: 91 m² (not 93), built 1991 (not ~1995), WOZ €306k (2020). Westwijk, newer building, label B est (unverified). Far out: ~22 min to Emmakade, ~32 to Zuidas — distance dominates. €500k from reaction.","date_found":"2026-05-27","source":"reaction"},{"address":"Populierenlaan 175, Amstelveen","url":"https://www.funda.nl/zoeken/koop?selected_area=%5B%22amstelveen/straat-populierenlaan%22%5D","price":400000,"area":81,"bedrooms":3,"woz":281000,"build_year":1962,"energy_label":"F","energy_estimated":true,"ground":null,"vve_costs":250,"vve_estimated":true,"dist_emmakade_min":12,"dist_zuidas_min":22,"scores":{"price":8,"legal":6,"dist_emmakade":7,"energy":3,"dist_zuidas":3,"renovation":3},"notes":"CORRECTED: label F per Kadasterdata (Huispedia says E) — worse than assumed; energy upgrade upside. 81 m², 3 bed (4-kamer), 1962, WOZ €281k (2020), VvE ~€250 (€160 svc + €90 heat). €4,938/m² — good value. €400k from reaction.","date_found":"2026-05-30","source":"reaction"},{"address":"Pruimenlaan 42, Amstelveen","url":"https://www.funda.nl/detail/koop/amstelveen/appartement-pruimenlaan-42/43329748/","price":435000,"area":80,"bedrooms":2,"woz":311000,"woz_year":2020,"build_year":1960,"energy_label":"C","ground":"Eigen grond","vve_costs":348,"vve_estimated":false,"dist_emmakade_min":12,"dist_zuidas_min":22,"scores":{"price":6,"legal":6,"dist_emmakade":7,"energy":7,"dist_zuidas":3,"renovation":5},"notes":"VERIFIED via Funda (full render): €435k, 80 m², 2 bed, label C, eigen grond, built 1960 (not 1965). VvE €348/mo = €246 base + €102 heating advance (confirmed). Status: ONDER BOD. €5,438/m².","date_found":"2026-05-24","source":"reaction"},{"address":"Mr. Troelstralaan 30, Amstelveen","url":"https://www.funda.nl/zoeken/koop?selected_area=%5B%22amstelveen/straat-mr-troelstralaan%22%5D","price":550000,"area":89,"bedrooms":3,"bedrooms_verified":false,"woz":350000,"build_year":1951,"energy_label":"C","energy_estimated":true,"ground":null,"vve_costs":175,"vve_estimated":true,"dist_emmakade_min":7,"dist_zuidas_min":15,"scores":{"price":4,"legal":5,"dist_emmakade":9,"energy":6,"dist_zuidas":6,"renovation":5},"notes":"CORRECTED: label est. C per Kadasterdata (not D), 89 m², 1951, WOZ €350k (2020). Not currently listed; €550k from reaction (24 May). Elsrijk, very desirable, but €6,180/m² — top of range. Neighbours (no.24 €525k, no.32 €465k, 89 m²) suggest realistic ask.","date_found":"2026-05-24","source":"reaction"},{"address":"Van Heuven Goedhartlaan 458, Amstelveen","url":"https://www.funda.nl/zoeken/koop?selected_area=%5B%22amstelveen/straat-van-heuven-goedhartlaan%22%5D","price":389000,"area":61,"bedrooms":2,"woz":273000,"build_year":1962,"energy_label":"D","ground":null,"vve_costs":250,"vve_estimated":true,"dist_emmakade_min":8,"dist_zuidas_min":16,"scores":{"price":5,"legal":5,"dist_emmakade":8,"energy":5,"dist_zuidas":4,"renovation":4},"notes":"CORRECTED via Kadasterdata: 61 m² (not 70 — materially smaller), label D (not E), 1962, WOZ €273k (2020). At €389k that's €6,377/m² — expensive for the size. Busy arterial (noise). Not currently listed; €389k from reaction.","date_found":"2026-05-20","source":"reaction"},{"address":"Van Heuven Goedhartlaan 520, Amstelveen","url":"https://www.funda.nl/zoeken/koop?selected_area=%5B%22amstelveen/straat-van-heuven-goedhartlaan%22%5D","price":395000,"area":65,"bedrooms":2,"woz":322000,"build_year":1962,"energy_label":"D","ground":null,"vve_costs":245,"vve_estimated":true,"dist_emmakade_min":8,"dist_zuidas_min":16,"scores":{"price":4,"legal":5,"dist_emmakade":8,"energy":5,"dist_zuidas":4,"renovation":4},"notes":"VERIFIED (Huispedia): 65 m², 2 bed, 1962, label D, WOZ ~€322k. Small gallery flat on busy arterial. €6,077/m² high for size/label. Not currently listed; €395k from reaction.","date_found":"2026-05-18","source":"reaction"},{"address":"Lindenlaan 559, Amstelveen","url":"https://www.funda.nl/detail/koop/amstelveen/appartement-lindenlaan-559/89707232/","price":430000,"area":71,"bedrooms":2,"woz":369000,"build_year":1960,"energy_label":"C","ground":null,"vve_costs":200,"vve_estimated":true,"dist_emmakade_min":13,"dist_zuidas_min":23,"scores":{"price":4,"legal":5,"dist_emmakade":6,"energy":7,"dist_zuidas":3,"renovation":5},"notes":"CORRECTED — earlier €275k/low-ask theory was WRONG. Actual asking €430,000 k.k. (te koop since 12 May, makelaar Investa 360), registered label C (Apr 2026; the E was only a provisional label). 71 m², 2 bed, 1960, WOZ €369k (2025). Was onder bod 29 Apr, re-listed after the deal fell through (not a low-ask). €6,056/m².","date_found":"2026-05-13","source":"digest"},{"address":"Bolestein 13-B, Amsterdam (Buitenveldert)","url":"https://www.funda.nl/detail/koop/amsterdam/appartement-bolestein-13-b/43393021/","price":395000,"area":52,"bedrooms":2,"woz":null,"build_year":1965,"energy_label":"A","ground":"Erfpacht lopend","vve_costs":150,"vve_estimated":false,"dist_emmakade_min":14,"dist_zuidas_min":8,"scores":{"price":3,"legal":4,"dist_emmakade":6,"energy":10,"dist_zuidas":9,"renovation":8},"notes":"VERIFIED: 52 m², 2 bed, label A, VvE €150/mo all confirmed. Erfpacht RUNNING, current period to 15-05-2036, canon €41.81/yr (indexed). Non-self-occupancy clause likely. Near Zuidas (~8 min) but 52 m² for 2 bed is tight at €7,596/m². Don't confuse with 13-A (separate, larger).","date_found":"2026-05-29","source":"reaction"},{"address":"De Boelelaan 305, Amsterdam (Buitenveldert)","url":"https://www.funda.nl/zoeken/koop?selected_area=%5B%22amsterdam%2Fstraat-de-boelelaan%22%5D","price":450000,"area":84,"area_estimated":true,"bedrooms":2,"woz":null,"build_year":1964,"energy_label":"C","energy_estimated":true,"ground":"Erfpacht afgekocht","ground_verified":false,"vve_costs":437,"vve_estimated":true,"dist_emmakade_min":16,"dist_zuidas_min":5,"scores":{"price":6,"legal":2,"dist_emmakade":4,"energy":7,"dist_zuidas":10,"renovation":5},"notes":"CORRECTED via comparable (De Boelelaan 281, Zuidwende, sold €385k): built 1964, ~84 m², 2 bed, label C, VvE ~€437/mo + ~€115 heat (very high, confirmed). Erfpacht likely eeuwigdurend AFGEKOCHT if in Zuidwende block (not running). MAJOR FLAG: 55+ Zuidwende senior complex — age limit + ballotage + zelfredzaamheid requirement confirmed. €450k from reaction; comparable suggests ~€385k.","date_found":"2026-05-24","source":"reaction"},{"address":"Arent Janszoon Ernststraat 795-K, Amsterdam (Buitenveldert)","url":"https://www.funda.nl/detail/koop/amsterdam/appartement-arent-janszoon-ernststraat-795/43983286/","price":550000,"area":80,"area_estimated":true,"bedrooms":2,"woz":381000,"build_year":1962,"energy_label":"C","ground":"Erfpacht afgekocht","vve_costs":289,"vve_estimated":false,"dist_emmakade_min":14,"dist_zuidas_min":7,"scores":{"price":3,"legal":7,"dist_emmakade":6,"energy":7,"dist_zuidas":9,"renovation":6},"notes":"PARTIALLY VERIFIED via main 795 unit: 76 m², 2 bed (4-kamer), 1962, label C, erfpacht eeuwigdurend AFGEKOCHT, VvE €289.20/mo, WOZ €381k. The main 795 unit is now RENTED at €500k; the '-K' unit Max reacted to (€550k) could not be isolated — likely a distinct dwelling. Get the -K measurement/erfpacht sheet from makelaar BNV. Non-self-occupancy/asbestos clauses. Busy A.J. Ernststraat.","date_found":"2026-05-23","source":"reaction"},{"address":"Wedderborg 25, Amsterdam (Buitenveldert)","url":"https://www.funda.nl/detail/koop/amsterdam/appartement-wedderborg-25/44475082/","price":495000,"area":67,"bedrooms":2,"woz":null,"build_year":1963,"energy_label":"A","ground":"Erfpacht afgekocht","vve_costs":131,"vve_estimated":false,"dist_emmakade_min":13,"dist_zuidas_min":8,"scores":{"price":3,"legal":7,"dist_emmakade":6,"energy":10,"dist_zuidas":9,"renovation":8},"notes":"CORRECTED via Funda (id 44475082, te koop since 28 May): 67 m² (not 80), label A (not D — much better), erfpacht eeuwigdurend AFGEKOCHT (no ground-lease risk), VvE only €131/mo (not €250). 2 bed, 1963, CH boiler 2023. Strong on energy + tenure + low costs, but small at €7,388/m². Near Zuidas (~8 min).","date_found":"2026-05-29","source":"reaction"},{"address":"Merckenburg 38, Amsterdam (Buitenveldert)","url":"https://www.funda.nl/zoeken/koop?selected_area=%5B%22amsterdam/straat-merckenburg%22%5D","price":415000,"area":65,"area_estimated":true,"bedrooms":2,"woz":355000,"build_year":1963,"energy_label":"E","energy_estimated":true,"ground":"Erfpacht lopend","vve_costs":178,"vve_estimated":true,"dist_emmakade_min":15,"dist_zuidas_min":9,"scores":{"price":4,"legal":4,"dist_emmakade":6,"energy":4,"dist_zuidas":9,"renovation":4},"notes":"CORRECTED via comparable (Merckenburg 32, sold €399k): ~63–66 m² (not 70), 2 bed, 1963, label ~E, WOZ €355k (2020), VvE ~€178/mo (not €250). Erfpacht RUNNING — building expiry/revision 15-04-2036, canon ~€150–200/yr. Buitenveldert-West near Gelderlandplein, ~9 min to Zuidas. Not currently listed; €415k from reaction.","date_found":"2026-05-18","source":"reaction"},{"address":"Onstein 134, Amsterdam (Buitenveldert)","url":"https://www.funda.nl/detail/koop/amsterdam/appartement-onstein-134/44462502/","price":469000,"area":77,"area_estimated":false,"bedrooms":2,"woz":null,"build_year":1971,"energy_label":"E","energy_estimated":false,"ground":"Erfpacht (afkoop aangevraagd)","vve_costs":227,"vve_estimated":false,"dist_emmakade_min":14,"dist_zuidas_min":7,"scores":{"price":7,"legal":7,"dist_emmakade":8,"energy":4,"dist_zuidas":9,"renovation":5},"notes":"VERIFIED via makelaar microsite (Tel Krop, id 44462502, Beschikbaar): 77 m2 benedenwoning met west-terras, EUR6.091/m2 - at/below Buitenveldert avg (~EUR6.000-6.600), good value for genuine 77 m2. Listed as 4 kamers but makelaar states only 2 slaapkamers (1 ruime slaapkamer + kleedkamer); treat as 2-bed. ERFPACHT POSITIEF: eeuwigdurende omzetting tijdig aangevraagd EN afkoop canon gekozen -> once processed = perpetual + bought off (best case); current period to 2044, canon EUR213,73/yr fixed. DUE DILIGENCE: confirm conversion/afkoop is settled and who bears the afkoopsom. VvE Onstein 108-194 professioneel beheerd (JNS): service EUR227,48/mo + EUR150/mo stookkosten voorschot (blokverwarming) = ~EUR377/mo combined (high). Ouderdoms-, niet-bewonings- en asbestclausule van toepassing (risk shifts to buyer; niet-bewoning suggests estate/never-occupied sale - less seller disclosure). Label E + blokverwarming + alleen vloerisolatie -> limited energy-improvement upside (HR++ glas mogelijk). WOZ not retrievable via loket (JS) - woz=null, verify at bezichtiging. Near Station Zuid (bike ~7 min), Gelderlandplein, VU, Amsterdamse Bos. Weighted score 7.1 - better value of the two new digest listings.","date_found":"2026-05-30","source":"digest"},{"address":"Meander 1101, Amstelveen (Stadshart)","url":"https://www.funda.nl/detail/koop/amstelveen/appartement-meander-1101/44476228/","price":395000,"area":100,"area_estimated":false,"bedrooms":1,"bedrooms_verified":true,"woz":445000,"build_year":1962,"energy_label":"D","energy_estimated":false,"ground":"Eigen grond","ground_verified":true,"vve_costs":282,"vve_estimated":false,"dist_emmakade_min":7,"dist_zuidas_min":16,"scores":{"price":9,"legal":6,"dist_emmakade":8,"energy":4,"dist_zuidas":5,"renovation":5},"notes":"BORDERLINE — currently 1 bed (2-kamer), flagged due to exceptional value. €395k / 100 m² = €3,950/m², WOZ €445k (2025) = asking 11% BELOW WOZ — rare. Stadshart top floor (11e, vrij uitzicht), eigen grond, active VvE €282/mo excl. stookkosten (~€100-150/mo stadsverwarming extra ≈ €430 total). Kluswoning: 2nd bedroom created by relocating kitchen per description. RISKS: 'as is where is' clause (asbestos/hidden defects risk shifts to buyer), stadsverwarming locked in (no HR boiler), limited energy-label upside (voorzetramen only). Even adding €80k renovation: total ~€475k = €4,750/m² vs neighbourhood avg €5,855/m² — strong. VvE actief, KvK, reservefonds, jaarlijkse vergadering confirmed. Listed 29 May 2026. Weighted score 7.1.","date_found":"2026-05-30","source":"digest"},{"address":"Schierstins 56, Amsterdam (Buitenveldert)","url":"https://www.funda.nl/detail/koop/amsterdam/appartement-schierstins-56/44478176/","price":475000,"area":67,"area_estimated":false,"bedrooms":3,"bedrooms_verified":true,"woz":357000,"woz_year":2020,"build_year":1963,"energy_label":"D","energy_estimated":false,"ground":"Erfpacht lopend (vastgeklikt €1.865/jr na 2036)","ground_verified":true,"vve_costs":144,"vve_estimated":false,"dist_emmakade_min":15,"dist_zuidas_min":7,"scores":{"price":5,"legal":5,"dist_emmakade":6,"energy":5,"dist_zuidas":9,"renovation":6},"notes":"VERIFIED via Funda (id 44478176, Beschikbaar, listed 30-05-2026): 67 m² NEN2580, 3 slaapkamers, label D, dubbel glas, CV-ketel 2007 (gas, owned — not blokverwarming). Galerijflat, 3e/top floor, west balkon 5 m², privéberging 6 m². VvE healthy: KvK, jaarlijkse vergadering, reservefonds, MJOP 2025, opstalverzekering, slechts €144/mo. ERFPACHT FLAG: gemeente Amsterdam lopend, canon €117.52/jr tot 2036, daarna VASTGEKLIKT eeuwigdurend op €1.865,46/jr (CPI-indexed) — NIET afgekocht. Sprong van ~€155/mo in 2036 is materieel. €7.090/m² vs buurt avg €6.903. WOZ €357k (2020) — asking 33% boven 2020-WOZ, maar WOZ is 6 jr oud. Comparables: Schierstins 131 (63m² €395k), Schierstins 62 (63m² €400k). CV-ketel 18 jr oud — vervangingsrisico binnen 5 jr. La Maison Makelaars broker.","date_found":"2026-05-31","source":"digest"},{"address":"Kiefskamp 15, Amsterdam (Buitenveldert)","url":"https://www.funda.nl/detail/koop/amsterdam/appartement-kiefskamp-15/44462070/","price":449000,"area":59,"area_estimated":false,"bedrooms":2,"woz":null,"build_year":1968,"energy_label":"E","energy_estimated":false,"ground":"Erfpacht voortdurend (AB 1994), canon afgekocht tot 31-05-2088","vve_costs":296,"vve_estimated":false,"dist_emmakade_min":14,"dist_zuidas_min":8,"scores":{"price":4,"legal":7,"dist_emmakade":8,"energy":4,"dist_zuidas":8,"renovation":5},"notes":"VERIFIED via makelaar microsite (Tel Krop, id 44462070, Beschikbaar): 59 m2 bovenwoning, 2e verd met lift, 2 balkons (O/W). EUR7.610/m2 - HIGH, well above Buitenveldert avg (~EUR6.000-6.600). Listed 3 kamers / 2 slaapkamers but description = 1 echte hoofdslaapkamer; 2e slaapkamer moet nog gecreeerd worden (keuken verplaatsen). Treat as 1-bed-now / 2-bed-potential -> weak value at this price for 59 m2. Recently renovated (net verbouwd) - modern badkamer/keuken, lower maintenance risk, but cosmetic only (still label E). ERFPACHT: canon afgekocht tot 31-05-2088 (voortdurend, AB 1994) = ~62 jr low near-term risk, but NOT eeuwigdurend - canon herziening na 2088. VvE Gebouw Kiefskamp 1-125 actief/professioneel (JNS): EUR296,16/mo service + EUR60 stookkosten = ~EUR356/mo (high for 59 m2). Build year discrepancy: structured field 1968 vs description 'bouwjaar 1963' - verify. Label E + blokverwarming + dubbel glas -> limited energy upside. WOZ not retrievable via loket (JS) - woz=null, verify. Park-adjacent, rustige weg, vrij uitzicht, near Gelderlandplein/Zuidas/VU. Weighted score 6.2.","date_found":"2026-05-30","source":"digest"}];
+// Merge seed by address, respecting deletions. On a SEED_VERSION bump, refresh all seeded
+// entries from SEED (the verified source of truth) so corrections propagate to existing data.
+function applySeed() {
+  let seeded; try { seeded = JSON.parse(localStorage.getItem("dreamhouse_seeded_v1")) || []; } catch { seeded = []; }
+  const storedVer = Number(localStorage.getItem("dreamhouse_seed_version") || 0);
+  const seedByAddr = Object.fromEntries(SEED.map(s => [s.address, s]));
+  let changed = false;
+  if (storedVer < SEED_VERSION) {              // verified refresh: overwrite seeded entries
+    for (let i = 0; i < props.length; i++) {
+      const s = seedByAddr[props[i].address];
+      if (s) { props[i] = JSON.parse(JSON.stringify(s)); changed = true; }
+    }
+    localStorage.setItem("dreamhouse_seed_version", String(SEED_VERSION));
+  }
+  if (changed) save();
+  const have = new Set(props.map(p => p.address));
+  let added = 0;
+  for (const s of SEED) {
+    if (!seeded.includes(s.address)) {
+      if (!have.has(s.address)) { props.push(JSON.parse(JSON.stringify(s))); added++; }
+      seeded.push(s.address);
+    }
+  }
+  localStorage.setItem("dreamhouse_seeded_v1", JSON.stringify(seeded));
+  if (added) save();
+}
+// Re-import scan data: forces any missing seed properties back in.
+function reimportSeed() {
+  const have = new Set(props.map(p => p.address));
+  let added = 0;
+  for (const s of SEED) if (!have.has(s.address)) { props.push(JSON.parse(JSON.stringify(s))); added++; }
+  if (added) save();
+  renderTable();
+  alert(added ? added + " property(ies) re-imported." : "All scan properties already present.");
+}
+
+function exportJSON() {
+  const blob = new Blob([JSON.stringify(props,null,2)], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = "property_data.json"; a.click();
+}
+
+document.getElementById("addBtn").onclick = () => openForm(null);
+document.getElementById("saveBtn").onclick = saveForm;
+document.getElementById("cancelBtn").onclick = closeForm;
+document.getElementById("sampleBtn").onclick = reimportSeed;
+document.getElementById("exportBtn").onclick = exportJSON;
+document.getElementById("clearBtn").onclick = () => { if(confirm("Remove all properties?")){ props=[]; save(); renderTable(); } };
+
+renderWeights();
+applySeed();
+renderTable();
+</script>
+</body>
+</html>
