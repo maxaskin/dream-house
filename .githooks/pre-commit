@@ -1,0 +1,14 @@
+#!/bin/sh
+# Pre-commit hook: keep the generated HTML in sync with property_data.json.
+# Only rebuilds when the data file is part of this commit (so other commits
+# don't churn SEED_VERSION). Aborts the commit if the build fails.
+
+if git diff --cached --name-only | grep -q '^property_data\.json$'; then
+  echo "property_data.json changed -> running build.js..."
+  if ! node build.js; then
+    echo "build.js failed - commit aborted. Fix the error and try again." >&2
+    exit 1
+  fi
+  # stage the regenerated artifacts so they're part of the same commit
+  git add property_ranking.html property_summary.html property_summary_ru.html
+fi
