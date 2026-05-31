@@ -75,7 +75,7 @@
   "dist_emmakade_min": 6,
   "dist_zuidas_min": 14,
   "scores": {
-   "price": 7,
+   "price": 9,
    "legal": 8,
    "dist_emmakade": 10,
    "energy": 5,
@@ -118,7 +118,7 @@
   "dist_emmakade_min": 9,
   "dist_zuidas_min": 10,
   "scores": {
-   "price": 7,
+   "price": 6,
    "legal": 6,
    "dist_emmakade": 9,
    "energy": 10,
@@ -159,7 +159,7 @@
   "dist_emmakade_min": 8,
   "dist_zuidas_min": 13,
   "scores": {
-   "price": 6,
+   "price": 8,
    "legal": 6,
    "dist_emmakade": 8,
    "energy": 7,
@@ -202,7 +202,7 @@
   "dist_emmakade_min": 7,
   "dist_zuidas_min": 15,
   "scores": {
-   "price": 7,
+   "price": 9,
    "legal": 5,
    "dist_emmakade": 9,
    "energy": 4,
@@ -245,7 +245,7 @@
   "dist_emmakade_min": 6,
   "dist_zuidas_min": 13,
   "scores": {
-   "price": 5,
+   "price": 7,
    "legal": 5,
    "dist_emmakade": 10,
    "energy": 4,
@@ -288,7 +288,7 @@
   "dist_emmakade_min": 22,
   "dist_zuidas_min": 32,
   "scores": {
-   "price": 7,
+   "price": 9,
    "legal": 8,
    "dist_emmakade": 3,
    "energy": 9,
@@ -330,7 +330,7 @@
   "dist_emmakade_min": 12,
   "dist_zuidas_min": 22,
   "scores": {
-   "price": 8,
+   "price": 9,
    "legal": 6,
    "dist_emmakade": 7,
    "energy": 3,
@@ -371,7 +371,7 @@
   "dist_emmakade_min": 12,
   "dist_zuidas_min": 22,
   "scores": {
-   "price": 6,
+   "price": 8,
    "legal": 6,
    "dist_emmakade": 7,
    "energy": 7,
@@ -414,7 +414,7 @@
   "dist_emmakade_min": 7,
   "dist_zuidas_min": 15,
   "scores": {
-   "price": 4,
+   "price": 6,
    "legal": 5,
    "dist_emmakade": 9,
    "energy": 6,
@@ -455,7 +455,7 @@
   "dist_emmakade_min": 8,
   "dist_zuidas_min": 16,
   "scores": {
-   "price": 5,
+   "price": 7,
    "legal": 5,
    "dist_emmakade": 8,
    "energy": 5,
@@ -496,7 +496,7 @@
   "dist_emmakade_min": 8,
   "dist_zuidas_min": 16,
   "scores": {
-   "price": 4,
+   "price": 6,
    "legal": 5,
    "dist_emmakade": 8,
    "energy": 5,
@@ -537,7 +537,7 @@
   "dist_emmakade_min": 13,
   "dist_zuidas_min": 23,
   "scores": {
-   "price": 4,
+   "price": 6,
    "legal": 5,
    "dist_emmakade": 6,
    "energy": 7,
@@ -578,7 +578,7 @@
   "dist_emmakade_min": 14,
   "dist_zuidas_min": 8,
   "scores": {
-   "price": 3,
+   "price": 4,
    "legal": 4,
    "dist_emmakade": 6,
    "energy": 10,
@@ -622,7 +622,7 @@
   "dist_emmakade_min": 16,
   "dist_zuidas_min": 5,
   "scores": {
-   "price": 6,
+   "price": 8,
    "legal": 2,
    "dist_emmakade": 4,
    "energy": 7,
@@ -705,7 +705,7 @@
   "dist_emmakade_min": 13,
   "dist_zuidas_min": 8,
   "scores": {
-   "price": 3,
+   "price": 4,
    "legal": 7,
    "dist_emmakade": 6,
    "energy": 10,
@@ -748,7 +748,7 @@
   "dist_emmakade_min": 15,
   "dist_zuidas_min": 9,
   "scores": {
-   "price": 4,
+   "price": 6,
    "legal": 4,
    "dist_emmakade": 6,
    "energy": 4,
@@ -791,7 +791,7 @@
   "dist_emmakade_min": 14,
   "dist_zuidas_min": 7,
   "scores": {
-   "price": 7,
+   "price": 8,
    "legal": 7,
    "dist_emmakade": 8,
    "energy": 4,
@@ -836,7 +836,7 @@
   "dist_emmakade_min": 7,
   "dist_zuidas_min": 16,
   "scores": {
-   "price": 9,
+   "price": 10,
    "legal": 6,
    "dist_emmakade": 8,
    "energy": 4,
@@ -881,7 +881,7 @@
   "dist_emmakade_min": 15,
   "dist_zuidas_min": 7,
   "scores": {
-   "price": 5,
+   "price": 6,
    "legal": 5,
    "dist_emmakade": 6,
    "energy": 5,
@@ -924,7 +924,7 @@
   "dist_emmakade_min": 14,
   "dist_zuidas_min": 8,
   "scores": {
-   "price": 4,
+   "price": 5,
    "legal": 7,
    "dist_emmakade": 8,
    "energy": 4,
