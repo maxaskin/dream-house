@@ -56,6 +56,15 @@ function scoreColor(t) {
 }
 const LABEL_COLOR = { A: '#15803d', B: '#65a30d', C: '#84a017', D: '#d97706', E: '#ea7317', F: '#dc2626', G: '#b91c1c' };
 function labelColor(l) { return LABEL_COLOR[(l || '').charAt(0)] || '#888'; }
+// ground/tenure → Russian (exact match; falls back to the original Dutch if unmapped)
+const GROUND_RU = {
+  'Eigen grond': 'Собственный участок',
+  'Erfpacht lopend': 'Аренда земли (действующая)',
+  'Erfpacht afgekocht': 'Аренда земли (выкуплена)',
+  'Erfpacht (afkoop aangevraagd)': 'Аренда земли (выкуп запрошен)',
+  'Erfpacht lopend (vastgeklikt €1.865/jr na 2036)': 'Аренда земли (действующая; зафиксирована €1.865/год после 2036)',
+  'Erfpacht voortdurend (AB 1994), canon afgekocht tot 31-05-2088': 'Аренда земли (бессрочная, AB 1994; канон выкуплен до 31-05-2088)',
+};
 function scoreStr(t) { return t == null ? '—' : (Math.round(t * 100) % 10 === 0 ? t.toFixed(1) : t.toFixed(2)); }
 // highlight risk tokens in notes (then keep the rest escaped)
 function noteHtml(notes) {
@@ -136,7 +145,7 @@ function card(r, rank, T) {
 <tr><td style="color:#666;padding:2px 8px 2px 0">${T.area}</td><td>${p.area ? p.area + ' m²' : '—'}</td></tr>
 <tr><td style="color:#666;padding:2px 8px 2px 0">${T.beds}</td><td>${p.bedrooms ?? '—'}</td></tr>
 <tr><td style="color:#666;padding:2px 8px 2px 0">${T.label}</td><td>${lbl}</td></tr>
-<tr><td style="color:#666;padding:2px 8px 2px 0">${T.ground}</td><td style="font-size:0.9em">${esc(p.ground || '—')}</td></tr>
+<tr><td style="color:#666;padding:2px 8px 2px 0">${T.ground}</td><td style="font-size:0.9em">${esc(T.grnd(p.ground))}</td></tr>
 <tr><td style="color:#666;padding:2px 8px 2px 0">→ Emmakade</td><td>${p.dist_emmakade_min} min</td></tr>
 <tr><td style="color:#666;padding:2px 8px 2px 0">→ Zuidas</td><td>${p.dist_zuidas_min} min</td></tr>
 <tr><td style="color:#666;padding:2px 8px 2px 0">${T.viewing}</td><td>${esc(p.viewing || 'No')}</td></tr>
@@ -161,7 +170,7 @@ function row(r, rank, T, noteOverride) {
 <td style="text-align:center">${p.bedrooms ?? '—'}</td>
 <td style="text-align:center">${p.build_year ?? '—'}</td>
 <td style="text-align:center">${lbl}</td>
-<td style="font-size:0.82em">${esc(p.ground || '—')}</td>
+<td style="font-size:0.82em">${esc(T.grnd(p.ground))}</td>
 <td style="text-align:right;font-size:0.88em">${vveCell(p)}</td>
 <td style="text-align:center">${p.dist_emmakade_min ?? '—'}</td>
 <td style="text-align:center">${p.dist_zuidas_min ?? '—'}</td>
@@ -250,6 +259,7 @@ const STR = {
     hAddr: 'Address', hScore: 'Score', hView: 'Viewing', hPrice: 'Price', hBeds: 'Beds', hBuilt: 'Built',
     hLabel: 'Label', hGround: 'Ground', hVve: 'VvE/mo', hNotes: 'Notes &amp; flags',
     price: 'Price', area: 'Area', beds: 'Beds', label: 'Label', ground: 'Ground', viewing: 'Viewing',
+    grnd: g => g || '—',
     no: 'No', visited: 'Visited', scheduled: 'Scheduled',
     footer: '<strong>Methodology:</strong> Weighted score out of 10: Price &amp; €/m² vs WOZ (35%), Legal risk (25%), Bike distance to Emmakade 33 (15%), Energy label (15%), Bike distance to Zuidas (10%). Renovation is a deduction: <code>−max(0, 6 − renovation_score) × 0.3</code> applied after the weighted sum (max −1.5 pts for fixers). Scores marked ~ or "est." are estimates and should be verified. WOZ values may be from different years. All data as of ' + GEN_DATE + '.',
   },
@@ -262,6 +272,7 @@ const STR = {
     hAddr: 'Адрес', hScore: 'Балл', hView: 'Просмотр', hPrice: 'Цена', hBeds: 'Спал.', hBuilt: 'Год',
     hLabel: 'Метка', hGround: 'Земля', hVve: 'VvE/мес', hNotes: 'Заметки и флаги',
     price: 'Цена', area: 'Площадь', beds: 'Спальни', label: 'Метка', ground: 'Земля', viewing: 'Просмотр',
+    grnd: g => g ? (GROUND_RU[g] || g) : '—',
     no: 'Нет', visited: 'Посещён', scheduled: 'Запланирован',
     footer: '<strong>Методология:</strong> Взвешенный балл из 10: Цена &amp; €/м² vs WOZ (35%), Юр. риск (25%), Велодистанция до Emmakade 33 (15%), Энергометка (15%), Велодистанция до Zuidas (10%). Ремонт — вычет: <code>−max(0, 6 − балл_ремонта) × 0.3</code> после взвешенной суммы (макс −1.5 балла). Значения с ~ или «est.» — оценки, требуют проверки. Значения WOZ могут быть за разные годы. Данные на ' + GEN_DATE + '.',
   },
@@ -279,6 +290,8 @@ for (const r of ranked) {
   if (e != null && (e < 3000 || e > 8000)) console.warn(`  €/m² out of range: ${r.p.address} = €${e}`);
   if (!/funda\.nl/.test(r.p.url || '')) { console.warn(`  non-funda url: ${r.p.address}`); bad++; }
 }
+const groundUnmapped = [...new Set(ranked.map(r => r.p.ground).filter(g => g && !GROUND_RU[g]))];
+if (groundUnmapped.length) console.warn(`  ground not translated for RU (add to GROUND_RU): ${groundUnmapped.map(g => JSON.stringify(g)).join(', ')}`);
 const ruMissing = ranked.filter(r => !r.p.notes_ru).map(r => r.p.address);
 console.log(`Built ${data.length} properties. ranking SEED_VERSION → ${ver}.`);
 if (ruMissing.length) console.log(`notes_ru missing for ${ruMissing.length} (RU falls back to EN note): ${ruMissing.join('; ')}`);
