@@ -5,24 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dream House</title>
   <style>
-    body {
-      font-family: sans-serif;
-      max-width: 400px;
-      margin: 80px auto;
-      padding: 0 20px;
+    *{box-sizing:border-box}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      background:linear-gradient(160deg,#eef2ff 0%,#f8fafc 45%,#f8fafc 100%);
+      color:#1a202c;margin:0;min-height:100vh;padding:48px 24px;color-scheme:light;
+      display:flex;align-items:center;justify-content:center;
     }
-    h1 { margin-bottom: 24px; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 12px 0; }
-    a { font-size: 1.1rem; text-decoration: none; color: #2563eb; }
-    a:hover { text-decoration: underline; }
+    .wrap{width:100%;max-width:560px}
+    .hero{text-align:center;margin-bottom:36px}
+    .hero .emoji{font-size:2.6em;line-height:1}
+    h1{font-size:2em;font-weight:800;margin:14px 0 6px;letter-spacing:-0.02em}
+    .subtitle{color:#64748b;font-size:0.95em;margin:0}
+    .cards{display:flex;flex-direction:column;gap:14px}
+    .card{
+      display:flex;align-items:center;gap:16px;
+      background:#fff;border:1px solid #e6e9ef;border-radius:14px;
+      padding:18px 20px;text-decoration:none;color:inherit;
+      box-shadow:0 1px 2px rgba(15,23,42,.04);
+      transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
+    }
+    .card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 24px rgba(37,99,235,.12);
+      border-color:#c7d2fe;
+    }
+    .card .ico{
+      flex:none;width:46px;height:46px;border-radius:11px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.4em;background:#eff6ff;
+    }
+    .card .body{flex:1;min-width:0}
+    .card .title{display:block;font-weight:700;font-size:1.08em;margin-bottom:2px}
+    .card .desc{display:block;color:#64748b;font-size:0.86em}
+    .card .arrow{flex:none;color:#94a3b8;font-size:1.3em;transition:transform .15s ease,color .15s ease}
+    .card:hover .arrow{transform:translateX(4px);color:#2563eb}
+    .footer{text-align:center;color:#94a3b8;font-size:0.8em;margin-top:32px}
   </style>
 </head>
 <body>
-  <h1>Dream House</h1>
-  <ul>
-    <li><a href="property_summary.html">Property Summary</a></li>
-    <li><a href="property_summary_ru.html">Property Summary (RU)</a></li>
-  </ul>
+  <div class="wrap">
+    <div class="hero">
+      <div class="emoji">🏠</div>
+      <h1>Dream House</h1>
+      <p class="subtitle">Amstelveen &amp; Amsterdam Buitenveldert — property research</p>
+    </div>
+    <div class="cards">
+      <a class="card" href="property_summary.html">
+        <span class="ico">📋</span>
+        <span class="body">
+          <span class="title">Property Summary</span>
+          <span class="desc">Verified overview of every property</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="card" href="property_summary_ru.html">
+        <span class="ico">🇷🇺</span>
+        <span class="body">
+          <span class="title">Property Summary (RU)</span>
+          <span class="desc">Сводка по объектам на русском</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="card" href="property_ranking.html">
+        <span class="ico">🏆</span>
+        <span class="body">
+          <span class="title">Property Ranking</span>
+          <span class="desc">Scored &amp; ranked shortlist</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+    <p class="footer">Generated 2026-05-31</p>
+  </div>
 </body>
 </html>
