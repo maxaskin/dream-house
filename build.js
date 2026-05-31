@@ -3,7 +3,6 @@
  * build.js — single source of truth → all artifacts.
  *
  * Reads property_data.json and regenerates, with one canonical scoring model:
- *   - property_ranking.html   (rewrites the embedded SEED array + bumps SEED_VERSION)
  *   - property_summary.html   (English printable summary)
  *   - property_summary_ru.html (Russian summary; reuses existing RU note translations,
  *                               keyed by address, so numbers stay in sync without
@@ -11,9 +10,8 @@
  *
  * Run: node build.js
  *
- * The weight constants below are the ONLY place the model is defined; the ranking
- * page reads the same numbers from its regenerated SEED + the WEIGHTS array, so the
- * four files can no longer drift (the manual-sync hazard in INSTRUCTIONS step "Keep in sync").
+ * The weight constants below are the ONLY place the model is defined, so the
+ * summaries can no longer drift (the manual-sync hazard in INSTRUCTIONS "Keep in sync").
  */
 const fs = require('fs');
 const path = require('path');
@@ -102,22 +100,7 @@ const ranked = data
   .sort((a, b) => (b.total ?? -1) - (a.total ?? -1));
 
 // =====================================================================
-// 1) property_ranking.html — rewrite SEED + bump SEED_VERSION
-// =====================================================================
-function buildRanking() {
-  const file = path.join(DIR, 'property_ranking.html');
-  let html = fs.readFileSync(file, 'utf8');
-  const seedJson = JSON.stringify(data);
-  const verMatch = html.match(/const SEED_VERSION = (\d+);/);
-  const nextVer = verMatch ? Number(verMatch[1]) + 1 : 1;
-  html = html.replace(/const SEED_VERSION = \d+;/, `const SEED_VERSION = ${nextVer};`);
-  html = html.replace(/const SEED = \[[\s\S]*?\];/, `const SEED = ${seedJson};`);
-  fs.writeFileSync(file, html);
-  return nextVer;
-}
-
-// =====================================================================
-// 2) summary (shared renderer; EN + RU differ only in chrome strings + notes)
+// summary (shared renderer; EN + RU differ only in chrome strings + notes)
 // =====================================================================
 function viewingBadge(v, T) {
   if (!v || v === 'No') return `<span style="color:#888;font-size:0.8em">${T.no}</span>`;
@@ -279,7 +262,6 @@ const STR = {
 };
 
 // ---- run ----
-const ver = buildRanking();
 fs.writeFileSync(path.join(DIR, 'property_summary.html'), buildSummary('en'));
 fs.writeFileSync(path.join(DIR, 'property_summary_ru.html'), buildSummary('ru'));
 
@@ -293,7 +275,7 @@ for (const r of ranked) {
 const groundUnmapped = [...new Set(ranked.map(r => r.p.ground).filter(g => g && !GROUND_RU[g]))];
 if (groundUnmapped.length) console.warn(`  ground not translated for RU (add to GROUND_RU): ${groundUnmapped.map(g => JSON.stringify(g)).join(', ')}`);
 const ruMissing = ranked.filter(r => !r.p.notes_ru).map(r => r.p.address);
-console.log(`Built ${data.length} properties. ranking SEED_VERSION → ${ver}.`);
+console.log(`Built ${data.length} properties (EN + RU summaries).`);
 if (ruMissing.length) console.log(`notes_ru missing for ${ruMissing.length} (RU falls back to EN note): ${ruMissing.join('; ')}`);
 else console.log('notes_ru: all properties translated.');
 if (bad) process.exitCode = 1;
