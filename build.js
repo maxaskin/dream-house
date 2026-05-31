@@ -63,6 +63,12 @@ function noteHtml(notes) {
   return esc(notes).replace(/\b(VERIFIED|CORRECTED|CONFLICT|FLAGS?)\b/g,
     '<strong style="color:#d97706">$1</strong>');
 }
+// Russian equivalents of the highlighted flag tokens (\b is unreliable for Cyrillic)
+function noteHtmlRu(notes) {
+  if (!notes) return '';
+  return esc(notes).replace(/(ПРОВЕРЕНО|ИСПРАВЛЕНО|РАСХОЖДЕНИЕ|КОНФЛИКТ|ФЛАГ|РИСК)/g,
+    '<strong style="color:#d97706">$1</strong>');
+}
 function vveCell(p) {
   if (p.vve_costs == null) return '?';
   return (p.vve_estimated ? '~€' : '€') + fmt(p.vve_costs);
@@ -163,12 +169,15 @@ function row(r, rank, T, noteOverride) {
 </tr>`;
 }
 
-function buildSummary(lang, notesByAddr) {
+function buildSummary(lang) {
   const T = lang === 'ru' ? STR.ru : STR.en;
   const cards = ranked.slice(0, 3).map((r, i) => card(r, i, T)).join('');
   const rows = ranked.map((r, i) => {
-    const override = notesByAddr ? (notesByAddr[r.p.address] ?? noteHtml(r.p.notes)) : null;
-    return row(r, i, T, override);
+    // RU prefers notes_ru (with RU highlighting); falls back to the EN note if absent
+    const note = lang === 'ru'
+      ? (r.p.notes_ru ? noteHtmlRu(r.p.notes_ru) : noteHtml(r.p.notes))
+      : noteHtml(r.p.notes);
+    return row(r, i, T, note);
   }).join('');
   const html = `<!DOCTYPE html>
 <html lang="${lang}">
@@ -258,24 +267,10 @@ const STR = {
   },
 };
 
-// extract existing RU note cells (keyed by address) so translations survive a rebuild
-function extractRuNotes() {
-  const file = path.join(DIR, 'property_summary_ru.html');
-  if (!fs.existsSync(file)) return {};
-  const html = fs.readFileSync(file, 'utf8');
-  const map = {};
-  // each data row: address anchor ... then the final note <td ...max-width:320px>NOTE</td>
-  const rowRe = /font-weight:500">([^<]+)<\/a>[\s\S]*?<td style="font-size:0\.8em;max-width:320px">([\s\S]*?)<\/td>\s*<\/tr>/g;
-  let m;
-  while ((m = rowRe.exec(html)) !== null) { map[m[1].trim()] = m[2].trim(); }
-  return map;
-}
-
 // ---- run ----
-const ruNotes = extractRuNotes();
 const ver = buildRanking();
-fs.writeFileSync(path.join(DIR, 'property_summary.html'), buildSummary('en', null));
-fs.writeFileSync(path.join(DIR, 'property_summary_ru.html'), buildSummary('ru', ruNotes));
+fs.writeFileSync(path.join(DIR, 'property_summary.html'), buildSummary('en'));
+fs.writeFileSync(path.join(DIR, 'property_summary_ru.html'), buildSummary('ru'));
 
 // ---- self-check ----
 let bad = 0;
@@ -284,8 +279,9 @@ for (const r of ranked) {
   if (e != null && (e < 3000 || e > 8000)) console.warn(`  €/m² out of range: ${r.p.address} = €${e}`);
   if (!/funda\.nl/.test(r.p.url || '')) { console.warn(`  non-funda url: ${r.p.address}`); bad++; }
 }
-const ruMissing = ranked.filter(r => !ruNotes[r.p.address]).map(r => r.p.address);
+const ruMissing = ranked.filter(r => !r.p.notes_ru).map(r => r.p.address);
 console.log(`Built ${data.length} properties. ranking SEED_VERSION → ${ver}.`);
-if (ruMissing.length) console.log(`RU notes missing for ${ruMissing.length} (fell back to EN): ${ruMissing.join('; ')}`);
+if (ruMissing.length) console.log(`notes_ru missing for ${ruMissing.length} (RU falls back to EN note): ${ruMissing.join('; ')}`);
+else console.log('notes_ru: all properties translated.');
 if (bad) process.exitCode = 1;
 console.log('Top 3:', ranked.slice(0, 3).map(r => `${r.p.address.split(',')[0]} ${scoreStr(r.total)}`).join(' · '));

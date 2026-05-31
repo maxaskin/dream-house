@@ -112,7 +112,7 @@ Per-field confidence flags already in the data: `bedrooms_verified`, `ground_ver
 - Cross-file check: JSON / EN summary / RU summary / SEED all **22 rows**; **0** score-pill mismatches vs the engine; **0** stale per-property "Weighted score" strings; RU notes preserved (Cyrillic intact); no `(30%)/(20%)` labels remain; every `url` on `funda.nl`; no unexplained €/m² outside €3.000–€8.000.
 
 ## Recommended follow-ups
-- Add `notes_ru` to the schema so the RU summary is fully regenerable (today new properties fall back to the EN note in RU).
+- ~~Add `notes_ru` to the schema so the RU summary is fully regenerable.~~ **Done** — all 22 properties now carry `notes_ru`; `build.js` renders RU from it with Russian flag highlighting and falls back to the EN note (logging any gaps) for new entries.
 - Render a small source indicator in the summary's flags column once `sources` is populated more widely.
 - Resolve the 4 `woz: null` records and all `*_estimated` fields by manual register checks, recording each in `sources`.
 - Re-confirm reaction-only (delisted) listings or mark them stale; 14 of 22 are reaction-sourced.

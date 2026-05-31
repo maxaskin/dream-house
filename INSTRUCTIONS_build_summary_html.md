@@ -81,7 +81,9 @@ node build.js            # regenerates ranking SEED (+SEED_VERSION bump), summar
 BUILD_DATE=2026-06-05 node build.js   # override the "Generated" date
 ```
 
-`build.js` defines the weight model in ONE place and recomputes every total, so `property_summary.html`, `property_summary_ru.html`, and `property_ranking.html` (its `SEED` array + `SEED_VERSION`) can no longer drift. Edit `property_data.json`, then rebuild. The RU summary reuses existing Russian note translations keyed by address; a new property shows its English note in RU until a translation is added (build.js logs which are missing). To make RU fully regenerable, add a `notes_ru` field per property and have build.js prefer it.
+`build.js` defines the weight model in ONE place and recomputes every total, so `property_summary.html`, `property_summary_ru.html`, and `property_ranking.html` (its `SEED` array + `SEED_VERSION`) can no longer drift. Edit `property_data.json`, then rebuild.
+
+**Russian summary:** each property carries a `notes_ru` field (plain Russian text). `build.js` renders the RU summary from `notes_ru`, applying the same flag highlighting to the Russian tokens `ПРОВЕРЕНО · ИСПРАВЛЕНО · РАСХОЖДЕНИЕ · КОНФЛИКТ · ФЛАГ · РИСК`. If a new property has no `notes_ru`, the RU summary falls back to the English `notes` and `build.js` logs which are missing — so add a `notes_ru` alongside `notes` for every new entry.
 
 ### Optional `sources` provenance block
 
