@@ -77,7 +77,8 @@ Base weights sum to 100%. **Renovation is a deduction, not a positive weight**: 
 `property_data.json` is the single source of truth. **Do not hand-edit the HTML** — run the build script:
 
 ```
-node build.js            # regenerates property_summary.html + property_summary_ru.html
+node build.js            # regenerates property_summary.html + property_summary_ru.html,
+                         # and stamps index.html footer with an incrementing build # + today's date
 BUILD_DATE=2026-06-05 node build.js   # override the "Generated" date
 ```
 

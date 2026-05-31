@@ -17,7 +17,7 @@ const fs = require('fs');
 const path = require('path');
 
 const DIR = __dirname;
-const GEN_DATE = process.env.BUILD_DATE || '2026-05-31'; // pass BUILD_DATE to override (Date.now avoided for reproducibility)
+const GEN_DATE = process.env.BUILD_DATE || new Date().toISOString().slice(0, 10); // today; override with BUILD_DATE=YYYY-MM-DD
 
 // ---- canonical scoring model (must match INSTRUCTIONS_build_summary_html.md) ----
 const WEIGHTS = [
@@ -261,9 +261,24 @@ const STR = {
   },
 };
 
+// Stamp the landing page's footer with an incrementing build number + date,
+// editing in place so the hand-maintained index design is preserved.
+function buildIndex() {
+  const file = path.join(DIR, 'index.html');
+  if (!fs.existsSync(file)) return null;
+  let html = fs.readFileSync(file, 'utf8');
+  const m = html.match(/Build (\d+)/);
+  const ver = m ? Number(m[1]) + 1 : 1;
+  html = html.replace(/<p class="footer">[\s\S]*?<\/p>/,
+    `<p class="footer">Build ${ver} · ${data.length} properties · Generated ${GEN_DATE}</p>`);
+  fs.writeFileSync(file, html);
+  return ver;
+}
+
 // ---- run ----
 fs.writeFileSync(path.join(DIR, 'property_summary.html'), buildSummary('en'));
 fs.writeFileSync(path.join(DIR, 'property_summary_ru.html'), buildSummary('ru'));
+const buildVer = buildIndex();
 
 // ---- self-check ----
 let bad = 0;
@@ -275,7 +290,7 @@ for (const r of ranked) {
 const groundUnmapped = [...new Set(ranked.map(r => r.p.ground).filter(g => g && !GROUND_RU[g]))];
 if (groundUnmapped.length) console.warn(`  ground not translated for RU (add to GROUND_RU): ${groundUnmapped.map(g => JSON.stringify(g)).join(', ')}`);
 const ruMissing = ranked.filter(r => !r.p.notes_ru).map(r => r.p.address);
-console.log(`Built ${data.length} properties (EN + RU summaries).`);
+console.log(`Built ${data.length} properties (EN + RU summaries). index.html build #${buildVer}, dated ${GEN_DATE}.`);
 if (ruMissing.length) console.log(`notes_ru missing for ${ruMissing.length} (RU falls back to EN note): ${ruMissing.join('; ')}`);
 else console.log('notes_ru: all properties translated.');
 if (bad) process.exitCode = 1;

@@ -10,5 +10,5 @@ if git diff --cached --name-only | grep -q '^property_data\.json$'; then
     exit 1
   fi
   # stage the regenerated artifacts so they're part of the same commit
-  git add property_summary.html property_summary_ru.html
+  git add property_summary.html property_summary_ru.html index.html
 fi
