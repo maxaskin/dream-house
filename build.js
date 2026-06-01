@@ -95,6 +95,20 @@ function wozCell(p) {
 
 // ---- load + rank ----
 const data = JSON.parse(fs.readFileSync(path.join(DIR, 'property_data.json'), 'utf8'));
+
+// Auto-flip stale Scheduled viewings: if the date has passed, treat as Visited.
+let autoFlipped = 0;
+for (const p of data) {
+  if (p.viewing && /^scheduled\s+(\d{4}-\d{2}-\d{2})$/i.test(p.viewing)) {
+    const dateStr = p.viewing.replace(/^scheduled\s+/i, '');
+    if (dateStr < GEN_DATE) {
+      p.viewing = 'Visited ' + dateStr;
+      autoFlipped++;
+    }
+  }
+}
+if (autoFlipped) console.log(`  ${autoFlipped} viewing(s) auto-flipped Scheduled → Visited (date passed).`);
+
 const ranked = data
   .map(p => ({ p, total: weightedTotal(p) }))
   .sort((a, b) => (b.total ?? -1) - (a.total ?? -1));
