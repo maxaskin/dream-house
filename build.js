@@ -62,6 +62,7 @@ const GROUND_RU = {
   'Erfpacht (afkoop aangevraagd)': 'Аренда земли (выкуп запрошен)',
   'Erfpacht lopend (vastgeklikt €1.865/jr na 2036)': 'Аренда земли (действующая; зафиксирована €1.865/год после 2036)',
   'Erfpacht voortdurend (AB 1994), canon afgekocht tot 31-05-2088': 'Аренда земли (бессрочная, AB 1994; канон выкуплен до 31-05-2088)',
+  'Erfpacht (tijdvak tot 2039)': 'Аренда земли (срок до 2039)',
 };
 function scoreStr(t) { return t == null ? '—' : (Math.round(t * 100) % 10 === 0 ? t.toFixed(1) : t.toFixed(2)); }
 // highlight risk tokens in notes (then keep the rest escaped)
