@@ -1020,5 +1020,88 @@
     "date_found": "2026-05-31",
     "source": "manual",
     "viewing": "Visited 2026-05-28"
+  },
+  {
+    "address": "Van Nijenrodeweg 276, Amsterdam (Buitenveldert)",
+    "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-van-nijenrodeweg-276/44478021/",
+    "price": 550000,
+    "area": 87,
+    "area_estimated": false,
+    "bedrooms": 2,
+    "bedrooms_verified": true,
+    "woz": 505000,
+    "woz_year": 2025,
+    "build_year": 1966,
+    "energy_label": "D",
+    "energy_estimated": false,
+    "ground": "Erfpacht (tijdvak tot 2039)",
+    "ground_verified": true,
+    "vve_costs": 236,
+    "vve_estimated": true,
+    "dist_emmakade_min": 13,
+    "dist_zuidas_min": 7,
+    "scores": {
+      "price": 6,
+      "legal": 5,
+      "dist_emmakade": 7,
+      "energy": 5,
+      "dist_zuidas": 8,
+      "renovation": 5
+    },
+    "notes": "NEW via Funda digest 02-Jun-2026 (id 44478021). Relisted 13-Apr-2026 at €550.000 k.k. by Vondel Makelaars (per drimble/LV-WOZ mirror; Funda detail page is JS/bot-gated so price not re-confirmed on Funda itself - verify at viewing). Portiekflat, 6th floor, 87 m² (NEN2580 86,20 m² - report available), 2 bed (3 kamers), 2 balconies (N + S, sun all day on S), 1966, lift, storage in onderbouw. €6.322/m²; ask +9% over WOZ €505k (2025). 1082 GZ avg WOZ €419.813 - this unit sits well above buurt avg (high floor / size). WOZ trend: 2025 505k / 2024 475k / 2023 455k / 2022 471k. Energy label D (geregistreerd; voorlopig was E) - block heating (blokverwarming) + double glazing; collective heating means individual label upgrade is hard and VvE-dependent, limited easy-upgrade upside. VvE: hoofd-VvE + onder-VvE of 36 appartementsrechten, MJOP present + ruim reservefonds (healthy); 2020 service €173,19 + heating voorschot €62,69 = €235,88/mo total (2026 figure not confirmed - estimated). RISK/FLAG: erfpacht NOT bought off / NOT eeuwigdurend - current tijdvak ends 15-01-2039 (canon €118,43/yr per 2020 deed); after 2039 canon resets to market (WOZ-based), or buyer must do costly overstap to eeuwigdurend now - material financial risk, get current erfpacht/overstap status from selling makelaar. FLAG: 1966 building -> ouderdoms- en asbestclausule in koopakte. FLAG: condition likely dated/original (1966, lamelparket) - budget cosmetic modernisation. CONFLICT: build year 1966 (listing/huispedia/voorlopig label) vs 1960 (drimble meta) - verify via BAG. Distances to Emmakade 33 (~13 min) and Zuidas (~7 min) estimated from 1082 GZ.",
+    "notes_ru": "НОВОЕ из рассылки Funda 02-июн-2026 (id 44478021). Перевыставлено 13-апр-2026 за €550.000 k.k. (Vondel Makelaars; источник drimble/LV-WOZ - страница Funda закрыта для ботов, цену подтвердить на просмотре). Подъездная квартира, 6-й этаж, 87 м² (NEN2580 86,20 м²), 2 спальни (3 комнаты), 2 балкона (север + юг), 1966 г., лифт, кладовка. €6.322/м²; цена +9% к WOZ €505k (2025), выше среднего по индексу 1082 GZ (€419.813). Энергокласс D (зарегистрирован) - блочное отопление + двойные стёкла; улучшить класс трудно (коллективное отопление, зависит от VvE). VvE: главный + под-VvE на 36 квартир, есть MJOP и большой резервный фонд (здоровый); €236/мес всего по данным 2020 (оценка). РИСК/ФЛАГ: erfpacht НЕ выкуплен / НЕ вечный - текущий срок до 15-01-2039 (канон €118,43/год по 2020); после 2039 канон пересчитывается по рынку (от WOZ), либо нужен дорогой переход на вечный - существенный финансовый риск, уточнить текущий статус у маклера. ФЛАГ: дом 1966 -> оговорка о возрасте и асбесте в договоре. ФЛАГ: состояние вероятно устаревшее - заложить косметический ремонт. РАСХОЖДЕНИЕ: год постройки 1966 (объявление) против 1960 (drimble) - сверить по BAG. Расстояния до Emmakade 33 (~13 мин) и Zuidas (~7 мин) - оценка.",
+    "sources": {
+      "price": {
+        "value": 550000,
+        "src": "drimble (verkoopgeschiedenis, Vondel Makelaars 13-04-2026)",
+        "url": "https://drimble.nl/adres/amsterdam/1082GZ/van-nijenrodeweg-276.html",
+        "checked": "2026-06-02",
+        "status": "unconfirmed",
+        "note": "Funda detail JS-gated; price from drimble relisting record, confirm on Funda/at viewing"
+      },
+      "area": {
+        "value": 87,
+        "src": "drimble + makelaar listing (NEN2580 86,20 m2)",
+        "url": "https://drimble.nl/adres/amsterdam/1082GZ/van-nijenrodeweg-276.html",
+        "checked": "2026-06-02",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "D",
+        "src": "drimble (geregistreerd energielabel mirror)",
+        "url": "https://drimble.nl/adres/amsterdam/1082GZ/van-nijenrodeweg-276.html",
+        "checked": "2026-06-02",
+        "status": "verified",
+        "note": "Geregistreerd label D (voorlopig was E). Verify authoritative record at EP-Online."
+      },
+      "woz": {
+        "value": 505000,
+        "src": "drimble (LV-WOZ mirror)",
+        "url": "https://drimble.nl/adres/amsterdam/1082GZ/van-nijenrodeweg-276.html",
+        "checked": "2026-06-02",
+        "status": "verified",
+        "peildatum": "2025-01-01",
+        "history": "2025:505k 2024:475k 2023:455k 2022:471k 2021:395k 2020:375k"
+      },
+      "ground": {
+        "value": "Erfpacht (tijdvak tot 2039)",
+        "src": "makelaar listing (2020 deed) + drimble",
+        "url": "https://www.makelaaramsterdam.nl/objecten/van-nijenrodeweg-276-2/",
+        "checked": "2026-06-02",
+        "status": "unconfirmed",
+        "note": "Tijdvak ends 15-01-2039, canon EUR118,43/yr per 2020 deed; not afgekocht/eeuwigdurend. Confirm current erfpacht/overstap status with selling makelaar and Amsterdam erfpacht map."
+      },
+      "build_year": {
+        "value": 1966,
+        "src": "makelaar listing + huispedia",
+        "url": "https://huispedia.nl/amsterdam/1082gz/van-nijenrodeweg/276",
+        "checked": "2026-06-02",
+        "status": "conflict",
+        "note": "drimble meta says 1960; verify via BAG (bagviewer.kadaster.nl)."
+      }
+    },
+    "date_found": "2026-06-02",
+    "source": "digest",
+    "viewing": "No"
   }
 ]
