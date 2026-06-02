@@ -19,14 +19,14 @@
     "heritage": "Gemeentelijk beschermd stadsgezicht (municipal). Interior modernisation is free; only street-facing facade/roof are protected. Street-visible changes need a permit via de Erfgoedcommissie — incl. front-roof solar panels and kunststof kozijnen. DUE DILIGENCE: confirm the existing plastic window frames were permitted. Not a monument — no maintenance obligation/subsidy. See heritage_beschermd_stadsgezicht.md.",
     "scores": {
       "price": 8,
-      "legal": 7,
+      "legal": 6,
       "dist_emmakade": 9,
       "energy": 10,
       "dist_zuidas": 6,
-      "renovation": 5
+      "renovation": 2
     },
-    "notes": "VERIFIED via official Funda (id 44469451, Beschikbaar, on Funda since 22 May): HOEKmaisonnette, 85 m² (not 93), 2 bed (3 kamers), label A (roof/wall/double-glazing insulation), 1951, eigen grond, VvE only €78/mo (healthy — reserve fund + maintenance plan). €5,706/m² — below Randwijck-Oost avg €6,613. Beschermd stadsgezicht — interior free, street-facing exterior needs permits (see heritage_beschermd_stadsgezicht.md); verify existing kunststof kozijnen were permitted. Stadshart & Zuidas by bike. Top pick.",
-    "notes_ru": "ПРОВЕРЕНО через официальный Funda (id 44469451, доступен, на Funda с 22 мая): угловой мезонет, 85 м² (не 93), 2 спальни (3 комнаты), класс A (утепление кровли/стен/двойное остекление), 1951 г., собственный земельный участок, ТСЖ/VvE всего €78/мес (здоровый — резервный фонд + план техобслуживания). €5.706/м² — ниже среднего по Randwijck-Oost (€6.613). Охраняемый исторический вид (beschermd stadsgezicht) — интерьер свободен, изменения фасада требуют разрешений (см. heritage_beschermd_stadsgezicht.md); уточнить, были ли получены разрешения на существующие пластиковые рамы. Рядом Stadshart и Zuidas на велосипеде. Лучший выбор.",
+    "notes": "VERIFIED via official Funda (id 44469451, Beschikbaar, on Funda since 22 May): HOEKmaisonnette, 85 m² (not 93), 2 bed (3 kamers), label A (roof/wall/double-glazing insulation), 1951, eigen grond, VvE only €78/mo (healthy — reserve fund + maintenance plan). €5,706/m² — below Randwijck-Oost avg €6,613. Beschermd stadsgezicht — interior free, street-facing exterior needs permits (see heritage_beschermd_stadsgezicht.md); verify existing kunststof kozijnen were permitted. Stadshart & Zuidas by bike. Top pick. VIEWING 2026-06-02 (Max): interior dated, needs FULL gut renovation — budget €110k–€140k incl. new kitchen/bath/electrics/plumbing/floors (1951 build → asbestos survey + full rewire likely; +15-20% contingency). Interior gut needs no permit (heritage = street-facing only). True all-in ~€7,000/m² (>Randwijck-Oost avg €6,613) — below-market thesis only holds if reno is negotiated off asking. RODENT FLAG: steel wool stuffing corner holes (seller managing a recurring problem) + waste container directly in front = active mouse/rat source. Gut is ideal moment to rodent-proof unit (steel wool+mortar, mesh over penetrations), but source needs VvE/gemeente collective fix (container) — sealing own unit won't fully solve. TODO before advancing: VvE notulen (check ongedierte history), bouwkundige keuring + pest inspection, force seller disclosure, re-price offer well below €485k.",
+    "notes_ru": "ПРОВЕРЕНО через официальный Funda (id 44469451, доступен, на Funda с 22 мая): угловой мезонет, 85 м² (не 93), 2 спальни (3 комнаты), класс A (утепление кровли/стен/двойное остекление), 1951 г., собственный земельный участок, ТСЖ/VvE всего €78/мес (здоровый — резервный фонд + план техобслуживания). €5.706/м² — ниже среднего по Randwijck-Oost (€6.613). Охраняемый исторический вид (beschermd stadsgezicht) — интерьер свободен, изменения фасада требуют разрешений (см. heritage_beschermd_stadsgezicht.md); уточнить, были ли получены разрешения на существующие пластиковые рамы. Рядом Stadshart и Zuidas на велосипеде. Лучший выбор. ОСМОТР 2026-06-02 (Max): интерьер устаревший, нужна ПОЛНАЯ капитальная реновация — бюджет €110–140 тыс. (новая кухня/санузел/электрика/сантехника/полы; дом 1951 г. → вероятны обследование на асбест и полная замена проводки; +15-20% резерв). Реновация интерьера без разрешения (охрана — только уличный фасад). Итоговая цена ~€7.000/м² (> среднего по Randwijck-Oost €6.613) — выгода «ниже рынка» сохраняется только если реновацию вычесть из цены. ГРЫЗУНЫ: стальная вата в углах (продавец борется с повторяющейся проблемой) + мусорный контейнер прямо перед домом = активный источник мышей/крыс. Капремонт — идеальный момент защитить квартиру (стальная вата+раствор, сетка на проходах), но источник (контейнер) требует общего решения через VvE/муниципалитет — герметизация только своей квартиры не решит полностью. ДО продвижения: протокол VvE (история ongedierte), строительная экспертиза + проверка на вредителей, раскрытие от продавца, новая оферта существенно ниже €485k.",
     "sources": {
       "area": {
         "value": 85,
@@ -57,7 +57,7 @@
     },
     "date_found": "2026-05-22",
     "source": "funda",
-    "viewing": "Scheduled 2026-06-02"
+    "viewing": "Visited 2026-06-02"
   },
   {
     "address": "Ferdinand Bolweg 35, Amstelveen",
