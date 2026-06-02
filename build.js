@@ -110,7 +110,12 @@ for (const p of data) {
 }
 if (autoFlipped) console.log(`  ${autoFlipped} viewing(s) auto-flipped Scheduled → Visited (date passed).`);
 
-const ranked = data
+// Sold listings stay in the database but are pulled out of the active ranking;
+// they reappear in a footer stats block as reference comps.
+const sold   = data.filter(p => p.sold);
+const active = data.filter(p => !p.sold);
+
+const ranked = active
   .map(p => ({ p, total: weightedTotal(p) }))
   .sort((a, b) => (b.total ?? -1) - (a.total ?? -1));
 
@@ -176,6 +181,25 @@ function row(r, rank, T, noteOverride) {
 </tr>`;
 }
 
+// Compact reference row for a sold listing (no score; dimmed; "Sold" badge).
+function soldRow(p, T) {
+  const lbl = p.energy_label
+    ? `<span style="background:${labelColor(p.energy_label)};color:#fff;padding:2px 8px;border-radius:8px;font-weight:700;font-size:0.9em">${p.energy_label}</span>` : '—';
+  const badge = `<span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:9px;font-size:0.8em;font-weight:600">${T.soldStatus}${p.sold_date ? ' ' + p.sold_date : ''}</span>`;
+  return `<tr style="opacity:0.72">
+<td><a href="${p.url}" target="_blank" style="color:#1d4ed8;text-decoration:none;font-weight:500">${esc(p.address)}</a></td>
+<td style="text-align:center">${badge}</td>
+<td style="text-align:right">€${fmt(p.price)}</td>
+<td style="text-align:right;font-size:0.88em">${eurM2Cell(p)}</td>
+<td style="text-align:right;font-size:0.88em">${wozCell(p)}</td>
+<td style="text-align:center">${p.area ?? '—'}</td>
+<td style="text-align:center">${p.bedrooms ?? '—'}</td>
+<td style="text-align:center">${p.build_year ?? '—'}</td>
+<td style="text-align:center">${lbl}</td>
+<td style="text-align:center">${p.dist_emmakade_min ?? '—'}</td>
+</tr>`;
+}
+
 function buildSummary(lang) {
   const T = lang === 'ru' ? STR.ru : STR.en;
   const cards = ranked.slice(0, 3).map((r, i) => card(r, i, T)).join('');
@@ -186,6 +210,22 @@ function buildSummary(lang) {
       : noteHtml(r.p.notes);
     return row(r, i, T, note);
   }).join('');
+  const soldSection = sold.length ? `
+<h2 style="font-size:1.1em;font-weight:700;margin:8px 0 12px">📊 ${T.soldTitle}</h2>
+<div class="subtitle" style="margin-bottom:12px">${T.soldNote}</div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>${T.hAddr}</th><th>${T.hStatus}</th><th>${T.hPrice}</th><th>€/m²</th><th>WOZ</th><th>m²</th><th>${T.hBeds}</th><th>${T.hBuilt}</th><th>${T.hLabel}</th><th>→Emma</th>
+</tr>
+</thead>
+<tbody>
+${sold.map(p => soldRow(p, T)).join('')}
+</tbody>
+</table>
+</div>
+` : '';
   const html = `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
@@ -212,7 +252,7 @@ tr:hover td{background:#f8fafc}
 </head>
 <body>
 <h1>🏠 ${T.title}</h1>
-<div class="subtitle">${T.subtitle(data.length)}</div>
+<div class="subtitle">${T.subtitle(active.length)}</div>
 
 <div class="legend">
 <div class="legend-item">${T.legPrice} <strong>35%</strong></div>
@@ -240,6 +280,7 @@ ${rows}
 </table>
 </div>
 
+${soldSection}
 <div class="footer">${T.footer}</div>
 </body>
 </html>`;
@@ -255,7 +296,9 @@ const STR = {
     legEnergy: 'Energy label', legZuidas: 'Bike → Zuidas', legReno: 'Renovation: deduction up to −1.5 pts',
     top3: 'Top 3', all: 'All Properties',
     hAddr: 'Address', hScore: 'Score', hView: 'Viewing', hPrice: 'Price', hBeds: 'Beds', hBuilt: 'Built',
-    hLabel: 'Label', hGround: 'Ground', hVve: 'VvE/mo', hNotes: 'Notes &amp; flags',
+    hLabel: 'Label', hGround: 'Ground', hVve: 'VvE/mo', hNotes: 'Notes &amp; flags', hStatus: 'Status',
+    soldTitle: 'Sold — reference comps', soldStatus: 'Sold',
+    soldNote: 'Kept in the database for statistics only — excluded from the active ranking above.',
     price: 'Price', area: 'Area', beds: 'Beds', label: 'Label', ground: 'Ground', viewing: 'Viewing',
     grnd: g => g || '—',
     no: 'No', visited: 'Visited', scheduled: 'Scheduled',
@@ -268,7 +311,9 @@ const STR = {
     legEnergy: 'Энергометка', legZuidas: 'Вело → Zuidas', legReno: 'Ремонт: вычет до −1.5 балла',
     top3: 'Топ-3', all: 'Все объекты',
     hAddr: 'Адрес', hScore: 'Балл', hView: 'Просмотр', hPrice: 'Цена', hBeds: 'Спал.', hBuilt: 'Год',
-    hLabel: 'Метка', hGround: 'Земля', hVve: 'VvE/мес', hNotes: 'Заметки и флаги',
+    hLabel: 'Метка', hGround: 'Земля', hVve: 'VvE/мес', hNotes: 'Заметки и флаги', hStatus: 'Статус',
+    soldTitle: 'Проданные — для статистики', soldStatus: 'Продано',
+    soldNote: 'Оставлено в базе только для статистики — исключено из активного рейтинга выше.',
     price: 'Цена', area: 'Площадь', beds: 'Спальни', label: 'Метка', ground: 'Земля', viewing: 'Просмотр',
     grnd: g => g ? (GROUND_RU[g] || g) : '—',
     no: 'Нет', visited: 'Посещён', scheduled: 'Запланирован',
@@ -285,7 +330,7 @@ function buildIndex() {
   const m = html.match(/Build (\d+)/);
   const ver = m ? Number(m[1]) + 1 : 1;
   html = html.replace(/<p class="footer">[\s\S]*?<\/p>/,
-    `<p class="footer">Build ${ver} · ${data.length} properties · Generated ${GEN_DATE}</p>`);
+    `<p class="footer">Build ${ver} · ${active.length} properties · Generated ${GEN_DATE}</p>`);
   fs.writeFileSync(file, html);
   return ver;
 }

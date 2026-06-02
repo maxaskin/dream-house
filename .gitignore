@@ -11,3 +11,7 @@
 # Local data backups
 *.bak
 *.bak*
+
+# Personal legal documents (AVG/GDPR) — keep out of git
+*.pdf
+Documents/**/*_ocr.txt
