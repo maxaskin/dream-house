@@ -82,8 +82,8 @@
       "dist_zuidas": 6,
       "renovation": 5
     },
-    "notes": "CORRECTED via Funda (id 44475595, te koop): 89 m² (not 90), 2 bed not 3 (3rd bedroom converted to bathroom 2023), label D not C, VvE €162.54 confirmed. Stadshart maisonette, eigen grond. €5,449/m².",
-    "notes_ru": "ИСПРАВЛЕНО через Funda (id 44475595, к продаже): 89 м² (не 90), 2 спальни, а не 3 (3-я переоборудована в ванную в 2023 г.), класс D, а не C, ТСЖ €162.54 подтверждён. Мезонет в Stadshart, собственный участок. €5.449/м².",
+    "notes": "CORRECTED via Funda (id 44475595, te koop): 89 m² (not 90), 2 bed not 3 (3rd bedroom converted to bathroom 2023), label D not C, VvE €162.54 confirmed. Stadshart maisonette, eigen grond. €5,449/m². DOCS REVIEWED 2026-06-03 (18 stukken, full DD in Documents/Ferdinand Bolweg 35/): NEN2580 confirms 89 m²; seller bought 01-2023 for €410k; brochure asking was €540k (now €485k); VvE dormant since 2022, charges restarted 1-1-2026 only, reserve €8,291; 2022 MJOP works (~€28k) possibly never executed (~€10k share risk); berging in use ≠ splitsingsakte; wooden piles: Fase 0 low risk but area indication 'ernstig'. Offer guidance: open ~€455k, walk-away €480k.",
+    "notes_ru": "ИСПРАВЛЕНО через Funda (id 44475595, к продаже): 89 м² (не 90), 2 спальни, а не 3 (3-я переоборудована в ванную в 2023 г.), класс D, а не C, ТСЖ €162.54 подтверждён. Мезонет в Stadshart, собственный участок. €5.449/м². ДОКУМЕНТЫ ИЗУЧЕНЫ 03-06-2026 (18 шт., полный отчёт в Documents/Ferdinand Bolweg 35/): NEN2580 подтверждает 89 м²; продавец купил в 01-2023 за €410k; в брошюре цена была €540k (сейчас €485k); ТСЖ «спало» с 2022 г., взносы возобновлены только с 01-01-2026, резерв €8.291; работы по плану 2022 (~€28k), возможно, не выполнены (риск ~€10k на долю); кладовка в пользовании ≠ акту раздела; деревянные сваи: Fase 0 — низкий риск, но индикация района «серьёзная». Рекомендация: старт ~€455k, предел €480k.",
     "sources": {
       "woz": {
         "value": 482000,
@@ -94,6 +94,38 @@
         "peildatum": "2025-01-01",
         "history": "2025:482k 2024:428k 2023:399k 2022:399k",
         "nummeraanduiding_id": "0362200000008781"
+      },
+      "area": {
+        "value": 89,
+        "src": "NEN2580 meetrapport (Van Roemburg, type A, on-site)",
+        "url": "",
+        "checked": "2026-06-03",
+        "status": "verified",
+        "note": "GO wonen 89 m² (44.02+44.85), BVO 107 m², balkon 2 m². Measured 06-02-2026."
+      },
+      "energy_label": {
+        "value": "D",
+        "src": "EP-Online (registered label)",
+        "url": "https://ep-online.nl",
+        "checked": "2026-06-03",
+        "status": "verified",
+        "note": "Reg.nr 585116489, registered 18-02-2026, valid to 06-02-2036. 277.9 kWh/m2; walls/roof uninsulated; Uw 1.80."
+      },
+      "vve_costs": {
+        "value": 162.54,
+        "src": "VvE besluit 13-03-2026",
+        "url": "",
+        "checked": "2026-06-03",
+        "status": "verified",
+        "note": "Statutory minimum for ex-dormant VvE: 32% of (0.5% x €1,067,580 + €757.31 insurance) = €162.54/mo, effective 1-1-2026."
+      },
+      "ground": {
+        "value": "Eigen grond",
+        "src": "Splitsingsakte 18-12-1981 + Kadaster eigendomsinformatie 04-02-2026",
+        "url": "",
+        "checked": "2026-06-03",
+        "status": "verified",
+        "note": "32/100 share & 32/100 votes; benign rear-path easement (1/19 maintenance)."
       }
     },
     "date_found": "2026-05-29",
@@ -313,7 +345,7 @@
     },
     "date_found": "2026-05-27",
     "source": "reaction",
-    "viewing": "Scheduled 2026-06-02"
+    "viewing": "Visited 2026-06-02"
   },
   {
     "address": "Populierenlaan 175, Amstelveen",
@@ -355,7 +387,7 @@
     },
     "date_found": "2026-05-30",
     "source": "reaction",
-    "viewing": "No"
+    "viewing": "Visited 2026-06-02"
   },
   {
     "address": "Pruimenlaan 42, Amstelveen",
@@ -521,7 +553,7 @@
     },
     "date_found": "2026-05-18",
     "source": "reaction",
-    "viewing": "Scheduled 2026-06-02"
+    "viewing": "Visited 2026-06-02"
   },
   {
     "address": "Lindenlaan 559, Amstelveen",
@@ -1447,6 +1479,6 @@
     },
     "date_found": "2026-06-03",
     "source": "reaction",
-    "viewing": "No"
+    "viewing": "Scheduled 2026-06-05"
   }
 ]
