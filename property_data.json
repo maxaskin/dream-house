@@ -134,7 +134,27 @@
     "date_found": "2026-05-29",
     "source": "reaction",
     "viewing": "Visited 2026-06-03",
-    "outdoor_space": "balcony ~2 m²"
+    "outdoor_space": "balcony ~2 m²",
+    "sale_history": [
+      {
+        "date": "2023-01",
+        "price": 410000,
+        "event": "purchase",
+        "src": "Kadaster eigendomsinformatie + deed"
+      },
+      {
+        "date": "2026-05",
+        "price": 540000,
+        "event": "listed",
+        "src": "brochure (initial ask)"
+      },
+      {
+        "date": "2026-05",
+        "price": 485000,
+        "event": "price_change",
+        "src": "Funda (current ask)"
+      }
+    ]
   },
   {
     "address": "Laanhorn 2, Amstelveen",
@@ -182,7 +202,15 @@
     "viewing": "No",
     "sold": true,
     "sold_date": "2026-06-02",
-    "outdoor_space": "garden ~15 m²"
+    "outdoor_space": "garden ~15 m²",
+    "sale_history": [
+      {
+        "date": "2026-06-02",
+        "price": 525000,
+        "event": "sold",
+        "src": "Funda"
+      }
+    ]
   },
   {
     "address": "Sint Philipsland 101, Amstelveen",
@@ -481,7 +509,25 @@
     },
     "date_found": "2026-05-24",
     "source": "reaction",
-    "viewing": "No"
+    "viewing": "No",
+    "comps": [
+      {
+        "address": "Mr. Troelstralaan 24",
+        "price": 525000,
+        "date": null,
+        "area": null,
+        "kind": "asking",
+        "note": "neighbour"
+      },
+      {
+        "address": "Mr. Troelstralaan 32",
+        "price": 465000,
+        "date": null,
+        "area": 89,
+        "kind": "asking",
+        "note": "neighbour"
+      }
+    ]
   },
   {
     "address": "Van Heuven Goedhartlaan 458, Amstelveen",
@@ -604,7 +650,21 @@
     },
     "date_found": "2026-05-13",
     "source": "digest",
-    "viewing": "No"
+    "viewing": "No",
+    "sale_history": [
+      {
+        "date": "2026-04-29",
+        "price": null,
+        "event": "under_offer",
+        "src": "Funda (deal later fell through)"
+      },
+      {
+        "date": "2026-05-12",
+        "price": 430000,
+        "event": "relisted",
+        "src": "Funda (Investa 360)"
+      }
+    ]
   },
   {
     "address": "Bolestein 13-B, Amsterdam (Buitenveldert)",
@@ -691,7 +751,17 @@
     },
     "date_found": "2026-05-24",
     "source": "reaction",
-    "viewing": "No"
+    "viewing": "No",
+    "comps": [
+      {
+        "address": "De Boelelaan 281 (Zuidwende)",
+        "price": 385000,
+        "date": null,
+        "area": 84,
+        "kind": "sold",
+        "note": "comparable Zuidwende unit, label C"
+      }
+    ]
   },
   {
     "address": "Arent Janszoon Ernststraat 795-K, Amsterdam (Buitenveldert)",
@@ -820,7 +890,17 @@
     },
     "date_found": "2026-05-18",
     "source": "reaction",
-    "viewing": "Visited 2026-05-21"
+    "viewing": "Visited 2026-05-21",
+    "comps": [
+      {
+        "address": "Merckenburg 32",
+        "price": 399000,
+        "date": null,
+        "area": 64,
+        "kind": "sold",
+        "note": "~63–66 m², 2 bed"
+      }
+    ]
   },
   {
     "address": "Onstein 134, Amsterdam (Buitenveldert)",
@@ -1167,7 +1247,15 @@
     "date_found": "2026-06-02",
     "source": "digest",
     "viewing": "No",
-    "outdoor_space": "balcony"
+    "outdoor_space": "balcony",
+    "sale_history": [
+      {
+        "date": "2026-04-13",
+        "price": 550000,
+        "event": "relisted",
+        "src": "drimble verkoopgeschiedenis (Vondel Makelaars)"
+      }
+    ]
   },
   {
     "address": "Meander 407, Amstelveen (Stadshart)",
@@ -1234,7 +1322,17 @@
     },
     "date_found": "2026-06-03",
     "source": "digest",
-    "viewing": "No"
+    "viewing": "No",
+    "comps": [
+      {
+        "address": "Meander 1101",
+        "price": 395000,
+        "date": null,
+        "area": 100,
+        "kind": "asking",
+        "note": "in-DB comp; 1 bed, eigen grond"
+      }
+    ]
   },
   {
     "address": "Loevestein 36, Amsterdam (Buitenveldert)",
@@ -1389,7 +1487,25 @@
     },
     "date_found": "2026-06-03",
     "source": "digest",
-    "viewing": "No"
+    "viewing": "No",
+    "comps": [
+      {
+        "address": "Van Nijenrodeweg 491",
+        "price": 465000,
+        "date": null,
+        "area": 87,
+        "kind": "asking",
+        "note": "near-identical neighbour"
+      },
+      {
+        "address": "Van Nijenrodeweg 171",
+        "price": 475000,
+        "date": null,
+        "area": 86,
+        "kind": "asking",
+        "note": "near-identical neighbour"
+      }
+    ]
   },
   {
     "address": "Van Heenvlietlaan 284-K, Amsterdam (Buitenveldert)",
@@ -1777,7 +1893,27 @@
     "date_found": "2026-06-05",
     "source": "digest",
     "viewing": "No",
-    "outdoor_space": "balcony ~7 m²"
+    "outdoor_space": "balcony ~7 m²",
+    "sale_history": [
+      {
+        "date": "2026-04-30",
+        "price": 500000,
+        "event": "listed",
+        "src": "huispedia/drimble timeline"
+      },
+      {
+        "date": "2026-05-24",
+        "price": null,
+        "event": "withdrawn",
+        "src": "huispedia"
+      },
+      {
+        "date": "2026-06-04",
+        "price": 489000,
+        "event": "relisted",
+        "src": "Funda digest (lowered)"
+      }
+    ]
   },
   {
     "address": "Nijenburg 1, Amsterdam (Buitenveldert)",
@@ -1846,7 +1982,15 @@
     "date_found": "2026-06-05",
     "source": "digest",
     "viewing": "No",
-    "outdoor_space": "terrace ~11 m²"
+    "outdoor_space": "terrace ~11 m²",
+    "sale_history": [
+      {
+        "date": "2022-01",
+        "price": 375000,
+        "event": "sold",
+        "src": "huispedia sales history (ask €375k; +27% in 4 yr)"
+      }
+    ]
   },
   {
     "address": "Wijenburg 31, Amsterdam (Buitenveldert)",
@@ -1914,7 +2058,15 @@
     },
     "date_found": "2026-06-05",
     "source": "digest",
-    "viewing": "No"
+    "viewing": "No",
+    "sale_history": [
+      {
+        "date": "2019-10",
+        "price": 375000,
+        "event": "purchase",
+        "src": "drimble/huispedia"
+      }
+    ]
   },
   {
     "address": "Merckenburg 4, Amsterdam (Buitenveldert)",
@@ -1981,7 +2133,25 @@
     },
     "date_found": "2026-06-05",
     "source": "digest",
-    "viewing": "No"
+    "viewing": "No",
+    "comps": [
+      {
+        "address": "Merckenburg 16",
+        "price": 499000,
+        "date": "2024",
+        "area": null,
+        "kind": "sold",
+        "note": "fully renovated 2024"
+      },
+      {
+        "address": "Merckenburg 30",
+        "price": 445000,
+        "date": null,
+        "area": 86,
+        "kind": "asking",
+        "note": "corner"
+      }
+    ]
   },
   {
     "address": "Burgemeester Haspelslaan 140, Amstelveen",
@@ -2058,6 +2228,16 @@
     "date_found": "2026-06-05",
     "source": "reaction",
     "viewing": "Scheduled 2026-06-12",
-    "outdoor_space": "balcony (south)"
+    "outdoor_space": "balcony (south)",
+    "comps": [
+      {
+        "address": "Burgemeester Haspelslaan 146",
+        "price": 400000,
+        "date": "2024-10",
+        "area": 75,
+        "kind": "sold",
+        "note": "identical layout; sold above ask; WOZ-2026 €429k"
+      }
+    ]
   }
 ]

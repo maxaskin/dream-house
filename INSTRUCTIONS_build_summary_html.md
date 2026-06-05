@@ -18,7 +18,10 @@ Read from `property_data.json` (the single source of truth). Each property objec
 - `dist_emmakade_min`, `dist_zuidas_min` (bike minutes, int) — feed the `location` score
 - `outdoor_space` (string or absent) — canonical token + optional size, e.g. `"balcony ~7 m²"`, `"terrace (west)"`, `"garden ~15 m²"`. Token must be one of `none | shared | balcony | loggia | terrace | roof terrace | garden` and **have a matching key in `OUTDOOR_RU` in `build.js`** (same discipline as `GROUND_RU`). Omit the field when the listing gives no outdoor info — the `outdoor` score is then left unscored and renormalises (don't guess).
 - `scores`: `{ value, family, condition, location, energy, tenure, outdoor, legal }` each 1–10. `outdoor` is optional (omit when unknown); `tenure` is omitted when `ground` is null.
+- `sale_history` (array, optional): structured prior transactions/relistings — `[{ date:"YYYY-MM[-DD]", price:int|null, event, src }]`, `event ∈ purchase | listed | relisted | withdrawn | under_offer | sold | price_change`. Rendered in the "Sales history & comparable prices" appendix; `purchase`/`sold` entries also drive the top-3 "Prior sale" line. Migrate from `notes` rather than leaving sale data only in prose.
+- `comps` (array, optional): comparable sold/asking units — `[{ address, price:int, date, area:int|null, kind:"sold"|"asking", note }]`. Rendered in the appendix + top-3 cards.
 - `notes` (string) · optional `heritage` (string) · `date_found`, `source`
+- `sources` (object, optional) — per-field provenance; now **read by `build.js`** to compute verification confidence (see "Verification confidence & triggers").
 
 ## Scoring model (must match the artifact and the agents)
 
@@ -106,4 +109,18 @@ Each property may carry an additive `sources` object documenting where each fiel
 }
 ```
 
-`status` ∈ `verified | corrected | unconfirmed | conflict`. Authoritative public registers: **BAG** (bagviewer.kadaster.nl — area + build year), **EP-Online** (ep-online.nl — energy label), **WOZ-waardeloket** (wozwaardeloket.nl — WOZ), **Kadaster**/Amsterdam erfpacht map (ground lease). Note: Funda and most registers are bot-/JS-gated, so automated scraping is unreliable — treat aggregator (kadasterdata/huispedia) figures as a second opinion that can show stale or building-level data, and confirm against the authoritative register before relying on a value.
+`status` ∈ `verified | corrected | unconfirmed | conflict`. Authoritative public registers: **BAG** (bagviewer.kadaster.nl — area + build year), **EP-Online** (ep-online.nl — energy label), **WOZ-waardeloket** (wozwaardeloket.nl — WOZ), **Kadaster**/Amsterdam erfpacht map (ground lease), **Kadaster koopsom** (transaction history → `sale_history`). Note: Funda and most registers are bot-/JS-gated, so automated scraping is unreliable — treat aggregator (kadasterdata/huispedia) figures as a second opinion that can show stale or building-level data, and confirm against the authoritative register before relying on a value.
+
+## Verification confidence & triggers
+
+`build.js` reads the `sources` block + `*_estimated`/`*_verified` flags to score each property's **data confidence** over six decision-critical `KEY_FIELDS` = `price, area, woz, energy_label, ground, bedrooms`. Per field, `fieldState()` resolves to `verified` (source `status: verified`/`corrected`, or a `*_verified:true` flag), `conflict` (`status: conflict`), `estimated` (`status: unconfirmed` or `*_estimated:true`), `unknown` (value null), else `assumed` (a value with **no** independent source — e.g. taken from the listing only; counts as *not* verified). The summary shows a **`Conf.` pill** `✓N/6` (green ≥5 · amber ≥3 · red <3; `⚠` on any conflict; hover for the unverified fields).
+
+**Tiered verification policy** — rigor scales with how serious a property is; `build.js` warns when a tier's expectations aren't met:
+
+| Tier | Trigger | Verify (independent source) | build.js warning |
+|---|---|---|---|
+| **0 — Intake** | every property added | Funda listing; WOZ (WOZ-waardeloket); EP-Online if a label is registered | — |
+| **1 — Shortlist** | viewing scheduled/visited, or a high score | BAG area; EP-Online label; **Amsterdam erfpacht** register (ground/tenure); Kadaster *koopsom* (→ `sale_history`); 2–3 `comps` | `TIER-1 …: unverified ground, area, energy_label` for any viewed/scheduled property whose those fields aren't `verified` |
+| **2 — Pre-offer** | offer contemplated | full seller-document due diligence (the 18-doc set: vragenlijst, akte, splitsingsakte, MJOP, VvE notulen/balans, NEN2580, energielabel, opstalpolis, funderingsattest…) | — |
+
+Other verification warnings `build.js` emits: `CONFLICT …` (any field `status: conflict`), `STALE …` (a source `checked` > 180 days before the build date), `STALE-WOZ …` (WOZ `peildatum` older than its own history), `LOW-CONF #n …` (a top-10 property with < 50% of key fields verified). Treat these as a worklist of what to fetch next — they do **not** fail the build.

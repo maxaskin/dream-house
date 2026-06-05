@@ -17,6 +17,10 @@ _Generated 2026-05-31. Covers the three requested stages: (1) evaluate the ranki
 >
 > Key changes: bedrooms/space and outdoor space are now scored (the child finally counts); value-vs-WOZ and erfpacht are split out of the old "price"/"legal" buckets; the two correlated commute distances are **merged into one `location` score** (resolving the double-count caveat in Stage 3 below); and the renovation deduction is gone — `condition` is a normal positive criterion. Canonical definition lives in `build.js` `WEIGHTS`; rubric in `INSTRUCTIONS_build_summary_html.md`. The Stage-1 table and rankings below reflect the **old** model and are kept for history.
 
+> ## Addendum 2026-06-05 — data verification now surfaced & enforced
+>
+> Stage 2 below noted the `sources` provenance block was documentary only. `build.js` now **reads** it: a per-property **`Conf.` (✓N/6)** column scores how many of six key fields (price, area, WOZ, energy label, ground/tenure, beds) are verified against an independent source (a value with no source counts as *assumed* = unverified), and the build emits a verification worklist — `CONFLICT`, `STALE`/`STALE-WOZ`, `TIER-1` (a viewed property missing key verifications), and `LOW-CONF` (a top-10 property under 50% verified). A documented **tiered trigger policy** (intake / shortlist / pre-offer) records when each source is expected. Sales data trapped in `notes` is now structured into `sale_history` + `comps` and shown in a "Sales history & comparable prices" appendix. See `INSTRUCTIONS_build_summary_html.md` → "Verification confidence & triggers". Still **not** automated: actually fetching erfpacht status / Kadaster *koopsom* / EP-Online for the unverified fields the warnings flag.
+
 ---
 
 ## Stage 1 — Ranking-system evaluation

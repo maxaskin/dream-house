@@ -123,6 +123,71 @@ function wozCell(p) {
   return `€${fmt(p.woz)}<br><small style="color:${col}">${sign}${prem}% ask</small>`;
 }
 
+// ---- verification confidence (reads the documentary `sources` block + *_estimated/*_verified flags) ----
+// Decision-critical fields whose provenance drives whether a ranking can be trusted.
+const KEY_FIELDS = ['price', 'area', 'woz', 'energy_label', 'ground', 'bedrooms'];
+// Per-field state: 'verified' | 'estimated' | 'conflict' | 'unknown' | 'assumed'.
+function fieldState(p, f) {
+  const s = p.sources && p.sources[f];
+  if (s && s.status) {
+    if (s.status === 'verified' || s.status === 'corrected') return 'verified';
+    if (s.status === 'conflict') return 'conflict';
+    if (s.status === 'unconfirmed') return 'estimated';
+  }
+  if (p[f + '_verified'] === true) return 'verified';
+  if (p[f + '_estimated'] === true) return 'estimated';
+  if (f === 'ground' && p.ground == null) return 'unknown';
+  if ((f === 'price' || f === 'woz' || f === 'area' || f === 'bedrooms') && p[f] == null) return 'unknown';
+  return 'assumed'; // value present but no provenance recorded → not independently verified
+}
+function verifyConfidence(p) {
+  const conflicts = [], unverified = [];
+  let verified = 0;
+  for (const f of KEY_FIELDS) {
+    const st = fieldState(p, f);
+    if (st === 'verified') verified++;
+    else if (st === 'conflict') conflicts.push(f);
+    else unverified.push(f); // estimated | unknown | assumed (value present but no independent source)
+  }
+  return { pct: verified / KEY_FIELDS.length, verified, total: KEY_FIELDS.length, conflicts, unverified };
+}
+function confColor(pct) { return pct >= 0.8 ? '#15803d' : pct >= 0.5 ? '#d97706' : '#dc2626'; }
+function confCell(p) {
+  const c = verifyConfidence(p);
+  const warn = c.conflicts.length ? '⚠ ' : '';
+  const tip = [c.conflicts.length ? 'conflict: ' + c.conflicts.join(', ') : '',
+               c.unverified.length ? 'unverified: ' + c.unverified.join(', ') : '']
+              .filter(Boolean).join(' · ') || 'all key fields verified';
+  return `<span title="${esc(tip)}" style="background:${confColor(c.pct)};color:#fff;padding:2px 7px;border-radius:9px;font-size:0.8em;font-weight:600;white-space:nowrap">${warn}✓${c.verified}/${c.total}</span>`;
+}
+// most recent purchase/sold entry from sale_history (for the "prior sale" line)
+function priorSale(p) {
+  if (!Array.isArray(p.sale_history)) return null;
+  const past = p.sale_history.filter(h => (h.event === 'purchase' || h.event === 'sold') && h.price != null);
+  if (!past.length) return null;
+  return past.reduce((a, b) => (String(b.date) > String(a.date) ? b : a));
+}
+function priorSaleText(p, T) {
+  const h = priorSale(p);
+  if (!h) return '—';
+  const yr = String(h.date).slice(0, 4);
+  const verb = h.event === 'purchase' ? T.bought : T.sold2;
+  let delta = '';
+  if (p.price && h.price) {
+    const pct = Math.round((p.price - h.price) / h.price * 100);
+    const col = pct >= 0 ? '#888' : '#15803d';
+    delta = ` <small style="color:${col}">${pct >= 0 ? '+' : ''}${pct}% ${T.toAsk}</small>`;
+  }
+  return `${verb} €${fmt(h.price)} (${yr})${delta}`;
+}
+function compsText(p, T) {
+  if (!Array.isArray(p.comps) || !p.comps.length) return '';
+  return p.comps.slice(0, 2).map(c => {
+    const kind = c.kind === 'sold' ? T.sold2 : T.asked;
+    return `€${fmt(c.price)} <small style="color:#888">(${esc(String(c.address).replace(/,.*$/, '').replace(/^.*\s(\S+)$/, '$1'))}, ${kind})</small>`;
+  }).join(' · ');
+}
+
 // ---- load + rank ----
 const data = JSON.parse(fs.readFileSync(path.join(DIR, 'property_data.json'), 'utf8'));
 
@@ -182,6 +247,9 @@ function card(r, rank, T) {
 <tr><td style="color:#666;padding:2px 8px 2px 0">→ Emmakade</td><td>${p.dist_emmakade_min} min</td></tr>
 <tr><td style="color:#666;padding:2px 8px 2px 0">→ Zuidas</td><td>${p.dist_zuidas_min} min</td></tr>
 <tr><td style="color:#666;padding:2px 8px 2px 0">${T.viewing}</td><td>${esc(p.viewing || 'No')}</td></tr>
+<tr><td style="color:#666;padding:2px 8px 2px 0">${T.hConf}</td><td>${confCell(p)}</td></tr>
+${priorSale(p) ? `<tr><td style="color:#666;padding:2px 8px 2px 0">${T.priorSale}</td><td>${priorSaleText(p, T)}</td></tr>` : ''}
+${(p.comps && p.comps.length) ? `<tr><td style="color:#666;padding:2px 8px 2px 0">${T.comps}</td><td style="font-size:0.92em">${compsText(p, T)}</td></tr>` : ''}
 </table>
 </div>`;
 }
@@ -195,6 +263,7 @@ function row(r, rank, T, noteOverride) {
 <td style="text-align:center;font-weight:700;color:#555">${rank + 1}</td>
 <td><a href="${p.url}" target="_blank" style="color:#1d4ed8;text-decoration:none;font-weight:500">${esc(p.address)}</a></td>
 <td style="text-align:center"><span style="background:${scoreColor(t)};color:#fff;padding:3px 10px;border-radius:12px;font-weight:700;font-size:0.95em">${scoreStr(t)}</span></td>
+<td style="text-align:center">${confCell(p)}</td>
 <td style="text-align:center">${viewingBadge(p.viewing, T)}</td>
 <td style="text-align:right">€${fmt(p.price)}</td>
 <td style="text-align:right;font-size:0.88em">${eurM2Cell(p)}</td>
@@ -229,6 +298,45 @@ function soldRow(p, T) {
 <td style="text-align:center">${lbl}</td>
 <td style="text-align:center">${p.dist_emmakade_min ?? '—'}</td>
 </tr>`;
+}
+
+// sale_history event → bilingual label
+const EV = {
+  purchase:    { en: 'bought',       ru: 'куплен' },
+  sold:        { en: 'sold',         ru: 'продан' },
+  listed:      { en: 'listed',       ru: 'выставлен' },
+  relisted:    { en: 'relisted',     ru: 'перевыставлен' },
+  withdrawn:   { en: 'withdrawn',    ru: 'снят с продажи' },
+  under_offer: { en: 'under offer',  ru: 'под предложением' },
+  price_change:{ en: 'price change', ru: 'смена цены' },
+};
+// "Sales history & comparable prices" appendix — surfaces structured sale_history/comps
+// for every property that has them, regardless of rank (answers "history of sales").
+function salesHistorySection(T, lang) {
+  const withData = active.filter(p => (p.sale_history && p.sale_history.length) || (p.comps && p.comps.length));
+  if (!withData.length) return '';
+  const blocks = withData.map(p => {
+    const timeline = (p.sale_history || []).map(h => {
+      const ev = (EV[h.event] && EV[h.event][lang]) || h.event;
+      const price = h.price != null ? `€${fmt(h.price)} ` : '';
+      const mo = String(h.date || '').length > 4 ? String(h.date).slice(0, 7) : String(h.date || '');
+      return `<span style="white-space:nowrap">${price}<small style="color:#888">${ev}${mo ? ' ' + mo : ''}</small></span>`;
+    }).join(' <span style="color:#bbb">→</span> ');
+    const comps = (p.comps || []).map(c => {
+      const kind = c.kind === 'sold' ? T.sold2 : T.asked;
+      const a = esc(String(c.address).replace(/,.*$/, ''));
+      return `€${fmt(c.price)} <small style="color:#888">(${a}${c.area ? ', ' + c.area + ' m²' : ''}, ${kind})</small>`;
+    }).join(' · ');
+    return `<div style="padding:8px 0;border-bottom:1px solid #f1f5f9">
+<a href="${p.url}" target="_blank" style="color:#1d4ed8;text-decoration:none;font-weight:600">${esc(p.address)}</a>
+${timeline ? `<div style="margin-top:3px;font-size:0.9em">${timeline}</div>` : ''}
+${comps ? `<div style="margin-top:3px;font-size:0.9em">${T.comps}: ${comps}</div>` : ''}
+</div>`;
+  }).join('');
+  return `
+<h2 style="font-size:1.1em;font-weight:700;margin:8px 0 8px">🕑 ${T.salesTitle}</h2>
+<div class="subtitle" style="margin-bottom:8px">${T.salesNote}</div>
+<div style="background:#fff;border:1px solid #e6e9ef;border-radius:12px;padding:6px 16px;margin-bottom:36px">${blocks}</div>`;
 }
 
 function buildSummary(lang) {
@@ -296,6 +404,7 @@ tr:hover td{background:#f8fafc}
 <div class="legend-item">${T.legLegal} <strong>5%</strong></div>
 </div>
 <div class="subtitle" style="margin:-16px 0 24px;font-size:0.85em">${T.legClusters}</div>
+<div class="subtitle" style="margin:-16px 0 24px;font-size:0.85em">${T.legConf}</div>
 
 <h2 style="font-size:1.1em;font-weight:700;margin-bottom:14px">🏆 ${T.top3}</h2>
 <div class="cards">${cards}</div>
@@ -305,7 +414,7 @@ tr:hover td{background:#f8fafc}
 <table>
 <thead>
 <tr>
-<th>#</th><th>${T.hAddr}</th><th>${T.hScore}</th><th>${T.hView}</th><th>${T.hPrice}</th><th>€/m²</th><th>WOZ</th><th>m²</th><th>${T.hBeds}</th><th>${T.hBuilt}</th><th>${T.hLabel}</th><th>${T.hGround}</th><th>${T.hOutdoor}</th><th>${T.hVve}</th><th>→Emma</th><th>→Zuidas</th><th>${T.hNotes}</th>
+<th>#</th><th>${T.hAddr}</th><th>${T.hScore}</th><th>${T.hConf}</th><th>${T.hView}</th><th>${T.hPrice}</th><th>€/m²</th><th>WOZ</th><th>m²</th><th>${T.hBeds}</th><th>${T.hBuilt}</th><th>${T.hLabel}</th><th>${T.hGround}</th><th>${T.hOutdoor}</th><th>${T.hVve}</th><th>→Emma</th><th>→Zuidas</th><th>${T.hNotes}</th>
 </tr>
 </thead>
 <tbody>
@@ -314,6 +423,7 @@ ${rows}
 </table>
 </div>
 
+${salesHistorySection(T, lang)}
 ${soldSection}
 <div class="footer">${T.footer}</div>
 </body>
@@ -330,9 +440,13 @@ const STR = {
     legLocation: 'Location &amp; commute', legEnergy: 'Energy label', legTenure: 'Tenure / erfpacht',
     legOutdoor: 'Outdoor space', legLegal: 'Legal / title',
     legClusters: 'Livability ~55% (family, condition, location, outdoor) · Financial / resale ~45% (value, energy, tenure, legal). Tuned for a live-in home for one adult + a 3-yo, sold in 5–10 years.',
+    legConf: '<strong>Conf.</strong> = data-verification confidence: how many of 6 key fields (price, area, WOZ, energy label, ground/tenure, beds) are verified against an independent source. ✓N/6, green ≥5 · amber ≥3 · red &lt;3; ⚠ = a source conflict. Hover for which fields are unverified.',
     top3: 'Top 3', all: 'All Properties',
-    hAddr: 'Address', hScore: 'Score', hView: 'Viewing', hPrice: 'Price', hBeds: 'Beds', hBuilt: 'Built',
+    hAddr: 'Address', hScore: 'Score', hConf: 'Conf.', hView: 'Viewing', hPrice: 'Price', hBeds: 'Beds', hBuilt: 'Built',
     hLabel: 'Label', hGround: 'Ground', hOutdoor: 'Outdoor', hVve: 'VvE/mo', hNotes: 'Notes &amp; flags', hStatus: 'Status',
+    priorSale: 'Prior sale', bought: 'bought', sold2: 'sold', toAsk: 'to ask', comps: 'Comps', asked: 'asking',
+    salesTitle: 'Sales history &amp; comparable prices',
+    salesNote: 'Prior transactions, relistings and comparable sold/asking prices — extracted from the notes. WOZ history (in the table) is annual tax assessment, not sales.',
     soldTitle: 'Sold — reference comps', soldStatus: 'Sold',
     soldNote: 'Kept in the database for statistics only — excluded from the active ranking above.',
     price: 'Price', area: 'Area', beds: 'Beds', label: 'Label', ground: 'Ground', viewing: 'Viewing',
@@ -348,9 +462,13 @@ const STR = {
     legLocation: 'Локация &amp; дорога', legEnergy: 'Энергометка', legTenure: 'Земля / эрфпахт',
     legOutdoor: 'Открытое пространство', legLegal: 'Юр. / титул',
     legClusters: 'Для жизни ~55% (семья, состояние, локация, открытое пространство) · Финансы / перепродажа ~45% (цена входа, энергия, земля, юр.). Настроено под жильё для одного взрослого + ребёнка 3 лет, с продажей через 5–10 лет.',
+    legConf: '<strong>Дост.</strong> = достоверность данных: сколько из 6 ключевых полей (цена, площадь, WOZ, энергометка, земля/эрфпахт, спальни) проверены по независимому источнику. ✓N/6, зелёный ≥5 · янтарный ≥3 · красный &lt;3; ⚠ = конфликт источников. Наведите курсор, чтобы увидеть непроверенные поля.',
     top3: 'Топ-3', all: 'Все объекты',
-    hAddr: 'Адрес', hScore: 'Балл', hView: 'Просмотр', hPrice: 'Цена', hBeds: 'Спал.', hBuilt: 'Год',
+    hAddr: 'Адрес', hScore: 'Балл', hConf: 'Дост.', hView: 'Просмотр', hPrice: 'Цена', hBeds: 'Спал.', hBuilt: 'Год',
     hLabel: 'Метка', hGround: 'Земля', hOutdoor: 'Двор/балкон', hVve: 'VvE/мес', hNotes: 'Заметки и флаги', hStatus: 'Статус',
+    priorSale: 'Пред. сделка', bought: 'куплен', sold2: 'продан', toAsk: 'к цене', comps: 'Аналоги', asked: 'запрос',
+    salesTitle: 'История продаж и цены аналогов',
+    salesNote: 'Прошлые сделки, перевыставления и сопоставимые цены продаж/запроса — извлечены из заметок. История WOZ (в таблице) — это ежегодная оценка для налога, не сделки.',
     soldTitle: 'Проданные — для статистики', soldStatus: 'Продано',
     soldNote: 'Оставлено в базе только для статистики — исключено из активного рейтинга выше.',
     price: 'Цена', area: 'Площадь', beds: 'Спальни', label: 'Метка', ground: 'Земля', viewing: 'Просмотр',
@@ -404,6 +522,41 @@ for (const r of ranked) {
   if (r.p.ground != null && s.tenure == null) missing.push('tenure (ground is known)');
   if (missing.length) console.warn(`  ${r.p.address}: missing scores [${missing.join(', ')}]`);
 }
+// ---- verification self-check (reads the `sources` block) ----
+const STALE_DAYS = 180;
+const genMs = new Date(GEN_DATE).getTime();
+const vWarn = [];
+for (const r of ranked) {
+  const p = r.p, c = verifyConfidence(p);
+  // 1. source conflicts
+  for (const f of c.conflicts) vWarn.push(`CONFLICT ${p.address}: ${f} (${p.sources[f].note || 'see sources'})`);
+  // 2. stale `checked` dates + WOZ peildatum not latest
+  if (p.sources) for (const [f, s] of Object.entries(p.sources)) {
+    if (s && s.checked) {
+      const ageDays = (genMs - new Date(s.checked).getTime()) / 86400000;
+      if (ageDays > STALE_DAYS) vWarn.push(`STALE ${p.address}: ${f} checked ${s.checked} (${Math.round(ageDays)}d ago)`);
+    }
+    if (f === 'woz' && s && s.history) {
+      const years = (s.history.match(/(\d{4}):/g) || []).map(x => +x.slice(0, 4));
+      const latest = Math.max(...years, 0);
+      if (s.peildatum && latest && +s.peildatum.slice(0, 4) < latest)
+        vWarn.push(`STALE-WOZ ${p.address}: peildatum ${s.peildatum} but history runs to ${latest}`);
+    }
+  }
+  // 3. Tier-1: a viewed/scheduled property should have its key fields verified
+  const serious = /^(visited|scheduled)/i.test(p.viewing || '');
+  if (serious) {
+    const unver = ['ground', 'area', 'energy_label'].filter(f => fieldState(p, f) !== 'verified');
+    if (unver.length) vWarn.push(`TIER-1 ${p.address} (${p.viewing}): unverified ${unver.join(', ')}`);
+  }
+}
+// 4. ranks high on thin data
+ranked.slice(0, 10).forEach((r, i) => {
+  const c = verifyConfidence(r.p);
+  if (c.pct < 0.5) vWarn.push(`LOW-CONF #${i + 1} ${r.p.address}: only ${c.verified}/${c.total} key fields verified`);
+});
+if (vWarn.length) console.warn(`  verification (${vWarn.length}):\n    ${vWarn.join('\n    ')}`);
+
 const ruMissing = ranked.filter(r => !r.p.notes_ru).map(r => r.p.address);
 console.log(`Built ${data.length} properties (EN + RU summaries). index.html build #${buildVer}, dated ${GEN_DATE}.`);
 if (ruMissing.length) console.log(`notes_ru missing for ${ruMissing.length} (RU falls back to EN note): ${ruMissing.join('; ')}`);
