@@ -67,6 +67,11 @@ const GROUND_RU = {
   'Erfpacht (tijdvak, te verifieren)': 'Аренда земли (срок требует проверки)',
   'Erfpacht (status te verifieren)': 'Аренда земли (статус требует проверки)',
   'Erfpacht (te verifieren)': 'Аренда земли (требует проверки)',
+  'Erfpacht (afgekocht tot 2051)': 'Аренда земли (выкуплена до 2051)',
+  'Erfpacht eeuwigdurend afgekocht': 'Аренда земли (вечная, выкуплена)',
+  'Eigen grond (per listing)': 'Собственный участок (согласно объявлению)',
+  'Erfpacht (status onbekend)': 'Аренда земли (статус неизвестен)',
+  'Erfpacht (vermoedelijk lopend, ~2036)': 'Аренда земли (предположительно действующая, ~2036)',
 };
 function scoreStr(t) { return t == null ? '—' : (Math.round(t * 100) % 10 === 0 ? t.toFixed(1) : t.toFixed(2)); }
 // highlight risk tokens in notes (then keep the rest escaped)

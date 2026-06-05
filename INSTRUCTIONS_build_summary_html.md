@@ -13,7 +13,7 @@ Read from `property_data.json` (the single source of truth). Each property objec
 - `address` (string, "Street nr, City") · `url` (Funda link ONLY)
 - `price` (€, int) · `area` (m², int or null) · `bedrooms` (int)
 - `woz` (€ or null) · `build_year` (int) · `energy_label` ("A"–"G")
-- `ground` ("Eigen grond" | "Erfpacht afgekocht" | "Erfpacht lopend" | null)
+- `ground` (free-text NL string, e.g. "Eigen grond" / "Erfpacht afgekocht" / "Erfpacht lopend" / "Erfpacht (status onbekend)" | null) — **every distinct value must have a matching key in `GROUND_RU` in `build.js`** (see "Keep in sync")
 - `vve_costs` (€/mo or null) · `*_estimated` flags (bool) where a value is an estimate
 - `dist_emmakade_min`, `dist_zuidas_min` (bike minutes, int)
 - `scores`: `{ price, legal, dist_emmakade, energy, dist_zuidas, renovation }` each 1–10 (`location` was removed from the model)
@@ -83,6 +83,8 @@ BUILD_DATE=2026-06-05 node build.js   # override the "Generated" date
 ```
 
 `build.js` defines the weight model in ONE place and recomputes every total, so `property_summary.html` and `property_summary_ru.html` can no longer drift. Edit `property_data.json`, then rebuild.
+
+**Ground lease (RU):** the `ground` field is free-text Dutch, and the RU summary translates it via the `GROUND_RU` map in `build.js`. Whenever you add a property — or edit a property's `ground` — with a Dutch value not already a key in `GROUND_RU`, **add its Russian translation to `GROUND_RU` in the same change**. `build.js` logs `ground not translated for RU` for any unmapped value; treat that warning as a build failure to fix, not a value to leave as untranslated Dutch in the RU output. (Same discipline as `notes_ru` below.)
 
 **Russian summary:** each property carries a `notes_ru` field (plain Russian text). `build.js` renders the RU summary from `notes_ru`, applying the same flag highlighting to the Russian tokens `ПРОВЕРЕНО · ИСПРАВЛЕНО · РАСХОЖДЕНИЕ · КОНФЛИКТ · ФЛАГ · РИСК`. If a new property has no `notes_ru`, the RU summary falls back to the English `notes` and `build.js` logs which are missing — so add a `notes_ru` alongside `notes` for every new entry.
 
