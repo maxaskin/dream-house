@@ -20,17 +20,19 @@ const DIR = __dirname;
 const GEN_DATE = process.env.BUILD_DATE || new Date().toISOString().slice(0, 10); // today; override with BUILD_DATE=YYYY-MM-DD
 
 // ---- canonical scoring model (must match INSTRUCTIONS_build_summary_html.md) ----
+// Tuned for the buyer's real brief: live-in home for one adult + a 3-yo (shared
+// custody), to be sold in 5-10 years. Two clusters — livability ~55%, financial/
+// resale ~45%. No renovation deduction: condition is a normal positive criterion.
 const WEIGHTS = [
-  { key: 'price',         label: 'Price & €/m²',      w: 0.35 },
-  { key: 'legal',         label: 'Legal / risk',      w: 0.25 },
-  { key: 'dist_emmakade', label: 'Dist. Emmakade 33', w: 0.15 },
-  { key: 'energy',        label: 'Energy label',      w: 0.15 },
-  { key: 'dist_zuidas',   label: 'Dist. Zuidas',      w: 0.10 },
+  { key: 'value',     label: 'Value at entry',     w: 0.20 }, // financial
+  { key: 'family',    label: 'Family fit & space', w: 0.18 }, // living
+  { key: 'condition', label: 'Condition',          w: 0.15 }, // living
+  { key: 'location',  label: 'Location & commute', w: 0.15 }, // living
+  { key: 'energy',    label: 'Energy label',       w: 0.10 }, // financial
+  { key: 'tenure',    label: 'Tenure / erfpacht',  w: 0.10 }, // financial
+  { key: 'outdoor',   label: 'Outdoor space',      w: 0.07 }, // living
+  { key: 'legal',     label: 'Legal / title',      w: 0.05 }, // financial
 ];
-function renoDeduct(p) {
-  const r = p.scores && p.scores.renovation;
-  return (r != null && !isNaN(r)) ? Math.max(0, 6 - r) * 0.3 : 0;
-}
 function weightedTotal(p) {
   let sum = 0, wsum = 0;
   for (const c of WEIGHTS) {
@@ -38,7 +40,7 @@ function weightedTotal(p) {
     if (v != null && v !== '' && !isNaN(v)) { sum += Number(v) * c.w; wsum += c.w; }
   }
   if (!wsum) return null;
-  return sum / wsum - renoDeduct(p);
+  return sum / wsum; // blank criteria renormalise over the ones that are scored
 }
 
 // ---- display helpers ----
@@ -73,6 +75,24 @@ const GROUND_RU = {
   'Erfpacht (status onbekend)': 'Аренда земли (статус неизвестен)',
   'Erfpacht (vermoedelijk lopend, ~2036)': 'Аренда земли (предположительно действующая, ~2036)',
 };
+// outdoor_space canonical token → Russian (exact match; falls back to original if unmapped)
+const OUTDOOR_RU = {
+  'none': 'нет',
+  'shared': 'общий двор',
+  'balcony': 'балкон',
+  'loggia': 'лоджия',
+  'terrace': 'терраса',
+  'roof terrace': 'крыша-терраса',
+  'garden': 'сад',
+};
+// outdoor_space is "<token>" or "<token> ~N m²"; translate the leading token for RU
+function outdoorCell(p, T) {
+  const o = p.outdoor_space;
+  if (o == null || o === '') return '<span style="color:#b6bdc8">?</span>';
+  const m = String(o).match(/^([a-z ]+?)(\s+.*)?$/i);
+  const token = m ? m[1].trim() : o, rest = m && m[2] ? m[2] : '';
+  return esc((T.outdoor ? (T.outdoor(token)) : token) + rest);
+}
 function scoreStr(t) { return t == null ? '—' : (Math.round(t * 100) % 10 === 0 ? t.toFixed(1) : t.toFixed(2)); }
 // highlight risk tokens in notes (then keep the rest escaped)
 function noteHtml(notes) {
@@ -158,6 +178,7 @@ function card(r, rank, T) {
 <tr><td style="color:#666;padding:2px 8px 2px 0">${T.beds}</td><td>${p.bedrooms ?? '—'}</td></tr>
 <tr><td style="color:#666;padding:2px 8px 2px 0">${T.label}</td><td>${lbl}</td></tr>
 <tr><td style="color:#666;padding:2px 8px 2px 0">${T.ground}</td><td style="font-size:0.9em">${esc(T.grnd(p.ground))}</td></tr>
+<tr><td style="color:#666;padding:2px 8px 2px 0">${T.hOutdoor}</td><td style="font-size:0.9em">${outdoorCell(p, T)}</td></tr>
 <tr><td style="color:#666;padding:2px 8px 2px 0">→ Emmakade</td><td>${p.dist_emmakade_min} min</td></tr>
 <tr><td style="color:#666;padding:2px 8px 2px 0">→ Zuidas</td><td>${p.dist_zuidas_min} min</td></tr>
 <tr><td style="color:#666;padding:2px 8px 2px 0">${T.viewing}</td><td>${esc(p.viewing || 'No')}</td></tr>
@@ -183,6 +204,7 @@ function row(r, rank, T, noteOverride) {
 <td style="text-align:center">${p.build_year ?? '—'}</td>
 <td style="text-align:center">${lbl}</td>
 <td style="font-size:0.82em">${esc(T.grnd(p.ground))}</td>
+<td style="font-size:0.82em">${outdoorCell(p, T)}</td>
 <td style="text-align:right;font-size:0.88em">${vveCell(p)}</td>
 <td style="text-align:center">${p.dist_emmakade_min ?? '—'}</td>
 <td style="text-align:center">${p.dist_zuidas_min ?? '—'}</td>
@@ -264,13 +286,16 @@ tr:hover td{background:#f8fafc}
 <div class="subtitle">${T.subtitle(active.length)}</div>
 
 <div class="legend">
-<div class="legend-item">${T.legPrice} <strong>35%</strong></div>
-<div class="legend-item">${T.legLegal} <strong>25%</strong></div>
-<div class="legend-item">${T.legEmma} <strong>15%</strong></div>
-<div class="legend-item">${T.legEnergy} <strong>15%</strong></div>
-<div class="legend-item">${T.legZuidas} <strong>10%</strong></div>
-<div class="legend-item" style="color:#888">${T.legReno}</div>
+<div class="legend-item">${T.legValue} <strong>20%</strong></div>
+<div class="legend-item">${T.legFamily} <strong>18%</strong></div>
+<div class="legend-item">${T.legCondition} <strong>15%</strong></div>
+<div class="legend-item">${T.legLocation} <strong>15%</strong></div>
+<div class="legend-item">${T.legEnergy} <strong>10%</strong></div>
+<div class="legend-item">${T.legTenure} <strong>10%</strong></div>
+<div class="legend-item">${T.legOutdoor} <strong>7%</strong></div>
+<div class="legend-item">${T.legLegal} <strong>5%</strong></div>
 </div>
+<div class="subtitle" style="margin:-16px 0 24px;font-size:0.85em">${T.legClusters}</div>
 
 <h2 style="font-size:1.1em;font-weight:700;margin-bottom:14px">🏆 ${T.top3}</h2>
 <div class="cards">${cards}</div>
@@ -280,7 +305,7 @@ tr:hover td{background:#f8fafc}
 <table>
 <thead>
 <tr>
-<th>#</th><th>${T.hAddr}</th><th>${T.hScore}</th><th>${T.hView}</th><th>${T.hPrice}</th><th>€/m²</th><th>WOZ</th><th>m²</th><th>${T.hBeds}</th><th>${T.hBuilt}</th><th>${T.hLabel}</th><th>${T.hGround}</th><th>${T.hVve}</th><th>→Emma</th><th>→Zuidas</th><th>${T.hNotes}</th>
+<th>#</th><th>${T.hAddr}</th><th>${T.hScore}</th><th>${T.hView}</th><th>${T.hPrice}</th><th>€/m²</th><th>WOZ</th><th>m²</th><th>${T.hBeds}</th><th>${T.hBuilt}</th><th>${T.hLabel}</th><th>${T.hGround}</th><th>${T.hOutdoor}</th><th>${T.hVve}</th><th>→Emma</th><th>→Zuidas</th><th>${T.hNotes}</th>
 </tr>
 </thead>
 <tbody>
@@ -301,32 +326,38 @@ const STR = {
   en: {
     title: 'Dream House — Property Summary',
     subtitle: n => `Amstelveen + Amsterdam Buitenveldert · all sizes · verified vs official Funda + a second source · ${n} properties · Generated ${GEN_DATE}`,
-    legPrice: 'Price &amp; €/m² vs WOZ', legLegal: 'Legal / risk', legEmma: 'Bike → Emmakade 33',
-    legEnergy: 'Energy label', legZuidas: 'Bike → Zuidas', legReno: 'Renovation: deduction up to −1.5 pts',
+    legValue: 'Value at entry', legFamily: 'Family fit &amp; space', legCondition: 'Condition',
+    legLocation: 'Location &amp; commute', legEnergy: 'Energy label', legTenure: 'Tenure / erfpacht',
+    legOutdoor: 'Outdoor space', legLegal: 'Legal / title',
+    legClusters: 'Livability ~55% (family, condition, location, outdoor) · Financial / resale ~45% (value, energy, tenure, legal). Tuned for a live-in home for one adult + a 3-yo, sold in 5–10 years.',
     top3: 'Top 3', all: 'All Properties',
     hAddr: 'Address', hScore: 'Score', hView: 'Viewing', hPrice: 'Price', hBeds: 'Beds', hBuilt: 'Built',
-    hLabel: 'Label', hGround: 'Ground', hVve: 'VvE/mo', hNotes: 'Notes &amp; flags', hStatus: 'Status',
+    hLabel: 'Label', hGround: 'Ground', hOutdoor: 'Outdoor', hVve: 'VvE/mo', hNotes: 'Notes &amp; flags', hStatus: 'Status',
     soldTitle: 'Sold — reference comps', soldStatus: 'Sold',
     soldNote: 'Kept in the database for statistics only — excluded from the active ranking above.',
     price: 'Price', area: 'Area', beds: 'Beds', label: 'Label', ground: 'Ground', viewing: 'Viewing',
     grnd: g => g || '—',
+    outdoor: t => t,
     no: 'No', visited: 'Visited', scheduled: 'Scheduled',
-    footer: '<strong>Methodology:</strong> Weighted score out of 10: Price &amp; €/m² vs WOZ (35%), Legal risk (25%), Bike distance to Emmakade 33 (15%), Energy label (15%), Bike distance to Zuidas (10%). Renovation is a deduction: <code>−max(0, 6 − renovation_score) × 0.3</code> applied after the weighted sum (max −1.5 pts for fixers). Scores marked ~ or "est." are estimates and should be verified. WOZ values are the official 2025 Kadaster LV-WOZ assessments. Neighbourhood €/m² averages are May-2026 agent comps (no official register exists for these) — re-check at offer time. All data as of ' + GEN_DATE + '.',
+    footer: '<strong>Methodology:</strong> Weighted score out of 10, tuned for a live-in home for one adult + a 3-yo (shared custody), sold in 5–10 years. Two clusters — <em>livability ~55%</em>: Family fit &amp; space (18%), Condition (15%), Location &amp; commute (15%), Outdoor space (7%); <em>financial / resale ~45%</em>: Value at entry vs WOZ &amp; €/m² (20%), Energy label (10%), Tenure / erfpacht (10%), Legal / title risk (5%). Blank criteria renormalise over the ones that are scored (no renovation deduction — condition is now a positive criterion). Scores marked ~ or "est." are estimates and should be verified. WOZ values are the official 2025 Kadaster LV-WOZ assessments. Neighbourhood €/m² averages are May-2026 agent comps (no official register exists for these) — re-check at offer time. All data as of ' + GEN_DATE + '.',
   },
   ru: {
     title: 'Dream House — Сводка по объектам',
     subtitle: n => `Амстелвен + Амстердам Бёйтенвелдерт · все площади · проверено по Funda + второй источник · ${n} объекта · Сформировано ${GEN_DATE.split('-').reverse().join('.')}`,
-    legPrice: 'Цена &amp; €/м² vs WOZ', legLegal: 'Юр. риск', legEmma: 'Вело → Emmakade 33',
-    legEnergy: 'Энергометка', legZuidas: 'Вело → Zuidas', legReno: 'Ремонт: вычет до −1.5 балла',
+    legValue: 'Цена входа vs WOZ', legFamily: 'Для семьи &amp; площадь', legCondition: 'Состояние',
+    legLocation: 'Локация &amp; дорога', legEnergy: 'Энергометка', legTenure: 'Земля / эрфпахт',
+    legOutdoor: 'Открытое пространство', legLegal: 'Юр. / титул',
+    legClusters: 'Для жизни ~55% (семья, состояние, локация, открытое пространство) · Финансы / перепродажа ~45% (цена входа, энергия, земля, юр.). Настроено под жильё для одного взрослого + ребёнка 3 лет, с продажей через 5–10 лет.',
     top3: 'Топ-3', all: 'Все объекты',
     hAddr: 'Адрес', hScore: 'Балл', hView: 'Просмотр', hPrice: 'Цена', hBeds: 'Спал.', hBuilt: 'Год',
-    hLabel: 'Метка', hGround: 'Земля', hVve: 'VvE/мес', hNotes: 'Заметки и флаги', hStatus: 'Статус',
+    hLabel: 'Метка', hGround: 'Земля', hOutdoor: 'Двор/балкон', hVve: 'VvE/мес', hNotes: 'Заметки и флаги', hStatus: 'Статус',
     soldTitle: 'Проданные — для статистики', soldStatus: 'Продано',
     soldNote: 'Оставлено в базе только для статистики — исключено из активного рейтинга выше.',
     price: 'Цена', area: 'Площадь', beds: 'Спальни', label: 'Метка', ground: 'Земля', viewing: 'Просмотр',
     grnd: g => g ? (GROUND_RU[g] || g) : '—',
+    outdoor: t => OUTDOOR_RU[t] || t,
     no: 'Нет', visited: 'Посещён', scheduled: 'Запланирован',
-    footer: '<strong>Методология:</strong> Взвешенный балл из 10: Цена &amp; €/м² vs WOZ (35%), Юр. риск (25%), Велодистанция до Emmakade 33 (15%), Энергометка (15%), Велодистанция до Zuidas (10%). Ремонт — вычет: <code>−max(0, 6 − балл_ремонта) × 0.3</code> после взвешенной суммы (макс −1.5 балла). Значения с ~ или «est.» — оценки, требуют проверки. Значения WOZ — официальные оценки Kadaster LV-WOZ за 2025 г. Средние €/м² по районам — оценки риелторов (май 2026), официального реестра нет — перепроверьте перед сделкой. Данные на ' + GEN_DATE + '.',
+    footer: '<strong>Методология:</strong> Взвешенный балл из 10, настроен под жильё для одного взрослого + ребёнка 3 лет (совместная опека), с продажей через 5–10 лет. Два кластера — <em>для жизни ~55%</em>: Для семьи &amp; площадь (18%), Состояние (15%), Локация &amp; дорога (15%), Открытое пространство (7%); <em>финансы / перепродажа ~45%</em>: Цена входа vs WOZ &amp; €/м² (20%), Энергометка (10%), Земля / эрфпахт (10%), Юр. / титул (5%). Незаполненные критерии перенормируются по заполненным (вычета за ремонт больше нет — состояние теперь обычный критерий). Значения с ~ или «est.» — оценки, требуют проверки. Значения WOZ — официальные оценки Kadaster LV-WOZ за 2025 г. Средние €/м² по районам — оценки риелторов (май 2026), официального реестра нет — перепроверьте перед сделкой. Данные на ' + GEN_DATE + '.',
   },
 };
 
@@ -358,6 +389,21 @@ for (const r of ranked) {
 }
 const groundUnmapped = [...new Set(ranked.map(r => r.p.ground).filter(g => g && !GROUND_RU[g]))];
 if (groundUnmapped.length) console.warn(`  ground not translated for RU (add to GROUND_RU): ${groundUnmapped.map(g => JSON.stringify(g)).join(', ')}`);
+// outdoor_space tokens must be RU-mapped (same discipline as ground)
+const outdoorTokens = [...new Set(ranked.map(r => r.p.outdoor_space).filter(Boolean)
+  .map(o => (String(o).match(/^([a-z ]+?)(\s+.*)?$/i) || [,o])[1].trim()))];
+const outdoorUnmapped = outdoorTokens.filter(t => !(t in OUTDOOR_RU));
+if (outdoorUnmapped.length) console.warn(`  outdoor_space token not translated for RU (add to OUTDOOR_RU): ${outdoorUnmapped.map(t => JSON.stringify(t)).join(', ')}`);
+// Required score keys must be present; tenure & outdoor are conditional:
+//   - tenure: only expected when `ground` is known (null ground → tenure renormalises)
+//   - outdoor: always optional (null outdoor_space legitimately means "unknown")
+const REQUIRED_KEYS = ['value', 'family', 'condition', 'location', 'energy', 'legal'];
+for (const r of ranked) {
+  const s = r.p.scores || {};
+  const missing = REQUIRED_KEYS.filter(k => s[k] == null);
+  if (r.p.ground != null && s.tenure == null) missing.push('tenure (ground is known)');
+  if (missing.length) console.warn(`  ${r.p.address}: missing scores [${missing.join(', ')}]`);
+}
 const ruMissing = ranked.filter(r => !r.p.notes_ru).map(r => r.p.address);
 console.log(`Built ${data.length} properties (EN + RU summaries). index.html build #${buildVer}, dated ${GEN_DATE}.`);
 if (ruMissing.length) console.log(`notes_ru missing for ${ruMissing.length} (RU falls back to EN note): ${ruMissing.join('; ')}`);

@@ -4,6 +4,21 @@ _Generated 2026-05-31. Covers the three requested stages: (1) evaluate the ranki
 
 ---
 
+> ## Addendum 2026-06-05 — scoring model redesigned
+>
+> The 5-criterion model documented below (price 35 / legal 25 / dist_emmakade 15 / energy 15 / dist_zuidas 10, minus a renovation deduction) has been **superseded**. It was re-tuned for the buyer's actual brief — a **live-in home for one adult + a 3-yo (shared custody), to be sold in 5–10 years** — into eight criteria in two clusters (livability ~55% / financial ~45%):
+>
+> | Criterion | key | weight | | Criterion | key | weight |
+> |---|---|---|---|---|---|---|
+> | Value at entry | `value` | 20% | | Energy label | `energy` | 10% |
+> | Family fit & space | `family` | 18% | | Tenure / erfpacht | `tenure` | 10% |
+> | Condition | `condition` | 15% | | Outdoor space | `outdoor` | 7% |
+> | Location & commute | `location` | 15% | | Legal / title | `legal` | 5% |
+>
+> Key changes: bedrooms/space and outdoor space are now scored (the child finally counts); value-vs-WOZ and erfpacht are split out of the old "price"/"legal" buckets; the two correlated commute distances are **merged into one `location` score** (resolving the double-count caveat in Stage 3 below); and the renovation deduction is gone — `condition` is a normal positive criterion. Canonical definition lives in `build.js` `WEIGHTS`; rubric in `INSTRUCTIONS_build_summary_html.md`. The Stage-1 table and rankings below reflect the **old** model and are kept for history.
+
+---
+
 ## Stage 1 — Ranking-system evaluation
 
 ### The model (confirmed correct & internally consistent)
@@ -59,7 +74,7 @@ Engine in `property_ranking.html` (`WEIGHTS`, `weightedTotal`) and the spec now 
 
 ### Model commentary (design notes, not changed)
 - **Renovation as a one-sided penalty** means a pristine, fully-renovated flat earns *nothing* for condition — it only avoids a deduction. If move-in-ready quality should be rewarded, consider a small symmetric bonus. Current behaviour is internally consistent and intentional per the spec.
-- **Location weight is effectively 25%** split across two correlated distances (Emmakade 15% + Zuidas 10%). For the Zuidas-centric brief this is reasonable, but the two are correlated, so a property near one tends to score the other — worth being aware of when reading totals.
+- **Location weight is effectively 25%** split across two correlated distances (Emmakade 15% + Zuidas 10%). For the Zuidas-centric brief this is reasonable, but the two are correlated, so a property near one tends to score the other — worth being aware of when reading totals. _(Resolved 2026-06-05: merged into a single `location` criterion — see the addendum at the top.)_
 
 ---
 
