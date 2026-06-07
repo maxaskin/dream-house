@@ -296,7 +296,7 @@
     },
     "date_found": "2026-05-30",
     "source": "reaction",
-    "viewing": "Scheduled 2026-06-05"
+    "viewing": "Visited 2026-06-05"
   },
   {
     "address": "Bijdorp 11, Amstelveen",
@@ -2227,7 +2227,7 @@
     },
     "date_found": "2026-06-05",
     "source": "reaction",
-    "viewing": "Scheduled 2026-06-12",
+    "viewing": "No",
     "outdoor_space": "balcony (south)",
     "comps": [
       {
@@ -2239,5 +2239,582 @@
         "note": "identical layout; sold above ask; WOZ-2026 €429k"
       }
     ]
+  },
+  {
+    "address": "Meander 37, Amstelveen (Stadshart)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-meander-37/80843091/",
+    "price": 515000,
+    "area": 110,
+    "area_estimated": false,
+    "bedrooms": 2,
+    "bedrooms_verified": true,
+    "woz": 445000,
+    "woz_year": 2025,
+    "build_year": 1961,
+    "energy_label": "C",
+    "energy_estimated": true,
+    "ground": "Eigen grond",
+    "ground_verified": true,
+    "vve_costs": 266,
+    "vve_estimated": false,
+    "dist_emmakade_min": 7,
+    "dist_zuidas_min": 16,
+    "scores": {
+      "value": 8,
+      "family": 7,
+      "condition": 8,
+      "location": 8,
+      "energy": 6,
+      "tenure": 10,
+      "outdoor": 2,
+      "legal": 7
+    },
+    "notes": "NEW via Funda digest 06-Jun-2026 (id 80843091, Dutch Real Estate Company Amsterdam, listed 05-06-2026). Stadshart, 1181 WN - complex 'Torenflat Meander I'. VERIFIED via Huispedia (mirrors Funda): EUR515.000 k.k., 110 m2, 3 kamers / 2 SLAAPKAMERS, hoekappartement on 5e verdieping, 2 liften, bouwjaar 1961, royale woonkamer ~45 m2, onderhoud binnen+buiten GOED (move-in ready), VOLLE EIGENDOM (eigen grond; kadaster AMSTELVEEN H 10873), WOZ EUR445k (peildatum 01-01-2025). EUR4.682/m2 = ~19% UNDER comparable sales (EUR5.782/m2); Huispedia realistic value EUR513-596k so the ask sits at the LOW end - GOOD VALUE despite +16% over the (lagging) WOZ. Plus: VvE active + financially healthy (beheer Newomij) and has STARTED a ZEP verduurzaming (Zeer Energiezuinig Pakket) aimed at upgrading the label to A - collective energy upside. FLAG: BLOKVERWARMING - servicekosten EUR266,39/mo EXCL EUR150/mo stookkostenvoorschot (~EUR416 all-in) - high heating cost; request MJOP + ZEP scope, timeline & expected levy. FLAG: NO PRIVATE OUTDOOR SPACE - listing shows no balcony/terrace (only vrij uitzicht + onderbouw berging) - confirm. Energy label C per Huispedia + dubbel glas HR++, but the Funda listing left the label field blank - VERIFY EP-Online registration. 1961 build - expect ouderdomsclausule in koopakte. Distances ESTIMATED from 1181 WN: ~7 min bike Emmakade 33, ~16 min Zuidas.",
+    "notes_ru": "НОВОЕ из рассылки Funda 06-июн-2026 (id 80843091, Dutch Real Estate Company Amsterdam, выставлено 05-06-2026). Stadshart, 1181 WN — комплекс 'Torenflat Meander I'. ПРОВЕРЕНО по Huispedia (зеркалит Funda): €515.000, 110 м2, 3 комнаты / 2 СПАЛЬНИ, угловая квартира на 5-м этаже, 2 лифта, 1961 г., гостиная ~45 м2, состояние внутри+снаружи ХОРОШЕЕ (заезжай и живи), ПОЛНАЯ СОБСТВЕННОСТЬ (своя земля; кадастр AMSTELVEEN H 10873), WOZ €445к (на 01-01-2025). €4.682/м2 = ~19% НИЖЕ сопоставимых продаж (€5.782/м2); реалистичная оценка Huispedia €513-596к, цена в НИЖНЕЙ части — ХОРОШАЯ ЦЕНА несмотря на +16% к (отстающей) WOZ. Плюс: VvE активный и финансово здоровый (управляет Newomij) и ЗАПУСТИЛ проект ZEP (энергомодернизация) с целью довести класс до A — коллективный потенциал энергоэффективности. ФЛАГ: БЛОЧНОЕ ОТОПЛЕНИЕ — сервис €266,39/мес БЕЗ €150/мес аванса за отопление (~€416 со всем) — дорого; запросить MJOP и детали ZEP: сроки и взнос. ФЛАГ: НЕТ ЛИЧНОГО БАЛКОНА/ТЕРРАСЫ (только свободный вид + кладовая) — уточнить. Класс C по Huispedia + стеклопакет HR++, но в объявлении Funda поле класса пустое — ПРОВЕРИТЬ регистрацию EP-Online. 1961 г. — ожидать оговорку о возрасте в акте. Расстояния — ОЦЕНКА от 1181 WN: ~7 мин до Emmakade 33, ~16 мин до Zuidas.",
+    "sources": {
+      "price": {
+        "value": 515000,
+        "src": "Funda digest + Huispedia",
+        "url": "https://huispedia.nl/amstelveen/1181wn/meander/37",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "area": {
+        "value": 110,
+        "src": "Huispedia/Funda",
+        "url": "https://huispedia.nl/amstelveen/1181wn/meander/37",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "woz": {
+        "value": 445000,
+        "src": "Huispedia (WOZ-loket mirror)",
+        "url": "https://huispedia.nl/amstelveen/1181wn/meander/37",
+        "checked": "2026-06-07",
+        "status": "verified",
+        "peildatum": "2025-01-01"
+      },
+      "build_year": {
+        "value": 1961,
+        "src": "Huispedia/Funda listing",
+        "url": "https://huispedia.nl/amstelveen/1181wn/meander/37",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "C",
+        "src": "Huispedia (HR++ glas); Funda label field blank",
+        "url": "https://huispedia.nl/amstelveen/1181wn/meander/37",
+        "checked": "2026-06-07",
+        "status": "unconfirmed",
+        "note": "verify EP-Online"
+      },
+      "ground": {
+        "value": "Eigen grond",
+        "src": "Listing 'volle eigendom' + kadaster AMSTELVEEN H 10873",
+        "url": "https://huispedia.nl/amstelveen/1181wn/meander/37",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "vve_costs": {
+        "value": 266,
+        "src": "Listing (EUR266,39 + EUR150 stook), Newomij",
+        "url": "https://huispedia.nl/amstelveen/1181wn/meander/37",
+        "checked": "2026-06-07",
+        "status": "verified"
+      }
+    },
+    "date_found": "2026-06-07",
+    "source": "digest",
+    "viewing": "No",
+    "outdoor_space": "none"
+  },
+  {
+    "address": "Van Heuven Goedhartlaan 310, Amstelveen",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-van-heuven-goedhartlaan-310/44488218/",
+    "price": 395000,
+    "area": 73,
+    "area_estimated": false,
+    "bedrooms": 2,
+    "bedrooms_verified": true,
+    "woz": 388000,
+    "woz_year": 2026,
+    "build_year": 1961,
+    "energy_label": "F",
+    "energy_estimated": false,
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 245,
+    "vve_estimated": true,
+    "dist_emmakade_min": 8,
+    "dist_zuidas_min": 16,
+    "scores": {
+      "value": 7,
+      "family": 6,
+      "condition": 5,
+      "location": 7,
+      "energy": 3,
+      "tenure": 8,
+      "outdoor": 6,
+      "legal": 5
+    },
+    "notes": "NEW via Funda digest 06-Jun-2026 (id 44488218, Amstelhoven Makelaars). Elsrijk, 1181 LJ. VERIFIED via Walter Living: EUR395.000, ~73 m2 (Funda; Walter 72), 3 kamers / 2 SLAAPKAMERS, 1e verdieping, lift, zonnig balkon op het WESTEN, eigen berging, bouwjaar 1961, energielabel F (registered), WOZ EUR388.000 (2026). CORRECTED: an aggregator (woz-waarde.nl) showed a bogus EUR300k 2025 WOZ for this and several neighbours - that is a placeholder; Walter's address-level WOZ EUR388k (2026) matches the block (nr 328 = EUR394k). EUR5.411/m2 vs Elsrijk median EUR6.835/m2 (~21% under); ask EUR395k is ~+2% over WOZ = at WOZ, FAIR-GOOD value. FLAG: ENERGY LABEL F (poor) - the main weakness; upgrade to ~C needs glazing/insulation but in an apartment the facade/roof are VvE matters (limited individual control) - little easy upside. FLAG: hot micro-market (Walter: Elsrijk 71% sold over ask, avg overbid EUR28k) - realistic level ~EUR420-425k, budget above ask. Eigen grond NOT confirmed (Walter eigendomssituatie blank; Amstelveen usually eigen grond) - verify akte. VvE ~EUR245/mo ESTIMATED from sister units (458/520) - confirm. 1961 build - expect ouderdomsclausule; request VvE MJOP/reserves. Condition dated - budget modernisation. Distances ESTIMATED from 1181 LJ: ~8 min bike Emmakade 33, ~16 min Zuidas.",
+    "notes_ru": "НОВОЕ из рассылки Funda 06-июн-2026 (id 44488218, Amstelhoven Makelaars). Elsrijk, 1181 LJ. ПРОВЕРЕНО по Walter Living: €395.000, ~73 м2 (Funda; Walter 72), 3 комнаты / 2 СПАЛЬНИ, 1-й этаж, лифт, солнечный балкон на ЗАПАД, кладовая, 1961 г., класс F (зарегистрирован), WOZ €388.000 (2026). ИСПРАВЛЕНО: агрегатор (woz-waarde.nl) показывал ложные €300к (2025) для этого и соседних адресов — это заглушка; адресный WOZ Walter €388к (2026) совпадает с домом (№328 = €394к). €5.411/м2 против медианы Elsrijk €6.835/м2 (~21% ниже); цена €395к ~+2% к WOZ = на уровне WOZ, СПРАВЕДЛИВО-ХОРОШО. ФЛАГ: КЛАСС F (плохой) — главный минус; апгрейд до ~C требует стеклопакетов/изоляции, но в квартире фасад/крыша — дело VvE (мало личного контроля) — лёгкого потенциала нет. ФЛАГ: горячий микрорынок (Walter: Elsrijk 71% продаж выше запроса, средний перебид €28к) — реалистично ~€420-425к, закладывать выше запроса. Своя земля НЕ подтверждена (у Walter поле пустое; в Амстелвене обычно своя) — проверить акт. VvE ~€245/мес — ОЦЕНКА по соседям (458/520) — уточнить. 1961 г. — ожидать оговорку о возрасте; запросить MJOP/резервы VvE. Состояние устаревшее — заложить модернизацию. Расстояния — ОЦЕНКА от 1181 LJ: ~8 мин до Emmakade 33, ~16 мин до Zuidas.",
+    "sources": {
+      "price": {
+        "value": 395000,
+        "src": "Funda digest + Walter Living",
+        "url": "https://walterliving.com/report/van-heuven-goedhartlaan-310-amstelveen",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "area": {
+        "value": 73,
+        "src": "Funda 73 m2 / Walter 72 m2",
+        "url": "https://walterliving.com/report/van-heuven-goedhartlaan-310-amstelveen",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "woz": {
+        "value": 388000,
+        "src": "Walter Living (address-level)",
+        "url": "https://walterliving.com/report/van-heuven-goedhartlaan-310-amstelveen",
+        "checked": "2026-06-07",
+        "status": "corrected",
+        "note": "aggregator woz-waarde.nl showed bogus EUR300k placeholder"
+      },
+      "build_year": {
+        "value": 1961,
+        "src": "Walter Living",
+        "url": "https://walterliving.com/report/van-heuven-goedhartlaan-310-amstelveen",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "F",
+        "src": "Walter Living (registered)",
+        "url": "https://walterliving.com/report/van-heuven-goedhartlaan-310-amstelveen",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "ground": {
+        "value": "Eigen grond",
+        "src": "Walter eigendomssituatie blank; Amstelveen norm",
+        "url": "https://walterliving.com/report/van-heuven-goedhartlaan-310-amstelveen",
+        "checked": "2026-06-07",
+        "status": "unconfirmed"
+      },
+      "vve_costs": {
+        "value": 245,
+        "src": "Estimated from sister units VHG 458/520",
+        "url": "https://walterliving.com/report/van-heuven-goedhartlaan-310-amstelveen",
+        "checked": "2026-06-07",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-07",
+    "source": "digest",
+    "viewing": "No",
+    "outdoor_space": "balcony (west)"
+  },
+  {
+    "address": "Van Heuven Goedhartlaan 350, Amstelveen",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-van-heuven-goedhartlaan-350/44488212/",
+    "price": 389000,
+    "area": 72,
+    "area_estimated": false,
+    "bedrooms": 2,
+    "bedrooms_verified": false,
+    "woz": 390000,
+    "woz_year": 2026,
+    "build_year": 1962,
+    "energy_label": "E",
+    "energy_estimated": true,
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 158,
+    "vve_estimated": false,
+    "dist_emmakade_min": 8,
+    "dist_zuidas_min": 16,
+    "scores": {
+      "value": 7,
+      "family": 5,
+      "condition": 6,
+      "location": 7,
+      "energy": 4,
+      "tenure": 8,
+      "outdoor": 6,
+      "legal": 5
+    },
+    "notes": "NEW via Funda digest 06-Jun-2026 (id 44488212; RELISTING - previously listed as id 43326003). Elsrijk, 1181 LJ. EUR389.000 k.k., 72 m2, 3 kamers, EUR5.403/m2. VERIFIED via the listing text (Funda) + block comps: TOP-FLOOR (bovenwoning), zonnig BALKON, eigen berging, airconditioning + infraroodpanelen, bouwjaar 1962, servicekosten EUR158/mo + EUR121/mo stookkostenvoorschot. Layout = 1 ruime slaapkamer + eetkamer EASILY CONVERTED to a 2nd bedroom (so '3 kamers' = effectively 1-2 bed) - bedroom count not independently verified. Energy label E ESTIMATED (block neighbours: nr 310 = F, nr 328 = E - VERIFY EP-Online). WOZ ~EUR390k ESTIMATED from neighbours (310 = EUR388k, 328 = EUR394k, both 2026) - VERIFY WOZ-waardeloket. EUR5.403/m2 vs Elsrijk median EUR6.835 (~21% under); ask ~at WOZ = FAIR-GOOD value. Plus: AC + infrared = comfort + partial heating mitigation. FLAG: only ~1 true bedroom (2nd is a converted dining room) - weaker family fit. FLAG: relisting (id changed; previously withdrawn/sold) - ask why; 1962 build, expect ouderdomsclausule. Eigen grond assumed - verify akte; request VvE MJOP/reserves. Distances ESTIMATED from 1181 LJ: ~8 min bike Emmakade 33, ~16 min Zuidas.",
+    "notes_ru": "НОВОЕ из рассылки Funda 06-июн-2026 (id 44488212; ПОВТОРНОЕ выставление — ранее id 43326003). Elsrijk, 1181 LJ. €389.000, 72 м2, 3 комнаты, €5.403/м2. ПРОВЕРЕНО по тексту объявления (Funda) + аналогам по дому: ВЕРХНИЙ этаж, солнечный БАЛКОН, кладовая, кондиционер + инфракрасные панели, 1962 г., сервис €158/мес + €121/мес аванс за отопление. Планировка = 1 большая спальня + столовая, ЛЕГКО переделать во 2-ю спальню (т.е. '3 комнаты' = по сути 1-2 спальни) — число спален независимо не подтверждено. Класс E — ОЦЕНКА по соседям (№310 = F, №328 = E — ПРОВЕРИТЬ EP-Online). WOZ ~€390к — ОЦЕНКА по соседям (310 = €388к, 328 = €394к, оба 2026) — ПРОВЕРИТЬ WOZ-loket. €5.403/м2 против медианы Elsrijk €6.835 (~21% ниже); цена ~на уровне WOZ = СПРАВЕДЛИВО-ХОРОШО. Плюс: кондиционер + ИК-панели = комфорт и частичная компенсация отопления. ФЛАГ: реально ~1 спальня (2-я — переделанная столовая) — слабее под семью. ФЛАГ: повторное выставление (id сменился; ранее снято/продано) — выяснить причину; 1962 г., ожидать оговорку о возрасте. Своя земля предполагается — проверить акт; запросить MJOP/резервы VvE. Расстояния — ОЦЕНКА от 1181 LJ: ~8 мин до Emmakade 33, ~16 мин до Zuidas.",
+    "sources": {
+      "price": {
+        "value": 389000,
+        "src": "Funda digest",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-van-heuven-goedhartlaan-350/44488212/",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "area": {
+        "value": 72,
+        "src": "Funda listing",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-van-heuven-goedhartlaan-350/44488212/",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "woz": {
+        "value": 390000,
+        "src": "Estimated from neighbours (310=388k,328=394k, Walter 2026)",
+        "url": "https://walterliving.com/report/van-heuven-goedhartlaan-310-amstelveen",
+        "checked": "2026-06-07",
+        "status": "unconfirmed"
+      },
+      "build_year": {
+        "value": 1962,
+        "src": "Listing text",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-van-heuven-goedhartlaan-350/43326003/",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "E",
+        "src": "Estimated from neighbours (310=F,328=E)",
+        "url": "https://walterliving.com/report/van-heuven-goedhartlaan-310-amstelveen",
+        "checked": "2026-06-07",
+        "status": "unconfirmed",
+        "note": "verify EP-Online"
+      },
+      "ground": {
+        "value": "Eigen grond",
+        "src": "Assumed (Amstelveen norm)",
+        "url": "https://www.funda.nl",
+        "checked": "2026-06-07",
+        "status": "unconfirmed"
+      },
+      "vve_costs": {
+        "value": 158,
+        "src": "Listing (EUR158 service + EUR121 stook)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-van-heuven-goedhartlaan-350/43326003/",
+        "checked": "2026-06-07",
+        "status": "verified"
+      }
+    },
+    "date_found": "2026-06-07",
+    "source": "digest",
+    "viewing": "No",
+    "outdoor_space": "balcony (sunny)"
+  },
+  {
+    "address": "Logger 52, Amstelveen (Waardhuizen)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-logger-52/44489500/",
+    "price": 450000,
+    "area": 81,
+    "area_estimated": false,
+    "bedrooms": 3,
+    "bedrooms_verified": false,
+    "woz": 400000,
+    "woz_year": 2025,
+    "build_year": 1981,
+    "energy_label": "C",
+    "energy_estimated": true,
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 120,
+    "vve_estimated": true,
+    "dist_emmakade_min": 14,
+    "dist_zuidas_min": 23,
+    "scores": {
+      "value": 6,
+      "family": 8,
+      "condition": 6,
+      "location": 5,
+      "energy": 6,
+      "tenure": 8,
+      "outdoor": 6,
+      "legal": 6
+    },
+    "notes": "NEW via Funda digest 06-Jun-2026 (id 44489500). Waardhuizen/Middenhoven (south Amstelveen), 1186 RS. 81 m2, 4 kamers (3 slaapkamers inferred from kamers - VERIFY), EUR450.000 k.k. = EUR5.556/m2. Portiekflat; complex built 1981 (comp Logger 12, same postcode: 1981, portiekflat, label C, 8 m2 balkon, WOZ EUR330k). PARTLY COMP-DERIVED - this unit's own page is bot-gated, so build_year, energy_label C (street-average per Huispedia Logger 12), WOZ ~EUR400k and VvE ~EUR120/mo are ESTIMATED from neighbours - VERIFY on EP-Online / WOZ-waardeloket / the listing. FLAG: PRICED NEAR/ABOVE MODEL VALUE - comp Logger 16 (same postcode 1186 RS) asks the SAME EUR450k against a Huispedia realistic value of only EUR356-409k; Logger 52 (81 m2) has better EUR/m2 but EUR450k likely leaves little headroom - negotiate, don't overbid. FLAG: WEAKEST LOCATION for the brief - south Amstelveen: ~14 min bike to Emmakade 33 (edge of the 15-min target) and ~23 min to Zuidas; quiet, green, family-friendly (34% gezinnen), supermarket on foot, but farther from centre/tram. Plus: largest of today's adds (3-bed family layout); label C beats the 1961 flats. Eigen grond assumed (1981 Waardhuizen) - confirm at akte. Condition unknown - request photos/keuring. Distances ESTIMATED from 1186 RS.",
+    "notes_ru": "НОВОЕ из рассылки Funda 06-июн-2026 (id 44489500). Waardhuizen/Middenhoven (юг Амстелвена), 1186 RS. 81 м2, 4 комнаты (≈3 спальни по числу комнат — ПРОВЕРИТЬ), €450.000 = €5.556/м2. Подъездный дом (portiekflat); комплекс 1981 г. (аналог Logger 12, тот же индекс: 1981, класс C, балкон 8 м2, WOZ €330к). ЧАСТИЧНО ПО АНАЛОГАМ — собственная страница объекта под защитой, поэтому год постройки, класс C (средний по улице), WOZ ~€400к и VvE ~€120/мес — ОЦЕНКА по соседям, нужна проверка (EP-Online / WOZ-loket / объявление). ФЛАГ: ЦЕНА НА УРОВНЕ/ВЫШЕ МОДЕЛИ — аналог Logger 16 (тот же индекс) просит те же €450к при реалистичной оценке Huispedia всего €356-409к; у №52 (81 м2) лучше €/м2, но €450к оставляет мало запаса — торговаться, не переплачивать. ФЛАГ: САМАЯ СЛАБАЯ ЛОКАЦИЯ под задачу — юг Амстелвена: ~14 мин на велосипеде до Emmakade 33 (на границе 15-мин цели) и ~23 мин до Zuidas; тихо, зелено, для семей, но дальше от центра/трамвая. Плюс: самая большая из сегодняшних (3 спальни). Своя земля предполагается (1981) — подтвердить по акту. Состояние неизвестно — запросить фото/осмотр. Расстояния — ОЦЕНКА от 1186 RS.",
+    "sources": {
+      "price": {
+        "value": 450000,
+        "src": "Funda digest",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-logger-52/44489500/",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "area": {
+        "value": 81,
+        "src": "Funda digest card",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-logger-52/44489500/",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "woz": {
+        "value": 400000,
+        "src": "Estimated (scaled from Logger 12 EUR330k/61m2)",
+        "url": "https://huispedia.nl/amstelveen/1186rs/logger/12",
+        "checked": "2026-06-07",
+        "status": "unconfirmed"
+      },
+      "build_year": {
+        "value": 1981,
+        "src": "Comp Logger 12 (same postcode/complex)",
+        "url": "https://huispedia.nl/amstelveen/1186rs/logger/12",
+        "checked": "2026-06-07",
+        "status": "unconfirmed"
+      },
+      "energy_label": {
+        "value": "C",
+        "src": "Street-average C (Huispedia Logger 12)",
+        "url": "https://huispedia.nl/amstelveen/1186rs/logger/12",
+        "checked": "2026-06-07",
+        "status": "unconfirmed",
+        "note": "verify EP-Online"
+      },
+      "ground": {
+        "value": "Eigen grond",
+        "src": "Assumed (1981 Waardhuizen)",
+        "url": "https://www.funda.nl",
+        "checked": "2026-06-07",
+        "status": "unconfirmed"
+      },
+      "vve_costs": {
+        "value": 120,
+        "src": "Estimated (Logger 12 ~EUR100/61m2)",
+        "url": "https://huispedia.nl/amstelveen/1186rs/logger/12",
+        "checked": "2026-06-07",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-07",
+    "source": "digest",
+    "viewing": "No",
+    "outdoor_space": "balcony (est)"
+  },
+  {
+    "address": "Populierenlaan 117, Amstelveen (Populierenbuurt)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-populierenlaan-117/80842194/",
+    "price": 299000,
+    "area": 39.7,
+    "area_estimated": false,
+    "bedrooms": 1,
+    "bedrooms_verified": false,
+    "woz": 240000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1965,
+    "build_year_estimated": true,
+    "energy_label": "G",
+    "energy_estimated": false,
+    "ground": "Eigen grond",
+    "ground_verified": true,
+    "vve_costs": 230,
+    "vve_estimated": false,
+    "dist_emmakade_min": 14,
+    "dist_zuidas_min": 22,
+    "scores": {
+      "value": 3,
+      "family": 3,
+      "condition": 6,
+      "location": 5,
+      "energy": 1,
+      "tenure": 10,
+      "outdoor": 3,
+      "legal": 6
+    },
+    "notes": "NEW via Funda digest 07-Jun-2026 (id 80842194). Populierenbuurt / Oud-Amstelveen, 1185SG. VERIFIED via Vastiva mirror (Gerritjan Heemskerk makelaar): €299.000 k.k., 39.7 m² NEN2580 (gross volume ~127.5 m³), 2 kamers / 1 slaapkamer, 8th floor (bovenwoning/penthouse), double lift, balkon ~2.0 m², eigen berging ~2.9 m² on ground floor, public parking. EIGEN GROND confirmed ('own land with no perpetual lease'). VvE €230.42/mo INCLUDING €80 stookkostenvoorschot (blokverwarming). ENERGY LABEL G (registered, valid to June 14, 2028) — worst possible rating; blokverwarming means individual upgrade impossible without VvE collective decision. €7.531/m² — expensive per m² for a G-label studio-size unit. Near Amsterdamse Poel, Amsterdamse Bos and Oud-Amstelveen ('old village'). WOZ ESTIMATED ~€240k (39.7 m² in 1185, area avg €415k for larger units; scaling down by size — VERIFY at WOZ-waardeloket with BAG ID 0362010002027408). Build year ESTIMATED ~1965 (Populierenbuurt complex typical era; double lifts). FLAG: LABEL G + BLOKVERWARMING — no realistic easy-upgrade path; high all-in VvE for 40 m². FLAG: 39.7 m² is studio-size — very small for 2-person living. FLAG: price €299k est. ~+25% above est. WOZ — no WOZ discount. Distances ESTIMATED from 1185SG (Oud-Amstelveen/Populierenbuurt): ~14 min bike Emmakade 33, ~22 min Zuidas.",
+    "notes_ru": "НОВОЕ из рассылки Funda 07-июн-2026 (id 80842194). Populierenbuurt / Oud-Amstelveen, 1185SG. ПРОВЕРЕНО через Vastiva (маклер Gerritjan Heemskerk): €299.000 k.k., 39,7 м² NEN2580, 2 комнаты / 1 спальня, 8-й этаж (пентхаус), 2 лифта, балкон ~2,0 м², кладовая ~2,9 м² на цокольном этаже, общественная парковка. СОБСТВЕННАЯ ЗЕМЛЯ подтверждена (без erfpacht). VvE €230,42/мес ВКЛЮЧАЯ €80 аванс на отопление (блочное). КЛАСС G (зарегистрирован, действует до июня 2028) — худший возможный; блочное отопление = улучшение класса невозможно без коллективного решения VvE. €7.531/м² — дорого за м² для класса G. Рядом Amstelveense Poel, Amsterdamse Bos и Oud-Amstelveen. WOZ ОЦЕНКА ~€240к (39,7 м² в 1185; средний по кварталу €415к для больших единиц — ПРОВЕРИТЬ на WOZ-loket, BAG ID 0362010002027408). Год постройки ОЦЕНКА ~1965 (типичный для комплекса). ФЛАГ: КЛАСС G + БЛОЧНОЕ ОТОПЛЕНИЕ — нет реального пути улучшения. ФЛАГ: 39,7 м² — размер студии, очень мало для двоих. ФЛАГ: цена ~+25% к оценочному WOZ. Расстояния — ОЦЕНКА: ~14 мин до Emmakade 33, ~22 мин до Zuidas.",
+    "sources": {
+      "price": {
+        "value": 299000,
+        "src": "Vastiva (Gerritjan Heemskerk makelaar mirror)",
+        "url": "https://www.vastiva.nl/woningaanbod/koop/nederland/noord-holland/amstelveen/appartement-populierenlaan-117/",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "area": {
+        "value": 39.7,
+        "src": "Vastiva (NEN2580 official measurement)",
+        "url": "https://www.vastiva.nl/woningaanbod/koop/nederland/noord-holland/amstelveen/appartement-populierenlaan-117/",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "G",
+        "src": "Vastiva (registered label valid to June 14, 2028)",
+        "url": "https://www.vastiva.nl/woningaanbod/koop/nederland/noord-holland/amstelveen/appartement-populierenlaan-117/",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "ground": {
+        "value": "Eigen grond",
+        "src": "Vastiva listing ('own land with no perpetual lease')",
+        "url": "https://www.vastiva.nl/woningaanbod/koop/nederland/noord-holland/amstelveen/appartement-populierenlaan-117/",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "vve_costs": {
+        "value": 230,
+        "src": "Vastiva (€230.42/mo incl. €80 stookkosten)",
+        "url": "https://www.vastiva.nl/woningaanbod/koop/nederland/noord-holland/amstelveen/appartement-populierenlaan-117/",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "woz": {
+        "value": 240000,
+        "src": "Estimated (39.7 m², 1185SG neighbourhood avg €415k for larger units; BAG ID 0362010002027408)",
+        "url": "https://woningstats.nl/woning/0362010002027408",
+        "checked": "2026-06-07",
+        "status": "unconfirmed",
+        "note": "Verify at WOZ-waardeloket or woz-waarde.nl using BAG ID 0362010002027408"
+      }
+    },
+    "date_found": "2026-06-07",
+    "source": "digest",
+    "viewing": "No",
+    "outdoor_space": "balcony ~2 m²"
+  },
+  {
+    "address": "Bos en Vaartlaan 77, Amstelveen (Randwijck)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-bos-en-vaartlaan-77/44488470/",
+    "price": 385000,
+    "price_estimated": true,
+    "area": 55,
+    "area_estimated": true,
+    "bedrooms": 1,
+    "bedrooms_verified": false,
+    "woz": 376000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1965,
+    "build_year_estimated": false,
+    "energy_label": "C",
+    "energy_estimated": true,
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 192,
+    "vve_estimated": true,
+    "dist_emmakade_min": 11,
+    "dist_zuidas_min": 11,
+    "scores": {
+      "value": 6,
+      "family": 3,
+      "condition": 6,
+      "location": 7,
+      "energy": 6,
+      "tenure": 9,
+      "outdoor": 6,
+      "legal": 7
+    },
+    "notes": "NEW via Funda digest 07-Jun-2026 (id 44488470). Randwijck / Amsterdam-Amstelveen border, 1181AD. LOW CONFIDENCE — almost all financial fields ESTIMATED (Funda detail JS/bot-gated; no makelaar microsite found yet). Comp-derived from Bos en Vaartlaan street profile: all units built 1965, galerijflat complex, ~55 m², 1-2 kamers, blokverwarming, VvE €192.49/mo including stookkosten (confirmed for the complex via Koopsmakelaardij listing 11119072 which describes an identical unit). Price ESTIMATED ~€385k based on active street comps: nr 71 €375k (56 m²), nr 80 €390k (55 m²), nr 68 €410k (55 m²). WOZ ESTIMATED ~€376k (nr 75 WOZ 2025 = €376k; same street/era). Build year 1965 CONFIRMED from multiple street comps. Energy label C ESTIMATED (nr 75 = C per Huispedia 2025). Ground ESTIMATED eigen grond (Amstelveen norm; confirm at akte). Location: 'on the border of Amsterdam and Amstelveen Randwijck'; Zuidas, VU, Amsterdamse Bos and Stadshart all within easy cycling distance. €7.000/m² — at top of Randwijck-Oost avg (€6.613). FLAG: BLOKVERWARMING — individual label upgrade hard/VvE-dependent; VvE costs include heating. FLAG: only 1 bedroom (2 kamers) — modest family fit. FLAG: all financials estimated — confirm price, WOZ, label, ground and VvE at Funda listing. Distances ESTIMATED from 1181AD: ~11 min bike Emmakade 33, ~11 min Zuidas.",
+    "notes_ru": "НОВОЕ из рассылки Funda 07-июн-2026 (id 44488470). Randwijck / граница Амстердам-Амстелвен, 1181AD. НИЗКАЯ ДОСТОВЕРНОСТЬ — почти всё ОЦЕНКА (Funda закрыта; страница маклера не найдена). Компараторная оценка по улице: все дома 1965 г., галерейные комплексы, ~55 м², 1-2 комнаты, блочное отопление, VvE €192,49/мес включая стоимость отопления (подтверждено для комплекса). Цена ОЦЕНКА ~€385к по аналогам: №71 €375к, №80 €390к, №68 €410к. WOZ ОЦЕНКА ~€376к (у №75 WOZ 2025 = €376к). Год постройки 1965 ПОДТВЕРЖДЁН по улице. Класс C ОЦЕНКА (у №75 = C по Huispedia). Земля ОЦЕНКА — своя (норма Амстелвена). Расположение: «граница Амстердам и Амстелвен Randwijck»; Zuidas, VU, Amsterdamse Bos и Stadshart — все в лёгкой досягаемости на велосипеде. €7.000/м² — на верхней границе среднего по Randwijck-Oost (€6.613). ФЛАГ: БЛОЧНОЕ ОТОПЛЕНИЕ — апгрейд класса труден/зависит от VvE. ФЛАГ: только 1 спальня. ФЛАГ: все финансовые показатели — ОЦЕНКА, проверить на Funda. Расстояния — ОЦЕНКА от 1181AD: ~11 мин до Emmakade 33, ~11 мин до Zuidas.",
+    "sources": {
+      "build_year": {
+        "value": 1965,
+        "src": "Multiple street comps (Bos en Vaartlaan 75 Huispedia, Koopsmakelaardij listing)",
+        "url": "https://huispedia.nl/amstelveen/1181ad/bos-en-vaartlaan/75",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "woz": {
+        "value": 376000,
+        "src": "Estimated from Bos en Vaartlaan 75 (WOZ 2025 €376k, 55 m², 1181AD)",
+        "url": "https://huispedia.nl/amstelveen/1181ad/bos-en-vaartlaan/75",
+        "checked": "2026-06-07",
+        "status": "unconfirmed",
+        "note": "Verify at WOZ-waardeloket for exact address"
+      },
+      "price": {
+        "value": 385000,
+        "src": "Estimated from street comps: nr 71 €375k, nr 80 €390k, nr 68 €410k (all 55 m², Pararius/Funda)",
+        "url": "https://www.pararius.nl/appartement-te-koop/amstelveen/1bc0ad9c/bos-en-vaartlaan",
+        "checked": "2026-06-07",
+        "status": "unconfirmed"
+      },
+      "vve_costs": {
+        "value": 192,
+        "src": "Koopsmakelaardij listing 11119072 (€192.49 incl. stookkosten, same complex type)",
+        "url": "https://www.koopsmakelaardij.nl/appartement-te-koop/amstelveen/bos-en-vaartlaan/11119072.html",
+        "checked": "2026-06-07",
+        "status": "unconfirmed",
+        "note": "Confirmed for a unit in same building complex; verify for nr 77 specifically"
+      }
+    },
+    "date_found": "2026-06-07",
+    "source": "digest",
+    "viewing": "No",
+    "outdoor_space": "balcony (est, ~5 m²)"
+  },
+  {
+    "address": "Bos en Vaartlaan 119, Amstelveen (Randwijck)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-bos-en-vaartlaan-119/44489554/",
+    "price": 395000,
+    "price_estimated": true,
+    "area": 55,
+    "area_estimated": true,
+    "bedrooms": 1,
+    "bedrooms_verified": false,
+    "woz": 376000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1965,
+    "build_year_estimated": false,
+    "energy_label": "C",
+    "energy_estimated": true,
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 192,
+    "vve_estimated": true,
+    "dist_emmakade_min": 11,
+    "dist_zuidas_min": 11,
+    "scores": {
+      "value": 5,
+      "family": 3,
+      "condition": 7,
+      "location": 7,
+      "energy": 6,
+      "tenure": 9,
+      "outdoor": 7,
+      "legal": 7
+    },
+    "notes": "NEW via Funda digest 07-Jun-2026 (id 44489554). Randwijck / Amsterdam-Amstelveen border, 1181AG. LOW CONFIDENCE — all financial fields ESTIMATED (Funda detail JS/bot-gated). Same street/complex profile as Bos en Vaartlaan 77 (see that entry): 1965 galerijflat, ~55 m², blokverwarming, VvE ~€192/mo incl. stookkosten. The Koopsmakelaardij listing 11119072 on this street describes an almost certain match: 9th floor (TOP floor), 2 kamers, 55 m², south-facing balcony 5 m², block heating, VvE €192.49/mo incl. heating — this top-floor unit commands a small premium over mid-floor units. Price ESTIMATED ~€395k (top-floor premium over nr 80 @€390k; same comp set as nr 77). WOZ ESTIMATED ~€376k (nr 75, same street). €7.182/m² — slightly above Randwijck-Oost avg. FLAG: BLOKVERWARMING — label C with block heating; limited individual upgrade. FLAG: 1 bedroom (2 kamers) — modest family fit. FLAG: all financials estimated — verify price, WOZ, label, ground at Funda listing or makelaar. ACTION: if Koopsmakelaardij listing 11119072 = Bos en Vaartlaan 119, price and specs need matching to this entry. Distances ESTIMATED from 1181AG: ~11 min bike Emmakade 33, ~11 min Zuidas.",
+    "notes_ru": "НОВОЕ из рассылки Funda 07-июн-2026 (id 44489554). Randwijck / граница Амстердам-Амстелвен, 1181AG. НИЗКАЯ ДОСТОВЕРНОСТЬ — всё ОЦЕНКА (Funda закрыта). Тот же профиль улицы/комплекса, что и у №77 (см. ту запись): 1965 г., галерейный дом, ~55 м², блочное отопление, VvE ~€192/мес вкл. отопление. Листинг Koopsmakelaardij 11119072 описывает, вероятно, этот объект: 9-й этаж (верхний), 2 комнаты, 55 м², южный балкон 5 м², VvE €192,49/мес — верхний этаж даёт небольшую премию. Цена ОЦЕНКА ~€395к (премия верхнего этажа над №80 @€390к). WOZ ОЦЕНКА ~€376к. €7.182/м² — немного выше среднего. ФЛАГ: БЛОЧНОЕ ОТОПЛЕНИЕ. ФЛАГ: 1 спальня. ФЛАГ: всё ОЦЕНКА — проверить на Funda/у маклера. ДЕЙСТВИЕ: если листинг Koopsmakelaardij 11119072 = Bos en Vaartlaan 119 — сверить данные. Расстояния — ОЦЕНКА от 1181AG: ~11 мин до Emmakade 33, ~11 мин до Zuidas.",
+    "sources": {
+      "build_year": {
+        "value": 1965,
+        "src": "Street comps (Huispedia nr 75, Koopsmakelaardij listing 11119072)",
+        "url": "https://huispedia.nl/amstelveen/1181ad/bos-en-vaartlaan/75",
+        "checked": "2026-06-07",
+        "status": "verified"
+      },
+      "woz": {
+        "value": 376000,
+        "src": "Estimated from Bos en Vaartlaan 75 (WOZ 2025 €376k, 55 m²)",
+        "url": "https://huispedia.nl/amstelveen/1181ad/bos-en-vaartlaan/75",
+        "checked": "2026-06-07",
+        "status": "unconfirmed",
+        "note": "Verify at WOZ-waardeloket"
+      },
+      "price": {
+        "value": 395000,
+        "src": "Estimated (top-floor premium; comps nr 71 €375k, nr 80 €390k, nr 68 €410k)",
+        "url": "https://www.koopsmakelaardij.nl/appartement-te-koop/amstelveen/bos-en-vaartlaan/11119072.html",
+        "checked": "2026-06-07",
+        "status": "unconfirmed"
+      },
+      "vve_costs": {
+        "value": 192,
+        "src": "Koopsmakelaardij listing 11119072 (€192.49 incl. stookkosten)",
+        "url": "https://www.koopsmakelaardij.nl/appartement-te-koop/amstelveen/bos-en-vaartlaan/11119072.html",
+        "checked": "2026-06-07",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-07",
+    "source": "digest",
+    "viewing": "No",
+    "outdoor_space": "balcony ~5 m² (south, est.)"
   }
 ]

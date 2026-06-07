@@ -312,8 +312,8 @@ const EV = {
 };
 // "Sales history & comparable prices" appendix — surfaces structured sale_history/comps
 // for every property that has them, regardless of rank (answers "history of sales").
-function salesHistorySection(T, lang) {
-  const withData = active.filter(p => (p.sale_history && p.sale_history.length) || (p.comps && p.comps.length));
+function salesHistorySection(T, lang, activeList) {
+  const withData = activeList.filter(p => (p.sale_history && p.sale_history.length) || (p.comps && p.comps.length));
   if (!withData.length) return '';
   const blocks = withData.map(p => {
     const timeline = (p.sale_history || []).map(h => {
@@ -339,17 +339,22 @@ ${comps ? `<div style="margin-top:3px;font-size:0.9em">${T.comps}: ${comps}</div
 <div style="background:#fff;border:1px solid #e6e9ef;border-radius:12px;padding:6px 16px;margin-bottom:36px">${blocks}</div>`;
 }
 
-function buildSummary(lang) {
+function buildSummary(lang, filter, subtitleFn, titleOverride) {
   const T = lang === 'ru' ? STR.ru : STR.en;
-  const cards = ranked.slice(0, 3).map((r, i) => card(r, i, T)).join('');
-  const rows = ranked.map((r, i) => {
+  const title = titleOverride || T.title;
+  // Optional per-page filter (e.g. Amstelveen-only); no filter → full dataset.
+  const rk = filter ? ranked.filter(r => filter(r.p)) : ranked;
+  const activeF = filter ? active.filter(filter) : active;
+  const soldF = filter ? sold.filter(filter) : sold;
+  const cards = rk.slice(0, 3).map((r, i) => card(r, i, T)).join('');
+  const rows = rk.map((r, i) => {
     // RU prefers notes_ru (with RU highlighting); falls back to the EN note if absent
     const note = lang === 'ru'
       ? (r.p.notes_ru ? noteHtmlRu(r.p.notes_ru) : noteHtml(r.p.notes))
       : noteHtml(r.p.notes);
     return row(r, i, T, note);
   }).join('');
-  const soldSection = sold.length ? `
+  const soldSection = soldF.length ? `
 <h2 style="font-size:1.1em;font-weight:700;margin:8px 0 12px">📊 ${T.soldTitle}</h2>
 <div class="subtitle" style="margin-bottom:12px">${T.soldNote}</div>
 <div class="table-wrap">
@@ -360,7 +365,7 @@ function buildSummary(lang) {
 </tr>
 </thead>
 <tbody>
-${sold.map(p => soldRow(p, T)).join('')}
+${soldF.map(p => soldRow(p, T)).join('')}
 </tbody>
 </table>
 </div>
@@ -370,7 +375,7 @@ ${sold.map(p => soldRow(p, T)).join('')}
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${T.title}</title>
+<title>${title}</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#1a202c;padding:24px;color-scheme:light}
@@ -390,8 +395,8 @@ tr:hover td{background:#f8fafc}
 </style>
 </head>
 <body>
-<h1>🏠 ${T.title}</h1>
-<div class="subtitle">${T.subtitle(active.length)}</div>
+<h1>🏠 ${title}</h1>
+<div class="subtitle">${(subtitleFn || T.subtitle)(activeF.length)}</div>
 
 <div class="legend">
 <div class="legend-item">${T.legValue} <strong>20%</strong></div>
@@ -423,7 +428,7 @@ ${rows}
 </table>
 </div>
 
-${salesHistorySection(T, lang)}
+${salesHistorySection(T, lang, activeF)}
 ${soldSection}
 <div class="footer">${T.footer}</div>
 </body>
@@ -494,8 +499,15 @@ function buildIndex() {
 }
 
 // ---- run ----
+// Amstelveen-only view: match the city segment of "Street nr, City" (Buitenveldert
+// entries end in ", Amsterdam"), not a bare substring.
+const isAmstelveen = p => /,\s*Amstelveen\b/i.test(p.address || '');
 fs.writeFileSync(path.join(DIR, 'property_summary.html'), buildSummary('en'));
 fs.writeFileSync(path.join(DIR, 'property_summary_ru.html'), buildSummary('ru'));
+fs.writeFileSync(path.join(DIR, 'property_summary_amstelveen.html'),
+  buildSummary('en', isAmstelveen,
+    n => `Amstelveen only · all sizes · verified vs official Funda + a second source · ${n} properties · Generated ${GEN_DATE}`,
+    'Dream House — Amstelveen'));
 const buildVer = buildIndex();
 
 // ---- self-check ----
