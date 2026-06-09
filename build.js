@@ -19,25 +19,133 @@ const path = require('path');
 const DIR = __dirname;
 const GEN_DATE = process.env.BUILD_DATE || new Date().toISOString().slice(0, 10); // today; override with BUILD_DATE=YYYY-MM-DD
 
-// ---- canonical scoring model (must match INSTRUCTIONS_build_summary_html.md) ----
+// ---- canonical scoring model v3 (must match INSTRUCTIONS_build_summary_html.md) ----
 // Tuned for the buyer's real brief: live-in home for one adult + a 3-yo (shared
-// custody), to be sold in 5-10 years. Two clusters — livability ~55%, financial/
-// resale ~45%. No renovation deduction: condition is a normal positive criterion.
+// custody), to be sold in 5-10 years. Two clusters — livability ~53%, financial/
+// resale ~47%.
+// v3 (2026-06-09): six criteria are now COMPUTED at build time from measured
+// fields (family, location, energy, tenure, costs, outdoor) so scores can no
+// longer drift from the rubric; only value/condition/legal stay hand-scored.
+// New: `costs` criterion (monthly VvE + heating advance) and an
+// `energy_upgrade` modifier ('easy' +1 / 'moderate' +0.5) per the brief
+// ("label improvable easily = a plus").
 const WEIGHTS = [
-  { key: 'value',     label: 'Value at entry',     w: 0.20 }, // financial
-  { key: 'family',    label: 'Family fit & space', w: 0.18 }, // living
-  { key: 'condition', label: 'Condition',          w: 0.15 }, // living
-  { key: 'location',  label: 'Location & commute', w: 0.15 }, // living
-  { key: 'energy',    label: 'Energy label',       w: 0.10 }, // financial
-  { key: 'tenure',    label: 'Tenure / erfpacht',  w: 0.10 }, // financial
-  { key: 'outdoor',   label: 'Outdoor space',      w: 0.07 }, // living
-  { key: 'legal',     label: 'Legal / title',      w: 0.05 }, // financial
+  { key: 'family',    label: 'Family fit & space', w: 0.18 },               // living  (computed)
+  { key: 'value',     label: 'Value at entry',     w: 0.16, manual: true }, // financial
+  { key: 'location',  label: 'Location & commute', w: 0.15 },               // living  (computed)
+  { key: 'condition', label: 'Condition',          w: 0.14, manual: true }, // living
+  { key: 'energy',    label: 'Energy label',       w: 0.10 },               // financial (computed)
+  { key: 'tenure',    label: 'Tenure / erfpacht',  w: 0.08 },               // financial (computed)
+  { key: 'costs',     label: 'Running costs',      w: 0.08 },               // financial (computed)
+  { key: 'outdoor',   label: 'Outdoor space',      w: 0.06 },               // living  (computed)
+  { key: 'legal',     label: 'Legal / title',      w: 0.05, manual: true }, // financial
 ];
+const clamp10 = v => Math.max(1, Math.min(10, v));
+
+// energy: fixed label table − 1 if the label is only estimated/conflicted,
+// + upgrade bonus when an easy/moderate path to a better label is documented.
+const ENERGY_SCORE = { 'A+++': 10, 'A++': 10, 'A+': 10, A: 10, B: 9, C: 7, D: 5, E: 4, F: 3, G: 2 };
+function calcEnergy(p) {
+  if (!p.energy_label) return null;
+  let s = ENERGY_SCORE[p.energy_label] ?? ENERGY_SCORE[(p.energy_label || '').charAt(0)];
+  if (s == null) return null;
+  const st = fieldState(p, 'energy_label');
+  if (st === 'estimated' || st === 'conflict') s -= 1;
+  if (p.energy_upgrade === 'easy') s += 1;
+  else if (p.energy_upgrade === 'moderate') s += 0.5;
+  return clamp10(s);
+}
+// tenure: exact `ground` string → score (same sync discipline as GROUND_RU;
+// unmapped values warn at build time).
+const TENURE_SCORE = {
+  'Eigen grond': 10,
+  'Eigen grond (per listing)': 8,
+  'Eigen grond (te verifieren)': 8,
+  'Erfpacht eeuwigdurend afgekocht': 9,
+  'Erfpacht voortdurend (AB 1994), canon afgekocht tot 31-05-2088': 8,
+  'Erfpacht (afgekocht tot 2051)': 7,
+  'Erfpacht afgekocht': 7,
+  'Erfpacht (afkoop aangevraagd)': 5,
+  'Erfpacht lopend (vastgeklikt €1.865/jr na 2036)': 5,
+  'Erfpacht lopend': 4,
+  'Erfpacht (tijdvak tot 2039)': 4,
+  'Erfpacht (vermoedelijk lopend, ~2036)': 4,
+  'Erfpacht (tijdvak, te verifieren)': 3,
+  'Erfpacht (status te verifieren)': 3,
+  'Erfpacht (te verifieren)': 3,
+  'Erfpacht (status onbekend)': 3,
+};
+function calcTenure(p) {
+  if (p.ground == null) return null;
+  return TENURE_SCORE[p.ground] ?? null; // null → renormalises; warned in self-check
+}
+// family: bedrooms × area bands; 55+/ballotage → 1; explicit `family_adj`
+// (±, with `family_adj_reason`) for documented potential (e.g. attic room).
+function calcFamily(p) {
+  if (p.age_restricted) return 1; // a child can't live there
+  const b = p.bedrooms, a = p.area || 0;
+  if (b == null) return null;
+  let s;
+  if (b === 0) s = 2;
+  else if (b === 1) s = 3;
+  else if (b === 2) s = a >= 85 ? 9 : a >= 75 ? 8 : a >= 65 ? 7 : a >= 55 ? 6 : 4;
+  else s = a >= 85 ? 10 : a >= 70 ? 9 : 8;
+  return clamp10(s + (p.family_adj || 0));
+}
+// location: bike-minute decay (Emmakade 60% / Zuidas 40%), ±1 neighbourhood
+// adjustment via `location_adj` (quiet/green + · busy arterial −).
+function calcLocation(p) {
+  const e = p.dist_emmakade_min, z = p.dist_zuidas_min;
+  if (e == null && z == null) return null;
+  const se = e == null ? null : (e <= 7 ? 10 : Math.max(2, 10 - 0.6 * (e - 7)));
+  const sz = z == null ? null : (z <= 6 ? 10 : Math.max(2, 10 - 0.5 * (z - 6)));
+  const base = (se != null && sz != null) ? 0.6 * se + 0.4 * sz : (se ?? sz);
+  return clamp10(base + (p.location_adj || 0));
+}
+// costs: all-in monthly (VvE + known heating advance) banded 1–10.
+function monthlyAllIn(p) { return p.vve_costs == null ? null : p.vve_costs + (p.heating_advance || 0); }
+function calcCosts(p) {
+  const m = monthlyAllIn(p);
+  if (m == null) return null;
+  return m <= 100 ? 10 : m <= 150 ? 9 : m <= 200 ? 8 : m <= 250 ? 7 : m <= 300 ? 6 : m <= 360 ? 5 : m <= 450 ? 4 : 3;
+}
+// outdoor: canonical token → score; balcony +1 if ≥5 m², +1 if south/west (cap 7).
+const OUTDOOR_SCORE = { garden: 9, 'roof terrace': 8, terrace: 7, balcony: 5, loggia: 5, shared: 3, none: 2 };
+function calcOutdoor(p) {
+  const o = p.outdoor_space;
+  if (o == null || o === '') return null;
+  const m = String(o).match(/^([a-z ]+?)(\s+.*|\s*\(.*)?$/i);
+  const token = (m ? m[1] : String(o)).trim().toLowerCase(), rest = (m && m[2]) || '';
+  let s = OUTDOOR_SCORE[token];
+  if (s == null) return null;
+  if (token === 'balcony') {
+    const size = rest.match(/(\d+(?:[.,]\d+)?)\s*m/);
+    if (size && parseFloat(size[1].replace(',', '.')) >= 5) s += 1;
+    if (/south|west|zuid|west/i.test(rest)) s += 1;
+    s = Math.min(7, s);
+  }
+  return clamp10(s);
+}
+// effective scores: computed criteria + the three manual ones; a manual value
+// for a computed key acts as an explicit override (surfaced in the self-check).
+function effectiveScores(p) {
+  const man = p.scores || {};
+  const calc = { family: calcFamily(p), location: calcLocation(p), energy: calcEnergy(p),
+                 tenure: calcTenure(p), costs: calcCosts(p), outdoor: calcOutdoor(p) };
+  const scores = {}, overridden = [];
+  for (const c of WEIGHTS) {
+    if (c.manual) { scores[c.key] = (man[c.key] != null && !isNaN(man[c.key])) ? Number(man[c.key]) : null; continue; }
+    scores[c.key] = calc[c.key];
+    if (man[c.key] != null && !isNaN(man[c.key])) { scores[c.key] = Number(man[c.key]); overridden.push(c.key); }
+  }
+  return { scores, overridden };
+}
 function weightedTotal(p) {
+  const { scores } = effectiveScores(p);
   let sum = 0, wsum = 0;
   for (const c of WEIGHTS) {
-    const v = p.scores && p.scores[c.key];
-    if (v != null && v !== '' && !isNaN(v)) { sum += Number(v) * c.w; wsum += c.w; }
+    const v = scores[c.key];
+    if (v != null && !isNaN(v)) { sum += Number(v) * c.w; wsum += c.w; }
   }
   if (!wsum) return null;
   return sum / wsum; // blank criteria renormalise over the ones that are scored
@@ -108,7 +216,10 @@ function noteHtmlRu(notes) {
 }
 function vveCell(p) {
   if (p.vve_costs == null) return '?';
-  return (p.vve_estimated ? '~€' : '€') + fmt(p.vve_costs);
+  const all = monthlyAllIn(p);
+  const base = (p.vve_estimated ? '~€' : '€') + fmt(p.vve_costs);
+  if (!p.heating_advance) return base;
+  return `<span title="VvE €${fmt(p.vve_costs)} + heating €${fmt(p.heating_advance)}">${(p.vve_estimated ? '~€' : '€')}${fmt(all)}*</span>`;
 }
 function eurM2Cell(p) {
   const e = eurM2(p);
@@ -210,7 +321,7 @@ const sold   = data.filter(p => p.sold);
 const active = data.filter(p => !p.sold);
 
 const ranked = active
-  .map(p => ({ p, total: weightedTotal(p) }))
+  .map(p => ({ p, total: weightedTotal(p), eff: effectiveScores(p) }))
   .sort((a, b) => (b.total ?? -1) - (a.total ?? -1));
 
 // =====================================================================
@@ -399,14 +510,7 @@ tr:hover td{background:#f8fafc}
 <div class="subtitle">${(subtitleFn || T.subtitle)(activeF.length)}</div>
 
 <div class="legend">
-<div class="legend-item">${T.legValue} <strong>20%</strong></div>
-<div class="legend-item">${T.legFamily} <strong>18%</strong></div>
-<div class="legend-item">${T.legCondition} <strong>15%</strong></div>
-<div class="legend-item">${T.legLocation} <strong>15%</strong></div>
-<div class="legend-item">${T.legEnergy} <strong>10%</strong></div>
-<div class="legend-item">${T.legTenure} <strong>10%</strong></div>
-<div class="legend-item">${T.legOutdoor} <strong>7%</strong></div>
-<div class="legend-item">${T.legLegal} <strong>5%</strong></div>
+${WEIGHTS.map(c => `<div class="legend-item">${T.leg[c.key]} <strong>${Math.round(c.w * 100)}%</strong></div>`).join('\n')}
 </div>
 <div class="subtitle" style="margin:-16px 0 24px;font-size:0.85em">${T.legClusters}</div>
 <div class="subtitle" style="margin:-16px 0 24px;font-size:0.85em">${T.legConf}</div>
@@ -441,10 +545,10 @@ const STR = {
   en: {
     title: 'Dream House — Property Summary',
     subtitle: n => `Amstelveen + Amsterdam Buitenveldert · all sizes · verified vs official Funda + a second source · ${n} properties · Generated ${GEN_DATE}`,
-    legValue: 'Value at entry', legFamily: 'Family fit &amp; space', legCondition: 'Condition',
-    legLocation: 'Location &amp; commute', legEnergy: 'Energy label', legTenure: 'Tenure / erfpacht',
-    legOutdoor: 'Outdoor space', legLegal: 'Legal / title',
-    legClusters: 'Livability ~55% (family, condition, location, outdoor) · Financial / resale ~45% (value, energy, tenure, legal). Tuned for a live-in home for one adult + a 3-yo, sold in 5–10 years.',
+    leg: { value: 'Value at entry', family: 'Family fit &amp; space', condition: 'Condition',
+           location: 'Location &amp; commute', energy: 'Energy label', tenure: 'Tenure / erfpacht',
+           costs: 'Running costs', outdoor: 'Outdoor space', legal: 'Legal / title' },
+    legClusters: 'Livability ~53% (family, condition, location, outdoor) · Financial / resale ~47% (value, energy, tenure, running costs, legal). Tuned for a live-in home for one adult + a 3-yo, sold in 5–10 years. Family, location, energy (incl. upgrade-potential bonus), tenure, running costs and outdoor are computed from the data; value, condition and legal are scored by hand.',
     legConf: '<strong>Conf.</strong> = data-verification confidence: how many of 6 key fields (price, area, WOZ, energy label, ground/tenure, beds) are verified against an independent source. ✓N/6, green ≥5 · amber ≥3 · red &lt;3; ⚠ = a source conflict. Hover for which fields are unverified.',
     top3: 'Top 3', all: 'All Properties',
     hAddr: 'Address', hScore: 'Score', hConf: 'Conf.', hView: 'Viewing', hPrice: 'Price', hBeds: 'Beds', hBuilt: 'Built',
@@ -458,15 +562,15 @@ const STR = {
     grnd: g => g || '—',
     outdoor: t => t,
     no: 'No', visited: 'Visited', scheduled: 'Scheduled',
-    footer: '<strong>Methodology:</strong> Weighted score out of 10, tuned for a live-in home for one adult + a 3-yo (shared custody), sold in 5–10 years. Two clusters — <em>livability ~55%</em>: Family fit &amp; space (18%), Condition (15%), Location &amp; commute (15%), Outdoor space (7%); <em>financial / resale ~45%</em>: Value at entry vs WOZ &amp; €/m² (20%), Energy label (10%), Tenure / erfpacht (10%), Legal / title risk (5%). Blank criteria renormalise over the ones that are scored (no renovation deduction — condition is now a positive criterion). Scores marked ~ or "est." are estimates and should be verified. WOZ values are the official 2025 Kadaster LV-WOZ assessments. Neighbourhood €/m² averages are May-2026 agent comps (no official register exists for these) — re-check at offer time. All data as of ' + GEN_DATE + '.',
+    footer: '<strong>Methodology (model v3):</strong> Weighted score out of 10, tuned for a live-in home for one adult + a 3-yo (shared custody), sold in 5–10 years. Two clusters — <em>livability ~53%</em>: Family fit &amp; space (18%), Location &amp; commute (15%), Condition (14%), Outdoor space (6%); <em>financial / resale ~47%</em>: Value at entry vs WOZ &amp; €/m² (16%), Energy label (10%), Tenure / erfpacht (8%), Running costs (8%), Legal / title risk (5%). Family, location, energy, tenure, running costs and outdoor are <em>computed</em> from the underlying data (bedrooms/area, bike minutes ± a documented neighbourhood adjustment, label table − 1 if unverified + upgrade-potential bonus, ground-lease status, all-in monthly VvE + heating, outdoor token); value, condition and legal are scored by hand against the rubric. Blank criteria renormalise over the ones that are scored. Costs marked * are VvE + a known heating advance; ~ marks estimates. WOZ values are the official 2025 Kadaster LV-WOZ assessments. Neighbourhood €/m² averages are May-2026 agent comps — re-check at offer time. All data as of ' + GEN_DATE + '.',
   },
   ru: {
     title: 'Dream House — Сводка по объектам',
     subtitle: n => `Амстелвен + Амстердам Бёйтенвелдерт · все площади · проверено по Funda + второй источник · ${n} объекта · Сформировано ${GEN_DATE.split('-').reverse().join('.')}`,
-    legValue: 'Цена входа vs WOZ', legFamily: 'Для семьи &amp; площадь', legCondition: 'Состояние',
-    legLocation: 'Локация &amp; дорога', legEnergy: 'Энергометка', legTenure: 'Земля / эрфпахт',
-    legOutdoor: 'Открытое пространство', legLegal: 'Юр. / титул',
-    legClusters: 'Для жизни ~55% (семья, состояние, локация, открытое пространство) · Финансы / перепродажа ~45% (цена входа, энергия, земля, юр.). Настроено под жильё для одного взрослого + ребёнка 3 лет, с продажей через 5–10 лет.',
+    leg: { value: 'Цена входа vs WOZ', family: 'Для семьи &amp; площадь', condition: 'Состояние',
+           location: 'Локация &amp; дорога', energy: 'Энергометка', tenure: 'Земля / эрфпахт',
+           costs: 'Расходы/мес', outdoor: 'Открытое пространство', legal: 'Юр. / титул' },
+    legClusters: 'Для жизни ~53% (семья, состояние, локация, открытое пространство) · Финансы / перепродажа ~47% (цена входа, энергия, земля, расходы/мес, юр.). Настроено под жильё для одного взрослого + ребёнка 3 лет, с продажей через 5–10 лет. Семья, локация, энергия (с бонусом за потенциал улучшения), земля, расходы и открытое пространство считаются из данных; цена входа, состояние и юр. — экспертная оценка.',
     legConf: '<strong>Дост.</strong> = достоверность данных: сколько из 6 ключевых полей (цена, площадь, WOZ, энергометка, земля/эрфпахт, спальни) проверены по независимому источнику. ✓N/6, зелёный ≥5 · янтарный ≥3 · красный &lt;3; ⚠ = конфликт источников. Наведите курсор, чтобы увидеть непроверенные поля.',
     top3: 'Топ-3', all: 'Все объекты',
     hAddr: 'Адрес', hScore: 'Балл', hConf: 'Дост.', hView: 'Просмотр', hPrice: 'Цена', hBeds: 'Спал.', hBuilt: 'Год',
@@ -480,7 +584,7 @@ const STR = {
     grnd: g => g ? (GROUND_RU[g] || g) : '—',
     outdoor: t => OUTDOOR_RU[t] || t,
     no: 'Нет', visited: 'Посещён', scheduled: 'Запланирован',
-    footer: '<strong>Методология:</strong> Взвешенный балл из 10, настроен под жильё для одного взрослого + ребёнка 3 лет (совместная опека), с продажей через 5–10 лет. Два кластера — <em>для жизни ~55%</em>: Для семьи &amp; площадь (18%), Состояние (15%), Локация &amp; дорога (15%), Открытое пространство (7%); <em>финансы / перепродажа ~45%</em>: Цена входа vs WOZ &amp; €/м² (20%), Энергометка (10%), Земля / эрфпахт (10%), Юр. / титул (5%). Незаполненные критерии перенормируются по заполненным (вычета за ремонт больше нет — состояние теперь обычный критерий). Значения с ~ или «est.» — оценки, требуют проверки. Значения WOZ — официальные оценки Kadaster LV-WOZ за 2025 г. Средние €/м² по районам — оценки риелторов (май 2026), официального реестра нет — перепроверьте перед сделкой. Данные на ' + GEN_DATE + '.',
+    footer: '<strong>Методология (модель v3):</strong> Взвешенный балл из 10, настроен под жильё для одного взрослого + ребёнка 3 лет (совместная опека), с продажей через 5–10 лет. Два кластера — <em>для жизни ~53%</em>: Для семьи &amp; площадь (18%), Локация &amp; дорога (15%), Состояние (14%), Открытое пространство (6%); <em>финансы / перепродажа ~47%</em>: Цена входа vs WOZ &amp; €/м² (16%), Энергометка (10%), Земля / эрфпахт (8%), Расходы/мес (8%), Юр. / титул (5%). Семья, локация, энергия, земля, расходы и открытое пространство <em>вычисляются</em> из данных (спальни/площадь, минуты на велосипеде ± поправка за район, таблица энергометок − 1 если метка не проверена + бонус за потенциал улучшения, статус земли, полные месячные расходы VvE + отопление, тип открытого пространства); цена входа, состояние и юр. — экспертная оценка по рубрике. Незаполненные критерии перенормируются по заполненным. Расходы со * = VvE + известный аванс за отопление; ~ — оценки. Значения WOZ — официальные оценки Kadaster LV-WOZ за 2025 г. Средние €/м² по районам — оценки риелторов (май 2026) — перепроверьте перед сделкой. Данные на ' + GEN_DATE + '.',
   },
 };
 
@@ -524,15 +628,20 @@ const outdoorTokens = [...new Set(ranked.map(r => r.p.outdoor_space).filter(Bool
   .map(o => (String(o).match(/^([a-z ]+?)(\s+.*)?$/i) || [,o])[1].trim()))];
 const outdoorUnmapped = outdoorTokens.filter(t => !(t in OUTDOOR_RU));
 if (outdoorUnmapped.length) console.warn(`  outdoor_space token not translated for RU (add to OUTDOOR_RU): ${outdoorUnmapped.map(t => JSON.stringify(t)).join(', ')}`);
-// Required score keys must be present; tenure & outdoor are conditional:
-//   - tenure: only expected when `ground` is known (null ground → tenure renormalises)
-//   - outdoor: always optional (null outdoor_space legitimately means "unknown")
-const REQUIRED_KEYS = ['value', 'family', 'condition', 'location', 'energy', 'legal'];
+// v3: only the three manual score keys are required; the rest are computed.
+const REQUIRED_KEYS = ['value', 'condition', 'legal'];
 for (const r of ranked) {
   const s = r.p.scores || {};
   const missing = REQUIRED_KEYS.filter(k => s[k] == null);
-  if (r.p.ground != null && s.tenure == null) missing.push('tenure (ground is known)');
-  if (missing.length) console.warn(`  ${r.p.address}: missing scores [${missing.join(', ')}]`);
+  if (missing.length) console.warn(`  ${r.p.address}: missing manual scores [${missing.join(', ')}]`);
+  // a hand value on a computed criterion is an explicit override — keep it visible
+  if (r.eff.overridden.length) console.warn(`  OVERRIDE ${r.p.address}: manual value on computed criteria [${r.eff.overridden.join(', ')}]`);
+  // ground string present but not in the tenure map → criterion silently renormalises
+  if (r.p.ground != null && TENURE_SCORE[r.p.ground] == null)
+    console.warn(`  TENURE-UNMAPPED ${r.p.address}: "${r.p.ground}" (add to TENURE_SCORE)`);
+  // after a physical viewing the outdoor space is observable — record it
+  if (/^visited/i.test(r.p.viewing || '') && !r.p.outdoor_space)
+    console.warn(`  VISITED-NO-OUTDOOR ${r.p.address}: record outdoor_space from the viewing`);
 }
 // ---- verification self-check (reads the `sources` block) ----
 const STALE_DAYS = 180;

@@ -17,30 +17,35 @@ Read from `property_data.json` (the single source of truth). Each property objec
 - `vve_costs` (€/mo or null) · `*_estimated` flags (bool) where a value is an estimate
 - `dist_emmakade_min`, `dist_zuidas_min` (bike minutes, int) — feed the `location` score
 - `outdoor_space` (string or absent) — canonical token + optional size, e.g. `"balcony ~7 m²"`, `"terrace (west)"`, `"garden ~15 m²"`. Token must be one of `none | shared | balcony | loggia | terrace | roof terrace | garden` and **have a matching key in `OUTDOOR_RU` in `build.js`** (same discipline as `GROUND_RU`). Omit the field when the listing gives no outdoor info — the `outdoor` score is then left unscored and renormalises (don't guess).
-- `scores`: `{ value, family, condition, location, energy, tenure, outdoor, legal }` each 1–10. `outdoor` is optional (omit when unknown); `tenure` is omitted when `ground` is null.
+- `scores`: `{ value, condition, legal }` each 1–10 (hand-scored). All other criteria (`family, location, energy, tenure, costs, outdoor`) are **computed by `build.js`** — see "Scoring model v3". Optional model fields: `age_restricted`, `family_adj` (+`family_adj_reason`), `location_adj`, `energy_upgrade`, `heating_advance`.
 - `sale_history` (array, optional): structured prior transactions/relistings — `[{ date:"YYYY-MM[-DD]", price:int|null, event, src }]`, `event ∈ purchase | listed | relisted | withdrawn | under_offer | sold | price_change`. Rendered in the "Sales history & comparable prices" appendix; `purchase`/`sold` entries also drive the top-3 "Prior sale" line. Migrate from `notes` rather than leaving sale data only in prose.
 - `comps` (array, optional): comparable sold/asking units — `[{ address, price:int, date, area:int|null, kind:"sold"|"asking", note }]`. Rendered in the appendix + top-3 cards.
 - `notes` (string) · optional `heritage` (string) · `date_found`, `source`
 - `sources` (object, optional) — per-field provenance; now **read by `build.js`** to compute verification confidence (see "Verification confidence & triggers").
 
-## Scoring model (must match the artifact and the agents)
+## Scoring model v3 (must match the artifact and the agents)
 
-Weighted total out of 10, tuned for the buyer's real brief: a **live-in home for one adult + a 3-yo (shared custody), to be sold in 5–10 years**. Two clusters — livability ~55%, financial/resale ~45%.
+Weighted total out of 10, tuned for the buyer's real brief: a **live-in home for one adult + a 3-yo (shared custody), to be sold in 5–10 years**. Two clusters — livability ~53%, financial/resale ~47%.
 
-| Criterion | key | weight | cluster | Rubric (1–10) |
+**v3 key change (2026-06-09): six criteria are COMPUTED by `build.js` from measured fields — do not hand-score them.** Only `value`, `condition` and `legal` are hand-scored in `scores`. A hand value on a computed key acts as an override and triggers an `OVERRIDE` build warning — use only with a documented reason.
+
+| Criterion | key | weight | cluster | How it's scored (1–10) |
 |---|---|---|---|---|
-| Value at entry | `value` | 20% | financial | From asking-vs-WOZ premium + €/m² vs local comps. ≤WOZ & cheap €/m² → 9–10; +5–10% → 6; +18–28% → 4; >28% or overpriced-for-condition → 3. Temper for low-ask bidding-war listings. |
-| Family fit & space | `family` | 18% | living | ≥3 bed & ≥85 m² → 10; 2 bed ≥75 m² → 8; 2 bed 55–65 m² → 6; 1 bed → 3; studio → 2. **Age-restricted (55+) → 1** (a child can't live there). |
-| Condition / move-in ready | `condition` | 15% | living | Fully renovated/move-in → 9; modernised → 7–8; dated → 4–5; full gut needed → 2–3. |
-| Location & commute | `location` | 15% | living | Blend bike→Emmakade (≤7 min →10) ~60% + bike→Zuidas (≤6 min →10) ~40%; then ±1 for neighbourhood family-friendliness (quiet/green +, busy arterial −). |
-| Energy label | `energy` | 10% | financial | A=10 · B=9 · C=7 · D=5 · E=4 · F=3 · G=2. |
-| Tenure / erfpacht | `tenure` | 10% | financial | Eigen grond → 10; erfpacht eeuwigdurend afgekocht → 9; afgekocht fixed-term → 7; lopend (canon, future revision) → 4–5; status onbekend/te verifieren → 3. Omit if `ground` is null. |
-| Outdoor space | `outdoor` | 7% | living | Garden → 9–10; large terrace → 8; terrace → 7; balcony → 5–6; loggia → 5; none/shared → 2–3. Omit (renormalise) if unknown. |
-| Legal / title risk | `legal` | 5% | financial | Residual **non-erfpacht** risk only. Start ~8; deduct for VvE problems, disclosure conflicts, missing splitsingsakte, heritage limits, 55+ ballotage, structural/pile risk, ex-rental clauses. |
+| Family fit & space | `family` | 18% | living | **Computed.** 55+/ballotage (`age_restricted: true`) → 1. Studio → 2 · 1 bed → 3 · 2 bed: <55 m² → 4, 55–64 → 6, 65–74 → 7, 75–84 → 8, ≥85 → 9 · 3+ bed: <70 → 8, 70–84 → 9, ≥85 → 10. Plus optional `family_adj` (± int, with `family_adj_reason`) for documented potential, e.g. attic = +1, "2nd bedroom must be created" = −2. |
+| Value at entry | `value` | 16% | financial | **Manual.** From asking-vs-WOZ premium + €/m² vs local comps. ≤WOZ & cheap €/m² → 9–10; +5–10% → 6; +18–28% → 4; >28% or overpriced-for-condition → 3. Temper for low-ask bidding-war listings. |
+| Location & commute | `location` | 15% | living | **Computed.** Emmakade: ≤7 min → 10, then −0.6/min (floor 2); Zuidas: ≤6 min → 10, then −0.5/min (floor 2); blend 60/40. Plus `location_adj` ∈ {−1, +1} for neighbourhood (quiet/green +1, busy arterial −1). |
+| Condition / move-in ready | `condition` | 14% | living | **Manual.** Fully renovated/move-in → 9; modernised → 7–8; dated → 4–5; full gut needed → 2–3. |
+| Energy label | `energy` | 10% | financial | **Computed.** A=10 · B=9 · C=7 · D=5 · E=4 · F=3 · G=2; **−1 if the label is estimated/conflicted** (per `fieldState`); **+1 if `energy_upgrade: "easy"`, +0.5 if `"moderate"`** (the brief's "label improvable easily = a plus"). easy = ≥2 classes reachable with glazing/boiler only, under individual control; moderate = reachable with envelope work you control; omit when blokverwarming / VvE-dependent facade. |
+| Tenure / erfpacht | `tenure` | 8% | financial | **Computed** from the exact `ground` string via `TENURE_SCORE` in `build.js` (eigen grond 10 · eeuwigdurend afgekocht 9 · eigen grond unverified 8 · afgekocht fixed-term 7 · vastgeklikt/afkoop aangevraagd 5 · lopend/tijdvak 4 · erfpacht te verifieren/onbekend 3). **Every distinct `ground` value needs a `TENURE_SCORE` entry** (same discipline as `GROUND_RU`); unmapped → `TENURE-UNMAPPED` warning + renormalise. Null ground → unscored. |
+| Running costs | `costs` | 8% | financial | **Computed** from all-in monthly = `vve_costs` + `heating_advance` (optional field for a known separate heating/stookkosten advance): ≤100 → 10 · ≤150 → 9 · ≤200 → 8 · ≤250 → 7 · ≤300 → 6 · ≤360 → 5 · ≤450 → 4 · >450 → 3. Null `vve_costs` → unscored. |
+| Outdoor space | `outdoor` | 6% | living | **Computed** from the `outdoor_space` token: garden 9 · roof terrace 8 · terrace 7 · balcony 5 (+1 if ≥5 m², +1 if south/west; cap 7) · loggia 5 · shared 3 · none 2. Omit (renormalise) if unknown. |
+| Legal / title risk | `legal` | 5% | financial | **Manual.** Residual **non-erfpacht** risk only. Start ~8; deduct for VvE problems, disclosure conflicts, missing splitsingsakte, heritage limits, structural/pile risk, ex-rental clauses. (55+/ballotage is handled by `family` = 1.) |
 
-Livability = 18+15+15+7 = 55%; financial = 20+10+10+5 = 45%. **No renovation deduction** — condition is now a normal positive criterion. (Earlier models used `price/legal/dist_emmakade/dist_zuidas/renovation`; that scheme is retired.)
+Livability = 18+15+14+6 = 53%; financial = 16+10+8+8+5 = 47%.
 
-`total = Σ(score × weight) / Σ(weight of scored criteria)` — i.e. blank criteria (e.g. unknown `outdoor`/`tenure`) renormalise over the ones that are scored. Round to 2 decimals for display. Sort descending.
+`total = Σ(score × weight) / Σ(weight of scored criteria)` — i.e. blank criteria (e.g. unknown `outdoor`/`tenure`/`costs`) renormalise over the ones that are scored. Round to 2 decimals for display. Sort descending.
+
+Per-property model fields (all optional unless noted): `scores: { value, condition, legal }` (required trio), `age_restricted` (bool), `family_adj` + `family_adj_reason`, `location_adj` (−1/+1), `energy_upgrade` ("easy"|"moderate"), `heating_advance` (€/mo).
 
 ## Layout (top to bottom)
 
@@ -95,7 +100,7 @@ BUILD_DATE=2026-06-05 node build.js   # override the "Generated" date
 
 **Outdoor space (RU):** `outdoor_space` uses a canonical English token (`none | shared | balcony | loggia | terrace | roof terrace | garden`) optionally followed by a size/side (e.g. `"balcony ~7 m²"`). The RU summary translates the leading token via the `OUTDOOR_RU` map. Any new token must get an `OUTDOOR_RU` entry in the same change — `build.js` logs `outdoor_space token not translated for RU`; treat as a build failure.
 
-**Scores (per property):** when adding/editing a property, set the six required scores (`value, family, condition, location, energy, legal`) plus `tenure` when `ground` is known and `outdoor` when outdoor info exists, per the rubric in "Scoring model". `build.js` logs `missing scores [...]` for any required key it can't find — treat as a build failure.
+**Scores (per property):** when adding/editing a property, hand-score only `value`, `condition`, `legal` per the rubric — `build.js` computes `family`, `location`, `energy`, `tenure`, `costs`, `outdoor` from the data fields. `build.js` logs `missing manual scores [...]` for a missing required key, `OVERRIDE` when a hand value shadows a computed criterion, `TENURE-UNMAPPED` for a `ground` string missing from `TENURE_SCORE`, and `VISITED-NO-OUTDOOR` when a visited property still has no `outdoor_space` — treat the first three as build failures to fix, the last as a viewing-checklist item.
 
 **Russian summary:** each property carries a `notes_ru` field (plain Russian text). `build.js` renders the RU summary from `notes_ru`, applying the same flag highlighting to the Russian tokens `ПРОВЕРЕНО · ИСПРАВЛЕНО · РАСХОЖДЕНИЕ · КОНФЛИКТ · ФЛАГ · РИСК`. If a new property has no `notes_ru`, the RU summary falls back to the English `notes` and `build.js` logs which are missing — so add a `notes_ru` alongside `notes` for every new entry.
 

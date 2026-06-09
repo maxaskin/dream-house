@@ -21,6 +21,19 @@ _Generated 2026-05-31. Covers the three requested stages: (1) evaluate the ranki
 >
 > Stage 2 below noted the `sources` provenance block was documentary only. `build.js` now **reads** it: a per-property **`Conf.` (✓N/6)** column scores how many of six key fields (price, area, WOZ, energy label, ground/tenure, beds) are verified against an independent source (a value with no source counts as *assumed* = unverified), and the build emits a verification worklist — `CONFLICT`, `STALE`/`STALE-WOZ`, `TIER-1` (a viewed property missing key verifications), and `LOW-CONF` (a top-10 property under 50% verified). A documented **tiered trigger policy** (intake / shortlist / pre-offer) records when each source is expected. Sales data trapped in `notes` is now structured into `sale_history` + `comps` and shown in a "Sales history & comparable prices" appendix. See `INSTRUCTIONS_build_summary_html.md` → "Verification confidence & triggers". Still **not** automated: actually fetching erfpacht status / Kadaster *koopsom* / EP-Online for the unverified fields the warnings flag.
 
+> ## Addendum 2026-06-09 — expert re-audit → model v3 (computed criteria)
+>
+> A full re-audit (46 properties) found the 8-criterion model architecturally sound but with four defects, fixed as **model v3**:
+>
+> 1. **Running costs were unscored** — VvE+heating ranged €78–€552/mo across candidates (≈ €40k+ over 10 years and a resale drag) with zero weight. New `costs` criterion (8%), computed from `vve_costs` + a new `heating_advance` field, banded ≤100→10 … >450→3.
+> 2. **Energy-upgrade potential was missing** despite the project brief ("label improvable easily = a plus"). New `energy_upgrade: easy|moderate` field gives +1/+0.5 on the energy score; an estimated/conflicted label now costs −1 (deterministic via `fieldState`).
+> 3. **Rubric drift in the data** — 9 newer entries deviated from the fixed energy table (worst: Burgemeester Haspelslaan, label B hand-scored 7 vs rubric 9); the family rubric had undefined zones (2bd 65–85 m², 3bd <85 m²) scored 6–9 inconsistently; location had no defined decay. **Root cause: hand-scoring criteria that are functions of measured data.** Fix: `build.js` now *computes* `family, location, energy, tenure, costs, outdoor` from the underlying fields; only `value, condition, legal` remain hand-scored. Neighbourhood judgment survives as an explicit `location_adj` (±1) and documented `family_adj`; a hand value on a computed key triggers an `OVERRIDE` warning.
+> 4. **Weights rebalanced** to fit the costs criterion: family 18 · value 16 · location 15 · condition 14 · energy 10 · tenure 8 · costs 8 · outdoor 6 · legal 5 (livability 53 / financial 47).
+>
+> Rank impact (sanity-checked, all in the intended direction): Catharina 40 #23→#12 (VvE €78 → costs 10; family 9), Ferdinand Bolweg #11→#5 (upgrade bonus + costs 8), Iepenrodelaan #7→#4; Pruimenlaan #10→#15 and Zonnesteinhof #12→#18 (heavy running costs now priced); Meander 1101 #13→#24 (1-bed + €407/mo all-in). Top-3 unchanged: Rietnesse · Wedderborg · Burg. Haspelslaan — **but Wedderborg holds #2 on 1/6 verified key fields; verify before trusting it** (LOW-CONF).
+>
+> New build warnings: `OVERRIDE`, `TENURE-UNMAPPED`, `VISITED-NO-OUTDOOR` (10 visited properties lack `outdoor_space` — observable at a viewing; record going forward). Execution gaps carried over as the open worklist: 7 TIER-1 visited properties with unverified ground/area/label, 2 area conflicts (Merckenburg 4, Wijenburg 31), 3 stale WOZ peildatums.
+
 ---
 
 ## Stage 1 — Ranking-system evaluation
