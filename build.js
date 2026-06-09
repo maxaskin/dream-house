@@ -362,16 +362,94 @@ function card(r, rank, T) {
 ${priorSale(p) ? `<tr><td style="color:#666;padding:2px 8px 2px 0">${T.priorSale}</td><td>${priorSaleText(p, T)}</td></tr>` : ''}
 ${(p.comps && p.comps.length) ? `<tr><td style="color:#666;padding:2px 8px 2px 0">${T.comps}</td><td style="font-size:0.92em">${compsText(p, T)}</td></tr>` : ''}
 </table>
+<div style="margin-top:12px;border-top:1px solid #f1f5f9;padding-top:8px">
+<div style="font-size:0.78em;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px">${T.breakdown}</div>
+${breakdownHtml(r, T)}
+</div>
 </div>`;
 }
 
-function row(r, rank, T, noteOverride) {
+// per-criterion inputs shown under the breakdown bars (why the computed score is what it is)
+function critDetail(p, key, T) {
+  switch (key) {
+    case 'family': {
+      const bits = [`${p.bedrooms ?? '?'} ${T.beds.toLowerCase()} · ${p.area ?? '?'} m²`];
+      if (p.age_restricted) bits.push(T.ageRestricted);
+      if (p.family_adj) bits.push(`${p.family_adj > 0 ? '+' : ''}${p.family_adj}${p.family_adj_reason ? ': ' + p.family_adj_reason : ''}`);
+      return bits.join(' · ');
+    }
+    case 'location': {
+      const bits = [`${p.dist_emmakade_min ?? '?'}′ Emmakade · ${p.dist_zuidas_min ?? '?'}′ Zuidas`];
+      if (p.location_adj) bits.push(`${p.location_adj > 0 ? '+' : ''}${p.location_adj} ${T.neigh}`);
+      return bits.join(' · ');
+    }
+    case 'energy': {
+      const bits = [p.energy_label || '?'];
+      const st = fieldState(p, 'energy_label');
+      if (st === 'estimated' || st === 'conflict') bits.push(`−1 ${T.unverifiedLbl}`);
+      if (p.energy_upgrade) bits.push(`+${p.energy_upgrade === 'easy' ? '1' : '0.5'} ${T.upgrade}`);
+      return bits.join(' · ');
+    }
+    case 'tenure': return p.ground || '';
+    case 'costs': {
+      const m = monthlyAllIn(p);
+      if (m == null) return '';
+      return p.heating_advance ? `€${fmt(m)}${T.allIn} (VvE €${fmt(p.vve_costs)} + ${T.heat} €${fmt(p.heating_advance)})` : `€${fmt(m)}${T.allIn}`;
+    }
+    case 'outdoor': return p.outdoor_space || '';
+    default: return '';
+  }
+}
+function breakdownHtml(r, T) {
+  const p = r.p, s = r.eff.scores;
+  const rows = WEIGHTS.map(c => {
+    const v = s[c.key];
+    const name = `${T.leg[c.key]} <small style="color:#94a3b8">${Math.round(c.w * 100)}%${c.manual ? '' : ' · ' + T.auto}</small>`;
+    if (v == null) return `<div class="bd-row"><div class="bd-name">${name}</div><div class="bd-bar"><span class="bd-na">${T.unscored}</span></div><div class="bd-val">—</div></div>`;
+    const detail = c.manual ? '' : critDetail(p, c.key, T);
+    return `<div class="bd-row" ${detail ? `title="${esc(detail)}"` : ''}>
+<div class="bd-name">${name}${detail ? `<div class="bd-detail">${esc(detail)}</div>` : ''}</div>
+<div class="bd-bar"><i style="width:${v * 10}%;background:${scoreColor(v)}"></i></div>
+<div class="bd-val">${(Math.round(v * 10) / 10)}</div></div>`;
+  }).join('');
+  return `<div class="bd">${rows}</div>`;
+}
+function sourcesHtml(p, T) {
+  if (!p.sources) return '';
+  const STATUS_BG = { verified: '#dcfce7;color:#166534', corrected: '#dcfce7;color:#166534', unconfirmed: '#fef3c7;color:#92400e', conflict: '#fee2e2;color:#991b1b' };
+  const items = Object.entries(p.sources).map(([f, s]) => {
+    if (!s || !s.src) return '';
+    const chip = s.status ? `<span style="background:${STATUS_BG[s.status] || '#f1f5f9;color:#475569'};padding:1px 6px;border-radius:6px;font-size:0.85em">${s.status}</span>` : '';
+    const src = s.url ? `<a href="${esc(s.url)}" target="_blank" style="color:#1d4ed8;text-decoration:none">${esc(s.src)}</a>` : esc(s.src);
+    return `<li><strong>${esc(f)}</strong>: ${src} ${chip}${s.checked ? ` <small style="color:#94a3b8">${s.checked}</small>` : ''}</li>`;
+  }).filter(Boolean).join('');
+  return items ? `<div class="dt-block"><div class="dt-title">${T.sources}</div><ul class="dt-src">${items}</ul></div>` : '';
+}
+// letter label → sortable rank (A best)
+function labelRank(l) { const i = 'ABCDEFG'.indexOf((l || '').charAt(0)); return i < 0 ? 99 : i; }
+function propGroup(r, rank, T, lang) {
   const p = r.p, t = r.total;
   const lbl = p.energy_label
-    ? `<span style="background:${labelColor(p.energy_label)};color:#fff;padding:2px 8px;border-radius:8px;font-weight:700;font-size:0.9em">${p.energy_label}</span>` : '—';
-  const note = noteOverride != null ? noteOverride : noteHtml(p.notes);
-  return `<tr>
-<td style="text-align:center;font-weight:700;color:#555">${rank + 1}</td>
+    ? `<span style="background:${labelColor(p.energy_label)};color:#fff;padding:2px 8px;border-radius:8px;font-weight:700;font-size:0.9em">${p.energy_label}${p.energy_upgrade ? '<span title="' + T.upgrade + '" style="font-size:0.85em">↑</span>' : ''}</span>` : '—';
+  const note = lang === 'ru' ? (p.notes_ru ? noteHtmlRu(p.notes_ru) : noteHtml(p.notes)) : noteHtml(p.notes);
+  const c = verifyConfidence(p);
+  const city = /,\s*Amstelveen\b/i.test(p.address) ? 'amstelveen' : 'amsterdam';
+  const visited = /^visited/i.test(p.viewing || '') ? 1 : 0;
+  const histo = (p.sale_history && p.sale_history.length) || (p.comps && p.comps.length);
+  const timeline = (p.sale_history || []).map(h => {
+    const ev = (EV[h.event] && EV[h.event][lang]) || h.event;
+    const mo = String(h.date || '').length > 4 ? String(h.date).slice(0, 7) : String(h.date || '');
+    return `<span style="white-space:nowrap">${h.price != null ? '€' + fmt(h.price) + ' ' : ''}<small style="color:#888">${ev}${mo ? ' ' + mo : ''}</small></span>`;
+  }).join(' <span style="color:#bbb">→</span> ');
+  const comps = (p.comps || []).map(cc => {
+    const kind = cc.kind === 'sold' ? T.sold2 : T.asked;
+    return `€${fmt(cc.price)} <small style="color:#888">(${esc(String(cc.address).replace(/,.*$/, ''))}${cc.area ? ', ' + cc.area + ' m²' : ''}, ${kind})</small>`;
+  }).join(' · ');
+  return `<tbody class="prop" data-addr="${esc(p.address.toLowerCase())}" data-city="${city}" data-beds="${p.bedrooms ?? ''}" data-price="${p.price ?? ''}"
+ data-score="${t ?? ''}" data-conf="${c.verified}" data-eurm2="${eurM2(p) ?? ''}" data-woz="${p.woz ?? ''}" data-m2="${p.area ?? ''}" data-built="${p.build_year ?? ''}"
+ data-labelrank="${labelRank(p.energy_label)}" data-costs="${monthlyAllIn(p) ?? ''}" data-emma="${p.dist_emmakade_min ?? ''}" data-zuidas="${p.dist_zuidas_min ?? ''}" data-visited="${visited}">
+<tr class="main" title="${T.clickHint}">
+<td style="text-align:center;font-weight:700;color:#555" class="rk">${rank + 1}</td>
 <td><a href="${p.url}" target="_blank" style="color:#1d4ed8;text-decoration:none;font-weight:500">${esc(p.address)}</a></td>
 <td style="text-align:center"><span style="background:${scoreColor(t)};color:#fff;padding:3px 10px;border-radius:12px;font-weight:700;font-size:0.95em">${scoreStr(t)}</span></td>
 <td style="text-align:center">${confCell(p)}</td>
@@ -388,8 +466,19 @@ function row(r, rank, T, noteOverride) {
 <td style="text-align:right;font-size:0.88em">${vveCell(p)}</td>
 <td style="text-align:center">${p.dist_emmakade_min ?? '—'}</td>
 <td style="text-align:center">${p.dist_zuidas_min ?? '—'}</td>
-<td style="font-size:0.8em;max-width:320px">${note}</td>
-</tr>`;
+<td style="font-size:0.8em;max-width:320px"><div class="note-clamp">${note}</div></td>
+</tr>
+<tr class="detail"><td colspan="18">
+<div class="dt-grid">
+<div class="dt-block"><div class="dt-title">${T.breakdown}</div>${breakdownHtml(r, T)}</div>
+<div>
+<div class="dt-block"><div class="dt-title">${T.hNotes}</div><div class="dt-note">${note}</div></div>
+${histo ? `<div class="dt-block"><div class="dt-title">${T.salesTitle}</div>${timeline ? `<div style="font-size:0.9em;margin-bottom:4px">${timeline}</div>` : ''}${comps ? `<div style="font-size:0.9em">${T.comps}: ${comps}</div>` : ''}</div>` : ''}
+${sourcesHtml(p, T)}
+</div>
+</div>
+</td></tr>
+</tbody>`;
 }
 
 // Compact reference row for a sold listing (no score; dimmed; "Sold" badge).
@@ -458,13 +547,7 @@ function buildSummary(lang, filter, subtitleFn, titleOverride) {
   const activeF = filter ? active.filter(filter) : active;
   const soldF = filter ? sold.filter(filter) : sold;
   const cards = rk.slice(0, 3).map((r, i) => card(r, i, T)).join('');
-  const rows = rk.map((r, i) => {
-    // RU prefers notes_ru (with RU highlighting); falls back to the EN note if absent
-    const note = lang === 'ru'
-      ? (r.p.notes_ru ? noteHtmlRu(r.p.notes_ru) : noteHtml(r.p.notes))
-      : noteHtml(r.p.notes);
-    return row(r, i, T, note);
-  }).join('');
+  const rows = rk.map((r, i) => propGroup(r, i, T, lang)).join('');
   const soldSection = soldF.length ? `
 <h2 style="font-size:1.1em;font-weight:700;margin:8px 0 12px">📊 ${T.soldTitle}</h2>
 <div class="subtitle" style="margin-bottom:12px">${T.soldNote}</div>
@@ -495,14 +578,52 @@ h1{font-size:1.6em;font-weight:800;margin-bottom:4px}
 .legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;font-size:0.85em}
 .legend-item{background:#fff;border:1px solid #e6e9ef;border-radius:8px;padding:5px 12px}
 .legend-item strong{color:#1d4ed8}
-.table-wrap{overflow-x:auto;margin-bottom:36px}
-table{border-collapse:collapse;width:100%;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e6e9ef;font-size:0.875em}
-th{background:#f1f5f9;padding:8px 10px;text-align:left;font-weight:700;font-size:0.82em;color:#374151;white-space:nowrap;border-bottom:2px solid #e6e9ef}
+.table-wrap{overflow-x:auto;margin-bottom:36px;max-height:80vh;overflow-y:auto;border-radius:12px;border:1px solid #e6e9ef}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:0.875em}
+th{background:#f1f5f9;padding:8px 10px;text-align:left;font-weight:700;font-size:0.82em;color:#374151;white-space:nowrap;border-bottom:2px solid #e6e9ef;position:sticky;top:0;z-index:2}
+th.s{cursor:pointer;user-select:none}
+th.s:hover{background:#e2e8f0}
+th.s.asc::after{content:" ▲";font-size:0.8em;color:#2563eb}
+th.s.desc::after{content:" ▼";font-size:0.8em;color:#2563eb}
 td{padding:8px 10px;border-bottom:1px solid #f1f5f9;vertical-align:top}
-tr:last-child td{border-bottom:none}
-tr:hover td{background:#f8fafc}
+tbody.prop tr.main{cursor:pointer}
+tbody.prop tr.main:hover td{background:#f8fafc}
+tbody.prop tr.detail{display:none}
+tbody.prop.open tr.detail{display:table-row}
+tbody.prop.open tr.main td{background:#eff6ff}
+tr.detail>td{background:#fbfdff;border-bottom:2px solid #dbeafe;padding:14px 16px}
+.note-clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;max-width:320px}
+tbody.prop.open .note-clamp{color:#94a3b8}
+.dt-grid{display:grid;grid-template-columns:minmax(280px,360px) 1fr;gap:20px}
+@media(max-width:800px){.dt-grid{grid-template-columns:1fr}}
+.dt-title{font-weight:700;font-size:0.85em;color:#374151;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:6px}
+.dt-block{margin-bottom:14px}
+.dt-note{font-size:0.92em;line-height:1.55;max-width:70ch}
+.dt-src{margin:0;padding-left:18px;font-size:0.9em;line-height:1.7}
+.bd-row{display:grid;grid-template-columns:1fr 110px 30px;gap:8px;align-items:center;padding:3px 0}
+.bd-name{font-size:0.86em}
+.bd-detail{font-size:0.82em;color:#64748b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px}
+.bd-bar{height:9px;background:#eef2f7;border-radius:5px;overflow:hidden}
+.bd-bar i{display:block;height:100%;border-radius:5px}
+.bd-na{font-size:0.75em;color:#b6bdc8;line-height:9px}
+.bd-val{font-weight:700;font-size:0.86em;text-align:right}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.toolbar input[type=search]{padding:6px 10px;border:1px solid #e6e9ef;border-radius:8px;min-width:200px;font-size:0.9em;background:#fff}
+.toolbar select{padding:6px 8px;border:1px solid #e6e9ef;border-radius:8px;font-size:0.9em;background:#fff}
+.chip{border:1px solid #e6e9ef;background:#fff;border-radius:999px;padding:5px 12px;font-size:0.85em;cursor:pointer}
+.chip.on{background:#2563eb;border-color:#2563eb;color:#fff}
+.chips{display:inline-flex;gap:4px}
+.chk{font-size:0.85em;display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid #e6e9ef;border-radius:999px;padding:5px 12px;cursor:pointer}
+.count{font-size:0.82em;color:#64748b;margin-left:auto}
+.hint{font-size:0.78em;color:#94a3b8;margin-bottom:8px}
 .cards{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:32px}
 .footer{font-size:0.82em;color:#555;border-top:1px solid #e6e9ef;padding-top:16px;line-height:1.6}
+@media print{
+  .toolbar,.hint{display:none}
+  .table-wrap{max-height:none;overflow:visible;border:none}
+  tbody.prop tr.detail{display:none !important}
+  body{padding:0}
+}
 </style>
 </head>
 <body>
@@ -519,18 +640,94 @@ ${WEIGHTS.map(c => `<div class="legend-item">${T.leg[c.key]} <strong>${Math.roun
 <div class="cards">${cards}</div>
 
 <h2 style="font-size:1.1em;font-weight:700;margin-bottom:12px">📋 ${T.all}</h2>
+<div class="toolbar">
+<input id="q" type="search" placeholder="${T.search}" autocomplete="off">
+<span class="chips" id="city">
+<button class="chip on" data-v="">${T.fAll}</button><button class="chip" data-v="amstelveen">Amstelveen</button><button class="chip" data-v="amsterdam">Amsterdam</button>
+</span>
+<select id="beds"><option value="">${T.fBeds}</option><option value="1">≥1</option><option value="2">≥2</option><option value="3">≥3</option></select>
+<select id="price"><option value="">${T.fPrice}</option><option value="400000">≤ €400k</option><option value="450000">≤ €450k</option><option value="500000">≤ €500k</option><option value="550000">≤ €550k</option></select>
+<label class="chk"><input id="vis" type="checkbox"> ${T.fVisited}</label>
+<button class="chip" id="reset">${T.fReset}</button>
+<span id="count" class="count"></span>
+</div>
+<div class="hint">${T.clickHint} · ${T.sortHint}</div>
 <div class="table-wrap">
-<table>
+<table id="tbl">
 <thead>
 <tr>
-<th>#</th><th>${T.hAddr}</th><th>${T.hScore}</th><th>${T.hConf}</th><th>${T.hView}</th><th>${T.hPrice}</th><th>€/m²</th><th>WOZ</th><th>m²</th><th>${T.hBeds}</th><th>${T.hBuilt}</th><th>${T.hLabel}</th><th>${T.hGround}</th><th>${T.hOutdoor}</th><th>${T.hVve}</th><th>→Emma</th><th>→Zuidas</th><th>${T.hNotes}</th>
+<th>#</th><th class="s" data-k="addr" data-t="s">${T.hAddr}</th><th class="s" data-k="score">${T.hScore}</th><th class="s" data-k="conf">${T.hConf}</th><th>${T.hView}</th><th class="s" data-k="price">${T.hPrice}</th><th class="s" data-k="eurm2">€/m²</th><th class="s" data-k="woz">WOZ</th><th class="s" data-k="m2">m²</th><th class="s" data-k="beds">${T.hBeds}</th><th class="s" data-k="built">${T.hBuilt}</th><th class="s" data-k="labelrank" data-a="1">${T.hLabel}</th><th>${T.hGround}</th><th>${T.hOutdoor}</th><th class="s" data-k="costs" data-a="1">${T.hVve}</th><th class="s" data-k="emma" data-a="1">→Emma</th><th class="s" data-k="zuidas" data-a="1">→Zuidas</th><th>${T.hNotes}</th>
 </tr>
 </thead>
-<tbody>
 ${rows}
-</tbody>
 </table>
 </div>
+<script>
+(function(){
+var tbl=document.getElementById('tbl');
+var groups=[].slice.call(tbl.querySelectorAll('tbody.prop'));
+var q=document.getElementById('q'),beds=document.getElementById('beds'),price=document.getElementById('price'),vis=document.getElementById('vis'),count=document.getElementById('count');
+var cityWrap=document.getElementById('city'),city='';
+function apply(){
+  var n=0,qs=(q.value||'').toLowerCase();
+  groups.forEach(function(g){
+    var d=g.dataset,show=true;
+    if(qs&&d.addr.indexOf(qs)<0)show=false;
+    if(city&&d.city!==city)show=false;
+    if(beds.value&&(+d.beds||0)<+beds.value)show=false;
+    if(price.value&&(+d.price||9e9)>+price.value)show=false;
+    if(vis.checked&&d.visited!=='1')show=false;
+    g.style.display=show?'':'none';
+    if(show)n++;
+  });
+  count.textContent="${T.showing}".replace('{n}',n).replace('{m}',groups.length);
+  renumber();
+}
+function renumber(){
+  var i=0;
+  groups.forEach(function(g){ if(g.style.display!=='none'){ i++; g.querySelector('.rk').textContent=i; } });
+}
+cityWrap.addEventListener('click',function(e){
+  var b=e.target.closest('.chip'); if(!b)return;
+  city=b.dataset.v;
+  [].slice.call(cityWrap.querySelectorAll('.chip')).forEach(function(x){x.classList.toggle('on',x===b)});
+  apply();
+});
+[q,beds,price,vis].forEach(function(el){ el.addEventListener('input',apply); el.addEventListener('change',apply); });
+document.getElementById('reset').addEventListener('click',function(){
+  q.value='';beds.value='';price.value='';vis.checked=false;city='';
+  [].slice.call(cityWrap.querySelectorAll('.chip')).forEach(function(x,i){x.classList.toggle('on',i===0)});
+  apply();
+});
+// row click → expand breakdown (ignore link clicks)
+tbl.addEventListener('click',function(e){
+  if(e.target.closest('a')||e.target.closest('thead'))return;
+  var g=e.target.closest('tbody.prop'); if(!g)return;
+  g.classList.toggle('open');
+});
+// sortable headers
+var curK='score',curAsc=false;
+[].slice.call(tbl.querySelectorAll('th.s')).forEach(function(th){
+  th.addEventListener('click',function(){
+    var k=th.dataset.k, defAsc=th.dataset.a==='1'||th.dataset.t==='s';
+    if(curK===k){curAsc=!curAsc}else{curK=k;curAsc=defAsc}
+    var isStr=th.dataset.t==='s';
+    groups.sort(function(a,b){
+      var x=a.dataset[k],y=b.dataset[k],r;
+      if(isStr){r=x<y?-1:x>y?1:0}
+      else{x=x===''?null:+x;y=y===''?null:+y;
+        if(x===null&&y===null)r=0;else if(x===null)r=1;else if(y===null)r=-1;else r=x-y;}
+      return curAsc?r:-r;
+    });
+    groups.forEach(function(g){tbl.appendChild(g)});
+    [].slice.call(tbl.querySelectorAll('th.s')).forEach(function(x){x.classList.remove('asc','desc')});
+    th.classList.add(curAsc?'asc':'desc');
+    renumber();
+  });
+});
+apply();
+})();
+</script>
 
 ${salesHistorySection(T, lang, activeF)}
 ${soldSection}
@@ -562,6 +759,10 @@ const STR = {
     grnd: g => g || '—',
     outdoor: t => t,
     no: 'No', visited: 'Visited', scheduled: 'Scheduled',
+    search: 'Search address…', fAll: 'All', fBeds: 'Beds', fPrice: 'Max price', fVisited: 'visited only', fReset: 'Reset',
+    showing: 'showing {n} of {m}', clickHint: 'Click a row for the score breakdown, full notes & sources', sortHint: 'click a column header to sort',
+    breakdown: 'Score breakdown', sources: 'Verified sources', auto: 'auto', unscored: 'not scored (renormalised)',
+    neigh: 'neighbourhood', upgrade: 'upgrade potential', unverifiedLbl: 'label unverified', allIn: '/mo all-in', heat: 'heating', ageRestricted: '55+ restricted',
     footer: '<strong>Methodology (model v3):</strong> Weighted score out of 10, tuned for a live-in home for one adult + a 3-yo (shared custody), sold in 5–10 years. Two clusters — <em>livability ~53%</em>: Family fit &amp; space (18%), Location &amp; commute (15%), Condition (14%), Outdoor space (6%); <em>financial / resale ~47%</em>: Value at entry vs WOZ &amp; €/m² (16%), Energy label (10%), Tenure / erfpacht (8%), Running costs (8%), Legal / title risk (5%). Family, location, energy, tenure, running costs and outdoor are <em>computed</em> from the underlying data (bedrooms/area, bike minutes ± a documented neighbourhood adjustment, label table − 1 if unverified + upgrade-potential bonus, ground-lease status, all-in monthly VvE + heating, outdoor token); value, condition and legal are scored by hand against the rubric. Blank criteria renormalise over the ones that are scored. Costs marked * are VvE + a known heating advance; ~ marks estimates. WOZ values are the official 2025 Kadaster LV-WOZ assessments. Neighbourhood €/m² averages are May-2026 agent comps — re-check at offer time. All data as of ' + GEN_DATE + '.',
   },
   ru: {
@@ -584,6 +785,10 @@ const STR = {
     grnd: g => g ? (GROUND_RU[g] || g) : '—',
     outdoor: t => OUTDOOR_RU[t] || t,
     no: 'Нет', visited: 'Посещён', scheduled: 'Запланирован',
+    search: 'Поиск по адресу…', fAll: 'Все', fBeds: 'Спальни', fPrice: 'Цена до', fVisited: 'только посещённые', fReset: 'Сброс',
+    showing: 'показано {n} из {m}', clickHint: 'Кликните по строке — разбор балла, полные заметки и источники', sortHint: 'клик по заголовку колонки — сортировка',
+    breakdown: 'Разбор балла', sources: 'Проверенные источники', auto: 'авто', unscored: 'не оценено (перенормировано)',
+    neigh: 'район', upgrade: 'потенциал улучшения', unverifiedLbl: 'метка не проверена', allIn: '/мес всего', heat: 'отопление', ageRestricted: 'только 55+',
     footer: '<strong>Методология (модель v3):</strong> Взвешенный балл из 10, настроен под жильё для одного взрослого + ребёнка 3 лет (совместная опека), с продажей через 5–10 лет. Два кластера — <em>для жизни ~53%</em>: Для семьи &amp; площадь (18%), Локация &amp; дорога (15%), Состояние (14%), Открытое пространство (6%); <em>финансы / перепродажа ~47%</em>: Цена входа vs WOZ &amp; €/м² (16%), Энергометка (10%), Земля / эрфпахт (8%), Расходы/мес (8%), Юр. / титул (5%). Семья, локация, энергия, земля, расходы и открытое пространство <em>вычисляются</em> из данных (спальни/площадь, минуты на велосипеде ± поправка за район, таблица энергометок − 1 если метка не проверена + бонус за потенциал улучшения, статус земли, полные месячные расходы VvE + отопление, тип открытого пространства); цена входа, состояние и юр. — экспертная оценка по рубрике. Незаполненные критерии перенормируются по заполненным. Расходы со * = VvE + известный аванс за отопление; ~ — оценки. Значения WOZ — официальные оценки Kadaster LV-WOZ за 2025 г. Средние €/м² по районам — оценки риелторов (май 2026) — перепроверьте перед сделкой. Данные на ' + GEN_DATE + '.',
   },
 };

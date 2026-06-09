@@ -51,11 +51,17 @@ Per-property model fields (all optional unless noted): `scores: { value, conditi
 
 1. **Header**: title "Dream House — Property Summary"; subtitle line (segment list: "Amstelveen + Amsterdam Buitenveldert · all sizes · verified vs official Funda + a second source · <count> properties"). No bedroom limit.
 2. **Weights legend**: the eight criteria with their percentages, plus a one-line cluster note (livability ~55% / financial ~45%).
-3. **Detail table** (one row per property, sorted by score), columns:
-   `# · Address (Funda link) · Score (colored pill) · Viewing (badge) · Price · €/m² · WOZ · m² · Beds · Built · Label (colored) · Ground · Outdoor · VvE · Bike→Emma · Bike→Zuidas · Notes & flags`
+3. **Detail table** (interactive; one `<tbody class="prop">` per property — a main row + a hidden detail row — sorted by score), columns:
+   `# · Address (Funda link) · Score (colored pill) · Conf. · Viewing (badge) · Price · €/m² · WOZ · m² · Beds · Built · Label (colored, ↑ = upgrade potential) · Ground · Outdoor · €/mo (all-in, * = incl. heating advance) · Bike→Emma · Bike→Zuidas · Notes (3-line clamp)`
+
+   Interactivity (vanilla inline JS, still a single self-contained file):
+   - **Toolbar**: address search, city chips (All / Amstelveen / Amsterdam), min-beds, max-price, visited-only checkbox, reset, live "showing N of M" counter. Filters hide whole `<tbody>` groups and renumber the # column.
+   - **Sortable headers** (`th.s[data-k]`): click toggles asc/desc on the matching `data-*` attribute; numeric by default, `data-t="s"` = string, `data-a="1"` = ascending-first (label, costs, distances).
+   - **Row click** (not on links) toggles the detail row: per-criterion **score breakdown** (bar + weight + computed inputs: beds/m², bike minutes ± adj, label ± modifiers, ground string, €/mo all-in, outdoor token), full notes, sale-history timeline + comps, and the per-field `sources` list with status chips.
+   - Sticky `thead` inside a max-height scroll container; `@media print` hides the toolbar and detail rows.
 
    Viewing badge: value is "No" (muted), "Scheduled YYYY-MM-DD" (amber), or "Visited YYYY-MM-DD" (green). WOZ cell also shows the asking-vs-WOZ premium (e.g. "+43% ask", green if ≤0). Outdoor cell shows `outdoor_space` ("?" when absent), RU-translated via `OUTDOOR_RU`.
-4. **Top-3 detail cards**: the three highest scores, each with price, €/m², area, beds, label, ground, outdoor, bike times. Highlight rank 1 (2px border).
+4. **Top-3 detail cards**: the three highest scores, each with price, €/m², area, beds, label, ground, outdoor, bike times, plus a compact score-breakdown bar list. Highlight rank 1 (2px border).
 5. **Footer**: one paragraph on methodology + the estimate caveat.
 
 ## Visual conventions
