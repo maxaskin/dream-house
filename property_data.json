@@ -2816,5 +2816,189 @@
     "source": "digest",
     "viewing": "No",
     "outdoor_space": "balcony ~5 m² (south, est.)"
+  },
+  {
+    "address": "Praam 273, Amstelveen (Waardhuizen)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-praam-273/44489742/",
+    "price": 339000,
+    "price_estimated": false,
+    "area": 57,
+    "area_estimated": false,
+    "bedrooms": 1,
+    "bedrooms_verified": false,
+    "woz": 275000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1981,
+    "build_year_estimated": true,
+    "energy_label": "A",
+    "energy_estimated": false,
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 110,
+    "vve_estimated": true,
+    "dist_emmakade_min": 14,
+    "dist_zuidas_min": 22,
+    "scores": {
+      "value": 5,
+      "family": 5,
+      "condition": 8,
+      "location": 5,
+      "energy": 9,
+      "tenure": 8,
+      "outdoor": 6,
+      "legal": 7
+    },
+    "notes": "NEW via Funda digest 08-Jun-2026 (id 44489742), listed by Roeleveld Makelaardij. Waardhuizen, 1186 TV (same boat-street complex as Logger 52 already tracked). 57 m2, 2 kamers = 1 slaapkamer, EUR339.000 k.k. = EUR5.947/m2. Built ~1981 (BAG comp Praam 142, same complex). ENERGY LABEL A on a 1981 portiekflat = almost certainly recently renovated/insulated (HR++/possible heat pump) - a real PLUS: likely move-in ready and the best label in the Waardhuizen set (Logger 52 was only C). FLAG: PRICED FULL vs WOZ - WOZ EUR275k is ESTIMATED (Praam 142, 84 m2, had WOZ EUR276k in 2020; scaled to 57 m2 and uprated to 2025, plus the label-A premium), so the asking sits ~20%+ over est WOZ; live comp Praam 327 (58 m2, same complex) asks only EUR295k - the ~EUR44k gap is the renovation / A-label premium. Negotiate; do not overbid the renovation. FLAG: WEAKEST LOCATION for the brief - south Amstelveen (Waardhuizen): ~14 min bike to Emmakade 33 (edge of the 15-min target), ~22 min to Zuidas; quiet, green, family-friendly, shops on foot. Eigen grond assumed (1981 Amstelveen) - confirm at akte (PLUS vs Amsterdam erfpacht). VvE ~EUR110/mo ESTIMATED. WOZ, ground and VvE to verify (wozwaardeloket / EP-Online / the listing). Build year and distances ESTIMATED.",
+    "notes_ru": "НОВОЕ из рассылки Funda 08-июн-2026 (id 44489742), маклер Roeleveld Makelaardij. Waardhuizen, 1186 TV (тот же комплекс «лодочных» улиц, что и Logger 52, уже в базе). 57 м2, 2 комнаты = 1 спальня, €339.000 = €5.947/м2. Постройка ~1981 (BAG-аналог Praam 142). ПРОВЕРЕНО: класс энергоэффективности A для дома 1981 г. — почти наверняка недавняя реновация/утепление (HR++/возможно тепловой насос) — реальный ПЛЮС: вероятно, заезжай-и-живи, лучший класс в районе (у Logger 52 только C). ФЛАГ: ЦЕНА ПОЛНАЯ относительно WOZ — WOZ €275к это ОЦЕНКА (у Praam 142, 84 м2, WOZ €276к в 2020 г.; пересчитано на 57 м2 и на 2025 г. плюс премия за класс A), поэтому запрос ~на 20%+ выше оценочного WOZ; живой аналог Praam 327 (58 м2, тот же комплекс) просит лишь €295к — разница ~€44к это премия за реновацию/класс A. Торговаться, не переплачивать за ремонт. ФЛАГ: САМАЯ СЛАБАЯ ЛОКАЦИЯ под задачу — юг Амстелвена (Waardhuizen): ~14 мин на велосипеде до Emmakade 33 (на границе 15-мин цели), ~22 мин до Zuidas; тихо, зелено, для семей, магазины рядом. Своя земля предполагается (1981, Амстелвен) — подтвердить по акту (ПЛЮС против амстердамского erfpacht). VvE ~€110/мес ОЦЕНКА. WOZ, землю и VvE проверить (wozwaardeloket/EP-Online/объявление). Год постройки и расстояния — ОЦЕНКА.",
+    "sources": {
+      "price": {
+        "value": 339000,
+        "src": "Funda listing card (Roeleveld Makelaardij)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-praam-273/44489742/",
+        "checked": "2026-06-08",
+        "status": "verified"
+      },
+      "area": {
+        "value": 57,
+        "src": "Funda listing card (woonoppervlak)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-praam-273/44489742/",
+        "checked": "2026-06-08",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "A",
+        "src": "Funda listing card",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-praam-273/44489742/",
+        "checked": "2026-06-08",
+        "status": "verified",
+        "note": "verify on EP-Online"
+      },
+      "build_year": {
+        "value": 1981,
+        "src": "Comp Praam 142 (same complex, BAG via Kadasterdata)",
+        "url": "https://www.kadasterdata.nl/amstelveen/praam/142",
+        "checked": "2026-06-08",
+        "status": "unconfirmed"
+      },
+      "woz": {
+        "value": 275000,
+        "src": "Estimated: Praam 142 WOZ EUR276k/2020 (84 m2) scaled to 57 m2 + uprated to 2025 + label-A premium; live comp Praam 327 (58 m2) asks EUR295k",
+        "url": "https://www.kadasterdata.nl/amstelveen/praam/142",
+        "checked": "2026-06-08",
+        "status": "unconfirmed",
+        "note": "verify at WOZ-waardeloket"
+      },
+      "ground": {
+        "value": "Eigen grond",
+        "src": "Assumed (1981 Amstelveen Waardhuizen; comp Logger 52)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-praam-273/44489742/",
+        "checked": "2026-06-08",
+        "status": "unconfirmed"
+      },
+      "vve_costs": {
+        "value": 110,
+        "src": "Estimated (Logger 52 ~EUR120/81 m2 scaled to 57 m2)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-praam-273/44489742/",
+        "checked": "2026-06-08",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-08",
+    "source": "digest",
+    "viewing": "No",
+    "outdoor_space": "balcony (est.)"
+  },
+  {
+    "address": "Van Nijenrodeweg 62, Amsterdam (Buitenveldert)",
+    "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-van-nijenrodeweg-62/44489591/",
+    "price": 335000,
+    "price_estimated": false,
+    "area": 33,
+    "area_estimated": false,
+    "bedrooms": 0,
+    "bedrooms_verified": false,
+    "woz": 300000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1967,
+    "build_year_estimated": false,
+    "energy_label": "D",
+    "energy_estimated": false,
+    "ground": "Erfpacht (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 120,
+    "vve_estimated": true,
+    "dist_emmakade_min": 12,
+    "dist_zuidas_min": 9,
+    "scores": {
+      "value": 4,
+      "family": 2,
+      "condition": 5,
+      "location": 7,
+      "energy": 5,
+      "tenure": 4,
+      "outdoor": 6,
+      "legal": 5
+    },
+    "notes": "NEW from the 07-Jun-2026 Funda digest (id 44489591), listed by Living Real Estate - picked up today; appears to have been MISSED in the 07-Jun run (the digest's Legmeerstraat 32-2 was correctly skipped as out-of-area, but this in-scope Buitenveldert unit was not added). Buitenveldert-West, 1083 ED. SCOPE NOTE: 1083 is Buitenveldert but just outside the brief's literal 1081/1082/1077 list - included as clearly the target neighbourhood (precedent: other Van Nijenrodeweg units tracked). STUDIO-appartement: 33 m2 (Funda woonopp.) / 36 m2 (BAG), built 1967, lift + SOUTH-FACING balkon. EUR335.000 k.k. = EUR10.151/m2 (33 m2) - very high EUR/m2, normal for tiny studios. FLAG: TOO SMALL FOR THE BRIEF - 0 separate bedrooms; not a realistic live-in home for one adult + a 3-yo (shared custody). Better as a Zuidas-area investment / pied-a-terre. (Funda card shows '1 room'; the listing title says studio - VERIFY whether a separate sleeping area exists -> may be 0 or 1 bedroom.) RISK: ERFPACHT (Amsterdam) - status UNKNOWN; verify afkoop/eeuwigdurend vs a running tijdvak + canon (neighbouring blocks run a tijdvak, e.g. Van Nijenrodeweg 276 to 2039). FLAG: PRICED FULL - gemeente WOZ EUR208.000 (2020, official via Kadasterdata); WOZ EUR300k (2025) is ESTIMATED (uprated) so the asking sits ~12% over est WOZ. PLUS: strong commute location - ~9 min bike to Zuidas, ~12 min to Emmakade 33; lift + south balcony. Energy label D (1967) - upgrades are VvE-controlled (limited individual upside). VvE ~EUR120/mo ESTIMATED. Verify erfpacht (Amsterdam erfpacht map / akte), WOZ (wozwaardeloket) and VvE on the listing.",
+    "notes_ru": "НОВОЕ из рассылки Funda 07-июн-2026 (id 44489591), маклер Living Real Estate — добавлено сегодня; похоже, было ПРОПУЩЕНО в запуске 07-июн (Legmeerstraat 32-2 из той рассылки верно отброшен как не тот район, но этот объект в Buitenveldert не добавили). Buitenveldert-West, 1083 ED. РАСХОЖДЕНИЕ по охвату: 1083 — это Buitenveldert, но формально вне списка 1081/1082/1077; включено как явно целевой район (прецедент: другие объекты на Van Nijenrodeweg в базе). СТУДИЯ: 33 м2 (Funda) / 36 м2 (BAG), постройка 1967, лифт + ЮЖНЫЙ балкон. €335.000 = €10.151/м2 (33 м2) — очень высокий €/м2, обычно для маленьких студий. ФЛАГ: СЛИШКОМ МАЛО ПОД ЗАДАЧУ — 0 отдельных спален; не подходит как жильё для взрослого + ребёнок 3 лет. Лучше как инвестиция/pied-a-terre у Zuidas. (Карточка Funda показывает «1 комната»; в заголовке — студия — ПРОВЕРИТЬ, есть ли отдельная спальная зона -> 0 или 1 спальня.) РИСК: ERFPACHT (Амстердам) — статус НЕИЗВЕСТЕН; проверить выкуп/вечный vs действующий tijdvak + canon (у соседних блоков tijdvak, напр. Van Nijenrodeweg 276 до 2039). ФЛАГ: ЦЕНА ПОЛНАЯ — WOZ гемеенте €208.000 (2020, офиц. через Kadasterdata); WOZ €300к (2025) — ОЦЕНКА (пересчёт), запрос ~на 12% выше оценочного WOZ. ПЛЮС: отличная локация для работы — ~9 мин на велосипеде до Zuidas, ~12 мин до Emmakade 33; лифт + южный балкон. Класс D (1967) — улучшения через VvE (ограниченные личные возможности). VvE ~€120/мес ОЦЕНКА. Проверить erfpacht (карта erfpacht Амстердама/акт), WOZ (wozwaardeloket) и VvE в объявлении.",
+    "sources": {
+      "price": {
+        "value": 335000,
+        "src": "Funda listing card (Living Real Estate)",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-van-nijenrodeweg-62/44489591/",
+        "checked": "2026-06-08",
+        "status": "verified"
+      },
+      "area": {
+        "value": 33,
+        "src": "Funda listing card (woonopp.); BAG/Kadasterdata 36 m2",
+        "url": "https://www.kadasterdata.nl/amsterdam/van+nijenrodeweg/62",
+        "checked": "2026-06-08",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1967,
+        "src": "Kadasterdata (BAG) Van Nijenrodeweg 62",
+        "url": "https://www.kadasterdata.nl/amsterdam/van+nijenrodeweg/62",
+        "checked": "2026-06-08",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "D",
+        "src": "Funda listing card; Kadasterdata 'geschat energielabel D'",
+        "url": "https://www.kadasterdata.nl/amsterdam/van+nijenrodeweg/62",
+        "checked": "2026-06-08",
+        "status": "verified",
+        "note": "verify registered label on EP-Online"
+      },
+      "woz": {
+        "value": 300000,
+        "src": "Estimated: gemeente WOZ EUR208k (2020, Kadasterdata) uprated to 2025",
+        "url": "https://www.kadasterdata.nl/amsterdam/van+nijenrodeweg/62",
+        "checked": "2026-06-08",
+        "status": "unconfirmed",
+        "note": "2020 WOZ EUR208.000 is firm; 2025 figure estimated - verify at WOZ-waardeloket"
+      },
+      "ground": {
+        "value": "Erfpacht (te verifieren)",
+        "src": "Amsterdam municipal ground lease (Buitenveldert) - status unverified",
+        "url": "https://maps.amsterdam.nl/erfpacht/",
+        "checked": "2026-06-08",
+        "status": "unconfirmed"
+      },
+      "vve_costs": {
+        "value": 120,
+        "src": "Estimated (Van Nijenrodeweg 276/487 EUR236/87 m2 scaled to 33 m2)",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-van-nijenrodeweg-62/44489591/",
+        "checked": "2026-06-08",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-08",
+    "source": "digest",
+    "viewing": "No",
+    "outdoor_space": "balcony (south-facing)"
   }
 ]
