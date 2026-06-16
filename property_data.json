@@ -3531,5 +3531,289 @@
     "viewing": "No",
     "date_found": "2026-06-15",
     "source": "digest"
+  },
+  {
+    "address": "Tiengemeten 61, Amstelveen (Randwijck-Oost)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-tiengemeten-61/44491420/",
+    "price": 435000,
+    "area": 79,
+    "area_estimated": false,
+    "bedrooms": 3,
+    "woz": 395000,
+    "woz_year": 2025,
+    "build_year": 1966,
+    "energy_label": "E",
+    "energy_estimated": false,
+    "ground": "Eigen grond (te verifiëren)",
+    "vve_costs": 175,
+    "vve_estimated": true,
+    "dist_emmakade_min": 10,
+    "dist_zuidas_min": 11,
+    "scores": {
+      "price": 7,
+      "legal": 7,
+      "dist_emmakade": 7,
+      "energy": 3,
+      "dist_zuidas": 3,
+      "renovation": 4
+    },
+    "notes": "NEW from Funda digest 16-06. 1181 CP Amstelveen (Randwijck-Oost). 79 m2, 4 kamers (3 slaapkamers = 3 bed), bouwjaar 1966 (BAG/drimble). Asking EUR 435k k.k. (te koop sinds 15-06) = EUR 5,506/m2 — the LOWEST EUR/m2 of today's batch and a genuine 3-bedroom family layout, which is the standout value point. VALUE CAVEAT: asking sits ~10% ABOVE WOZ EUR 395k (peildatum 01-01-2025, drimble/LV-WOZ) — so the appeal is space-per-euro, NOT WOZ headroom. Energy label E (geregistreerd, EP-Online via drimble) — weak; a 1966 portiek/galerijflat can in principle be improved (HR++ glazing/insulation) but that is VvE-driven, so easy-upgrade upside is LIMITED for a single owner. RISK: ground = Amstelveen, so almost certainly EIGEN GROND (no Amsterdam erfpacht) — a clear legal plus, but confirm on the akte. VvE EUR/mo unknown (est EUR 175). Condition: 1966 + label E suggests largely original/dated — budget for modernisation (keuken/badkamer/beglazing). Bike: ~10 min to Emmakade 33, ~11 min to Zuidas (est from postcode). 3 bedrooms comfortably meets the original 2-bed+ brief.",
+    "notes_ru": "НОВОЕ из дайджеста Funda 16-06. 1181 CP Amstelveen (Randwijck-Oost). 79 м2, 4 комнаты (3 спальни = 3 bed), год постройки 1966 (BAG/drimble). Запрос EUR 435 тыс. k.k. (в продаже с 15-06) = EUR 5.506/м2 — САМАЯ НИЗКАЯ цена за метр в сегодняшней подборке и полноценная планировка с 3 спальнями, это ключевой плюс по соотношению цена/площадь. ОГОВОРКА ПО ЦЕНЕ: запрос на ~10% ВЫШЕ WOZ EUR 395 тыс. (на 01-01-2025, drimble/LV-WOZ) — то есть привлекательность в метрах за евро, а НЕ в запасе к WOZ. ПРОВЕРЕНО: энергокласс E (зарегистрированный, EP-Online через drimble) — слабый; галерейный дом 1966 г. в принципе можно улучшить (HR++ стекло/изоляция), но это решение VvE, поэтому апсайд по апгрейду ОГРАНИЧЕН для одного владельца. РИСК: земля — Amstelveen, почти наверняка СОБСТВЕННАЯ ЗЕМЛЯ (без амстердамского эрфпахта) — явный юридический плюс, но подтвердить по акту. ФЛАГ: взнос VvE неизвестен (оценка EUR 175). Состояние: 1966 + класс E указывают на в основном оригинальное/устаревшее — закладывать бюджет на модернизацию (кухня/ванная/остекление). Велосипед: ~10 мин до Emmakade 33, ~11 мин до Zuidas (оценка по индексу). 3 спальни уверенно отвечают исходному запросу от 2 спален.",
+    "sources": {
+      "woz": {
+        "value": 395000,
+        "src": "drimble.nl (LV-WOZ feed)",
+        "url": "https://drimble.nl/adres/amstelveen/1181CP/tiengemeten-61.html",
+        "checked": "2026-06-16",
+        "status": "verified",
+        "peildatum": "2025-01-01"
+      },
+      "energy_label": {
+        "value": "E",
+        "src": "drimble.nl (geregistreerd energielabel, EP-Online)",
+        "url": "https://drimble.nl/adres/amstelveen/1181CP/tiengemeten-61.html",
+        "checked": "2026-06-16",
+        "status": "verified"
+      },
+      "area": {
+        "value": 79,
+        "src": "Funda digest + drimble/BAG",
+        "url": "https://drimble.nl/adres/amstelveen/1181CP/tiengemeten-61.html",
+        "checked": "2026-06-16",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1966,
+        "src": "drimble.nl/BAG",
+        "url": "https://drimble.nl/adres/amstelveen/1181CP/tiengemeten-61.html",
+        "checked": "2026-06-16",
+        "status": "verified"
+      },
+      "ground": {
+        "value": "Eigen grond (te verifiëren)",
+        "src": "assumption (Amstelveen mostly freehold); not on register fetched",
+        "url": "",
+        "checked": "2026-06-16",
+        "status": "unconfirmed"
+      }
+    },
+    "viewing": "No",
+    "date_found": "2026-06-16",
+    "source": "digest"
+  },
+  {
+    "address": "Bouvigne 28-1, Amsterdam (Buitenveldert)",
+    "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-bouvigne-28-1/80854947/",
+    "price": 525000,
+    "area": 83,
+    "area_estimated": false,
+    "bedrooms": 3,
+    "woz": 600000,
+    "woz_year": 2025,
+    "build_year": 1959,
+    "energy_label": "C",
+    "energy_estimated": false,
+    "ground": "Erfpacht (afgekocht tot 2058)",
+    "vve_costs": 171,
+    "vve_estimated": false,
+    "dist_emmakade_min": 13,
+    "dist_zuidas_min": 6,
+    "scores": {
+      "price": 7,
+      "legal": 6,
+      "dist_emmakade": 5,
+      "energy": 6,
+      "dist_zuidas": 8,
+      "renovation": 8
+    },
+    "notes": "NEW from Funda digest 16-06. 1083 BP Amsterdam (Buitenveldert-Oost). 83 m2, 4 kamers (3 slaapkamers = 3 bed), bouwjaar 1959 portiekflat, VOLLEDIG GERENOVEERD in 2019 + extra kamer 2023 met HR++ beglazing (move-in ready). Asking EUR 525k k.k. (te koop sinds 15-06, Burgemeester Vastgoed) = EUR 6,325/m2. VALUE: asking is ~12% BELOW WOZ EUR 600k (peildatum 01-01-2025, huispedia/LV-WOZ) and below Huispedia woningwaarde EUR 544k-632k. FLAG: classic invite-overbid pricing — 89% of homes in this buurt sell ABOVE asking and Huispedia models a winning bid ~EUR 590k; budget vs ~EUR 590k+, NOT the EUR 525k vraagprijs. CONFLICT: a stale aggregator snippet showed WOZ EUR 482k (likely an older peildatum); the property page states EUR 600k @ 01-01-2025 — reconcile on wozwaardeloket.nl before any offer. RISK (top): ERFPACHT — canon is AFGEKOCHT only until 30-11-2058 under Algemene Bepalingen 2000 (voortdurend), NOT eeuwigdurend afgekocht; after 2058 a new canon/buy-off applies — a finite ~32-yr horizon that can affect future financing/resale; verify regime on the akte/Amsterdam erfpacht map. VvE healthy: professionally managed (Pro VvE Beheer), 48 woningen, servicekosten EUR 170.58/mo (verified). Note: within a Schiphol aircraft-noise zone. Energy label C with some upside to B/A (partly addressed in the 2019 reno). Bike: ~6 min to Zuidas (station Zuid 1.96km), ~13 min to Emmakade 33 (est). Best-condition and joint-largest of today's batch.",
+    "notes_ru": "НОВОЕ из дайджеста Funda 16-06. 1083 BP Amsterdam (Buitenveldert-Oost). 83 м2, 4 комнаты (3 спальни = 3 bed), год постройки 1959 (портиковый дом), ПОЛНОСТЬЮ ОТРЕМОНТИРОВАН в 2019 + доп. комната 2023 с HR++ остеклением (заезжай и живи). Запрос EUR 525 тыс. k.k. (в продаже с 15-06, Burgemeester Vastgoed) = EUR 6.325/м2. ЦЕНА: запрос на ~12% НИЖЕ WOZ EUR 600 тыс. (на 01-01-2025, huispedia/LV-WOZ) и ниже оценки Huispedia EUR 544-632 тыс. ФЛАГ: классическое ценообразование «под перебивание ставок» — 89% домов в районе продаются ВЫШЕ запроса, Huispedia моделирует победную ставку ~EUR 590 тыс.; бюджет считать от ~EUR 590 тыс.+, а НЕ от vraagprijs EUR 525 тыс. РАСХОЖДЕНИЕ: устаревший фрагмент агрегатора показал WOZ EUR 482 тыс. (вероятно, более ранняя дата); страница объекта указывает EUR 600 тыс. на 01-01-2025 — сверить на wozwaardeloket.nl до оферты. РИСК (главный): ЭРФПАХТ — канон ВЫКУПЛЕН только до 30-11-2058 по Общим положениям 2000 (voortdurend), это НЕ бессрочный выкуп; после 2058 применяется новый канон/выкуп — конечный горизонт ~32 года, может повлиять на будущее финансирование/перепродажу; проверить режим по акту/карте эрфпахта Амстердама. ПРОВЕРЕНО: VvE здоровый — профессиональное управление (Pro VvE Beheer), 48 квартир, сервисные расходы EUR 170,58/мес. ФЛАГ: в зоне авиашума Схипхола. Энергокласс C с потенциалом до B/A (частично уже в ремонте 2019). Велосипед: ~6 мин до Zuidas (станция Zuid 1,96 км), ~13 мин до Emmakade 33 (оценка). Лучшее состояние и один из самых больших в подборке.",
+    "sources": {
+      "woz": {
+        "value": 600000,
+        "src": "huispedia.nl (property page, LV-WOZ)",
+        "url": "https://huispedia.nl/amsterdam/1083bp/bouvigne/28-1",
+        "checked": "2026-06-16",
+        "status": "conflict",
+        "peildatum": "2025-01-01",
+        "note": "Property page states EUR 600k @ 01-01-2025; a separate aggregator snippet showed EUR 482k (likely older peildatum) — reconcile on wozwaardeloket."
+      },
+      "energy_label": {
+        "value": "C",
+        "src": "huispedia.nl (listing, EP-Online)",
+        "url": "https://huispedia.nl/amsterdam/1083bp/bouvigne/28-1",
+        "checked": "2026-06-16",
+        "status": "verified"
+      },
+      "area": {
+        "value": 83,
+        "src": "huispedia.nl listing (NEN2580 meetrapport aanwezig)",
+        "url": "https://huispedia.nl/amsterdam/1083bp/bouvigne/28-1",
+        "checked": "2026-06-16",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1959,
+        "src": "huispedia.nl/BAG",
+        "url": "https://huispedia.nl/amsterdam/1083bp/bouvigne/28-1",
+        "checked": "2026-06-16",
+        "status": "verified"
+      },
+      "ground": {
+        "value": "Erfpacht afgekocht t/m 30-11-2058 (AB2000, voortdurend)",
+        "src": "huispedia.nl listing (Eigendomssituatie)",
+        "url": "https://huispedia.nl/amsterdam/1083bp/bouvigne/28-1",
+        "checked": "2026-06-16",
+        "status": "verified"
+      },
+      "vve": {
+        "value": "EUR 170.58/mo (Pro VvE Beheer, 48 woningen)",
+        "src": "huispedia.nl listing",
+        "url": "https://huispedia.nl/amsterdam/1083bp/bouvigne/28-1",
+        "checked": "2026-06-16",
+        "status": "verified"
+      }
+    },
+    "viewing": "No",
+    "date_found": "2026-06-16",
+    "source": "digest"
+  },
+  {
+    "address": "Max Havelaarlaan 543, Amstelveen (Bankras-Kostverloren)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-max-havelaarlaan-543/80855008/",
+    "price": 315000,
+    "area": 49,
+    "area_estimated": false,
+    "bedrooms": 1,
+    "woz": 300000,
+    "woz_year": 2025,
+    "build_year": 1974,
+    "energy_label": "D",
+    "energy_estimated": true,
+    "ground": "Eigen grond (te verifiëren)",
+    "vve_costs": 180,
+    "vve_estimated": true,
+    "dist_emmakade_min": 11,
+    "dist_zuidas_min": 18,
+    "scores": {
+      "price": 5,
+      "legal": 6,
+      "dist_emmakade": 6,
+      "energy": 4,
+      "dist_zuidas": 1,
+      "renovation": 5
+    },
+    "notes": "NEW from Funda digest 16-06. 1183 NB Amstelveen (Bankras/Kostverloren). 49 m2, 2 kamers (1 slaapkamer = 1 bed), part of the 1974 Max Havelaarlaan galerijflat-complex (bouwjaar 1974, confirmed via verified neighbours 535/359A/365). Asking EUR 315k k.k. (te koop sinds 15-06) = EUR 6,429/m2. VALUE: #543's own WOZ was not separately fetchable (official registers JS-gated). ESTIMATED ~EUR 300k (2025) by pro-rating the verified neighbour Max Havelaarlaan 535 (52 m2 = WOZ EUR 319k @ 01-01-2025, drimble) — so asking ~5% above est WOZ, roughly market. RISK: ground = Amstelveen, likely EIGEN GROND (no erfpacht) — legal plus, confirm on akte. ESTIMATED FIELDS (flagged): WOZ (~EUR 300k), energy label (D — 1974 galerijflat, neighbours range C-E, EP-Online not fetched), VvE (~EUR 180/mo). Condition: 1974, modest EUR/m2 suggests dated/original — budget for modernisation. Only 1 bedroom (small for a couple) and the FURTHEST from Zuidas in the batch (~18 min). Bike: ~11 min to Emmakade 33, ~18 min to Zuidas (est).",
+    "notes_ru": "НОВОЕ из дайджеста Funda 16-06. 1183 NB Amstelveen (Bankras/Kostverloren). 49 м2, 2 комнаты (1 спальня = 1 bed), часть галерейного комплекса Max Havelaarlaan 1974 г. (год постройки 1974, подтверждён по проверенным соседям 535/359A/365). Запрос EUR 315 тыс. k.k. (в продаже с 15-06) = EUR 6.429/м2. ЦЕНА: собственный WOZ для #543 отдельно недоступен (офиц. реестры закрыты JS). ОЦЕНКА ~EUR 300 тыс. (2025) пропорционально проверенному соседу Max Havelaarlaan 535 (52 м2 = WOZ EUR 319 тыс. на 01-01-2025, drimble) — запрос ~на 5% выше оценочного WOZ, примерно по рынку. РИСК: земля — Amstelveen, вероятно СОБСТВЕННАЯ (без эрфпахта) — юридический плюс, подтвердить по акту. ОЦЕНОЧНЫЕ ПОЛЯ (помечены): WOZ (~EUR 300 тыс.), энергокласс (D — галерейный дом 1974, соседи C-E, EP-Online не запрошен), VvE (~EUR 180/мес). Состояние: 1974, умеренная цена за метр указывает на устаревшее/оригинальное — закладывать бюджет на модернизацию. Только 1 спальня (мало для пары) и САМЫЙ ДАЛЁКИЙ от Zuidas в подборке (~18 мин). Велосипед: ~11 мин до Emmakade 33, ~18 мин до Zuidas (оценка).",
+    "sources": {
+      "woz": {
+        "value": 300000,
+        "src": "ESTIMATE: pro-rated from neighbour Max Havelaarlaan 535 (drimble, 52 m2 = EUR 319k @ 01-01-2025)",
+        "url": "https://drimble.nl/adres/amstelveen/1183NA/max-havelaarlaan-535.html",
+        "checked": "2026-06-16",
+        "status": "unconfirmed",
+        "peildatum": "2025-01-01"
+      },
+      "energy_label": {
+        "value": "D",
+        "src": "ESTIMATE (1974 galerijflat; neighbours range C-E)",
+        "url": "",
+        "checked": "2026-06-16",
+        "status": "unconfirmed"
+      },
+      "area": {
+        "value": 49,
+        "src": "Funda digest",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-max-havelaarlaan-543/80855008/",
+        "checked": "2026-06-16",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1974,
+        "src": "drimble neighbours (535/359A/365 all 1974)",
+        "url": "https://drimble.nl/adres/amstelveen/1183NA/max-havelaarlaan-535.html",
+        "checked": "2026-06-16",
+        "status": "verified"
+      },
+      "ground": {
+        "value": "Eigen grond (te verifiëren)",
+        "src": "assumption (Amstelveen mostly freehold)",
+        "url": "",
+        "checked": "2026-06-16",
+        "status": "unconfirmed"
+      }
+    },
+    "viewing": "No",
+    "date_found": "2026-06-16",
+    "source": "digest"
+  },
+  {
+    "address": "Van Nijenrodeweg 693, Amsterdam (Buitenveldert)",
+    "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-van-nijenrodeweg-693/80854368/",
+    "price": 320000,
+    "area": 33,
+    "area_estimated": false,
+    "bedrooms": 1,
+    "woz": 311000,
+    "woz_year": 2025,
+    "build_year": 1964,
+    "energy_label": "C",
+    "energy_estimated": false,
+    "ground": "Erfpacht (tijdvak, te verifiëren)",
+    "vve_costs": 130,
+    "vve_estimated": true,
+    "dist_emmakade_min": 13,
+    "dist_zuidas_min": 7,
+    "scores": {
+      "price": 4,
+      "legal": 5,
+      "dist_emmakade": 5,
+      "energy": 6,
+      "dist_zuidas": 7,
+      "renovation": 5
+    },
+    "notes": "NEW from Funda digest 16-06. 1082 JC Amsterdam (Buitenveldert-Midden-Zuid). 33 m2, 2 kamers (1 slaapkamer = 1 bed), bouwjaar 1964 (drimble/BAG). Asking EUR 320k k.k. (te koop sinds 15-06) = EUR 9,697/m2 — a HIGH EUR/m2 micro-unit premium (smallest of the batch); poor space-per-euro. VALUE: asking ~3% above WOZ EUR 311k (peildatum 01-01-2025, drimble/LV-WOZ) — essentially at WOZ. Energy label C (geregistreerd, EP-Online via drimble) — mid, modest upgrade upside. RISK (top): Amsterdam ERFPACHT — running tijdvak/canon; afkoop/eeuwigdurend status NOT verified (consistent with DB neighbours Van Nijenrodeweg 62 & 487, both erfpacht); confirm canon + herzieningsdatum on the akte / Amsterdam erfpacht map — an unbought canon adds to monthly cost. VvE EUR/mo unknown (est EUR 130, cf. Van Nijenrodeweg 62 = EUR 120). Condition: 1964, assume dated unless renovated (not stated). Only 1 bedroom and a tiny 33 m2 — studio-plus, niche resale. Bike: ~13 min to Emmakade 33, ~7 min to Zuidas (est).",
+    "notes_ru": "НОВОЕ из дайджеста Funda 16-06. 1082 JC Amsterdam (Buitenveldert-Midden-Zuid). 33 м2, 2 комнаты (1 спальня = 1 bed), год постройки 1964 (drimble/BAG). Запрос EUR 320 тыс. k.k. (в продаже с 15-06) = EUR 9.697/м2 — ВЫСОКАЯ цена за метр (премия за микро-юнит, самый маленький в подборке); плохое соотношение площадь/евро. ЦЕНА: запрос ~на 3% выше WOZ EUR 311 тыс. (на 01-01-2025, drimble/LV-WOZ) — фактически по WOZ. ПРОВЕРЕНО: энергокласс C (зарегистрированный, EP-Online через drimble) — средний, умеренный апсайд по апгрейду. РИСК (главный): амстердамский ЭРФПАХТ — действующий tijdvak/канон; статус выкупа/бессрочности НЕ проверен (как у соседей по базе Van Nijenrodeweg 62 и 487, оба эрфпахт); подтвердить канон + дату пересмотра по акту / карте эрфпахта Амстердама — невыкупленный канон увеличивает ежемесячные расходы. ФЛАГ: взнос VvE неизвестен (оценка EUR 130, ср. Van Nijenrodeweg 62 = EUR 120). Состояние: 1964, считать устаревшим, если не отремонтирован (не указано). Только 1 спальня и крошечные 33 м2 — студия-плюс, нишевая перепродажа. Велосипед: ~13 мин до Emmakade 33, ~7 мин до Zuidas (оценка).",
+    "sources": {
+      "woz": {
+        "value": 311000,
+        "src": "drimble.nl (LV-WOZ feed)",
+        "url": "https://drimble.nl/adres/amsterdam/1082JC/van-nijenrodeweg-693.html",
+        "checked": "2026-06-16",
+        "status": "verified",
+        "peildatum": "2025-01-01"
+      },
+      "energy_label": {
+        "value": "C",
+        "src": "drimble.nl (geregistreerd energielabel, EP-Online)",
+        "url": "https://drimble.nl/adres/amsterdam/1082JC/van-nijenrodeweg-693.html",
+        "checked": "2026-06-16",
+        "status": "verified"
+      },
+      "area": {
+        "value": 33,
+        "src": "Funda digest + drimble/BAG",
+        "url": "https://drimble.nl/adres/amsterdam/1082JC/van-nijenrodeweg-693.html",
+        "checked": "2026-06-16",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1964,
+        "src": "drimble.nl/BAG",
+        "url": "https://drimble.nl/adres/amsterdam/1082JC/van-nijenrodeweg-693.html",
+        "checked": "2026-06-16",
+        "status": "verified"
+      },
+      "ground": {
+        "value": "Erfpacht (tijdvak, te verifiëren)",
+        "src": "Amsterdam erfpacht (status not fetched); DB precedent Van Nijenrodeweg 62/487",
+        "url": "",
+        "checked": "2026-06-16",
+        "status": "unconfirmed"
+      }
+    },
+    "viewing": "No",
+    "date_found": "2026-06-16",
+    "source": "digest"
   }
 ]
