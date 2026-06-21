@@ -4503,5 +4503,361 @@
     "viewing": "No",
     "date_found": "2026-06-18",
     "source": "digest"
+  },
+  {
+    "address": "Franciscus van Assisiëlaan 27, Amstelveen (Keizer Karelpark-Oost)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-franciscus-van-assisielaan-27/80863099/",
+    "price": 369000,
+    "area": 70,
+    "area_estimated": false,
+    "bedrooms": 2,
+    "bedrooms_verified": true,
+    "woz": 369000,
+    "woz_year": 2025,
+    "woz_estimated": false,
+    "build_year": 1961,
+    "build_year_estimated": false,
+    "energy_label": "E",
+    "energy_estimated": false,
+    "energy_upgrade": "easy",
+    "ground": "Eigen grond (per listing)",
+    "ground_verified": false,
+    "vve_costs": 389,
+    "vve_estimated": false,
+    "dist_emmakade_min": 9,
+    "dist_zuidas_min": 20,
+    "outdoor_space": "balcony ~5 m²",
+    "family_adj": 1,
+    "family_adj_reason": "3rd bedroom easily created from the large living room (stated in listing)",
+    "location_adj": 0,
+    "heritage": null,
+    "scores": {
+      "value": 8,
+      "condition": 8,
+      "legal": 7
+    },
+    "notes": "VERIFIED via Huispedia listing (Funda id 80863099, on market since 19-Jun-2026, makelaar Hoeksteen Makelaardij). Instapklaar 3-kamer galerijflat, 70 m² + 5 m² balkon, EUR369.000 k.k. = EUR5.271/m². 2 slaapkamers, with stated option to create a 3rd from the large living room. Bouwjaar 1961, energielabel E. EIGEN GROND (stated in kenmerken; confirm at akte). VvE EUR389,29/mo incl. berging. WOZ EUR369.000 (peildatum 01-01-2025) = asking equals WOZ exactly (0% premium) — strong on paper. BIG PLUS / energy upside: the VvE has already APPROVED and FULLY FINANCED a major verduurzaming (kunststof kozijnen met triple glas, dak- en gevelisolatie, vernieuwde entree) — financing is arranged and folded into the monthly contribution, so NO extra one-off bijdrage for a buyer. Label E should jump after the works → energy_upgrade='easy'. This is why the EUR389/mo VvE is high (it carries the loan); factor that into running costs. FLAG (low-ask bidding war): Huispedia realistic value EUR420.000-488.000 and biedadvies ~EUR455.000; 75% of nearby homes sell over asking. The EUR369k asking is deliberately set low — expect to pay ~EUR440-460k, which erodes the headline value. Negotiate on facts; set a hard ceiling. Condition good (instapklaar, modern keuken+badkamer, onderhoud binnen/buiten Goed). Best-located of today's adds for the brief: ~9 min bike to Emmakade 33, ~20 min to Zuidas (both ESTIMATED from 1185 CD). No heritage protection. Verify eigen grond + VvE reserve/MJOP + the verduurzaming loan terms at viewing.",
+    "notes_ru": "ПРОВЕРЕНО по Huispedia (Funda id 80863099, в продаже с 19-июн-2026, маклер Hoeksteen). Готова к заселению, 3-комнатная галерейная квартира, 70 м² + балкон 5 м², €369.000 = €5.271/м². 2 спальни, есть возможность сделать 3-ю из большой гостиной. Год 1961, энергокласс E. СВОЯ ЗЕМЛЯ (указано в объявлении; подтвердить по акту). VvE €389,29/мес вкл. кладовку. WOZ €369.000 (на 01-01-2025) — цена равна WOZ (наценка 0%), на бумаге отлично. БОЛЬШОЙ ПЛЮС / потенциал по энергии: VvE уже УТВЕРДИЛА и ПОЛНОСТЬЮ ПРОФИНАНСИРОВАЛА крупную модернизацию (пластиковые рамы с триплексом, утепление крыши и фасада, новый вход) — финансирование заложено в ежемесячный взнос, отдельного разового платежа для покупателя НЕТ. Класс E вырастет после работ → energy_upgrade='easy'. Поэтому VvE €389/мес высокий (несёт кредит) — учесть в расходах. ФЛАГ (занижена цена, торги вверх): реалистичная оценка Huispedia €420.000-488.000, совет по ставке ~€455.000; 75% соседних квартир уходят выше запроса. €369k — намеренно низкая цена, реально заплатить ~€440-460k, что съедает выгоду. Торговаться по фактам, задать жёсткий потолок. Состояние хорошее (заезжай и живи, новые кухня/санузел). Лучшая локация под задачу среди сегодняшних: ~9 мин на велосипеде до Emmakade 33, ~20 мин до Zuidas (ОЦЕНКА от 1185 CD). Памятников/охраны нет. Проверить своя земля + резерв VvE/MJOP + условия кредита на модернизацию.",
+    "sources": {
+      "price": {
+        "value": 369000,
+        "src": "Huispedia listing",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-franciscus-van-assisielaan-27/80863099/",
+        "checked": "2026-06-21",
+        "status": "verified"
+      },
+      "area": {
+        "value": 70,
+        "src": "Huispedia (Funda) kenmerken",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-franciscus-van-assisielaan-27/80863099/",
+        "checked": "2026-06-21",
+        "status": "verified"
+      },
+      "bedrooms": {
+        "value": 2,
+        "src": "Huispedia: 3 kamers / 2 slaapkamers",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-franciscus-van-assisielaan-27/80863099/",
+        "checked": "2026-06-21",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1961,
+        "src": "Huispedia kenmerken",
+        "url": "https://huispedia.nl/amstelveen/1185cd/franciscus-van-assisielaan/27",
+        "checked": "2026-06-21",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "E",
+        "src": "Huispedia kenmerken (energielabel E)",
+        "url": "https://huispedia.nl/amstelveen/1185cd/franciscus-van-assisielaan/27",
+        "checked": "2026-06-21",
+        "status": "verified",
+        "note": "VvE-funded verduurzaming will improve it (energy_upgrade=easy)"
+      },
+      "ground": {
+        "value": "Eigen grond",
+        "src": "Listing kenmerken ('Eigen grond!')",
+        "url": "https://huispedia.nl/amstelveen/1185cd/franciscus-van-assisielaan/27",
+        "checked": "2026-06-21",
+        "status": "unconfirmed",
+        "note": "confirm at akte/kadaster"
+      },
+      "vve_costs": {
+        "value": 389,
+        "src": "Listing: EUR389,29/mo incl. berging",
+        "url": "https://huispedia.nl/amstelveen/1185cd/franciscus-van-assisielaan/27",
+        "checked": "2026-06-21",
+        "status": "verified",
+        "note": "carries the verduurzaming loan"
+      },
+      "woz": {
+        "value": 369000,
+        "src": "Huispedia WOZ (peildatum 01-01-2025)",
+        "url": "https://huispedia.nl/amstelveen/1185cd/franciscus-van-assisielaan/27",
+        "checked": "2026-06-21",
+        "status": "verified"
+      }
+    },
+    "date_found": "2026-06-21",
+    "source": "digest",
+    "viewing": "No"
+  },
+  {
+    "address": "Turfschip 229, Amstelveen (Waardhuizen)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/huis-turfschip-229/44408551/",
+    "price": 525000,
+    "area": 97,
+    "area_estimated": false,
+    "bedrooms": 3,
+    "bedrooms_verified": false,
+    "woz": 535000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1980,
+    "build_year_estimated": true,
+    "energy_label": "C",
+    "energy_estimated": true,
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 0,
+    "vve_estimated": false,
+    "dist_emmakade_min": 15,
+    "dist_zuidas_min": 24,
+    "outdoor_space": "garden (est)",
+    "location_adj": 1,
+    "heritage": null,
+    "scores": {
+      "value": 8,
+      "condition": 6,
+      "legal": 7
+    },
+    "notes": "NEW via Funda digest 20-Jun-2026 (id 44408551). Eengezins-/rijwoning (Funda type 'huis'), Waardhuizen, 1186 XJ. 97 m², 4 kamers (=3 slaapkamers inferred — VERIFY), EUR525.000 k.k. = EUR5.412/m². COMP-DERIVED (the unit's own page is bot-gated): bouwjaar 1980 and energielabel C taken from the same block/street (Huispedia Turfschip 220: woonhuis, 1980, label C, WOZ EUR645k/134m²). WOZ for No.229 ESTIMATED ~EUR535k (scaled to 97 m²) — verify on WOZ-waardeloket. EIGEN GROND assumed (Amstelveen woonhuis) — confirm at akte. VALUE: at EUR5.412/m² it undercuts comparable smaller Turfschip houses (No.24: 93 m² EUR595k = EUR6.398/m²) and sits roughly at estimated WOZ — good entry for a freehold family house with private garden and no VvE. Buurt is hot: ~90% of nearby homes sell over asking, so expect competition. FLAG (location for the brief): south Amstelveen — ~15 min bike to Emmakade 33 (just past the 15-min target) and ~24 min to Zuidas (both ESTIMATED). Quiet, green, family-friendly (34% gezinnen). FLAG (condition unknown): 1980 house may be original — request photos/keuring; could need modernising (condition scored 6 pending viewing). No heritage protection.",
+    "notes_ru": "НОВОЕ из рассылки Funda 20-июн-2026 (id 44408551). Дом (тип Funda 'huis'), Waardhuizen, 1186 XJ. 97 м², 4 комнаты (=3 спальни по числу комнат — ПРОВЕРИТЬ), €525.000 = €5.412/м². ПО АНАЛОГАМ (своя страница объекта под защитой от ботов): год 1980 и класс C взяты по тому же кварталу/улице (Huispedia Turfschip 220: дом, 1980, класс C, WOZ €645k/134м²). WOZ для №229 ОЦЕНКА ~€535k (масштаб на 97 м²) — проверить на WOZ-loket. СВОЯ ЗЕМЛЯ предполагается (дом в Амстелвене) — подтвердить по акту. ЦЕНА: €5.412/м² ниже сопоставимых меньших домов на Turfschip (№24: 93 м² €595k = €6.398/м²) и примерно на уровне оценочного WOZ — хороший вход в собственный семейный дом с садом и без VvE. Район горячий: ~90% уходят выше запроса, ждать конкуренции. ФЛАГ (локация под задачу): юг Амстелвена — ~15 мин на велосипеде до Emmakade 33 (на грани 15-мин цели) и ~24 мин до Zuidas (ОЦЕНКА). Тихо, зелено, для семей (34% семей). ФЛАГ (состояние неизвестно): дом 1980 г. может быть в оригинале — запросить фото/осмотр; возможна модернизация (состояние 6 до просмотра). Памятников/охраны нет.",
+    "sources": {
+      "price": {
+        "value": 525000,
+        "src": "Funda digest card",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/huis-turfschip-229/44408551/",
+        "checked": "2026-06-21",
+        "status": "verified"
+      },
+      "area": {
+        "value": 97,
+        "src": "Funda digest card (97 m², 4 kamers)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/huis-turfschip-229/44408551/",
+        "checked": "2026-06-21",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1980,
+        "src": "Comp Turfschip 220 (same block, 1980)",
+        "url": "https://huispedia.nl/amstelveen/1186xt/turfschip/220",
+        "checked": "2026-06-21",
+        "status": "unconfirmed"
+      },
+      "energy_label": {
+        "value": "C",
+        "src": "Street/comp Turfschip 220 (label C)",
+        "url": "https://huispedia.nl/amstelveen/1186xt/turfschip/220",
+        "checked": "2026-06-21",
+        "status": "unconfirmed",
+        "note": "verify EP-Online"
+      },
+      "woz": {
+        "value": 535000,
+        "src": "Estimated, scaled from Turfschip 220 (EUR645k/134m²)",
+        "url": "https://huispedia.nl/amstelveen/1186xt/turfschip/220",
+        "checked": "2026-06-21",
+        "status": "unconfirmed"
+      },
+      "ground": {
+        "value": "Eigen grond",
+        "src": "Assumed (Amstelveen woonhuis)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/huis-turfschip-229/44408551/",
+        "checked": "2026-06-21",
+        "status": "unconfirmed",
+        "note": "confirm at akte"
+      }
+    },
+    "date_found": "2026-06-21",
+    "source": "digest",
+    "viewing": "No"
+  },
+  {
+    "address": "Logger 166, Amstelveen (Waardhuizen)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-logger-166/80861454/",
+    "price": 475000,
+    "area": 82,
+    "area_estimated": false,
+    "bedrooms": 3,
+    "bedrooms_verified": false,
+    "woz": 410000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1980,
+    "build_year_estimated": false,
+    "energy_label": "C",
+    "energy_estimated": true,
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 110,
+    "vve_estimated": true,
+    "dist_emmakade_min": 14,
+    "dist_zuidas_min": 23,
+    "outdoor_space": "balcony ~8 m² (est)",
+    "location_adj": 1,
+    "heritage": null,
+    "scores": {
+      "value": 6,
+      "condition": 6,
+      "legal": 7
+    },
+    "notes": "NEW via Funda digest 20-Jun-2026 (id 80861454). Portiekflat, Waardhuizen/Punterbuurt, 1186 RW. 82 m², 4 kamers (=3 slaapkamers — VERIFY), EUR475.000 k.k. = EUR5.793/m². Bouwjaar 1980. Near-identical comp Logger 160 (1186 RV, same complex): 81 m², 1980, portiekflat, energielabel C, balkon 8 m², WOZ EUR410.000 (2025), Huispedia realistic value EUR436.000-506.000. So for No.166: label C and WOZ ~EUR410k taken from that comp (ESTIMATED — verify EP-Online / WOZ-waardeloket); VvE ~EUR110/mo estimated (Huispedia est EUR100 for No.160, Logger 52 EUR120). EIGEN GROND assumed (Amstelveen) — confirm. VALUE: EUR475k sits inside the comp's realistic range and Huispedia tags it 'within value', but EUR5.793/m² is a touch above sibling Logger 52 (EUR5.556/m²) and asking is ~16% over the est. WOZ — fairly priced with limited headroom; don't overbid (buurt sells ~82% over asking). 3-bed family layout is a plus. FLAG (location): south Amstelveen — ~14 min bike to Emmakade 33 (edge of target), ~23 min to Zuidas (ESTIMATED). Quiet, green, family-friendly. Condition unknown (1980 portiekflat) — request photos/keuring (condition 6 pending). No heritage protection.",
+    "notes_ru": "НОВОЕ из рассылки Funda 20-июн-2026 (id 80861454). Подъездная квартира, Waardhuizen/Punterbuurt, 1186 RW. 82 м², 4 комнаты (=3 спальни — ПРОВЕРИТЬ), €475.000 = €5.793/м². Год 1980. Почти идентичный аналог Logger 160 (1186 RV, тот же комплекс): 81 м², 1980, класс C, балкон 8 м², WOZ €410.000 (2025), реалистичная оценка Huispedia €436.000-506.000. Для №166: класс C и WOZ ~€410k взяты по аналогу (ОЦЕНКА — проверить EP-Online/WOZ-loket); VvE ~€110/мес оценка (Huispedia €100 для №160, Logger 52 €120). СВОЯ ЗЕМЛЯ предполагается (Амстелвен) — подтвердить. ЦЕНА: €475k в пределах реалистичного диапазона аналога, Huispedia помечает 'в рамках стоимости', но €5.793/м² чуть выше брата Logger 52 (€5.556/м²), и запрос ~16% выше оценочного WOZ — справедливо, запас мал; не переплачивать (район уходит ~82% выше запроса). Планировка на 3 спальни — плюс. ФЛАГ (локация): юг Амстелвена — ~14 мин на велосипеде до Emmakade 33 (на грани цели), ~23 мин до Zuidas (ОЦЕНКА). Тихо, зелено, для семей. Состояние неизвестно (дом 1980) — запросить фото/осмотр (состояние 6 до просмотра). Памятников/охраны нет.",
+    "sources": {
+      "price": {
+        "value": 475000,
+        "src": "Funda digest card / Huispedia",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-logger-166/80861454/",
+        "checked": "2026-06-21",
+        "status": "verified"
+      },
+      "area": {
+        "value": 82,
+        "src": "Funda digest card (82 m², 4 kamers)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-logger-166/80861454/",
+        "checked": "2026-06-21",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1980,
+        "src": "Huispedia listing + comp Logger 160",
+        "url": "https://huispedia.nl/amstelveen/1186rv/logger/160",
+        "checked": "2026-06-21",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "C",
+        "src": "Comp Logger 160 (same complex, label C)",
+        "url": "https://huispedia.nl/amstelveen/1186rv/logger/160",
+        "checked": "2026-06-21",
+        "status": "unconfirmed",
+        "note": "verify EP-Online"
+      },
+      "woz": {
+        "value": 410000,
+        "src": "Comp Logger 160 WOZ EUR410k (2025)",
+        "url": "https://huispedia.nl/amstelveen/1186rv/logger/160",
+        "checked": "2026-06-21",
+        "status": "unconfirmed"
+      },
+      "vve_costs": {
+        "value": 110,
+        "src": "Estimated (Huispedia EUR100 No.160; Logger 52 EUR120)",
+        "url": "https://huispedia.nl/amstelveen/1186rv/logger/160",
+        "checked": "2026-06-21",
+        "status": "unconfirmed"
+      },
+      "ground": {
+        "value": "Eigen grond",
+        "src": "Assumed (Amstelveen Waardhuizen)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-logger-166/80861454/",
+        "checked": "2026-06-21",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-21",
+    "source": "digest",
+    "viewing": "No"
+  },
+  {
+    "address": "Van Heenvlietlaan 250-D, Amsterdam (Buitenveldert-Oost)",
+    "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-van-heenvlietlaan-250-d/44408113/",
+    "price": 240000,
+    "area": 23,
+    "area_estimated": false,
+    "bedrooms": 0,
+    "bedrooms_verified": false,
+    "woz": 214000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1977,
+    "build_year_estimated": true,
+    "energy_label": "C",
+    "energy_estimated": true,
+    "ground": "Erfpacht (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 150,
+    "vve_estimated": true,
+    "dist_emmakade_min": 13,
+    "dist_zuidas_min": 7,
+    "outdoor_space": "none (est)",
+    "location_adj": -1,
+    "heritage": null,
+    "scores": {
+      "value": 5,
+      "condition": 6,
+      "legal": 3
+    },
+    "notes": "NEW via Funda digest 20-Jun-2026 (id 44408113). Studio (0 slaapkamers), Buitenveldert-Oost, 1083 CN. 23 m², EUR240.000 k.k. = EUR10.435/m² (high EUR/m², normal for micro-studios). Part of a very large complex (350+ addresses at No.250 — the Holland2Stay-style building), so check owner/rental mix and VvE/splitsing health. COMP-DERIVED (unit page bot-gated): direct comp Van Heenvlietlaan 254-D (1083 CN): 24 m², bouwjaar 1977, energielabel B, WOZ EUR214.000 (2025), Huispedia value EUR218.000-253.000. Unit 250A carries energielabel C (valid to 2034). So for 250-D: WOZ ~EUR214k, label C and bouwjaar ~1977 ESTIMATED — verify BAG/EP-Online/WOZ-waardeloket. VvE ~EUR150/mo estimated. RISK (erfpacht): Buitenveldert is leasehold — ground status UNVERIFIED. Could be afgekocht/eeuwigdurend OR a running tijdvak with a future canon revision (a real, unquantified cost). Resolve via the Amsterdam erfpacht map / akte BEFORE bidding (legal scored low = 3 for this). VALUE: EUR240k vs WOZ ~EUR214k = ~12% premium; within Huispedia's realistic range but at the upper end for a tiny studio. LOCATION is the strength: ~7 min bike to Zuidas, RAI/Zuid stations ~1.5 km; shops (Jumbo) across the street. FLAG: busy Van Heenvlietlaan + Schiphol flight-noise zone (location_adj -1). NOT a family home (studio) — fits the no-bedroom-limit scope but is an investor/single-occupant unit. No heritage protection.",
+    "notes_ru": "НОВОЕ из рассылки Funda 20-июн-2026 (id 44408113). Студия (0 спален), Buitenveldert-Oost, 1083 CN. 23 м², €240.000 = €10.435/м² (высокий €/м², обычно для микростудий). Часть очень большого комплекса (350+ адресов на №250 — здание типа Holland2Stay), проверить долю собственников/аренды и здоровье VvE/разделения. ПО АНАЛОГАМ (страница объекта под защитой): прямой аналог Van Heenvlietlaan 254-D (1083 CN): 24 м², год 1977, класс B, WOZ €214.000 (2025), оценка Huispedia €218.000-253.000. Юнит 250A имеет класс C (действителен до 2034). Для 250-D: WOZ ~€214k, класс C и год ~1977 — ОЦЕНКА, проверить BAG/EP-Online/WOZ-loket. VvE ~€150/мес оценка. РИСК (эрфпахт): Buitenveldert — аренда земли, статус НЕ ПРОВЕРЕН. Может быть выкуплен/бессрочный ИЛИ действующий период с будущим пересмотром канона (реальная неучтённая стоимость). Выяснить по карте эрфпахта Амстердама / акту ДО ставки (юр. оценка низкая = 3). ЦЕНА: €240k против WOZ ~€214k = наценка ~12%; в пределах реалистичного диапазона Huispedia, но в верхней части для крошечной студии. ЛОКАЦИЯ — сильная сторона: ~7 мин на велосипеде до Zuidas, станции RAI/Zuid ~1,5 км; магазины (Jumbo) напротив. ФЛАГ: оживлённая Van Heenvlietlaan + зона авиашума Схипхола (location_adj -1). НЕ семейное жильё (студия) — попадает в scope без лимита спален, но это инвест/одиночный юнит. Памятников/охраны нет.",
+    "sources": {
+      "price": {
+        "value": 240000,
+        "src": "Funda digest card",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-van-heenvlietlaan-250-d/44408113/",
+        "checked": "2026-06-21",
+        "status": "verified"
+      },
+      "area": {
+        "value": 23,
+        "src": "Funda digest card (23 m², studio)",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-van-heenvlietlaan-250-d/44408113/",
+        "checked": "2026-06-21",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1977,
+        "src": "Comp Van Heenvlietlaan 254-D (1977)",
+        "url": "https://huispedia.nl/amsterdam/1083cn/van-heenvlietlaan/254-d",
+        "checked": "2026-06-21",
+        "status": "unconfirmed",
+        "note": "verify BAG"
+      },
+      "energy_label": {
+        "value": "C",
+        "src": "Unit 250A label C (valid to 2034); comp 254-D=B",
+        "url": "https://huispedia.nl/amsterdam/1083cn/van-heenvlietlaan/254-d",
+        "checked": "2026-06-21",
+        "status": "unconfirmed",
+        "note": "verify EP-Online"
+      },
+      "woz": {
+        "value": 214000,
+        "src": "Comp Van Heenvlietlaan 254-D WOZ EUR214k (2025)",
+        "url": "https://huispedia.nl/amsterdam/1083cn/van-heenvlietlaan/254-d",
+        "checked": "2026-06-21",
+        "status": "unconfirmed"
+      },
+      "ground": {
+        "value": "Erfpacht",
+        "src": "Buitenveldert leasehold; status unknown",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-van-heenvlietlaan-250-d/44408113/",
+        "checked": "2026-06-21",
+        "status": "unconfirmed",
+        "note": "check Amsterdam erfpacht map / akte"
+      },
+      "vve_costs": {
+        "value": 150,
+        "src": "Estimated (Buitenveldert flats)",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-van-heenvlietlaan-250-d/44408113/",
+        "checked": "2026-06-21",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-21",
+    "source": "digest",
+    "viewing": "No"
   }
 ]
