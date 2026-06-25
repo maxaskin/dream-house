@@ -794,7 +794,7 @@
     },
     "date_found": "2026-05-29",
     "source": "reaction",
-    "viewing": "Visited 2026-06-05"
+    "viewing": "No"
   },
   {
     "address": "Merckenburg 38, Amsterdam (Buitenveldert)",
@@ -3165,7 +3165,7 @@
         "status": "verified"
       }
     },
-    "viewing": "No",
+    "viewing": "Scheduled 2026-06-25",
     "date_found": "2026-06-12",
     "source": "digest"
   },
@@ -5582,6 +5582,336 @@
       }
     },
     "date_found": "2026-06-24",
+    "source": "digest",
+    "viewing": "No"
+  },
+  {
+    "address": "Populierenlaan 583, Amstelveen (Keizer Karelpark)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-populierenlaan-583/44403299/",
+    "price": 440000,
+    "area": 88,
+    "area_estimated": false,
+    "bedrooms": 2,
+    "bedrooms_verified": true,
+    "woz": 400000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1963,
+    "build_year_estimated": true,
+    "energy_label": "D",
+    "energy_estimated": true,
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 175,
+    "vve_estimated": true,
+    "dist_emmakade_min": 13,
+    "dist_zuidas_min": 22,
+    "location_adj": 0,
+    "outdoor_space": "balcony (est)",
+    "heritage": null,
+    "scores": {
+      "value": 6,
+      "condition": 5,
+      "legal": 7
+    },
+    "notes": "NEW via Funda digest 25-Jun-2026 (id 44403299). 1185 SX, Keizer Karelpark / Populierenbuurt, Amstelveen. PROVEN from the digest card: EUR440.000 k.k., 88 m^2, 3 kamers (=2 slaapkamers) = EUR5.000/m^2. Eigen grond (Amstelveen norm; te verifieren). ESTIMATED (Funda detail page is bot-/JS-gated): bouwjaar ~1963 (neighbour Populierenlaan 581 = 1963; street avg 1961-63), energielabel D, WOZ ~EUR400k (2025), VvE ~EUR175/mo, balcony - all to confirm on Funda / EP-Online / WOZ-loket. VALUE ok: EUR5.000/m^2 is moderate for this part of Amstelveen; asking sits ~+10% over WOZ est. Good FAMILY fit: 88 m^2 / 2-bd is the largest of this batch. FLAG: condition provisional (no photos read) - 1963 flat likely needs cosmetic updating; verify WOZ, energielabel, VvE/MJOP and bouwjaar from the listing. Bike ~13 min Emmakade, ~22 min Zuidas (est).",
+    "notes_ru": "НОВОЕ из рассылки Funda 25-июн-2026 (id 44403299). 1185 SX, Keizer Karelpark / Populierenbuurt, Amstelveen. ПРОВЕРЕНО по карточке рассылки: €440.000, 88 м^2, 3 комнаты (=2 спальни) = €5.000/м^2. Собственный участок (норма для Amstelveen; требует проверки). ОЦЕНКА (страница Funda заблокирована ботами): год ~1963 (сосед Populierenlaan 581 = 1963), класс D, WOZ ~€400k (2025), VvE ~€175/мес, балкон - всё подтвердить на Funda / EP-Online / WOZ-loket. ЦЕНА норм: €5.000/м^2 умеренно для этого района; запрос ~+10% к WOZ (оценка). Хорошо по семье: 88 м^2 / 2 спальни - самый большой в этой партии. ФЛАГ: состояние предварительно (фото не читались) - квартира 1963 г., вероятно нужен косметический ремонт; проверить WOZ, класс энергии, VvE/MJOP и год. Велосипед ~13 мин Emmakade, ~22 мин Zuidas (оценка).",
+    "sources": {
+      "price": {
+        "value": 440000,
+        "src": "Funda digest card",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-populierenlaan-583/44403299/",
+        "checked": "2026-06-25",
+        "status": "verified"
+      },
+      "area": {
+        "value": 88,
+        "src": "Funda digest card (88 m^2, 3 kamers)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-populierenlaan-583/44403299/",
+        "checked": "2026-06-25",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1963,
+        "src": "Neighbour Populierenlaan 581 = 1963; street avg 1961-63",
+        "url": "https://www.leukhuis.nl/amstelveen/1185sx/populierenlaan/581",
+        "checked": "2026-06-25",
+        "status": "unconfirmed"
+      },
+      "energy_label": {
+        "value": "D",
+        "src": "Estimated (1963 Amstelveen flat)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-populierenlaan-583/44403299/",
+        "checked": "2026-06-25",
+        "status": "unconfirmed",
+        "note": "verify EP-Online"
+      },
+      "woz": {
+        "value": 400000,
+        "src": "Estimated (Amstelveen comp; ~EUR4.5-4.8k/m^2)",
+        "url": "https://www.wozwaardeloket.nl/",
+        "checked": "2026-06-25",
+        "status": "unconfirmed"
+      },
+      "ground": {
+        "value": "Eigen grond (te verifieren)",
+        "src": "Amstelveen norm",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-populierenlaan-583/44403299/",
+        "checked": "2026-06-25",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-25",
+    "source": "digest",
+    "viewing": "No"
+  },
+  {
+    "address": "Bijdorp 91, Amstelveen (Elsrijk)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-bijdorp-91/44404754/",
+    "price": 400000,
+    "area": 77,
+    "area_estimated": false,
+    "bedrooms": 2,
+    "bedrooms_verified": true,
+    "woz": 432000,
+    "woz_year": 2025,
+    "woz_estimated": false,
+    "build_year": 1962,
+    "build_year_estimated": false,
+    "energy_label": "C",
+    "energy_estimated": false,
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 260,
+    "vve_estimated": false,
+    "dist_emmakade_min": 6,
+    "dist_zuidas_min": 13,
+    "location_adj": 0,
+    "outdoor_space": "balcony ~5 m²",
+    "heritage": null,
+    "scores": {
+      "value": 7,
+      "condition": 6,
+      "legal": 6
+    },
+    "notes": "NEW via Funda digest 25-Jun-2026 (id 44404754). 1181 MZ, Elsrijk, Amstelveen - galerijflat, 4e etage. VERIFIED (Huispedia): EUR400.000 k.k., 77 m^2, 3 kamers (=2 slaapkamers), balkon 5 m^2, bouwjaar 1962, energielabel C (better than street avg E), VvE EUR260/mo, WOZ EUR432.000 (2025), eigen grond (Amstelveen). VALUE strong on paper: asking EUR400k is UNDER WOZ EUR432k and ~14% below comparable EUR/m^2 (EUR5.195 vs EUR6.009); Huispedia woningwaarde EUR466k-541k, biedadvies ~EUR505k. RISK/FLAG: classic LOW-ASK bidding magnet - 88% of Elsrijk homes sell over asking, so expect heavy overbidding (likely EUR470-505k) and the headline discount will largely evaporate at sale; set a hard ceiling. Scrutinise the EUR260/mo VvE (1962 lift/galerij complex) - check MJOP/reserves. CONDITION ~6 (label C implies some updating; confirm from photos). Best Emmakade proximity of this batch (~6 min bike; ~13 min Zuidas). Akte/clauses unread (Funda blocked).",
+    "notes_ru": "НОВОЕ из рассылки Funda 25-июн-2026 (id 44404754). 1181 MZ, Elsrijk, Amstelveen - галерейный дом, 4-й этаж. ПРОВЕРЕНО (Huispedia): €400.000, 77 м^2, 3 комнаты (=2 спальни), балкон 5 м^2, год 1962, класс C (лучше среднего по улице E), VvE €260/мес, WOZ €432.000 (2025), собственный участок (Amstelveen). ЦЕНА сильная на бумаге: запрос €400k НИЖЕ WOZ €432k и на ~14% ниже сопоставимой цены €/м^2 (€5.195 против €6.009); оценка Huispedia €466k-541k, biedadvies ~€505k. РИСК/ФЛАГ: классическая занижённая цена-приманка - 88% домов в Elsrijk уходят выше запроса, ждите серьёзного перебоя (вероятно €470-505k); заявленная скидка почти исчезнет при сделке - ставьте жёсткий потолок. Проверить VvE €260/мес (дом 1962 с лифтом) - смотреть MJOP/резервы. СОСТОЯНИЕ ~6 (класс C = частичное обновление; подтвердить по фото). Лучшая близость к Emmakade в этой партии (~6 мин велосипед; ~13 мин Zuidas). Акт/оговорки не читались (Funda заблокирована).",
+    "sources": {
+      "price": {
+        "value": 400000,
+        "src": "Funda digest card / Huispedia",
+        "url": "https://huispedia.nl/amstelveen/1181mz/bijdorp/91",
+        "checked": "2026-06-25",
+        "status": "verified"
+      },
+      "area": {
+        "value": 77,
+        "src": "Huispedia (77 m^2, 3 kamers, balkon 5 m^2)",
+        "url": "https://huispedia.nl/amstelveen/1181mz/bijdorp/91",
+        "checked": "2026-06-25",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1962,
+        "src": "Huispedia (galerijflat 1962)",
+        "url": "https://huispedia.nl/amstelveen/1181mz/bijdorp/91",
+        "checked": "2026-06-25",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "C",
+        "src": "Huispedia (label C, street avg E)",
+        "url": "https://huispedia.nl/amstelveen/1181mz/bijdorp/91",
+        "checked": "2026-06-25",
+        "status": "verified",
+        "note": "confirm EP-Online"
+      },
+      "woz": {
+        "value": 432000,
+        "src": "Huispedia WOZ peildatum 01-01-2025",
+        "url": "https://huispedia.nl/amstelveen/1181mz/bijdorp/91",
+        "checked": "2026-06-25",
+        "status": "verified"
+      },
+      "vve_costs": {
+        "value": 260,
+        "src": "Huispedia listing (maandelijkse bijdrage EUR260)",
+        "url": "https://huispedia.nl/amstelveen/1181mz/bijdorp/91",
+        "checked": "2026-06-25",
+        "status": "verified"
+      },
+      "ground": {
+        "value": "Eigen grond (te verifieren)",
+        "src": "Amstelveen norm",
+        "url": "https://huispedia.nl/amstelveen/1181mz/bijdorp/91",
+        "checked": "2026-06-25",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-25",
+    "source": "digest",
+    "viewing": "No"
+  },
+  {
+    "address": "Nijenburg 8, Amsterdam (Buitenveldert-West)",
+    "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-nijenburg-8/44403933/",
+    "price": 425000,
+    "area": 55,
+    "area_estimated": false,
+    "bedrooms": 1,
+    "bedrooms_verified": true,
+    "woz": 418000,
+    "woz_year": 2025,
+    "woz_estimated": false,
+    "build_year": 1967,
+    "build_year_estimated": false,
+    "energy_label": "C",
+    "energy_estimated": false,
+    "ground": "Erfpacht lopend",
+    "ground_verified": false,
+    "vve_costs": 100,
+    "vve_estimated": true,
+    "dist_emmakade_min": 13,
+    "dist_zuidas_min": 8,
+    "location_adj": 0,
+    "outdoor_space": "balcony",
+    "heritage": null,
+    "scores": {
+      "value": 6,
+      "condition": 5,
+      "legal": 6
+    },
+    "notes": "NEW via Funda digest 25-Jun-2026 (id 44403933). 1081 GG, Buitenveldert-West, Amsterdam - portiekflat, 1e etage. VERIFIED (Huispedia): EUR425.000 k.k., 55 m^2, 2 kamers (=1 slaapkamer), balkon, bouwjaar 1967, energielabel C (better than street avg D), WOZ EUR418.000 (2025); asking only ~+1.7% over WOZ, 'binnen de waarde' (EUR386-448k), EUR7.727/m^2 in line with comps (EUR7.817). CONFLICT/CORRECTED: an aggregator summary showed bouwjaar 1960 / WOZ EUR296k - the property's own Huispedia page gives 1967 and WOZ EUR418.000 (2025); used the page values. RISK/FLAG (tenure): Amsterdam erfpacht with a running canon ~EUR113/yr (NOT bought off) - verify whether eeuwigdurend (no future revision) or voortdurend (canon-revision risk) and any afkoop option. VvE ~EUR100/mo (Huispedia ESTIMATE - confirm). LIMITATION: 55 m^2 / 1-bd is small for a child (weak family fit). Strong Zuidas access (~8 min bike), ~13 min Emmakade. Condition provisional (1967, likely original interior).",
+    "notes_ru": "НОВОЕ из рассылки Funda 25-июн-2026 (id 44403933). 1081 GG, Buitenveldert-West, Amsterdam - подъездный дом, 1-й этаж. ПРОВЕРЕНО (Huispedia): €425.000, 55 м^2, 2 комнаты (=1 спальня), балкон, год 1967, класс C (лучше среднего по улице D), WOZ €418.000 (2025); запрос всего ~+1.7% к WOZ, 'в рамках стоимости' (€386-448k), €7.727/м^2 в линию с аналогами (€7.817). КОНФЛИКТ/ИСПРАВЛЕНО: сводка агрегатора показывала год 1960 / WOZ €296k - на собственной странице Huispedia год 1967 и WOZ €418.000 (2025); взяты значения страницы. РИСК/ФЛАГ (аренда земли): эрфпахт Амстердама с действующим каноном ~€113/год (НЕ выкуплен) - проверить, бессрочный (без пересмотра) или продолжающийся (риск пересмотра канона) и есть ли опция выкупа. VvE ~€100/мес (ОЦЕНКА Huispedia - подтвердить). ОГРАНИЧЕНИЕ: 55 м^2 / 1 спальня - мало для ребёнка (слабо по семье). Хороший доступ к Zuidas (~8 мин велосипед), ~13 мин Emmakade. Состояние предварительно (1967, вероятно оригинальный интерьер).",
+    "sources": {
+      "price": {
+        "value": 425000,
+        "src": "Funda digest card / Huispedia",
+        "url": "https://huispedia.nl/amsterdam/1081gg/nijenburg/8",
+        "checked": "2026-06-25",
+        "status": "verified"
+      },
+      "area": {
+        "value": 55,
+        "src": "Huispedia (55 m^2, 2 kamers)",
+        "url": "https://huispedia.nl/amsterdam/1081gg/nijenburg/8",
+        "checked": "2026-06-25",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1967,
+        "src": "Huispedia property page (portiekflat 1967)",
+        "url": "https://huispedia.nl/amsterdam/1081gg/nijenburg/8",
+        "checked": "2026-06-25",
+        "status": "verified",
+        "note": "aggregator summary said 1960 - corrected to page value 1967"
+      },
+      "energy_label": {
+        "value": "C",
+        "src": "Huispedia (label C, street avg D)",
+        "url": "https://huispedia.nl/amsterdam/1081gg/nijenburg/8",
+        "checked": "2026-06-25",
+        "status": "verified",
+        "note": "confirm EP-Online"
+      },
+      "woz": {
+        "value": 418000,
+        "src": "Huispedia WOZ peildatum 01-01-2025",
+        "url": "https://huispedia.nl/amsterdam/1081gg/nijenburg/8",
+        "checked": "2026-06-25",
+        "status": "verified",
+        "note": "aggregator summary said EUR296k - corrected to page WOZ EUR418k"
+      },
+      "ground": {
+        "value": "Erfpacht lopend",
+        "src": "Huispedia (Erfpacht, canon ~EUR113/yr)",
+        "url": "https://huispedia.nl/amsterdam/1081gg/nijenburg/8",
+        "checked": "2026-06-25",
+        "status": "unconfirmed",
+        "note": "verify eeuwigdurend vs voortdurend + afkoop"
+      }
+    },
+    "date_found": "2026-06-25",
+    "source": "digest",
+    "viewing": "No"
+  },
+  {
+    "address": "Spangenhof 39, Amsterdam (Buitenveldert-Oost)",
+    "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-spangenhof-39/44404588/",
+    "price": 545000,
+    "area": 83,
+    "area_estimated": false,
+    "bedrooms": 2,
+    "bedrooms_verified": true,
+    "woz": 580000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1986,
+    "build_year_estimated": true,
+    "energy_label": "C",
+    "energy_estimated": true,
+    "ground": "Erfpacht (status te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 175,
+    "vve_estimated": true,
+    "dist_emmakade_min": 15,
+    "dist_zuidas_min": 8,
+    "location_adj": 0,
+    "outdoor_space": "balcony (est)",
+    "heritage": null,
+    "scores": {
+      "value": 6,
+      "condition": 6,
+      "legal": 6
+    },
+    "notes": "NEW via Funda digest 25-Jun-2026 (id 44404588). 1083 JJ, Buitenveldert-Oost (De Klenckebuurt), Amsterdam. PROVEN from the digest card: EUR545.000 k.k., 83 m^2, 3 kamers (=2 slaapkamers) = EUR6.566/m^2. ESTIMATED from same-complex neighbour Spangenhof 38 (Drimble): bouwjaar 1986, energielabel C, WOZ ~EUR580k (2025, scaled from #38's EUR564k at 78 m^2) - verify #39 exact on Funda / WOZ-loket / EP-Online. VALUE ok: ~6% under WOZ est; EUR6.566/m^2 is reasonable for a 1986 Buitenveldert-Oost flat. RISK/FLAG (tenure): Amsterdam erfpacht, status unknown for a 1986 complex (likely voortdurend AB 1966/1994) - verify afkoop / tijdvak / eeuwigdurend conversion and the canon. VvE ~EUR175/mo (est) - confirm and check MJOP. Newest building of this batch, so condition likely the best (~6). Bike ~15 min Emmakade, ~8 min Zuidas (est). Akte/clauses unread (Funda blocked).",
+    "notes_ru": "НОВОЕ из рассылки Funda 25-июн-2026 (id 44404588). 1083 JJ, Buitenveldert-Oost (De Klenckebuurt), Amsterdam. ПРОВЕРЕНО по карточке рассылки: €545.000, 83 м^2, 3 комнаты (=2 спальни) = €6.566/м^2. ОЦЕНКА по соседу того же комплекса Spangenhof 38 (Drimble): год 1986, класс C, WOZ ~€580k (2025, пересчёт с €564k при 78 м^2 у #38) - подтвердить точные данные #39 на Funda / WOZ-loket / EP-Online. ЦЕНА норм: ~6% ниже WOZ (оценка); €6.566/м^2 разумно для дома 1986 г. в Buitenveldert-Oost. РИСК/ФЛАГ (аренда земли): эрфпахт Амстердама, статус для дома 1986 г. неизвестен (вероятно voortdurend AB 1966/1994) - проверить выкуп / срок / перевод в бессрочный и канон. VvE ~€175/мес (оценка) - подтвердить и смотреть MJOP. Самое новое здание партии, состояние, вероятно, лучшее (~6). Велосипед ~15 мин Emmakade, ~8 мин Zuidas (оценка). Акт/оговорки не читались (Funda заблокирована).",
+    "sources": {
+      "price": {
+        "value": 545000,
+        "src": "Funda digest card",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-spangenhof-39/44404588/",
+        "checked": "2026-06-25",
+        "status": "verified"
+      },
+      "area": {
+        "value": 83,
+        "src": "Funda digest card (83 m^2, 3 kamers)",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-spangenhof-39/44404588/",
+        "checked": "2026-06-25",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1986,
+        "src": "Same-complex neighbour Spangenhof 38 (Drimble) bouwjaar 1986",
+        "url": "https://drimble.nl/adres/amsterdam/1083JJ/spangenhof-38.html",
+        "checked": "2026-06-25",
+        "status": "unconfirmed"
+      },
+      "energy_label": {
+        "value": "C",
+        "src": "Neighbour Spangenhof 38 label C",
+        "url": "https://drimble.nl/adres/amsterdam/1083JJ/spangenhof-38.html",
+        "checked": "2026-06-25",
+        "status": "unconfirmed",
+        "note": "verify EP-Online for #39"
+      },
+      "woz": {
+        "value": 580000,
+        "src": "Estimated from neighbour Spangenhof 38 WOZ EUR564k (78 m^2), scaled to 83 m^2",
+        "url": "https://drimble.nl/adres/amsterdam/1083JJ/spangenhof-38.html",
+        "checked": "2026-06-25",
+        "status": "unconfirmed"
+      },
+      "ground": {
+        "value": "Erfpacht (status te verifieren)",
+        "src": "Amsterdam erfpacht; 1986 complex - status unknown",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-spangenhof-39/44404588/",
+        "checked": "2026-06-25",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-25",
     "source": "digest",
     "viewing": "No"
   }
