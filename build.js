@@ -19,23 +19,29 @@ const path = require('path');
 const DIR = __dirname;
 const GEN_DATE = process.env.BUILD_DATE || new Date().toISOString().slice(0, 10); // today; override with BUILD_DATE=YYYY-MM-DD
 
-// ---- canonical scoring model v3 (must match INSTRUCTIONS_build_summary_html.md) ----
+// ---- canonical scoring model v4 (must match INSTRUCTIONS_build_summary_html.md) ----
 // Tuned for the buyer's real brief: live-in home for one adult + a 3-yo (shared
-// custody), to be sold in 5-10 years. Two clusters — livability ~53%, financial/
-// resale ~47%.
-// v3 (2026-06-09): six criteria are now COMPUTED at build time from measured
-// fields (family, location, energy, tenure, costs, outdoor) so scores can no
-// longer drift from the rubric; only value/condition/legal stay hand-scored.
-// New: `costs` criterion (monthly VvE + heating advance) and an
-// `energy_upgrade` modifier ('easy' +1 / 'moderate' +0.5) per the brief
-// ("label improvable easily = a plus").
+// custody), to be sold in 5-10 years. Two clusters — livability ~51%, financial/
+// resale ~49%.
+// v3 (2026-06-09): six criteria are COMPUTED at build time from measured fields
+// (family, location, energy, tenure, costs, outdoor); only value/condition/legal
+// stay hand-scored.
+// v4 (2026-06-28): price signal rebalanced so €/m² outweighs the raw WOZ premium.
+//   - NEW computed `relvalue` (9%): asking/WOZ premium centred on the property's
+//     city median → objective "price vs local €/m²" (WOZ used only as the
+//     location/size-aware normaliser, not as a stale absolute anchor).
+//   - `value` (manual) trimmed 16→10% and re-scoped to a condition-adjusted
+//     judgment overlay (over-priced-for-condition, bidding-war temper).
+//   - `costs` now includes the WOZ-driven owner taxes (OZB per gemeente +
+//     eigenwoningforfait drag), so a higher WOZ correctly raises carrying cost.
 const WEIGHTS = [
-  { key: 'family',    label: 'Family fit & space', w: 0.18 },               // living  (computed)
-  { key: 'value',     label: 'Value at entry',     w: 0.16, manual: true }, // financial
+  { key: 'family',    label: 'Family fit & space', w: 0.17 },               // living  (computed)
+  { key: 'value',     label: 'Value (judgment)',   w: 0.10, manual: true }, // financial
+  { key: 'relvalue',  label: 'Price vs local €/m²', w: 0.09 },              // financial (computed)
   { key: 'location',  label: 'Location & commute', w: 0.15 },               // living  (computed)
-  { key: 'condition', label: 'Condition',          w: 0.14, manual: true }, // living
+  { key: 'condition', label: 'Condition',          w: 0.13, manual: true }, // living
   { key: 'energy',    label: 'Energy label',       w: 0.10 },               // financial (computed)
-  { key: 'tenure',    label: 'Tenure / erfpacht',  w: 0.08 },               // financial (computed)
+  { key: 'tenure',    label: 'Tenure / erfpacht',  w: 0.07 },               // financial (computed)
   { key: 'costs',     label: 'Running costs',      w: 0.08 },               // financial (computed)
   { key: 'outdoor',   label: 'Outdoor space',      w: 0.06 },               // living  (computed)
   { key: 'legal',     label: 'Legal / title',      w: 0.05, manual: true }, // financial
@@ -102,12 +108,46 @@ function calcLocation(p) {
   const base = (se != null && sz != null) ? 0.6 * se + 0.4 * sz : (se ?? sz);
   return clamp10(base + (p.location_adj || 0));
 }
-// costs: all-in monthly (VvE + known heating advance) banded 1–10.
+// costs: full owner monthly — VvE + heating advance + WOZ-driven owner taxes — banded 1–10.
+// monthlyAllIn stays VvE+heating (what the "VvE/mo" column shows); the cost SCORE adds
+// the WOZ taxes via ownershipMonthly, so a pricey WOZ is penalised on carrying cost.
+const OZB_RATE = { Amstelveen: 0.00063, Amsterdam: 0.000577 }; // 2025 owner (eigenaar) OZB tariffs, per gemeente
+const FORFAIT_RATE = 0.0035;   // eigenwoningforfait 2025/26, WOZ ≤ €1.33M (national)
+const MARGINAL_RATE = 0.37;    // assumed box-1 low-bracket rate for the forfait cash drag; set 0 for OZB-only
+function cityOf(p) { return /amsterdam/i.test(p.address || '') ? 'Amsterdam' : 'Amstelveen'; }
+function wozTaxMonthly(p) {
+  if (p.woz == null) return 0;
+  const ozb = p.woz * (OZB_RATE[cityOf(p)] ?? OZB_RATE.Amstelveen);
+  return (ozb + p.woz * FORFAIT_RATE * MARGINAL_RATE) / 12;
+}
 function monthlyAllIn(p) { return p.vve_costs == null ? null : p.vve_costs + (p.heating_advance || 0); }
+function ownershipMonthly(p) { const m = monthlyAllIn(p); return m == null ? null : m + wozTaxMonthly(p); }
 function calcCosts(p) {
-  const m = monthlyAllIn(p);
+  const m = ownershipMonthly(p);
   if (m == null) return null;
-  return m <= 100 ? 10 : m <= 150 ? 9 : m <= 200 ? 8 : m <= 250 ? 7 : m <= 300 ? 6 : m <= 360 ? 5 : m <= 450 ? 4 : 3;
+  return m <= 160 ? 10 : m <= 210 ? 9 : m <= 260 ? 8 : m <= 320 ? 7 : m <= 380 ? 6 : m <= 450 ? 5 : m <= 540 ? 4 : 3;
+}
+// relvalue: asking/WOZ premium centred on the property's city median. Because WOZ is the
+// gemeente's location+size-aware assessment, price/WOZ ≈ actual €/m² ÷ "fair" €/m²;
+// centring on the city median cancels the shared WOZ peildatum lag and yields a robust
+// relative-value signal (cheaper-than-local-peers → higher score). 92/93 coverage.
+function premium(p) { return (p.price && p.woz) ? p.price / p.woz : null; }
+function median(xs) { const a = xs.filter(v => v != null).sort((x, y) => x - y); if (!a.length) return null; const m = a.length >> 1; return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2; }
+let _premBase = null;
+function premBaseline() {
+  if (_premBase) return _premBase;
+  const byCity = {};
+  for (const p of active) { const pr = premium(p); if (pr == null) continue; (byCity[cityOf(p)] = byCity[cityOf(p)] || []).push(pr); }
+  const med = {}, cnt = {};
+  for (const c in byCity) { med[c] = median(byCity[c]); cnt[c] = byCity[c].length; }
+  _premBase = { med, cnt, all: median(active.map(premium)) };
+  return _premBase;
+}
+function relBase(p) { const b = premBaseline(), c = cityOf(p); return (b.cnt[c] >= 8 ? b.med[c] : b.all) || b.all; }
+function calcRelValue(p) {
+  const pr = premium(p);
+  if (pr == null) return null;
+  return clamp10(6 - (pr / relBase(p) - 1) * 14); // K=14, neutral 6 at the city median
 }
 // outdoor: canonical token → score; balcony +1 if ≥5 m², +1 if south/west (cap 7).
 const OUTDOOR_SCORE = { garden: 9, 'roof terrace': 8, terrace: 7, balcony: 5, loggia: 5, shared: 3, none: 2 };
@@ -131,7 +171,8 @@ function calcOutdoor(p) {
 function effectiveScores(p) {
   const man = p.scores || {};
   const calc = { family: calcFamily(p), location: calcLocation(p), energy: calcEnergy(p),
-                 tenure: calcTenure(p), costs: calcCosts(p), outdoor: calcOutdoor(p) };
+                 tenure: calcTenure(p), costs: calcCosts(p), outdoor: calcOutdoor(p),
+                 relvalue: calcRelValue(p) };
   const scores = {}, overridden = [];
   for (const c of WEIGHTS) {
     if (c.manual) { scores[c.key] = (man[c.key] != null && !isNaN(man[c.key])) ? Number(man[c.key]) : null; continue; }
@@ -394,7 +435,15 @@ function critDetail(p, key, T) {
     case 'costs': {
       const m = monthlyAllIn(p);
       if (m == null) return '';
-      return p.heating_advance ? `€${fmt(m)}${T.allIn} (VvE €${fmt(p.vve_costs)} + ${T.heat} €${fmt(p.heating_advance)})` : `€${fmt(m)}${T.allIn}`;
+      const tax = Math.round(wozTaxMonthly(p));
+      const vve = p.heating_advance ? `VvE €${fmt(p.vve_costs)} + ${T.heat} €${fmt(p.heating_advance)}` : `VvE €${fmt(p.vve_costs)}`;
+      return `€${fmt(Math.round(m + wozTaxMonthly(p)))}${T.allIn} (${vve}${tax ? ` + ${T.tax} €${fmt(tax)}` : ''})`;
+    }
+    case 'relvalue': {
+      const pr = premium(p);
+      if (pr == null) return '';
+      const ask = Math.round((pr - 1) * 100), rel = Math.round((pr / relBase(p) - 1) * 100);
+      return `${ask >= 0 ? '+' : ''}${ask}% ${T.vsWoz} · ${rel >= 0 ? '+' : ''}${rel}% ${T.vsMedian}`;
     }
     case 'outdoor': return p.outdoor_space || '';
     default: return '';
@@ -485,7 +534,18 @@ ${sourcesHtml(p, T)}
 function soldRow(p, T) {
   const lbl = p.energy_label
     ? `<span style="background:${labelColor(p.energy_label)};color:#fff;padding:2px 8px;border-radius:8px;font-weight:700;font-size:0.9em">${p.energy_label}</span>` : '—';
-  const badge = `<span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:9px;font-size:0.8em;font-weight:600">${T.soldStatus}${p.sold_date ? ' ' + p.sold_date : ''}</span>`;
+  const SOLD_LABELS = {
+    onder_bod:   { en: 'Under bid',    ru: 'Под предложением' },
+    verkocht_ov: { en: 'Sold (cond.)', ru: 'Продано (усл.)' },
+    off_funda:   { en: 'Off-market',   ru: 'Снято с продажи' },
+    sold:        { en: 'Sold',         ru: 'Продано' },
+  };
+  const isRu = T.soldStatus === 'продан';
+  const sl = p.sold_status && SOLD_LABELS[p.sold_status] ? SOLD_LABELS[p.sold_status][isRu ? 'ru' : 'en'] : T.soldStatus;
+  const badgeBg = p.sold_status === 'onder_bod' ? '#fef3c7;color:#92400e'
+                : p.sold_status === 'verkocht_ov' ? '#fed7aa;color:#9a3412'
+                : '#fee2e2;color:#991b1b';
+  const badge = `<span style="background:${badgeBg};padding:2px 8px;border-radius:9px;font-size:0.8em;font-weight:600">${sl}${p.sold_date ? ' ' + p.sold_date : ''}</span>`;
   return `<tr style="opacity:0.72">
 <td><a href="${p.url}" target="_blank" style="color:#1d4ed8;text-decoration:none;font-weight:500">${esc(p.address)}</a></td>
 <td style="text-align:center">${badge}</td>
@@ -742,10 +802,11 @@ const STR = {
   en: {
     title: 'Dream House — Property Summary',
     subtitle: n => `Amstelveen + Amsterdam Buitenveldert · all sizes · verified vs official Funda + a second source · ${n} properties · Generated ${GEN_DATE}`,
-    leg: { value: 'Value at entry', family: 'Family fit &amp; space', condition: 'Condition',
+    leg: { value: 'Value (judgment)', family: 'Family fit &amp; space', condition: 'Condition',
            location: 'Location &amp; commute', energy: 'Energy label', tenure: 'Tenure / erfpacht',
-           costs: 'Running costs', outdoor: 'Outdoor space', legal: 'Legal / title' },
-    legClusters: 'Livability ~53% (family, condition, location, outdoor) · Financial / resale ~47% (value, energy, tenure, running costs, legal). Tuned for a live-in home for one adult + a 3-yo, sold in 5–10 years. Family, location, energy (incl. upgrade-potential bonus), tenure, running costs and outdoor are computed from the data; value, condition and legal are scored by hand.',
+           costs: 'Running costs', outdoor: 'Outdoor space', legal: 'Legal / title',
+           relvalue: 'Price vs local €/m²' },
+    legClusters: 'Livability ~51% (family, location, condition, outdoor) · Financial / resale ~49% (price vs local €/m², value judgment, energy, running costs, tenure, legal). Tuned for a live-in home for one adult + a 3-yo, sold in 5–10 years. Price vs local €/m², family, location, energy (incl. upgrade-potential bonus), tenure, running costs and outdoor are computed from the data; value (a condition-adjusted judgment), condition and legal are scored by hand.',
     legConf: '<strong>Conf.</strong> = data-verification confidence: how many of 6 key fields (price, area, WOZ, energy label, ground/tenure, beds) are verified against an independent source. ✓N/6, green ≥5 · amber ≥3 · red &lt;3; ⚠ = a source conflict. Hover for which fields are unverified.',
     top3: 'Top 3', all: 'All Properties',
     hAddr: 'Address', hScore: 'Score', hConf: 'Conf.', hView: 'Viewing', hPrice: 'Price', hBeds: 'Beds', hBuilt: 'Built',
@@ -762,16 +823,17 @@ const STR = {
     search: 'Search address…', fAll: 'All', fBeds: 'Beds', fPrice: 'Max price', fVisited: 'visited only', fReset: 'Reset',
     showing: 'showing {n} of {m}', clickHint: 'Click a row for the score breakdown, full notes & sources', sortHint: 'click a column header to sort',
     breakdown: 'Score breakdown', sources: 'Verified sources', auto: 'auto', unscored: 'not scored (renormalised)',
-    neigh: 'neighbourhood', upgrade: 'upgrade potential', unverifiedLbl: 'label unverified', allIn: '/mo all-in', heat: 'heating', ageRestricted: '55+ restricted',
-    footer: '<strong>Methodology (model v3):</strong> Weighted score out of 10, tuned for a live-in home for one adult + a 3-yo (shared custody), sold in 5–10 years. Two clusters — <em>livability ~53%</em>: Family fit &amp; space (18%), Location &amp; commute (15%), Condition (14%), Outdoor space (6%); <em>financial / resale ~47%</em>: Value at entry vs WOZ &amp; €/m² (16%), Energy label (10%), Tenure / erfpacht (8%), Running costs (8%), Legal / title risk (5%). Family, location, energy, tenure, running costs and outdoor are <em>computed</em> from the underlying data (bedrooms/area, bike minutes ± a documented neighbourhood adjustment, label table − 1 if unverified + upgrade-potential bonus, ground-lease status, all-in monthly VvE + heating, outdoor token); value, condition and legal are scored by hand against the rubric. Blank criteria renormalise over the ones that are scored. Costs marked * are VvE + a known heating advance; ~ marks estimates. WOZ values are the official 2025 Kadaster LV-WOZ assessments. Neighbourhood €/m² averages are May-2026 agent comps — re-check at offer time. All data as of ' + GEN_DATE + '.',
+    neigh: 'neighbourhood', upgrade: 'upgrade potential', unverifiedLbl: 'label unverified', allIn: '/mo all-in', heat: 'heating', ageRestricted: '55+ restricted', tax: 'WOZ tax', vsWoz: 'vs WOZ', vsMedian: 'vs city median',
+    footer: '<strong>Methodology (model v4):</strong> Weighted score out of 10, tuned for a live-in home for one adult + a 3-yo (shared custody), sold in 5–10 years. Two clusters — <em>livability ~51%</em>: Family fit &amp; space (17%), Location &amp; commute (15%), Condition (13%), Outdoor space (6%); <em>financial / resale ~49%</em>: Price vs local €/m² (9%), Value judgment (10%), Energy label (10%), Running costs (8%), Tenure / erfpacht (7%), Legal / title risk (5%). <strong>v4 change:</strong> €/m² now outweighs the raw WOZ premium — <em>Price vs local €/m²</em> is the asking-vs-WOZ premium centred on the property\'s city median, so WOZ serves only as the location/size-aware normaliser, not a stale absolute anchor. <em>Running costs</em> are the full owner monthly = VvE + heating advance + WOZ-driven owner taxes (OZB ≈0.063% Amstelveen / ≈0.058% Amsterdam + eigenwoningforfait 0.35% × ~37% box-1), so a higher WOZ raises carrying cost. Price vs €/m², family, location, energy, tenure, running costs and outdoor are <em>computed</em> from the underlying data; value (a condition-adjusted judgment overlay: over-priced-for-condition, bidding-war temper), condition and legal are scored by hand against the rubric. Blank criteria renormalise over the ones that are scored. WOZ values are the official 2025 Kadaster LV-WOZ assessments; OZB/forfait are 2025 rates (tunable) — re-check at offer time. All data as of ' + GEN_DATE + '.',
   },
   ru: {
     title: 'Dream House — Сводка по объектам',
     subtitle: n => `Амстелвен + Амстердам Бёйтенвелдерт · все площади · проверено по Funda + второй источник · ${n} объекта · Сформировано ${GEN_DATE.split('-').reverse().join('.')}`,
-    leg: { value: 'Цена входа vs WOZ', family: 'Для семьи &amp; площадь', condition: 'Состояние',
+    leg: { value: 'Цена (экспертно)', family: 'Для семьи &amp; площадь', condition: 'Состояние',
            location: 'Локация &amp; дорога', energy: 'Энергометка', tenure: 'Земля / эрфпахт',
-           costs: 'Расходы/мес', outdoor: 'Открытое пространство', legal: 'Юр. / титул' },
-    legClusters: 'Для жизни ~53% (семья, состояние, локация, открытое пространство) · Финансы / перепродажа ~47% (цена входа, энергия, земля, расходы/мес, юр.). Настроено под жильё для одного взрослого + ребёнка 3 лет, с продажей через 5–10 лет. Семья, локация, энергия (с бонусом за потенциал улучшения), земля, расходы и открытое пространство считаются из данных; цена входа, состояние и юр. — экспертная оценка.',
+           costs: 'Расходы/мес', outdoor: 'Открытое пространство', legal: 'Юр. / титул',
+           relvalue: 'Цена vs €/м² (р-н)' },
+    legClusters: 'Для жизни ~51% (семья, локация, состояние, открытое пространство) · Финансы / перепродажа ~49% (цена vs €/м² по району, экспертная цена, энергия, расходы/мес, земля, юр.). Настроено под жильё для одного взрослого + ребёнка 3 лет, с продажей через 5–10 лет. Цена vs €/м², семья, локация, энергия (с бонусом за потенциал), земля, расходы и открытое пространство считаются из данных; цена (экспертная поправка на состояние), состояние и юр. — экспертная оценка.',
     legConf: '<strong>Дост.</strong> = достоверность данных: сколько из 6 ключевых полей (цена, площадь, WOZ, энергометка, земля/эрфпахт, спальни) проверены по независимому источнику. ✓N/6, зелёный ≥5 · янтарный ≥3 · красный &lt;3; ⚠ = конфликт источников. Наведите курсор, чтобы увидеть непроверенные поля.',
     top3: 'Топ-3', all: 'Все объекты',
     hAddr: 'Адрес', hScore: 'Балл', hConf: 'Дост.', hView: 'Просмотр', hPrice: 'Цена', hBeds: 'Спал.', hBuilt: 'Год',
@@ -788,8 +850,8 @@ const STR = {
     search: 'Поиск по адресу…', fAll: 'Все', fBeds: 'Спальни', fPrice: 'Цена до', fVisited: 'только посещённые', fReset: 'Сброс',
     showing: 'показано {n} из {m}', clickHint: 'Кликните по строке — разбор балла, полные заметки и источники', sortHint: 'клик по заголовку колонки — сортировка',
     breakdown: 'Разбор балла', sources: 'Проверенные источники', auto: 'авто', unscored: 'не оценено (перенормировано)',
-    neigh: 'район', upgrade: 'потенциал улучшения', unverifiedLbl: 'метка не проверена', allIn: '/мес всего', heat: 'отопление', ageRestricted: 'только 55+',
-    footer: '<strong>Методология (модель v3):</strong> Взвешенный балл из 10, настроен под жильё для одного взрослого + ребёнка 3 лет (совместная опека), с продажей через 5–10 лет. Два кластера — <em>для жизни ~53%</em>: Для семьи &amp; площадь (18%), Локация &amp; дорога (15%), Состояние (14%), Открытое пространство (6%); <em>финансы / перепродажа ~47%</em>: Цена входа vs WOZ &amp; €/м² (16%), Энергометка (10%), Земля / эрфпахт (8%), Расходы/мес (8%), Юр. / титул (5%). Семья, локация, энергия, земля, расходы и открытое пространство <em>вычисляются</em> из данных (спальни/площадь, минуты на велосипеде ± поправка за район, таблица энергометок − 1 если метка не проверена + бонус за потенциал улучшения, статус земли, полные месячные расходы VvE + отопление, тип открытого пространства); цена входа, состояние и юр. — экспертная оценка по рубрике. Незаполненные критерии перенормируются по заполненным. Расходы со * = VvE + известный аванс за отопление; ~ — оценки. Значения WOZ — официальные оценки Kadaster LV-WOZ за 2025 г. Средние €/м² по районам — оценки риелторов (май 2026) — перепроверьте перед сделкой. Данные на ' + GEN_DATE + '.',
+    neigh: 'район', upgrade: 'потенциал улучшения', unverifiedLbl: 'метка не проверена', allIn: '/мес всего', heat: 'отопление', ageRestricted: 'только 55+', tax: 'налог WOZ', vsWoz: 'к WOZ', vsMedian: 'к медиане города',
+    footer: '<strong>Методология (модель v4):</strong> Взвешенный балл из 10, настроен под жильё для одного взрослого + ребёнка 3 лет (совместная опека), с продажей через 5–10 лет. Два кластера — <em>для жизни ~51%</em>: Для семьи &amp; площадь (17%), Локация &amp; дорога (15%), Состояние (13%), Открытое пространство (6%); <em>финансы / перепродажа ~49%</em>: Цена vs €/м² по району (9%), Экспертная цена (10%), Энергометка (10%), Расходы/мес (8%), Земля / эрфпахт (7%), Юр. / титул (5%). <strong>Изменение v4:</strong> €/м² теперь весит больше «надбавки к WOZ» — <em>Цена vs €/м² по району</em> = надбавка цена/WOZ, центрированная по медиане города, поэтому WOZ служит лишь нормализатором по локации/площади, а не устаревшим абсолютным якорем. <em>Расходы/мес</em> — полные месячные расходы владельца = VvE + аванс за отопление + налоги от WOZ (OZB ≈0,063% Амстелвен / ≈0,058% Амстердам + eigenwoningforfait 0,35% × ~37% box-1), поэтому высокий WOZ повышает стоимость владения. Цена vs €/м², семья, локация, энергия, земля, расходы и открытое пространство <em>вычисляются</em> из данных; цена (экспертная поправка на состояние: переоценка под состояние, поправка на «торги»), состояние и юр. — экспертная оценка по рубрике. Незаполненные критерии перенормируются по заполненным. Значения WOZ — официальные оценки Kadaster LV-WOZ за 2025 г.; ставки OZB/forfait — 2025 г. (настраиваемые) — перепроверьте перед сделкой. Данные на ' + GEN_DATE + '.',
   },
 };
 
