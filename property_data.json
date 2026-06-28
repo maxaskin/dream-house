@@ -5967,5 +5967,422 @@
     "date_found": "2026-06-25",
     "source": "digest",
     "viewing": "No"
+  },
+  {
+    "address": "Bosboom-Toussaintlaan 43, Amstelveen (Bovenkerk)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/huis-bosboom-toussaintlaan-43/44418292/",
+    "price": 550000,
+    "area": 77,
+    "area_estimated": false,
+    "bedrooms": 4,
+    "bedrooms_verified": false,
+    "woz": 640000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1963,
+    "build_year_estimated": true,
+    "energy_label": "C",
+    "energy_estimated": true,
+    "energy_upgrade": "moderate",
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 0,
+    "vve_estimated": false,
+    "dist_emmakade_min": 15,
+    "dist_zuidas_min": 26,
+    "location_adj": 0,
+    "outdoor_space": "garden (est)",
+    "heritage": null,
+    "scores": {
+      "value": 7,
+      "condition": 5,
+      "legal": 6
+    },
+    "notes": "NEW via Funda digest 28-Jun-2026 (id 44418292), eengezinswoning. 1187 CP, Bovenkerk, Amstelveen. PROVEN from digest card: EUR550.000 k.k., 77 m^2, 5 kamers (=4 slaapkamers) = EUR7.143/m^2. ESTIMATED from same-block comp Bosboom-Toussaintlaan 41 (drimble): bouwjaar 1963, WOZ EUR671k (2025, 82 m^2); #21 WOZ EUR829k. WOZ #43 est ~EUR640k (smaller 77 m^2) - verify WOZ-loket/EP-Online/BAG. FLAG (low-ask bidding): asking ~14% BELOW est WOZ -> expect competitive overbidding, final likely near/above WOZ. House on eigen grond (te verifieren) - no erfpacht, no VvE (running-cost plus). Energielabel C est (street modal C) - verify EP-Online; 1963 build => modernisation likely (condition est 5). Bovenkerk under Schiphol approach (noise). Bike ~15 min Emmakade, ~26 min Zuidas (est). FLAG: akte/clauses + possible beschermd dorpsgezicht Bovenkerk unread (Funda bot-gated).",
+    "notes_ru": "НОВОЕ из рассылки Funda 28-июн-2026 (id 44418292), дом. 1187 CP, Bovenkerk, Амстелвен. ПРОВЕРЕНО по карточке: €550.000, 77 м^2, 5 комнат (=4 спальни) = €7.143/м^2. ОЦЕНКА по соседу того же блока Bosboom-Toussaintlaan 41 (drimble): год 1963, WOZ €671k (2025, 82 м^2); #21 WOZ €829k. WOZ #43 оценка ~€640k (меньше, 77 м^2) — проверить WOZ-loket/EP-Online/BAG. ФЛАГ (заниженная цена под торги): запрос ~14% НИЖЕ оценочного WOZ -> ожидается перебив, итог близко/выше WOZ. Дом на собственной земле (требует проверки) — без эрфпахта, без VvE (плюс к расходам). Класс C (оценка, по улице модальный C) — проверить EP-Online; постройка 1963 => вероятна модернизация (состояние ~5). Bovenkerk под глиссадой Схипхола (шум). Велосипед ~15 мин Emmakade, ~26 мин Zuidas (оценка). ФЛАГ: акт/оговорки + возможный охранный статус Bovenkerk не читались (Funda заблокирована).",
+    "sources": {
+      "price": {
+        "value": 550000,
+        "src": "Funda digest card 28-Jun-2026",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/huis-bosboom-toussaintlaan-43/44418292/",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "area": {
+        "value": 77,
+        "src": "Funda digest card (77 m^2, 5 kamers)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/huis-bosboom-toussaintlaan-43/44418292/",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1963,
+        "src": "Same-block comp Bosboom-Toussaintlaan 41 (drimble)",
+        "url": "https://drimble.nl/adres/amstelveen/1187CP/bosboom-toussaintlaan-41.html",
+        "checked": "2026-06-28",
+        "status": "unconfirmed"
+      },
+      "energy_label": {
+        "value": "C",
+        "src": "Street modal label C (allecijfers); not address-specific",
+        "url": "https://allecijfers.nl/weg/bosboom-toussaintlaan-amstelveen/",
+        "checked": "2026-06-28",
+        "status": "unconfirmed",
+        "note": "verify EP-Online for #43"
+      },
+      "woz": {
+        "value": 640000,
+        "src": "Est from comps #41 EUR671k/82m^2 & #21 EUR829k, scaled down for 77 m^2",
+        "url": "https://drimble.nl/adres/amstelveen/1187CP/bosboom-toussaintlaan-41.html",
+        "checked": "2026-06-28",
+        "status": "unconfirmed"
+      },
+      "ground": {
+        "value": "Eigen grond (te verifieren)",
+        "src": "Amstelveen eengezinswoning -> typically eigen grond",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/huis-bosboom-toussaintlaan-43/44418292/",
+        "checked": "2026-06-28",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-28",
+    "source": "digest",
+    "viewing": "No"
+  },
+  {
+    "address": "Eyckenstein 79, Amstelveen (Bovenkerk-Westwijk Noord)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-eyckenstein-79/80872816/",
+    "price": 550000,
+    "area": 119,
+    "area_estimated": false,
+    "bedrooms": 3,
+    "bedrooms_verified": true,
+    "woz": 547000,
+    "woz_year": 2025,
+    "woz_estimated": false,
+    "build_year": 1995,
+    "build_year_estimated": false,
+    "energy_label": "A",
+    "energy_estimated": false,
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 343,
+    "vve_estimated": false,
+    "dist_emmakade_min": 18,
+    "dist_zuidas_min": 30,
+    "location_adj": 0,
+    "outdoor_space": "balcony 10 m²",
+    "heritage": null,
+    "scores": {
+      "value": 8,
+      "condition": 7,
+      "legal": 7
+    },
+    "notes": "NEW via Funda digest 27-Jun-2026 (id 80872816), bovenwoning 5e etage. 1187 HX, Bovenkerk-Westwijk Noord, Amstelveen. PROVEN from digest card: EUR550.000 k.k., 119 m^2, 4 kamers (=3 slaapkamers) = EUR4.622/m^2. VERIFIED on Huispedia: bouwjaar 1995, energielabel A, balkon 10 m^2, VvE EUR343/mo, WOZ EUR547.000 (peildatum 01-01-2025). VALUE strong: asking ~= WOZ (0% premium) and EUR4.622/m^2 is low for Amstelveen; Huispedia model value EUR680-790k. FLAG (low-ask): priced at WOZ in a buurt where ~78% sell over asking -> expect overbidding. Eigen grond (te verifieren) - neighbour #25 eigen grond. NEGATIVES: 5th floor, EUR343 VvE (higher running cost), far from Emmakade/Zuidas (~18/~30 min bike), Schiphol noise zone. Condition est 7 (1995, label A). Akte/VvE-MJOP unread.",
+    "notes_ru": "НОВОЕ из рассылки Funda 27-июн-2026 (id 80872816), верхняя квартира, 5 этаж. 1187 HX, Bovenkerk-Westwijk Noord, Амстелвен. ПРОВЕРЕНО по карточке: €550.000, 119 м^2, 4 комнаты (=3 спальни) = €4.622/м^2. ПРОВЕРЕНО на Huispedia: год 1995, класс A, балкон 10 м^2, VvE €343/мес, WOZ €547.000 (на 01-01-2025). ЦЕНА сильная: запрос ≈ WOZ (0% премии), €4.622/м^2 низко для Амстелвена; модельная оценка Huispedia €680-790k. ФЛАГ (занижение под торги): цена на уровне WOZ в районе, где ~78% уходят выше запроса -> ожидается перебив. Собственная земля (требует проверки) — у соседа #25 собственная. МИНУСЫ: 5 этаж, €343 VvE (высокие расходы), далеко до Emmakade/Zuidas (~18/~30 мин), зона шума Схипхол. Состояние ~7 (1995, класс A). Акт/MJOP не читались.",
+    "sources": {
+      "price": {
+        "value": 550000,
+        "src": "Funda digest card 27-Jun-2026",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-eyckenstein-79/80872816/",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "area": {
+        "value": 119,
+        "src": "Funda digest card + Huispedia (119 m^2)",
+        "url": "https://huispedia.nl/amstelveen/1187hx/eyckenstein/79",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1995,
+        "src": "Huispedia (bouwjaar 1995)",
+        "url": "https://huispedia.nl/amstelveen/1187hx/eyckenstein/79",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "A",
+        "src": "Huispedia (energielabel A)",
+        "url": "https://huispedia.nl/amstelveen/1187hx/eyckenstein/79",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "woz": {
+        "value": 547000,
+        "src": "Huispedia WOZ EUR547.000, peildatum 01-01-2025",
+        "url": "https://huispedia.nl/amstelveen/1187hx/eyckenstein/79",
+        "checked": "2026-06-28",
+        "status": "verified",
+        "note": "peildatum 2025-01-01"
+      },
+      "vve_costs": {
+        "value": 343,
+        "src": "Huispedia VvE EUR343/mo",
+        "url": "https://huispedia.nl/amstelveen/1187hx/eyckenstein/79",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "ground": {
+        "value": "Eigen grond (te verifieren)",
+        "src": "Neighbour Eyckenstein 25 = eigen grond (in DB)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-eyckenstein-79/80872816/",
+        "checked": "2026-06-28",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-28",
+    "source": "digest",
+    "viewing": "No"
+  },
+  {
+    "address": "Amberlaan 68, Amstelveen (Keizer Karelpark)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-amberlaan-68/44418067/",
+    "price": 439000,
+    "area": 80,
+    "area_estimated": false,
+    "bedrooms": 2,
+    "bedrooms_verified": false,
+    "woz": 408000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1962,
+    "build_year_estimated": true,
+    "energy_label": "E",
+    "energy_estimated": true,
+    "energy_upgrade": "moderate",
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 175,
+    "vve_estimated": true,
+    "dist_emmakade_min": 12,
+    "dist_zuidas_min": 21,
+    "location_adj": 0,
+    "outdoor_space": "balcony (est)",
+    "heritage": null,
+    "scores": {
+      "value": 6,
+      "condition": 5,
+      "legal": 6
+    },
+    "notes": "NEW via Funda digest 27-Jun-2026 (id 44418067), appartement. 1185 RM, Keizer Karelpark, Amstelveen. PROVEN from digest card: EUR439.000 k.k., 80 m^2, 3 kamers (=2 slaapkamers) = EUR5.488/m^2. ESTIMATED from same-block comp Amberlaan 60 (drimble): bouwjaar 1962, WOZ EUR408.000 (2025, 81 m^2) -> WOZ #68 est ~EUR408k. VALUE fair: asking ~+7.6% over est WOZ. FLAG energielabel E est (street modal E) - verify EP-Online; 1962 flat => upgrade potential (moderate). Eigen grond (te verifieren). VvE ~EUR175/mo est - confirm + MJOP (1962 complex: check reserves/maintenance). Condition est 5 (likely dated). Bike ~12 min Emmakade, ~21 min Zuidas (est).",
+    "notes_ru": "НОВОЕ из рассылки Funda 27-июн-2026 (id 44418067), квартира. 1185 RM, Keizer Karelpark, Амстелвен. ПРОВЕРЕНО по карточке: €439.000, 80 м^2, 3 комнаты (=2 спальни) = €5.488/м^2. ОЦЕНКА по соседу того же блока Amberlaan 60 (drimble): год 1962, WOZ €408.000 (2025, 81 м^2) -> WOZ #68 оценка ~€408k. ЦЕНА норм: запрос ~+7.6% к оценочному WOZ. ФЛАГ класс E (оценка, по улице модальный E) — проверить EP-Online; дом 1962 => потенциал улучшения (умеренный). Собственная земля (требует проверки). VvE ~€175/мес (оценка) — подтвердить + MJOP (комплекс 1962: резервы/ремонт). Состояние ~5 (вероятно устаревшее). Велосипед ~12 мин Emmakade, ~21 мин Zuidas (оценка).",
+    "sources": {
+      "price": {
+        "value": 439000,
+        "src": "Funda digest card 27-Jun-2026",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-amberlaan-68/44418067/",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "area": {
+        "value": 80,
+        "src": "Funda digest card (80 m^2, 3 kamers)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-amberlaan-68/44418067/",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1962,
+        "src": "Same-block comp Amberlaan 60 (drimble)",
+        "url": "https://drimble.nl/adres/amstelveen/1185RM/amberlaan-60.html",
+        "checked": "2026-06-28",
+        "status": "unconfirmed"
+      },
+      "energy_label": {
+        "value": "E",
+        "src": "Street modal label E (allecijfers); not address-specific",
+        "url": "https://allecijfers.nl/weg/amberlaan-amstelveen/",
+        "checked": "2026-06-28",
+        "status": "unconfirmed",
+        "note": "verify EP-Online for #68"
+      },
+      "woz": {
+        "value": 408000,
+        "src": "Same-block comp Amberlaan 60 WOZ EUR408.000 (2025, 81 m^2)",
+        "url": "https://drimble.nl/adres/amstelveen/1185RM/amberlaan-60.html",
+        "checked": "2026-06-28",
+        "status": "unconfirmed"
+      },
+      "ground": {
+        "value": "Eigen grond (te verifieren)",
+        "src": "Amstelveen flat -> typically eigen grond",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-amberlaan-68/44418067/",
+        "checked": "2026-06-28",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-28",
+    "source": "digest",
+    "viewing": "No"
+  },
+  {
+    "address": "Dr. Willem Dreesweg 438, Amstelveen (Middenhoven)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-dr-willem-dreesweg-438/44417086/",
+    "price": 465000,
+    "area": 86,
+    "area_estimated": false,
+    "bedrooms": 2,
+    "bedrooms_verified": false,
+    "woz": 430000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1990,
+    "build_year_estimated": true,
+    "energy_label": "C",
+    "energy_estimated": true,
+    "energy_upgrade": "moderate",
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 165,
+    "vve_estimated": true,
+    "dist_emmakade_min": 14,
+    "dist_zuidas_min": 22,
+    "location_adj": 0,
+    "outdoor_space": "balcony (est)",
+    "heritage": null,
+    "scores": {
+      "value": 6,
+      "condition": 6,
+      "legal": 7
+    },
+    "notes": "NEW via Funda digest 27-Jun-2026 (id 44417086), appartement. 1188 LE, Middenhoven, Amstelveen. PROVEN from digest card: EUR465.000 k.k., 86 m^2, 3 kamers (=2 slaapkamers) = EUR5.407/m^2. ESTIMATED from same-street near-neighbour Dr. Willem Dreesweg 462 (in DB, likely same complex): bouwjaar 1990, energielabel C, eigen grond, VvE ~EUR158; WOZ #462 EUR334k (2025, 62 m^2) -> WOZ #438 est ~EUR430k (86 m^2) - verify WOZ-loket. VALUE fair: asking ~+8% over est WOZ. Energielabel C est -> moderate upgrade potential; verify EP-Online. Eigen grond (te verifieren). VvE ~EUR165/mo est. Condition est 6. Bike ~14 min Emmakade, ~22 min Zuidas (from #462).",
+    "notes_ru": "НОВОЕ из рассылки Funda 27-июн-2026 (id 44417086), квартира. 1188 LE, Middenhoven, Амстелвен. ПРОВЕРЕНО по карточке: €465.000, 86 м^2, 3 комнаты (=2 спальни) = €5.407/м^2. ОЦЕНКА по соседу той же улицы Dr. Willem Dreesweg 462 (в базе, вероятно тот же комплекс): год 1990, класс C, собственная земля, VvE ~€158; WOZ #462 €334k (2025, 62 м^2) -> WOZ #438 оценка ~€430k (86 м^2) — проверить WOZ-loket. ЦЕНА норм: запрос ~+8% к оценочному WOZ. Класс C (оценка) -> умеренный потенциал улучшения; проверить EP-Online. Собственная земля (требует проверки). VvE ~€165/мес (оценка). Состояние ~6. Велосипед ~14 мин Emmakade, ~22 мин Zuidas (по #462).",
+    "sources": {
+      "price": {
+        "value": 465000,
+        "src": "Funda digest card 27-Jun-2026",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-dr-willem-dreesweg-438/44417086/",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "area": {
+        "value": 86,
+        "src": "Funda digest card (86 m^2, 3 kamers)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-dr-willem-dreesweg-438/44417086/",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1990,
+        "src": "Same-street near-neighbour Dr. Willem Dreesweg 462 (in DB)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-dr-willem-dreesweg-438/44417086/",
+        "checked": "2026-06-28",
+        "status": "unconfirmed"
+      },
+      "energy_label": {
+        "value": "C",
+        "src": "Same-street #462 label C; street modal C",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-dr-willem-dreesweg-438/44417086/",
+        "checked": "2026-06-28",
+        "status": "unconfirmed",
+        "note": "verify EP-Online for #438"
+      },
+      "woz": {
+        "value": 430000,
+        "src": "Scaled from #462 WOZ EUR334k/62m^2 to 86 m^2",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-dr-willem-dreesweg-438/44417086/",
+        "checked": "2026-06-28",
+        "status": "unconfirmed"
+      },
+      "ground": {
+        "value": "Eigen grond (te verifieren)",
+        "src": "Same-street #462 = eigen grond (te verifieren)",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-dr-willem-dreesweg-438/44417086/",
+        "checked": "2026-06-28",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-28",
+    "source": "digest",
+    "viewing": "No"
+  },
+  {
+    "address": "Dr. Eykmanstraat 26, Amstelveen (Elsrijk)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-dr-eykmanstraat-26/44417875/",
+    "price": 475000,
+    "area": 75,
+    "area_estimated": false,
+    "bedrooms": 2,
+    "bedrooms_verified": true,
+    "woz": 429000,
+    "woz_year": 2025,
+    "woz_estimated": false,
+    "build_year": 1960,
+    "build_year_estimated": false,
+    "energy_label": "A",
+    "energy_estimated": false,
+    "ground": "Eigen grond (te verifieren)",
+    "ground_verified": false,
+    "vve_costs": 100,
+    "vve_estimated": true,
+    "dist_emmakade_min": 7,
+    "dist_zuidas_min": 14,
+    "location_adj": 0,
+    "outdoor_space": "balcony",
+    "heritage": null,
+    "scores": {
+      "value": 6,
+      "condition": 7,
+      "legal": 7
+    },
+    "notes": "NEW via Funda digest 27-Jun-2026 (id 44417875), galerijflat 3e woonlaag. 1181 WH, Elsrijk, Amstelveen. PROVEN from digest card: EUR475.000 k.k., 75 m^2, 3 kamers (=2 slaapkamers) = EUR6.333/m^2. VERIFIED on Huispedia: bouwjaar 1960, energielabel A (=> renovated), WOZ EUR429.000 (peildatum 01-01-2025); listed 26-06-2026 by Admiraal ERA. VALUE fair: asking ~+10.7% over WOZ; Huispedia calls EUR475k 'realistic' (model EUR474-550k), expect overbidding to ~EUR510k (100% of buurt sells over asking). Eigen grond (te verifieren). VvE EUR100/mo est (Huispedia: exact not yet known - confirm). Best LOCATION of batch: ~7 min Emmakade, ~14 min Zuidas. Energielabel A on a 1960 block = renovated (condition est 7). Comp in DB: Rozenoord 91 (73 m^2, 1961, EUR460k).",
+    "notes_ru": "НОВОЕ из рассылки Funda 27-июн-2026 (id 44417875), галерейная квартира, 3 этаж. 1181 WH, Elsrijk, Амстелвен. ПРОВЕРЕНО по карточке: €475.000, 75 м^2, 3 комнаты (=2 спальни) = €6.333/м^2. ПРОВЕРЕНО на Huispedia: год 1960, класс A (=> отремонтировано), WOZ €429.000 (на 01-01-2025); размещено 26-06-2026 (Admiraal ERA). ЦЕНА норм: запрос ~+10.7% к WOZ; Huispedia считает €475k 'реалистичной' (диапазон €474-550k), ожидается перебив до ~€510k (100% района уходит выше запроса). Собственная земля (требует проверки). VvE €100/мес (оценка; Huispedia: точная пока неизвестна — подтвердить). Лучшая ЛОКАЦИЯ партии: ~7 мин Emmakade, ~14 мин Zuidas. Класс A в доме 1960 = ремонт (состояние ~7). Сосед в базе: Rozenoord 91 (73 м^2, 1961, €460k).",
+    "sources": {
+      "price": {
+        "value": 475000,
+        "src": "Funda digest card + Huispedia (EUR475.000 k.k.)",
+        "url": "https://huispedia.nl/amstelveen/1181wh/dr-eykmanstraat/26",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "area": {
+        "value": 75,
+        "src": "Funda digest card + Huispedia (75 m^2)",
+        "url": "https://huispedia.nl/amstelveen/1181wh/dr-eykmanstraat/26",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1960,
+        "src": "Huispedia (bouwjaar 1960)",
+        "url": "https://huispedia.nl/amstelveen/1181wh/dr-eykmanstraat/26",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "A",
+        "src": "Huispedia (energielabel A)",
+        "url": "https://huispedia.nl/amstelveen/1181wh/dr-eykmanstraat/26",
+        "checked": "2026-06-28",
+        "status": "verified"
+      },
+      "woz": {
+        "value": 429000,
+        "src": "Huispedia WOZ EUR429.000, peildatum 01-01-2025",
+        "url": "https://huispedia.nl/amstelveen/1181wh/dr-eykmanstraat/26",
+        "checked": "2026-06-28",
+        "status": "verified",
+        "note": "peildatum 2025-01-01"
+      },
+      "vve_costs": {
+        "value": 100,
+        "src": "Huispedia est (exact VvE not yet known)",
+        "url": "https://huispedia.nl/amstelveen/1181wh/dr-eykmanstraat/26",
+        "checked": "2026-06-28",
+        "status": "unconfirmed"
+      },
+      "ground": {
+        "value": "Eigen grond (te verifieren)",
+        "src": "Elsrijk Amstelveen flat -> typically eigen grond",
+        "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-dr-eykmanstraat-26/44417875/",
+        "checked": "2026-06-28",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-06-28",
+    "source": "digest",
+    "viewing": "No"
   }
 ]
