@@ -1,0 +1,72 @@
+rank,v3,delta,address,score,eurm2,woz,prem,relvalue,cost_score,label,beds
+1,5,4,"Wedderborg 25, Amsterdam (Buitenveldert)",7.64,7388,505000,-2,6.4,9,A,2
+2,1,-1,"Rietnesse 12-2, Amsterdam (Buitenveldert)",7.63,5892,515000,-5,6.8,6,C,2
+3,2,-1,"Bouvigne 28-1, Amsterdam (Buitenveldert)",7.61,6325,600000,-12,7.8,7,C,3
+4,3,-1,"Dr. Eykmanstraat 26, Amstelveen (Elsrijk)",7.58,6333,429000,11,5.7,9,A,2
+5,7,2,"Turfschip 229, Amstelveen (Waardhuizen)",7.53,5412,535000,-2,7.4,10,C,3
+6,6,0,"Iepenrodelaan 6-BVR, Amstelveen",7.5,6690,434000,9,5.9,10,D,3
+7,4,-3,"Laanhorn 2, Amstelveen",7.45,6908,398000,32,3.0,8,A,2
+8,8,0,"Ferdinand Bolweg 81, Amstelveen",7.44,5382,471000,2,6.9,8,C,2
+9,10,1,"Ferdinand Bolweg 35, Amstelveen",7.39,5449,482000,1,7.0,8,D,2
+10,9,-1,"Fideliolaan 174, Amstelveen (Kronenburg/Uilenstede)",7.35,5632,450000,9,6.0,8,B,3
+11,17,6,"Bijdorp 91, Amstelveen (Elsrijk)",7.26,5195,432000,-7,8.1,6,C,2
+12,16,4,"Sint Philipsland 101, Amstelveen",7.15,5443,425000,1,7.0,5,C,2
+13,13,0,"Rembrandtweg 493, Amstelveen (Randwijck)",7.14,6188,425000,16,5.0,5,C,2
+14,15,1,"Eyckenstein 79, Amstelveen (Bovenkerk-Westwijk Noord)",7.14,4622,547000,1,7.1,5,A,3
+15,14,-1,"Nijenburg 1, Amsterdam (Buitenveldert)",7.13,7540,512000,-7,7.1,7,C,2
+16,26,10,"Bosboom-Toussaintlaan 43, Amstelveen (Bovenkerk)",7.12,7143,640000,-14,8.9,10,C,4
+17,11,-6,"Meander 37, Amstelveen (Stadshart)",7.12,4682,445000,16,5.1,4,C,2
+18,12,-6,"Tiengemeten 61, Amstelveen (Randwijck-Oost)",7.08,5506,395000,10,5.8,8,E,3
+19,18,-1,"Maimonideslaan 114, Amstelveen (Kostverlorenhof)",7.07,7770,550000,5,6.5,7,A,2
+20,25,5,"Catharina van Clevepark 40, Amstelveen",7.06,5706,446000,9,6.0,10,A,2
+21,20,-1,"Mr. Troelstralaan 30, Amstelveen",7.01,6180,466000,18,4.8,8,C,3
+22,24,2,"Franciscus van Assisiëlaan 27, Amstelveen (Keizer Karelpark-Oost)",6.98,5271,369000,0,7.1,5,E,2
+23,27,4,"Meander 407, Amstelveen (Stadshart)",6.98,4427,445000,-4,7.7,6,D,2
+24,19,-5,"Grote Ruwenberg 25-2, Amsterdam (Buitenveldert)",6.98,7031,447000,1,6.0,8,C,2
+25,21,-4,"Eyckenstein 25, Amstelveen (Westwijk)",6.8,5707,461000,14,5.3,8,B,2
+26,29,3,"Merckenburg 4, Amsterdam (Buitenveldert)",6.78,5349,501000,-8,7.2,8,D,3
+27,33,6,"Newa 69, Amstelveen (Groenelaan)",6.76,6953,303000,-1,7.3,10,B,1
+28,28,0,"Logger 166, Amstelveen (Waardhuizen)",6.75,5793,410000,16,5.1,9,C,3
+29,23,-6,"Camera Obscuralaan 314, Amstelveen (Boekenbuurt)",6.73,6014,340000,31,3.1,9,D,2
+30,31,1,"Onstein 134, Amsterdam (Buitenveldert)",6.7,6091,518000,-9,7.4,7,E,2
+31,22,-9,"Lindenlaan 499, Amstelveen (Keizer Karelpark)",6.69,6429,375000,20,4.6,7,D,3
+32,30,-2,"Logger 52, Amstelveen (Waardhuizen)",6.68,5556,400000,12,5.5,9,C,3
+33,36,3,"Sportlaan 56, Amstelveen",6.66,4938,399000,0,7.1,7,D,3
+34,39,5,"Van Nijenrodeweg 487, Amsterdam (Buitenveldert)",6.63,5345,500000,-7,7.1,7,C,2
+35,32,-3,"Maarten Lutherweg 18, Amstelveen (Kruiskerk)",6.62,5320,367000,9,6.0,9,E,2
+36,35,-1,"Dr. Willem Dreesweg 438, Amstelveen (Middenhoven)",6.6,5407,430000,8,6.1,8,C,2
+37,37,0,"Schierstins 56, Amsterdam (Buitenveldert)",6.52,7090,471000,1,6.0,8,D,3
+38,34,-4,"Rozenoord 91, Amstelveen (Elsrijk)",6.51,6301,390000,18,4.8,8,C,2
+39,42,3,"Merckenburg 42, Amsterdam (Buitenveldert)",6.51,5449,475000,-11,7.6,8,E,2
+40,41,1,"Wijenburg 31, Amsterdam (Buitenveldert)",6.5,6962,550000,0,6.1,8,C,2
+41,40,-1,"Populierenlaan 385, Amstelveen (Populierenbuurt)",6.49,5438,370000,18,4.9,9,C,3
+42,38,-4,"Haya van Somerenlaan 62, Amstelveen (Westwijk/Betsy Perkbuurt)",6.45,6117,490000,17,4.9,8,B,2
+43,43,0,"Van Boshuizenstraat 375, Amsterdam (Buitenveldert)",6.44,6343,467000,-9,7.4,8,C,2
+44,44,0,"Van Heuven Goedhartlaan 350, Amstelveen",6.36,5403,390000,0,7.2,8,E,2
+45,45,0,"Spangenhof 39, Amsterdam (Buitenveldert-Oost)",6.34,6566,580000,-6,6.9,7,C,2
+46,47,1,"Flevolaan 159, Amstelveen",6.31,5903,417000,2,6.9,4,E,2
+47,56,9,"Leo Smitstraat 49, Amsterdam (Zuidas-Zuid)",6.29,10778,543000,-11,7.6,9,A,1
+48,49,1,"Fideliolaan 140, Amstelveen",6.25,6500,298000,9,6.0,8,B,1
+49,48,-1,"Populierenlaan 583, Amstelveen (Keizer Karelpark)",6.25,5000,400000,10,5.8,8,D,2
+50,51,1,"Loevestein 36, Amsterdam (Buitenveldert)",6.23,6169,457000,4,5.6,7,D,2
+51,50,-1,"Rooswijck 92, Amsterdam (Buitenveldert)",6.19,6813,530000,3,5.7,8,D,2
+52,53,1,"Van Heuven Goedhartlaan 310, Amstelveen",6.19,5411,388000,2,6.9,7,F,2
+53,52,-1,"Van Nijenrodeweg 276, Amsterdam (Buitenveldert)",6.1,6322,505000,9,4.9,7,D,2
+54,57,3,"Bos en Vaartlaan 77, Amstelveen (Randwijck)",6.1,7000,376000,2,6.8,8,C,1
+55,54,-1,"Amberlaan 68, Amstelveen (Keizer Karelpark)",6.09,5488,408000,8,6.1,8,E,2
+56,46,-10,"Heringa-State 38, Amsterdam (Buitenveldert)",6.06,6646,485000,8,5.0,8,E,2
+57,55,-2,"Dr. Willem Dreesweg 462, Amstelveen (Middenhoven)",5.95,6452,334000,20,4.6,8,C,1
+58,60,2,"Van Nijenrodeweg 693, Amsterdam (Buitenveldert)",5.84,9697,311000,3,5.7,9,C,1
+59,59,0,"Lindenlaan 559, Amstelveen",5.83,6056,369000,17,5.0,8,C,2
+60,63,3,"Mr. F.A. van Hallweg 56, Amstelveen (Elsrijk)",5.73,5085,285000,5,6.4,9,D,1
+61,61,0,"Nijenburg 8, Amsterdam (Buitenveldert-West)",5.7,7727,418000,2,5.9,9,C,1
+62,64,2,"Van Boshuizenstraat 47, Amsterdam (Buitenveldert)",5.67,6781,494000,0,6.1,8,G,2
+63,58,-5,"Schierstins 47, Amsterdam (Buitenveldert)",5.55,7721,431000,22,3.1,8,F,2
+64,62,-2,"Ennemaborg 69, Amsterdam (Buitenveldert-West)",5.4,7486,380000,42,1,9,D,2
+65,66,1,"Max Havelaarlaan 543, Amstelveen (Bankras-Kostverloren)",5.25,6429,300000,5,6.5,8,D,1
+66,65,-1,"Van Heenvlietlaan 284-K, Amsterdam (Buitenveldert)",5.18,7857,225000,22,3.0,7,A,0
+67,68,1,"Van Heenvlietlaan 250-D, Amsterdam (Buitenveldert-Oost)",4.81,10435,214000,12,4.4,9,C,0
+68,69,1,"Populierenlaan 117, Amstelveen (Populierenbuurt)",4.8,7531,240000,25,4.0,7,G,1
+69,70,1,"Amstelveenseweg 641-B, Amsterdam (Buitenveldert-West)",4.75,8163,350000,14,4.1,9,E,1
+70,67,-3,"Van Boshuizenstraat 501, Amsterdam (Buitenveldert)",4.71,7500,416000,19,3.5,8,E,1
+71,71,0,"Van Nijenrodeweg 824, Amsterdam (Buitenveldert-West)",4.33,10152,230000,46,1,9,D,1
