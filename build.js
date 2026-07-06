@@ -34,6 +34,16 @@ const GEN_DATE = process.env.BUILD_DATE || new Date().toISOString().slice(0, 10)
 //     judgment overlay (over-priced-for-condition, bidding-war temper).
 //   - `costs` now includes the WOZ-driven owner taxes (OZB per gemeente +
 //     eigenwoningforfait drag), so a higher WOZ correctly raises carrying cost.
+// v5 (2026-07-06): dealbreakers stop averaging away; costs get honest.
+//   - VETO GATES: legal<4 · Schiphol `lib_zone` · price>€550k budget · 55+ →
+//     total capped at 5.4 (red) with ⛔ + reasons; raw score kept in tooltip.
+//   - `costs`: + erfpacht `canon_month`; VvE <€100/mo without `vve_reserve_ok`
+//     caps the score at 7 (an underfunded reserve is a risk, not a saving).
+//   - `location` blend Emmakade/Zuidas 60/40 → 70/30 (buyer's call, 2026-07-06).
+//   - `relvalue` baseline PINNED per city per quarter (REL_BASELINE) so scores
+//     stop drifting with dataset churn; BASELINE-DRIFT warns when >3% off.
+//   - VALUE-RUBRIC worklist: top-15 hand `value` scores flagged until re-scored
+//     per the v4 rubric and marked `value_v4: true`.
 const WEIGHTS = [
   { key: 'family',    label: 'Family fit & space', w: 0.17 },               // living  (computed)
   { key: 'value',     label: 'Value (judgment)',   w: 0.10, manual: true }, // financial
@@ -98,14 +108,14 @@ function calcFamily(p) {
   else s = a >= 85 ? 10 : a >= 70 ? 9 : 8;
   return clamp10(s + (p.family_adj || 0));
 }
-// location: bike-minute decay (Emmakade 60% / Zuidas 40%), ±1 neighbourhood
+// location: bike-minute decay (Emmakade 70% / Zuidas 30%, v5), ±1 neighbourhood
 // adjustment via `location_adj` (quiet/green + · busy arterial −).
 function calcLocation(p) {
   const e = p.dist_emmakade_min, z = p.dist_zuidas_min;
   if (e == null && z == null) return null;
   const se = e == null ? null : (e <= 7 ? 10 : Math.max(2, 10 - 0.6 * (e - 7)));
   const sz = z == null ? null : (z <= 6 ? 10 : Math.max(2, 10 - 0.5 * (z - 6)));
-  const base = (se != null && sz != null) ? 0.6 * se + 0.4 * sz : (se ?? sz);
+  const base = (se != null && sz != null) ? 0.7 * se + 0.3 * sz : (se ?? sz);
   return clamp10(base + (p.location_adj || 0));
 }
 // costs: full owner monthly — VvE + heating advance + WOZ-driven owner taxes — banded 1–10.
@@ -121,11 +131,17 @@ function wozTaxMonthly(p) {
   return (ozb + p.woz * FORFAIT_RATE * MARGINAL_RATE) / 12;
 }
 function monthlyAllIn(p) { return p.vve_costs == null ? null : p.vve_costs + (p.heating_advance || 0); }
-function ownershipMonthly(p) { const m = monthlyAllIn(p); return m == null ? null : m + wozTaxMonthly(p); }
+// v5: erfpacht canon (`canon_month`, €/mo, 0 when afgekocht) is a real carrying cost —
+// include it in the ownership total so a lopend canon is priced, not just tenure-scored.
+function ownershipMonthly(p) { const m = monthlyAllIn(p); return m == null ? null : m + wozTaxMonthly(p) + (p.canon_month || 0); }
+// v5: a suspiciously low VvE fee usually signals an underfunded reserve (special-assessment
+// risk), so <€100/mo without `vve_reserve_ok: true` (MJOP/balans checked) caps the score at 7.
 function calcCosts(p) {
   const m = ownershipMonthly(p);
   if (m == null) return null;
-  return m <= 160 ? 10 : m <= 210 ? 9 : m <= 260 ? 8 : m <= 320 ? 7 : m <= 380 ? 6 : m <= 450 ? 5 : m <= 540 ? 4 : 3;
+  const s = m <= 160 ? 10 : m <= 210 ? 9 : m <= 260 ? 8 : m <= 320 ? 7 : m <= 380 ? 6 : m <= 450 ? 5 : m <= 540 ? 4 : 3;
+  if (p.vve_costs != null && p.vve_costs > 0 && p.vve_costs < 100 && !p.vve_reserve_ok) return Math.min(s, 7);
+  return s;
 }
 // relvalue: asking/WOZ premium centred on the property's city median. Because WOZ is the
 // gemeente's location+size-aware assessment, price/WOZ ≈ actual €/m² ÷ "fair" €/m²;
@@ -133,6 +149,10 @@ function calcCosts(p) {
 // relative-value signal (cheaper-than-local-peers → higher score). 92/93 coverage.
 function premium(p) { return (p.price && p.woz) ? p.price / p.woz : null; }
 function median(xs) { const a = xs.filter(v => v != null).sort((x, y) => x - y); if (!a.length) return null; const m = a.length >> 1; return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2; }
+// v5: the baseline is PINNED per city per quarter so scores don't drift as listings
+// enter/leave the set. Re-pin at the start of each quarter: run with REL_BASELINE = null,
+// read the "dynamic baseline" line from the self-check, and write the values back here.
+const REL_BASELINE = { asof: '2026-Q3 (pinned 2026-07-06)', med: { Amsterdam: 1.0076, Amstelveen: 1.0760 } };
 let _premBase = null;
 function premBaseline() {
   if (_premBase) return _premBase;
@@ -143,7 +163,12 @@ function premBaseline() {
   _premBase = { med, cnt, all: median(active.map(premium)) };
   return _premBase;
 }
-function relBase(p) { const b = premBaseline(), c = cityOf(p); return (b.cnt[c] >= 8 ? b.med[c] : b.all) || b.all; }
+function relBase(p) {
+  const c = cityOf(p);
+  if (REL_BASELINE && REL_BASELINE.med[c]) return REL_BASELINE.med[c];
+  const b = premBaseline();
+  return (b.cnt[c] >= 8 ? b.med[c] : b.all) || b.all;
+}
 function calcRelValue(p) {
   const pr = premium(p);
   if (pr == null) return null;
@@ -190,6 +215,27 @@ function weightedTotal(p) {
   }
   if (!wsum) return null;
   return sum / wsum; // blank criteria renormalise over the ones that are scored
+}
+
+// ---- v5 veto gates ------------------------------------------------------
+// A weighted mean lets a strong criterion average away a dealbreaker; these don't average.
+// Any triggered gate caps the displayed total at GATE_CAP (red zone) and is listed in the
+// self-check + shown as ⛔ on the score pill. Fields: `lib_zone` (e.g. "LIB-3"/"LIB-4",
+// Schiphol noise/no-build contour — check for every Amstelveen shortlist property).
+const BUDGET_CAP = 550000;   // buyer's hard budget
+const GATE_CAP = 5.4;        // gated totals render red (<5.5)
+function gateReasons(p) {
+  const g = [], man = (p.scores || {});
+  if (man.legal != null && man.legal < 4) g.push(`legal ${man.legal}<4`);
+  if (p.lib_zone) g.push(`Schiphol ${p.lib_zone}`);
+  if (p.price != null && p.price > BUDGET_CAP) g.push(`>€${(BUDGET_CAP / 1000)}k budget`);
+  if (p.age_restricted) g.push('55+/ballotage');
+  return g;
+}
+function gatedTotal(p) {
+  const t = weightedTotal(p);
+  if (t == null) return t;
+  return gateReasons(p).length ? Math.min(t, GATE_CAP) : t;
 }
 
 // ---- display helpers ----
@@ -362,7 +408,7 @@ const sold   = data.filter(p => p.sold);
 const active = data.filter(p => !p.sold);
 
 const ranked = active
-  .map(p => ({ p, total: weightedTotal(p), eff: effectiveScores(p) }))
+  .map(p => ({ p, total: gatedTotal(p), raw: weightedTotal(p), gates: gateReasons(p), eff: effectiveScores(p) }))
   .sort((a, b) => (b.total ?? -1) - (a.total ?? -1));
 
 // =====================================================================
@@ -385,7 +431,7 @@ function card(r, rank, T) {
   return `<div style="flex:1;min-width:260px;border:${border};border-radius:12px;padding:18px;background:#fff">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
   <span style="font-weight:700;font-size:1.05em">#${rank + 1}</span>
-  <span style="background:${scoreColor(t)};color:#fff;padding:4px 12px;border-radius:12px;font-weight:700">${scoreStr(t)}</span>
+  <span style="background:${scoreColor(t)};color:#fff;padding:4px 12px;border-radius:12px;font-weight:700" ${r.gates && r.gates.length ? `title="GATED (raw ${scoreStr(r.raw)}): ${esc(r.gates.join(', '))}"` : ''}>${r.gates && r.gates.length ? '⛔ ' : ''}${scoreStr(t)}</span>
 </div>
 <div style="font-weight:600;margin-bottom:10px"><a href="${p.url}" target="_blank" style="color:#1d4ed8;text-decoration:none">${esc(p.address)}</a></div>
 <table style="font-size:0.88em;border-collapse:collapse;width:100%">
@@ -437,7 +483,7 @@ function critDetail(p, key, T) {
       if (m == null) return '';
       const tax = Math.round(wozTaxMonthly(p));
       const vve = p.heating_advance ? `VvE €${fmt(p.vve_costs)} + ${T.heat} €${fmt(p.heating_advance)}` : `VvE €${fmt(p.vve_costs)}`;
-      return `€${fmt(Math.round(m + wozTaxMonthly(p)))}${T.allIn} (${vve}${tax ? ` + ${T.tax} €${fmt(tax)}` : ''})`;
+      return `€${fmt(Math.round(ownershipMonthly(p)))}${T.allIn} (${vve}${tax ? ` + ${T.tax} €${fmt(tax)}` : ''}${p.canon_month ? ` + canon €${fmt(p.canon_month)}` : ''})`;
     }
     case 'relvalue': {
       const pr = premium(p);
@@ -500,7 +546,7 @@ function propGroup(r, rank, T, lang) {
 <tr class="main" title="${T.clickHint}">
 <td style="text-align:center;font-weight:700;color:#555" class="rk">${rank + 1}</td>
 <td><a href="${p.url}" target="_blank" style="color:#1d4ed8;text-decoration:none;font-weight:500">${esc(p.address)}</a></td>
-<td style="text-align:center"><span style="background:${scoreColor(t)};color:#fff;padding:3px 10px;border-radius:12px;font-weight:700;font-size:0.95em">${scoreStr(t)}</span></td>
+<td style="text-align:center"><span style="background:${scoreColor(t)};color:#fff;padding:3px 10px;border-radius:12px;font-weight:700;font-size:0.95em" ${r.gates && r.gates.length ? `title="GATED (raw ${scoreStr(r.raw)}): ${esc(r.gates.join(', '))}"` : ''}>${r.gates && r.gates.length ? '⛔ ' : ''}${scoreStr(t)}</span></td>
 <td style="text-align:center">${confCell(p)}</td>
 <td style="text-align:center">${viewingBadge(p.viewing, T)}</td>
 <td style="text-align:right">€${fmt(p.price)}</td>
@@ -824,7 +870,7 @@ const STR = {
     showing: 'showing {n} of {m}', clickHint: 'Click a row for the score breakdown, full notes & sources', sortHint: 'click a column header to sort',
     breakdown: 'Score breakdown', sources: 'Verified sources', auto: 'auto', unscored: 'not scored (renormalised)',
     neigh: 'neighbourhood', upgrade: 'upgrade potential', unverifiedLbl: 'label unverified', allIn: '/mo all-in', heat: 'heating', ageRestricted: '55+ restricted', tax: 'WOZ tax', vsWoz: 'vs WOZ', vsMedian: 'vs city median',
-    footer: '<strong>Methodology (model v4):</strong> Weighted score out of 10, tuned for a live-in home for one adult + a 3-yo (shared custody), sold in 5–10 years. Two clusters — <em>livability ~51%</em>: Family fit &amp; space (17%), Location &amp; commute (15%), Condition (13%), Outdoor space (6%); <em>financial / resale ~49%</em>: Price vs local €/m² (9%), Value judgment (10%), Energy label (10%), Running costs (8%), Tenure / erfpacht (7%), Legal / title risk (5%). <strong>v4 change:</strong> €/m² now outweighs the raw WOZ premium — <em>Price vs local €/m²</em> is the asking-vs-WOZ premium centred on the property\'s city median, so WOZ serves only as the location/size-aware normaliser, not a stale absolute anchor. <em>Running costs</em> are the full owner monthly = VvE + heating advance + WOZ-driven owner taxes (OZB ≈0.063% Amstelveen / ≈0.058% Amsterdam + eigenwoningforfait 0.35% × ~37% box-1), so a higher WOZ raises carrying cost. Price vs €/m², family, location, energy, tenure, running costs and outdoor are <em>computed</em> from the underlying data; value (a condition-adjusted judgment overlay: over-priced-for-condition, bidding-war temper), condition and legal are scored by hand against the rubric. Blank criteria renormalise over the ones that are scored. WOZ values are the official 2025 Kadaster LV-WOZ assessments; OZB/forfait are 2025 rates (tunable) — re-check at offer time. All data as of ' + GEN_DATE + '.',
+    footer: '<strong>Methodology (model v5):</strong> Weighted score out of 10, tuned for a live-in home for one adult + a 3-yo (shared custody), sold in 5–10 years. Two clusters — <em>livability ~51%</em>: Family fit &amp; space (17%), Location &amp; commute (15%), Condition (13%), Outdoor space (6%); <em>financial / resale ~49%</em>: Price vs local €/m² (9%), Value judgment (10%), Energy label (10%), Running costs (8%), Tenure / erfpacht (7%), Legal / title risk (5%). <strong>v4 change:</strong> €/m² now outweighs the raw WOZ premium — <em>Price vs local €/m²</em> is the asking-vs-WOZ premium centred on the property\'s city median, so WOZ serves only as the location/size-aware normaliser, not a stale absolute anchor. <em>Running costs</em> are the full owner monthly = VvE + heating advance + WOZ-driven owner taxes (OZB ≈0.063% Amstelveen / ≈0.058% Amsterdam + eigenwoningforfait 0.35% × ~37% box-1), so a higher WOZ raises carrying cost. Price vs €/m², family, location, energy, tenure, running costs and outdoor are <em>computed</em> from the underlying data; value (a condition-adjusted judgment overlay: over-priced-for-condition, bidding-war temper), condition and legal are scored by hand against the rubric. Blank criteria renormalise over the ones that are scored. WOZ values are the official 2025 Kadaster LV-WOZ assessments; OZB/forfait are 2025 rates (tunable) — re-check at offer time. <strong>v5 change:</strong> veto gates — legal &lt;4, Schiphol LIB zone, price &gt;€550k (budget) or 55+ cap the total at 5.4 (⛔, raw score in tooltip): dealbreakers no longer average away. Running costs add the erfpacht canon; a VvE fee &lt;€100/mo without a verified reserve caps the costs score (underfunded-reserve risk). Location blend Emmakade/Zuidas = 70/30. The relvalue city-median baseline is pinned per quarter. All data as of ' + GEN_DATE + '.',
   },
   ru: {
     title: 'Dream House — Сводка по объектам',
@@ -851,7 +897,7 @@ const STR = {
     showing: 'показано {n} из {m}', clickHint: 'Кликните по строке — разбор балла, полные заметки и источники', sortHint: 'клик по заголовку колонки — сортировка',
     breakdown: 'Разбор балла', sources: 'Проверенные источники', auto: 'авто', unscored: 'не оценено (перенормировано)',
     neigh: 'район', upgrade: 'потенциал улучшения', unverifiedLbl: 'метка не проверена', allIn: '/мес всего', heat: 'отопление', ageRestricted: 'только 55+', tax: 'налог WOZ', vsWoz: 'к WOZ', vsMedian: 'к медиане города',
-    footer: '<strong>Методология (модель v4):</strong> Взвешенный балл из 10, настроен под жильё для одного взрослого + ребёнка 3 лет (совместная опека), с продажей через 5–10 лет. Два кластера — <em>для жизни ~51%</em>: Для семьи &amp; площадь (17%), Локация &amp; дорога (15%), Состояние (13%), Открытое пространство (6%); <em>финансы / перепродажа ~49%</em>: Цена vs €/м² по району (9%), Экспертная цена (10%), Энергометка (10%), Расходы/мес (8%), Земля / эрфпахт (7%), Юр. / титул (5%). <strong>Изменение v4:</strong> €/м² теперь весит больше «надбавки к WOZ» — <em>Цена vs €/м² по району</em> = надбавка цена/WOZ, центрированная по медиане города, поэтому WOZ служит лишь нормализатором по локации/площади, а не устаревшим абсолютным якорем. <em>Расходы/мес</em> — полные месячные расходы владельца = VvE + аванс за отопление + налоги от WOZ (OZB ≈0,063% Амстелвен / ≈0,058% Амстердам + eigenwoningforfait 0,35% × ~37% box-1), поэтому высокий WOZ повышает стоимость владения. Цена vs €/м², семья, локация, энергия, земля, расходы и открытое пространство <em>вычисляются</em> из данных; цена (экспертная поправка на состояние: переоценка под состояние, поправка на «торги»), состояние и юр. — экспертная оценка по рубрике. Незаполненные критерии перенормируются по заполненным. Значения WOZ — официальные оценки Kadaster LV-WOZ за 2025 г.; ставки OZB/forfait — 2025 г. (настраиваемые) — перепроверьте перед сделкой. Данные на ' + GEN_DATE + '.',
+    footer: '<strong>Методология (модель v5):</strong> Взвешенный балл из 10, настроен под жильё для одного взрослого + ребёнка 3 лет (совместная опека), с продажей через 5–10 лет. Два кластера — <em>для жизни ~51%</em>: Для семьи &amp; площадь (17%), Локация &amp; дорога (15%), Состояние (13%), Открытое пространство (6%); <em>финансы / перепродажа ~49%</em>: Цена vs €/м² по району (9%), Экспертная цена (10%), Энергометка (10%), Расходы/мес (8%), Земля / эрфпахт (7%), Юр. / титул (5%). <strong>Изменение v4:</strong> €/м² теперь весит больше «надбавки к WOZ» — <em>Цена vs €/м² по району</em> = надбавка цена/WOZ, центрированная по медиане города, поэтому WOZ служит лишь нормализатором по локации/площади, а не устаревшим абсолютным якорем. <em>Расходы/мес</em> — полные месячные расходы владельца = VvE + аванс за отопление + налоги от WOZ (OZB ≈0,063% Амстелвен / ≈0,058% Амстердам + eigenwoningforfait 0,35% × ~37% box-1), поэтому высокий WOZ повышает стоимость владения. Цена vs €/м², семья, локация, энергия, земля, расходы и открытое пространство <em>вычисляются</em> из данных; цена (экспертная поправка на состояние: переоценка под состояние, поправка на «торги»), состояние и юр. — экспертная оценка по рубрике. Незаполненные критерии перенормируются по заполненным. Значения WOZ — официальные оценки Kadaster LV-WOZ за 2025 г.; ставки OZB/forfait — 2025 г. (настраиваемые) — перепроверьте перед сделкой. <strong>Изменение v5:</strong> вето-фильтры — юр. &lt;4, зона шума Схипхола (LIB), цена &gt;€550k (бюджет) или 55+ ограничивают балл на 5,4 (⛔, исходный балл в подсказке): критические дефекты больше не «усредняются». В расходы добавлен канон эрфпахта; взнос VvE &lt;€100/мес без проверенного резерва ограничивает балл расходов (риск недофинансированного резерва). Вес локации Emmakade/Zuidas = 70/30. Медиана города для relvalue фиксируется поквартально. Данные на ' + GEN_DATE + '.',
   },
 };
 
@@ -903,6 +949,9 @@ for (const r of ranked) {
   if (missing.length) console.warn(`  ${r.p.address}: missing manual scores [${missing.join(', ')}]`);
   // a hand value on a computed criterion is an explicit override — keep it visible
   if (r.eff.overridden.length) console.warn(`  OVERRIDE ${r.p.address}: manual value on computed criteria [${r.eff.overridden.join(', ')}]`);
+  if (r.gates.length) console.warn(`  GATED ${r.p.address}: total capped ${scoreStr(r.raw)} → ${scoreStr(r.total)} [${r.gates.join(', ')}]`);
+  if (r.p.vve_costs != null && r.p.vve_costs > 0 && r.p.vve_costs < 100 && !r.p.vve_reserve_ok)
+    console.warn(`  VVE-LOW ${r.p.address}: €${r.p.vve_costs}/mo without vve_reserve_ok — costs capped at 7; check MJOP/reserve before trusting`);
   // ground string present but not in the tenure map → criterion silently renormalises
   if (r.p.ground != null && TENURE_SCORE[r.p.ground] == null)
     console.warn(`  TENURE-UNMAPPED ${r.p.address}: "${r.p.ground}" (add to TENURE_SCORE)`);
@@ -944,6 +993,26 @@ ranked.slice(0, 10).forEach((r, i) => {
   if (c.pct < 0.5) vWarn.push(`LOW-CONF #${i + 1} ${r.p.address}: only ${c.verified}/${c.total} key fields verified`);
 });
 if (vWarn.length) console.warn(`  verification (${vWarn.length}):\n    ${vWarn.join('\n    ')}`);
+
+// v5: relvalue baseline — report pinned vs dynamic drift (re-pin quarterly if >3%).
+{
+  const dyn = premBaseline();
+  if (REL_BASELINE) {
+    for (const c in REL_BASELINE.med) {
+      const d = dyn.med[c];
+      if (d && Math.abs(d / REL_BASELINE.med[c] - 1) > 0.03)
+        console.warn(`  BASELINE-DRIFT ${c}: pinned ${REL_BASELINE.med[c].toFixed(4)} (${REL_BASELINE.asof}) vs dynamic ${d.toFixed(4)} — consider re-pinning`);
+    }
+  }
+  console.log(`  relvalue baseline: pinned ${REL_BASELINE ? Object.entries(REL_BASELINE.med).map(([c, v]) => `${c}=${v}`).join(' ') + ` (${REL_BASELINE.asof})` : 'OFF'} · dynamic ${Object.entries(dyn.med).map(([c, v]) => `${c}=${v.toFixed(4)} (n=${dyn.cnt[c]})`).join(' ')}`);
+}
+
+// v5: stale manual `value` worklist — hand scores predating the v4 rubric distort 10% of
+// the total; flag the top 15 active until each is re-scored and marked `value_v4: true`.
+{
+  const stale = ranked.slice(0, 15).filter(r => !r.p.value_v4 && (r.p.scores || {}).value != null);
+  if (stale.length) console.warn(`  VALUE-RUBRIC (${stale.length}/top-15): re-score \`value\` per v4 rubric, then set value_v4:true — ${stale.map(r => r.p.address.split(',')[0]).join('; ')}`);
+}
 
 const ruMissing = ranked.filter(r => !r.p.notes_ru).map(r => r.p.address);
 console.log(`Built ${data.length} properties (EN + RU summaries). index.html build #${buildVer}, dated ${GEN_DATE}.`);
