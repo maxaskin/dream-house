@@ -20,3 +20,4 @@ Documents/**/*_ocr.txt
 # Temp/probe files
 __deltest.txt
 _probe_*
+._agent_test_delete_me.tmp
