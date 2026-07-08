@@ -3346,7 +3346,7 @@
         "note": "Appartementenclausule not shown on 2022 polis; seller Q15b 'nee'. Confirm 2026 polisblad + foundation cover."
       }
     },
-    "viewing": "DD docs reviewed 2026-06-25 (viewing same day)",
+    "viewing": "Visited 2026-06-25",
     "date_found": "2026-06-12",
     "source": "digest",
     "scores_legacy": {
@@ -8492,6 +8492,96 @@
     },
     "viewing": "No",
     "date_found": "2026-07-08",
+    "source": "digest"
+  },
+  {
+    "address": "Frieslandstraat 143, Amsterdam (Buitenveldert-West)",
+    "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-frieslandstraat-143/43428857/",
+    "price": 350000,
+    "area": 41,
+    "area_estimated": false,
+    "bedrooms": 1,
+    "bedrooms_verified": true,
+    "woz": 230000,
+    "woz_year": 2025,
+    "woz_estimated": true,
+    "build_year": 1964,
+    "build_year_estimated": false,
+    "energy_label": "E",
+    "energy_estimated": false,
+    "energy_upgrade": "limited (blokverwarming - VvE-wide project needed, not an individual upgrade)",
+    "ground": "Erfpacht (canon bevroren tot 2036)",
+    "ground_verified": false,
+    "vve_costs": 145,
+    "vve_estimated": false,
+    "heating_advance": 30,
+    "outdoor_space": "garden (zuid, tuin)",
+    "dist_emmakade_min": 14,
+    "dist_zuidas_min": 7,
+    "heritage": null,
+    "scores": {
+      "price": 5,
+      "legal": 5,
+      "dist_emmakade": 8,
+      "energy": 3,
+      "dist_zuidas": 9,
+      "renovation": 5
+    },
+    "notes": "NEW from Funda digest 07-07-2026 (id 43428857), 1082 TM Amsterdam (Buitenveldert-West, near Gelderlandplein/Zuidas). Ground-floor (benedenwoning) 2-kamer appartement, 41 m2 (Funda listing), 1 bedroom + separate living room, sunny south-facing garden, built-in aircon, electric sun-screen. Bouwjaar 1964 (Funda) - same building era as Frieslandstraat 3/131/147 on the same street. Asking EUR350,000 k.k. = EUR8,537/m2 - high per-m2 vs street comps (Frieslandstraat 131: 67m2 sold EUR7,239/m2; Frieslandstraat 3: ~70m2 WOZ EUR330k =~EUR4,700-6,450/m2 WOZ range across comps), but small units in Amsterdam typically carry a premium per m2, and WOZ structurally lags asking price. FLAG (WOZ): no address-specific WOZ found (Funda/kadasterdata/huispedia all JS-gated, returned empty); ESTIMATE EUR230k based on interpolating comp WOZ-per-m2 (Frieslandstraat 3 and 131) x 41 m2 - LOW CONFIDENCE, verify via wozwaardeloket.nl before an offer. Energielabel E (Funda: double glazing, but block heating + electric boiler) - poor, and hard to upgrade individually since heating is VvE-managed (blokverwarming); any improvement needs a building-wide VvE project. RISK (legal): Amsterdam ERFPACHT with canon FROZEN only until 2036 (EUR235/yr per search) - FLAG: revision at 2036 could raise costs materially; confirm the akte/erfpacht map before an offer, and whether afkoop (buy-out) to eeuwigdurend is possible. VvE EUR145/mo + EUR30/mo heating advance = EUR175/mo total - reasonable, described as active/healthy VvE, but breakdown/reserve not independently verified. Distances estimated by analogy to Frieslandstraat 131 (same street): ~14 min Emmakade, ~7 min Zuidas (close - a plus for this criterion). No viewing yet.",
+    "notes_ru": "НОВОЕ из дайджеста Funda от 07-07-2026 (id 43428857), 1082 TM Амстердам (Buitenveldert-West, рядом с Gelderlandplein/Zuidas). Квартира на первом этаже (benedenwoning), 2 комнаты, 41 м2 (по Funda), 1 спальня + отдельная гостиная, солнечный сад на юг, встроенный кондиционер, электрический тент от солнца. Год постройки 1964 (Funda) - тот же период застройки, что и Frieslandstraat 3/131/147 на той же улице. Запрос EUR350 000 k.k. = EUR8 537/м2 - выше по цене за м2, чем сравнимые объекты на улице (Frieslandstraat 131: 67 м2 продана за EUR7 239/м2; Frieslandstraat 3: ~70 м2, WOZ EUR330 тыс. =~EUR4 700-6 450/м2 по WOZ в разных объектах), но малые квартиры в Амстердаме обычно дороже за м2, а WOZ структурно отстаёт от цены продажи. ФЛАГ (WOZ): точное значение WOZ для этого адреса не найдено (Funda/kadasterdata/huispedia требуют JS, вернули пусто); ОЦЕНКА EUR230 тыс. на основе интерполяции WOZ/м2 соседних объектов (Frieslandstraat 3 и 131) x 41 м2 - НИЗКАЯ ДОСТОВЕРНОСТЬ, проверить через wozwaardeloket.nl перед предложением. Класс энергоэффективности E (Funda: двойное остекление, но блочное отопление и электрический бойлер) - слабый показатель, который сложно улучшить индивидуально, т.к. отопление управляется VvE (блочное) - апгрейд возможен только в рамках общего проекта VvE. РИСК (юридический): амстердамский ЭРФПАХТ с каноном, ЗАМОРОЖЕННЫМ только до 2036 года (EUR235/год по данным поиска) - ФЛАГ: пересмотр в 2036 может существенно поднять расходы; проверить акт/карту эрфпахта перед предложением, а также возможность выкупа (afkoop) в бессрочный. VvE EUR145/мес + EUR30/мес аванс на отопление = EUR175/мес всего - разумно, указано как активное/здоровое VvE, но резервный фонд отдельно не проверен. Расстояния оценены по аналогии с Frieslandstraat 131 (та же улица): ~14 мин до Emmakade, ~7 мин до Zuidas (близко - плюс по этому критерию). Осмотра пока не было.",
+    "sources": {
+      "price": {
+        "value": 350000,
+        "src": "Funda listing (via web search)",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-frieslandstraat-143/43428857/",
+        "checked": "2026-07-08",
+        "status": "verified"
+      },
+      "area": {
+        "value": 41,
+        "src": "Funda listing description (via web search)",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-frieslandstraat-143/43428857/",
+        "checked": "2026-07-08",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1964,
+        "src": "Funda listing (via web search)",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-frieslandstraat-143/43428857/",
+        "checked": "2026-07-08",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "E",
+        "src": "Funda listing (double glazing, block heating, electric boiler)",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-frieslandstraat-143/43428857/",
+        "checked": "2026-07-08",
+        "status": "verified"
+      },
+      "woz": {
+        "value": 230000,
+        "src": "ESTIMATE interpolated from Frieslandstraat 3 (WOZ 330k / ~70m2) and Frieslandstraat 131 (WOZ 432k / 67m2) per-m2 x 41m2; kadasterdata/huispedia/wozwaardeloket pages returned empty (JS-gated)",
+        "url": "",
+        "checked": "2026-07-08",
+        "status": "conflict"
+      },
+      "ground": {
+        "value": "Erfpacht (canon bevroren tot 2036, EUR235/jr)",
+        "src": "Web search summary of listing/marketing site frieslandstraat143.nl",
+        "url": "https://www.frieslandstraat143.nl/",
+        "checked": "2026-07-08",
+        "status": "unconfirmed"
+      },
+      "vve_costs": {
+        "value": 145,
+        "src": "Funda listing (VvE EUR145/mo + EUR30/mo heating advance)",
+        "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-frieslandstraat-143/43428857/",
+        "checked": "2026-07-08",
+        "status": "verified"
+      }
+    },
+    "viewing": "No",
+    "date_found": "2026-07-07",
     "source": "digest"
   }
 ]
