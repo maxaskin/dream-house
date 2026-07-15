@@ -56,7 +56,7 @@
     "source": "funda",
     "viewing": "Visited 2026-06-02",
     "sold": true,
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_status": "verkocht_ov",
     "sold_date": "2026-07-14",
     "sold_price": null,
@@ -155,7 +155,7 @@
       }
     ],
     "energy_upgrade": "moderate",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "value_v4": true
   },
   {
@@ -208,7 +208,7 @@
         "src": "Funda"
       }
     ],
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_status": "sold",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
@@ -253,7 +253,7 @@
     "source": "reaction",
     "viewing": "Visited 2026-05-21",
     "heating_advance": 80,
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-06",
@@ -284,8 +284,8 @@
       "condition": 4,
       "legal": 6
     },
-    "notes": "CORRECTED via Kadasterdata: 76 m² (not 79), built 1961 (not 1968), eigen grond, WOZ €425k (2025, official). VvE much higher than thought ~€275 service + €125 heat (~€400/mo). Label uncertain — complex comparable shows G; assume E or worse. €425k from reaction (23 May), not currently listed. €5,592/m². | Funda status 2026-06-28: no longer listed on Funda (listing page removed) — off-market, moved to sold pile. | Funda status 2026-06-30: REACTIVATED — back on Funda as Beschikbaar/Available (street for-sale, no badge), €425k, live detail id 44464587. Was off-market 28-06. Moved back to ACTIVE; URL updated to the live detail page. Recall prior concerns: energy label likely E/G, VvE ~€400/mo.",
-    "notes_ru": "ИСПРАВЛЕНО через Kadasterdata: 76 м² (не 79), построен в 1961 г. (не 1968), собственный участок, WOZ €425к (2025, офиц.). ТСЖ гораздо выше ожидаемого ~€275 обслуживание + €125 отопление (~€400/мес). Класс неопределён — сопоставимый объект показывает G; предположительно E или хуже. €425к по реакции (23 мая), в настоящее время не выставлен. €5.592/м². | Статус Funda 2026-06-28: больше нет на Funda (объявление удалено) — снято с продажи, перенесено в проданные. | Статус Funda 2026-06-30: ВОЗВРАЩЕНО В ПРОДАЖУ — снова на Funda как Beschikbaar/доступен (список продажи по улице, без бейджа), €425к, действующий id 44464587. На 28-06 было снято. Возвращено в АКТИВНЫЕ; ссылка обновлена на действующую страницу. Помнить о прежних замечаниях: класс энергоэффективности вероятно E/G, VvE ~€400/мес.",
+    "notes": "CORRECTED via Kadasterdata: 76 m² (not 79), built 1961 (not 1968), eigen grond, WOZ €425k (2025, official). VvE much higher than thought ~€275 service + €125 heat (~€400/mo). Label uncertain — complex comparable shows G; assume E or worse. €425k from reaction (23 May), not currently listed. €5,592/m². | Funda status 2026-06-28: no longer listed on Funda (listing page removed) — off-market, moved to sold pile. | Funda status 2026-06-30: REACTIVATED — back on Funda as Beschikbaar/Available (street for-sale, no badge), €425k, live detail id 44464587. Was off-market 28-06. Moved back to ACTIVE; URL updated to the live detail page. Recall prior concerns: energy label likely E/G, VvE ~€400/mo. [2026-07-15] Status changed on Funda: now Onder bod (under bid). Moved from active to sold-pile (non-final).",
+    "notes_ru": "ИСПРАВЛЕНО через Kadasterdata: 76 м² (не 79), построен в 1961 г. (не 1968), собственный участок, WOZ €425к (2025, офиц.). ТСЖ гораздо выше ожидаемого ~€275 обслуживание + €125 отопление (~€400/мес). Класс неопределён — сопоставимый объект показывает G; предположительно E или хуже. €425к по реакции (23 мая), в настоящее время не выставлен. €5.592/м². | Статус Funda 2026-06-28: больше нет на Funda (объявление удалено) — снято с продажи, перенесено в проданные. | Статус Funda 2026-06-30: ВОЗВРАЩЕНО В ПРОДАЖУ — снова на Funda как Beschikbaar/доступен (список продажи по улице, без бейджа), €425к, действующий id 44464587. На 28-06 было снято. Возвращено в АКТИВНЫЕ; ссылка обновлена на действующую страницу. Помнить о прежних замечаниях: класс энергоэффективности вероятно E/G, VvE ~€400/мес. [2026-07-15] Статус изменён на Funda: теперь Onder bod (предложение принято, сделка не финальна). Перемещено из активных в проданные (не финально).",
     "sources": {
       "woz": {
         "value": 425000,
@@ -301,8 +301,10 @@
     "date_found": "2026-05-30",
     "source": "reaction",
     "viewing": "Visited 2026-06-05",
-    "sold": false,
-    "status_checked": "2026-07-14"
+    "sold": true,
+    "status_checked": "2026-07-15",
+    "sold_status": "onder_bod",
+    "sold_date": "2026-07-15"
   },
   {
     "address": "Bijdorp 11, Amstelveen",
@@ -346,7 +348,7 @@
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-06-28",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -395,7 +397,7 @@
     "sold": false,
     "sold_status": null,
     "sold_date": null,
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Populierenlaan 175, Amstelveen",
@@ -439,7 +441,7 @@
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-06-28",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -486,7 +488,7 @@
     "sold": true,
     "sold_status": "sold",
     "sold_date": "2026-06-22",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -549,7 +551,7 @@
         "note": "neighbour"
       }
     ],
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Van Heuven Goedhartlaan 458, Amstelveen",
@@ -592,7 +594,7 @@
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-06-28",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -639,7 +641,7 @@
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-06-28",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -696,7 +698,7 @@
         "src": "Funda (Investa 360)"
       }
     ],
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Bolestein 13-B, Amsterdam (Buitenveldert)",
@@ -738,7 +740,7 @@
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-07-09",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -800,7 +802,7 @@
     "sold": true,
     "sold_status": "sold",
     "sold_date": "2026-06-15",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -827,8 +829,8 @@
       "condition": 6,
       "legal": 4
     },
-    "notes": "PARTIALLY VERIFIED via main 795 unit: 76 m², 2 bed (4-kamer), 1962, label C, erfpacht eeuwigdurend AFGEKOCHT, VvE €289.20/mo, WOZ €381k (main 795 unit). Official 2025 LV-WOZ for the -K nummeraanduiding = €662k, but it jumped €329k→€547k in 2022–23 — consistent with a merged/relisted object, so treat that WOZ as unreliable. The main 795 unit is now RENTED at €500k; the '-K' unit Max reacted to (€550k) could not be isolated — likely a distinct dwelling. Get the -K measurement/erfpacht sheet from makelaar BNV. Non-self-occupancy/asbestos clauses. Busy A.J. Ernststraat. | Sold/transferred 2025-07-30 (final €500,000); now rented out (Verhuurd) by new owner. | [2026-07-01] STATUS: No longer for sale on Funda (page now shows rental/off-market). Remains in sold pile. | [2026-07-05] Re-check: Funda page now shows Verhuurd (rented); sale withdrawn — stays off for-sale market. | [2026-07-06] STATUS: Funda listing ID now shows 'Verhuurd' (rented) — confirms unit is fully off the sales market (repurposed as rental). Sold status unchanged. | [2026-07-07] STATUS: Funda listing page shows 'Verhuurd' (rented) again — confirms unit remains fully off the sales market (repurposed as rental by new owner). Sold status unchanged. | [2026-07-08] STATUS: Funda re-checked (double-verified via full reload, tab-contamination ruled out) — still shows 'Verhuurd' (rented), listing details unchanged (dates ~2025, asking-as-rental 500000). Sold status unchanged. | [2026-07-09] STATUS: Funda re-checked, still shows 'Verhuurd' (rented) — unit remains off the sales market, repurposed as rental. Sold status unchanged (not a standard reactivation since it never returned to 'Beschikbaar' for sale). | [2026-07-10] STATUS: Funda re-checked, still shows 'Verhuurd' (rented) — unit remains off the sales market, repurposed as rental. Sold status unchanged.\n[2026-07-12] Daily Funda sweep re-check: live page still shows status 'Verhuurd' (rented, Verhuurdatum 30-07-2025) rather than 'Verkocht', consistent with prior finding — the unit appears to have been converted to a rental rather than sold via this listing. No status change made; record kept as sold/off-market.\n[2026-07-13] Daily Funda sweep re-check: live page still shows status 'Verhuurd' (rented, Verhuurdatum 30-07-2025) rather than 'Verkocht' — consistent with all prior checks since 2026-07-01. No status change made; record kept as sold/off-market. | [2026-07-13] FLAG: Funda listing page now shows 'Verhuurd' (rented) with a rental history section instead of a sale status - the sale listing may have been repurposed/reused as a rental listing on this ID. Recommend manual review; sold/sold_status left unchanged pending confirmation. | [2026-07-14] STATUS: re-confirmed: page still shows anomalous 'Verhuurd' (rental) status under this ID with slight address mismatch (795 vs 795-K). sold/sold_status left unchanged (already long-sold 2025-07-30); recommend continued manual monitoring.",
-    "notes_ru": "ЧАСТИЧНО ПРОВЕРЕНО через основной блок 795: 76 м², 2 спальни (4 комнаты), 1962 г., класс C, эрфпахт бессрочный ВЫКУПЛЕН, ТСЖ €289.20/мес, WOZ €381к (осн. блок 795). Офиц. WOZ 2025 для -K = €662к, но скачок €329к→€547к в 2022–23 — похоже на объединённый/перевыставленный объект, поэтому этот WOZ ненадёжен. Основной блок 795 теперь сдаётся в аренду за €500к; блок «-К», на который откликнулся Макс (€550к), изолировать не удалось — вероятно, отдельное жильё. Запросить у маклера BNV обмеры и документ по эрфпахту для -К. Оговорки о нецелевом проживании и асбесте. Оживлённая улица A.J. Ernststraat. | Продано/передано 30-07-2025 (итог €500 000); сдаётся новым владельцем. | [2026-07-01] СТАТУС: Больше не продаётся на Funda (теперь аренда/снято). Остаётся в проданных. | [2026-07-05] Повторная проверка: страница Funda теперь «Verhuurd» (сдано); продажа снята — остаётся вне рынка продажи. | [2026-07-06] СТАТУС: По этому ID Funda теперь показывает 'Verhuurd' (сдано в аренду) — подтверждает, что объект полностью снят с продажи (сдан в аренду). Статус продажи без изменений. | [2026-07-07] СТАТУС: страница Funda снова показывает 'Verhuurd' (сдано в аренду) — подтверждает, что объект полностью снят с продажи (сдан в аренду новым владельцем). Статус продажи без изменений. | [2026-07-08] СТАТУС: повторная проверка Funda (дважды подтверждено после полной перезагрузки, искажение вкладки исключено) — по-прежнему 'Verhuurd' (сдано в аренду), детали объявления без изменений (даты ~2025, цена как аренда 500000). Статус продажи без изменений. | [2026-07-09] СТАТУС: повторная проверка Funda, по-прежнему 'Verhuurd' (сдано в аренду) — объект остаётся вне рынка продажи, сдан в аренду. Статус продажи без изменений (не реактивация, т.к. не вернулся в статус 'Beschikbaar' для продажи). | [2026-07-10] СТАТУС: повторная проверка Funda, по-прежнему 'Verhuurd' (сдано в аренду) — объект остаётся вне рынка продажи, сдан в аренду. Статус продажи без изменений.\n[2026-07-12] Ежедневная проверка Funda: страница по-прежнему показывает статус 'Verhuurd' (сдано в аренду, дата 30-07-2025), а не 'Verkocht' — согласуется с ранее найденным: похоже, объект был сдан в аренду, а не продан по этому объявлению. Статус не менялся, запись остаётся как продано/снято с продажи.\n[2026-07-13] Ежедневная проверка Funda: страница по-прежнему показывает статус 'Verhuurd' (сдано в аренду, дата 30-07-2025), а не 'Verkocht' — согласуется со всеми проверками с 2026-07-01. Статус не менялся, запись остаётся как продано/снято с продажи. | [2026-07-13] ФЛАГ: страница Funda теперь показывает 'Verhuurd' (сдано в аренду) с историей аренды вместо статуса продажи - возможно, ID объявления о продаже был повторно использован под аренду. Рекомендуется ручная проверка; sold/sold_status оставлены без изменений до подтверждения. | [2026-07-14] СТАТУС: повторно подтверждено: страница всё ещё показывает аномальный статус 'Verhuurd' (аренда) под этим ID с небольшим несоответствием адреса (795 vs 795-K). sold/sold_status не изменены (уже давно продано 2025-07-30); рекомендуется дальнейший ручной контроль.",
+    "notes": "PARTIALLY VERIFIED via main 795 unit: 76 m², 2 bed (4-kamer), 1962, label C, erfpacht eeuwigdurend AFGEKOCHT, VvE €289.20/mo, WOZ €381k (main 795 unit). Official 2025 LV-WOZ for the -K nummeraanduiding = €662k, but it jumped €329k→€547k in 2022–23 — consistent with a merged/relisted object, so treat that WOZ as unreliable. The main 795 unit is now RENTED at €500k; the '-K' unit Max reacted to (€550k) could not be isolated — likely a distinct dwelling. Get the -K measurement/erfpacht sheet from makelaar BNV. Non-self-occupancy/asbestos clauses. Busy A.J. Ernststraat. | Sold/transferred 2025-07-30 (final €500,000); now rented out (Verhuurd) by new owner. | [2026-07-01] STATUS: No longer for sale on Funda (page now shows rental/off-market). Remains in sold pile. | [2026-07-05] Re-check: Funda page now shows Verhuurd (rented); sale withdrawn — stays off for-sale market. | [2026-07-06] STATUS: Funda listing ID now shows 'Verhuurd' (rented) — confirms unit is fully off the sales market (repurposed as rental). Sold status unchanged. | [2026-07-07] STATUS: Funda listing page shows 'Verhuurd' (rented) again — confirms unit remains fully off the sales market (repurposed as rental by new owner). Sold status unchanged. | [2026-07-08] STATUS: Funda re-checked (double-verified via full reload, tab-contamination ruled out) — still shows 'Verhuurd' (rented), listing details unchanged (dates ~2025, asking-as-rental 500000). Sold status unchanged. | [2026-07-09] STATUS: Funda re-checked, still shows 'Verhuurd' (rented) — unit remains off the sales market, repurposed as rental. Sold status unchanged (not a standard reactivation since it never returned to 'Beschikbaar' for sale). | [2026-07-10] STATUS: Funda re-checked, still shows 'Verhuurd' (rented) — unit remains off the sales market, repurposed as rental. Sold status unchanged.\n[2026-07-12] Daily Funda sweep re-check: live page still shows status 'Verhuurd' (rented, Verhuurdatum 30-07-2025) rather than 'Verkocht', consistent with prior finding — the unit appears to have been converted to a rental rather than sold via this listing. No status change made; record kept as sold/off-market.\n[2026-07-13] Daily Funda sweep re-check: live page still shows status 'Verhuurd' (rented, Verhuurdatum 30-07-2025) rather than 'Verkocht' — consistent with all prior checks since 2026-07-01. No status change made; record kept as sold/off-market. | [2026-07-13] FLAG: Funda listing page now shows 'Verhuurd' (rented) with a rental history section instead of a sale status - the sale listing may have been repurposed/reused as a rental listing on this ID. Recommend manual review; sold/sold_status left unchanged pending confirmation. | [2026-07-14] STATUS: re-confirmed: page still shows anomalous 'Verhuurd' (rental) status under this ID with slight address mismatch (795 vs 795-K). sold/sold_status left unchanged (already long-sold 2025-07-30); recommend continued manual monitoring. [2026-07-15] Funda page now shows this unit was subsequently rented out (Verhuurd) after the recorded sale; no change to sold-record.",
+    "notes_ru": "ЧАСТИЧНО ПРОВЕРЕНО через основной блок 795: 76 м², 2 спальни (4 комнаты), 1962 г., класс C, эрфпахт бессрочный ВЫКУПЛЕН, ТСЖ €289.20/мес, WOZ €381к (осн. блок 795). Офиц. WOZ 2025 для -K = €662к, но скачок €329к→€547к в 2022–23 — похоже на объединённый/перевыставленный объект, поэтому этот WOZ ненадёжен. Основной блок 795 теперь сдаётся в аренду за €500к; блок «-К», на который откликнулся Макс (€550к), изолировать не удалось — вероятно, отдельное жильё. Запросить у маклера BNV обмеры и документ по эрфпахту для -К. Оговорки о нецелевом проживании и асбесте. Оживлённая улица A.J. Ernststraat. | Продано/передано 30-07-2025 (итог €500 000); сдаётся новым владельцем. | [2026-07-01] СТАТУС: Больше не продаётся на Funda (теперь аренда/снято). Остаётся в проданных. | [2026-07-05] Повторная проверка: страница Funda теперь «Verhuurd» (сдано); продажа снята — остаётся вне рынка продажи. | [2026-07-06] СТАТУС: По этому ID Funda теперь показывает 'Verhuurd' (сдано в аренду) — подтверждает, что объект полностью снят с продажи (сдан в аренду). Статус продажи без изменений. | [2026-07-07] СТАТУС: страница Funda снова показывает 'Verhuurd' (сдано в аренду) — подтверждает, что объект полностью снят с продажи (сдан в аренду новым владельцем). Статус продажи без изменений. | [2026-07-08] СТАТУС: повторная проверка Funda (дважды подтверждено после полной перезагрузки, искажение вкладки исключено) — по-прежнему 'Verhuurd' (сдано в аренду), детали объявления без изменений (даты ~2025, цена как аренда 500000). Статус продажи без изменений. | [2026-07-09] СТАТУС: повторная проверка Funda, по-прежнему 'Verhuurd' (сдано в аренду) — объект остаётся вне рынка продажи, сдан в аренду. Статус продажи без изменений (не реактивация, т.к. не вернулся в статус 'Beschikbaar' для продажи). | [2026-07-10] СТАТУС: повторная проверка Funda, по-прежнему 'Verhuurd' (сдано в аренду) — объект остаётся вне рынка продажи, сдан в аренду. Статус продажи без изменений.\n[2026-07-12] Ежедневная проверка Funda: страница по-прежнему показывает статус 'Verhuurd' (сдано в аренду, дата 30-07-2025), а не 'Verkocht' — согласуется с ранее найденным: похоже, объект был сдан в аренду, а не продан по этому объявлению. Статус не менялся, запись остаётся как продано/снято с продажи.\n[2026-07-13] Ежедневная проверка Funda: страница по-прежнему показывает статус 'Verhuurd' (сдано в аренду, дата 30-07-2025), а не 'Verkocht' — согласуется со всеми проверками с 2026-07-01. Статус не менялся, запись остаётся как продано/снято с продажи. | [2026-07-13] ФЛАГ: страница Funda теперь показывает 'Verhuurd' (сдано в аренду) с историей аренды вместо статуса продажи - возможно, ID объявления о продаже был повторно использован под аренду. Рекомендуется ручная проверка; sold/sold_status оставлены без изменений до подтверждения. | [2026-07-14] СТАТУС: повторно подтверждено: страница всё ещё показывает аномальный статус 'Verhuurd' (аренда) под этим ID с небольшим несоответствием адреса (795 vs 795-K). sold/sold_status не изменены (уже давно продано 2025-07-30); рекомендуется дальнейший ручной контроль. [2026-07-15] Страница Funda теперь показывает, что после продажи объект впоследствии был сдан в аренду (Verhuurd); запись о продаже не меняется.",
     "sources": {
       "woz": {
         "value": 662000,
@@ -848,7 +850,7 @@
     "sold": true,
     "sold_status": "sold",
     "sold_date": "2025-07-30",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "DATA CONFLICT: tracker says sold 2025-07-30 for EUR 500,000, but Huispedia/Miljoenhuizen show it re-listed 2026-05-11 at EUR 550,000 and sold Jun 2026, koopsom pending. Needs verification.",
@@ -894,7 +896,7 @@
     "sold": true,
     "sold_status": "sold",
     "sold_date": "2026-06-25",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -952,7 +954,7 @@
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-07-06",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -998,7 +1000,7 @@
     "source": "digest",
     "viewing": "No",
     "outdoor_space": "terrace (west)",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": false,
     "sold_status": null,
     "sold_date": null
@@ -1050,7 +1052,7 @@
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-07-07",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -1099,7 +1101,7 @@
     "viewing": "No",
     "outdoor_space": "balcony ~5 m²",
     "energy_upgrade": "moderate",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "off_funda",
     "sold_date": "2026-07-08",
@@ -1151,7 +1153,7 @@
     "family_adj": -2,
     "family_adj_reason": "2nd bedroom must still be created (kitchen move)",
     "sold": true,
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_status": "onder_bod",
     "sold_date": "2026-07-05",
     "sold_price": null,
@@ -1233,7 +1235,7 @@
     "sold": true,
     "sold_status": "off_funda",
     "sold_date": "2026-07-06",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -1331,7 +1333,7 @@
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-06",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -1412,7 +1414,7 @@
     "sold": false,
     "sold_status": null,
     "sold_date": null,
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Loevestein 36, Amsterdam (Buitenveldert)",
@@ -1483,7 +1485,7 @@
     "date_found": "2026-06-03",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-07-10",
@@ -1587,7 +1589,7 @@
       }
     ],
     "location_adj": -1,
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Van Heenvlietlaan 284-K, Amsterdam (Buitenveldert)",
@@ -1648,7 +1650,7 @@
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-06-28",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -1716,7 +1718,7 @@
     "source": "reaction",
     "viewing": "Visited 2026-06-05",
     "sold": false,
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Flevolaan 159, Amstelveen",
@@ -1781,7 +1783,7 @@
     "source": "digest",
     "viewing": "No",
     "outdoor_space": "balcony ~9 m²",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Hoeksewaard 51, Amstelveen",
@@ -1842,7 +1844,7 @@
     "sold": true,
     "sold_status": "sold",
     "sold_date": "2026-07-01",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -1908,7 +1910,7 @@
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-07-14",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -2002,7 +2004,7 @@
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-06",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -2082,7 +2084,7 @@
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-07-06",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -2159,7 +2161,7 @@
         "src": "drimble/huispedia"
       }
     ],
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-07-06",
@@ -2248,7 +2250,7 @@
         "note": "corner"
       }
     ],
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Burgemeester Haspelslaan 140, Amstelveen",
@@ -2334,7 +2336,7 @@
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-06-28",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -2424,7 +2426,7 @@
     "viewing": "No",
     "outdoor_space": "none",
     "heating_advance": 150,
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Van Heuven Goedhartlaan 310, Amstelveen",
@@ -2509,7 +2511,7 @@
     "viewing": "No",
     "outdoor_space": "balcony (west)",
     "location_adj": -1,
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Van Heuven Goedhartlaan 350, Amstelveen",
@@ -2594,7 +2596,7 @@
     "viewing": "No",
     "outdoor_space": "balcony (sunny)",
     "location_adj": -1,
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Logger 52, Amstelveen (Waardhuizen)",
@@ -2679,7 +2681,7 @@
     "viewing": "No",
     "outdoor_space": "balcony (est)",
     "location_adj": 1,
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "off_funda",
     "sold_date": "2026-07-12"
@@ -2762,7 +2764,7 @@
     "viewing": "No",
     "outdoor_space": "balcony ~2 m²",
     "location_adj": 1,
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Bos en Vaartlaan 77, Amstelveen (Randwijck)",
@@ -2830,7 +2832,7 @@
     "viewing": "No",
     "outdoor_space": "balcony (est, ~5 m²)",
     "location_adj": -1,
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Bos en Vaartlaan 119, Amstelveen (Randwijck)",
@@ -2900,7 +2902,7 @@
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-07-12",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -2996,7 +2998,7 @@
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-07-07",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -3092,7 +3094,7 @@
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-07-07",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -3162,7 +3164,7 @@
     "viewing": "No",
     "date_found": "2026-06-12",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Schierstins 47, Amsterdam (Buitenveldert)",
@@ -3219,7 +3221,7 @@
     "viewing": "No",
     "date_found": "2026-06-12",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Populierenlaan 569, Amstelveen",
@@ -3246,8 +3248,8 @@
       "dist_zuidas": 4,
       "renovation": 5
     },
-    "notes": "NEW from Funda digest 12-06. 1185 SX (Populierenbuurt — same street as Populierenlaan 175/117 already in DB). 87 m², 3 kamers (2 bed) — generous size. €5,161/m² — among the best €/m² in the pipeline. WOZ could NOT be retrieved this run (street pages didn't expose nr 569) — check wozwaardeloket; street comps: nr 175 WOZ €391k/81 m². Build year est ~1960 (street built 1960-65). Energy label UNKNOWN — estimated E (street mostly E/F/G; nr 175 = F, nr 517 = G) → assume upgrade needed. Ground: Amstelveen, likely eigen grond but unverified. VvE unknown, est €250 (street complexes run €250-400 incl heating advance). Bike: ~13 min Emmakade, ~23 min Zuidas (est). Same-street experience (175 visited) makes this easy to assess — recommend viewing if 2 bed suffices. | Funda status 2026-06-28: Onder bod (under bid) — moved to sold pile. | [2026-07-07] STATUS: Funda re-checked, still under bid (Onder bod). No change.",
-    "notes_ru": "НОВОЕ из дайджеста Funda 12-06. 1185 SX (Populierenbuurt — та же улица, что 175/117 в базе). 87 м², 3 комнаты (2 спальни) — щедрая площадь. €5.161/м² — одно из лучших значений в подборке. WOZ получить НЕ удалось в этот прогон — проверить wozwaardeloket; ориентир: №175 WOZ €391 тыс./81 м². Год постройки оценочно ~1960. Класс энергии НЕИЗВЕСТЕН — оценка E (на улице в основном E/F/G) → закладывать модернизацию. Земля: Амстелвен, вероятно собственная, не проверено. VvE неизвестен, оценка €250 (на улице €250-400 с авансом за отопление). Велосипед: ~13 мин Emmakade, ~23 мин Zuidas (оценка). Улица знакома по №175 — рекомендован осмотр, если достаточно 2 спален. | Статус Funda 2026-06-28: Onder bod (под предложением) — перенесено в проданные. | [2026-07-07] СТАТУС: повторная проверка Funda, всё ещё под предложением (Onder bod). Без изменений.",
+    "notes": "NEW from Funda digest 12-06. 1185 SX (Populierenbuurt — same street as Populierenlaan 175/117 already in DB). 87 m², 3 kamers (2 bed) — generous size. €5,161/m² — among the best €/m² in the pipeline. WOZ could NOT be retrieved this run (street pages didn't expose nr 569) — check wozwaardeloket; street comps: nr 175 WOZ €391k/81 m². Build year est ~1960 (street built 1960-65). Energy label UNKNOWN — estimated E (street mostly E/F/G; nr 175 = F, nr 517 = G) → assume upgrade needed. Ground: Amstelveen, likely eigen grond but unverified. VvE unknown, est €250 (street complexes run €250-400 incl heating advance). Bike: ~13 min Emmakade, ~23 min Zuidas (est). Same-street experience (175 visited) makes this easy to assess — recommend viewing if 2 bed suffices. | Funda status 2026-06-28: Onder bod (under bid) — moved to sold pile. | [2026-07-07] STATUS: Funda re-checked, still under bid (Onder bod). No change. [2026-07-15] Status progressed on Funda: Onder bod -> Verkocht onder voorbehoud (sale conditional, not yet final).",
+    "notes_ru": "НОВОЕ из дайджеста Funda 12-06. 1185 SX (Populierenbuurt — та же улица, что 175/117 в базе). 87 м², 3 комнаты (2 спальни) — щедрая площадь. €5.161/м² — одно из лучших значений в подборке. WOZ получить НЕ удалось в этот прогон — проверить wozwaardeloket; ориентир: №175 WOZ €391 тыс./81 м². Год постройки оценочно ~1960. Класс энергии НЕИЗВЕСТЕН — оценка E (на улице в основном E/F/G) → закладывать модернизацию. Земля: Амстелвен, вероятно собственная, не проверено. VvE неизвестен, оценка €250 (на улице €250-400 с авансом за отопление). Велосипед: ~13 мин Emmakade, ~23 мин Zuidas (оценка). Улица знакома по №175 — рекомендован осмотр, если достаточно 2 спален. | Статус Funda 2026-06-28: Onder bod (под предложением) — перенесено в проданные. | [2026-07-07] СТАТУС: повторная проверка Funda, всё ещё под предложением (Onder bod). Без изменений. [2026-07-15] Статус на Funda изменился: Onder bod -> Verkocht onder voorbehoud (продажа под условием, ещё не финальна).",
     "sources": {
       "woz": {
         "value": null,
@@ -3268,9 +3270,9 @@
     "date_found": "2026-06-12",
     "source": "digest",
     "sold": true,
-    "sold_status": "onder_bod",
-    "sold_date": "2026-06-28",
-    "status_checked": "2026-07-14",
+    "sold_status": "verkocht_ov",
+    "sold_date": "2026-07-15",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -3326,7 +3328,7 @@
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-06",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -3393,7 +3395,7 @@
     "viewing": "No",
     "date_found": "2026-06-12",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Ferdinand Bolweg 81, Amstelveen",
@@ -3502,7 +3504,7 @@
     "vve_committed_works": "Chimneys €31,656.63 (Dakexpert) + painting €40,435 (JMG) — ex reserve, no levy (ALV 09-04-2026)",
     "vve_looming_works": "Cast-iron standleidingen full replacement (1 portiek already defective); new MJOP; steel kozijnen 2028 → likely higher bijdrage / possible future suppletie",
     "recommendation": "BID — conditional. Open ~€465k / target €470–475k / walk-away ~€482k. Subject to: (1) bouwkundige keuring; (2) Kadaster + leveringsakte/splitsingsakte confirming eigen grond + achterpad erfdienstbaarheid; (3) current VvE jaarrekening 2025 + zero-arrears verklaring + standleidingen/MJOP outlook; (4) 2026 polisblad confirming appartementenclausule + foundation cover; (5) splitsingstekening — berging named in koopakte.",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "value_v4": true,
     "sold": true,
     "sold_status": "onder_bod",
@@ -3569,7 +3571,7 @@
     "viewing": "No",
     "date_found": "2026-06-12",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Doddendaal 151, Amsterdam (Buitenveldert)",
@@ -3621,7 +3623,7 @@
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-06-28",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -3689,7 +3691,7 @@
     "viewing": "No",
     "date_found": "2026-06-14",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Lindenlaan 499, Amstelveen (Keizer Karelpark)",
@@ -3747,7 +3749,7 @@
     "viewing": "No",
     "date_found": "2026-06-14",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Eyckenstein 25, Amstelveen (Westwijk)",
@@ -3807,7 +3809,7 @@
     "viewing": "No",
     "date_found": "2026-06-14",
     "source": "digest",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-13"
@@ -3892,7 +3894,7 @@
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-06-29",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -3966,7 +3968,7 @@
     "viewing": "No",
     "date_found": "2026-06-16",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Bouvigne 28-1, Amsterdam (Buitenveldert)",
@@ -4044,7 +4046,7 @@
     "viewing": "No",
     "date_found": "2026-06-16",
     "source": "digest",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-07-06",
@@ -4121,7 +4123,7 @@
     "viewing": "No",
     "date_found": "2026-06-16",
     "source": "digest",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-06",
@@ -4198,7 +4200,7 @@
     "viewing": "No",
     "date_found": "2026-06-16",
     "source": "digest",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-07-06",
@@ -4277,7 +4279,7 @@
     "viewing": "No",
     "date_found": "2026-06-18",
     "source": "digest",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "off_funda",
     "sold_date": "2026-07-07",
@@ -4355,7 +4357,7 @@
     "viewing": "No",
     "date_found": "2026-06-18",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Rembrandtweg 493, Amstelveen (Randwijck)",
@@ -4426,7 +4428,7 @@
     "viewing": "No",
     "date_found": "2026-06-18",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Maarten Lutherweg 18, Amstelveen (Kruiskerk)",
@@ -4455,8 +4457,8 @@
       "condition": 5,
       "legal": 7
     },
-    "notes": "NEW from Funda digest 18-06. 1185 AN Amstelveen (Kruiskerk/Bankras). Bovenwoning, 75 m2, bouwjaar 1960. Asking EUR 399k k.k. (PRICE REDUCED from EUR 419k) = EUR 5,320/m2 (lowest EUR/m2 of the batch). VALUE: WOZ EUR 367k (2025, woningstats/LV-WOZ); asking +8.7% over WOZ. Woningstats verwachte verkoopprijs EUR 394k (EUR 5,253/m2) = -1.3% BELOW asking -> NOT expected to be overbid; soft demand, motivated seller (price cut). CONFLICT: bedrooms - Funda digest '4 kamers' (=>3 bed) vs woningstats register '2 slaapkamers'; recorded as 2, VERIFY on viewing. Energielabel not registered (est E, 1960 bovenwoning) -> moderate upgrade upside. Eigen grond (Amstelveen, te verifieren). VvE est EUR 130/mo. Condition: 1960, assume cosmetic/dated. Bike ~9 min Emmakade, ~16 min Zuidas (est). Best value-entry of the batch (low EUR/m2 + price cut). | Funda status 2026-06-29: Onder bod (under bid) — moved to sold pile. Under-bid is NOT final; watch for reactivation if the deal collapses. | [2026-07-06] ⚠ FLAG: REACTIVATED — Funda status is now Beschikbaar (available) again; previous onder_bod deal fell through. Back on active shortlist — worth a fresh look.",
-    "notes_ru": "НОВОЕ из дайджеста Funda 18-06. 1185 AN Амстелвен (Kruiskerk/Bankras). Верхняя квартира, 75 м2, 1960. Запрос EUR 399 тыс. k.k. (СНИЖЕНО с EUR 419 тыс.) = EUR 5.320/м2 (самая низкая цена за метр в подборке). ЦЕНА: WOZ EUR 367 тыс. (2025, woningstats/LV-WOZ); запрос +8.7% к WOZ. Ожидаемая цена продажи woningstats EUR 394 тыс. = -1.3% НИЖЕ запроса -> переторг не ожидается; слабый спрос, мотивированный продавец (снижение цены). КОНФЛИКТ: спальни - Funda '4 комнаты' (=>3 спальни) против реестра '2 спальни'; записано 2, ПРОВЕРИТЬ на просмотре. Класс не зарегистрирован (оценочно E, 1960) -> умеренный апсайд. Собственная земля (уточнить). VvE оценочно EUR 130/мес. Состояние: 1960, считать косметическим/устаревшим. Велосипед ~9 мин Emmakade, ~16 мин Zuidas (оценка). Лучшая цена входа в подборке (низкая цена за метр + снижение). | Статус Funda 2026-06-29: Onder bod (под предложением) — перенесено в проданные. Под предложением — НЕ окончательно; следить за возвратом, если сделка сорвётся. | [2026-07-06] ⚠ ФЛАГ: СНОВА В ПРОДАЖЕ — статус на Funda снова Beschikbaar (доступно); предыдущая сделка onder_bod сорвалась. Снова в активном списке — стоит пересмотреть.",
+    "notes": "NEW from Funda digest 18-06. 1185 AN Amstelveen (Kruiskerk/Bankras). Bovenwoning, 75 m2, bouwjaar 1960. Asking EUR 399k k.k. (PRICE REDUCED from EUR 419k) = EUR 5,320/m2 (lowest EUR/m2 of the batch). VALUE: WOZ EUR 367k (2025, woningstats/LV-WOZ); asking +8.7% over WOZ. Woningstats verwachte verkoopprijs EUR 394k (EUR 5,253/m2) = -1.3% BELOW asking -> NOT expected to be overbid; soft demand, motivated seller (price cut). CONFLICT: bedrooms - Funda digest '4 kamers' (=>3 bed) vs woningstats register '2 slaapkamers'; recorded as 2, VERIFY on viewing. Energielabel not registered (est E, 1960 bovenwoning) -> moderate upgrade upside. Eigen grond (Amstelveen, te verifieren). VvE est EUR 130/mo. Condition: 1960, assume cosmetic/dated. Bike ~9 min Emmakade, ~16 min Zuidas (est). Best value-entry of the batch (low EUR/m2 + price cut). | Funda status 2026-06-29: Onder bod (under bid) — moved to sold pile. Under-bid is NOT final; watch for reactivation if the deal collapses. | [2026-07-06] ⚠ FLAG: REACTIVATED — Funda status is now Beschikbaar (available) again; previous onder_bod deal fell through. Back on active shortlist — worth a fresh look. [2026-07-15] Status changed on Funda: now Onder bod (under bid). Moved from active to sold-pile (non-final).",
+    "notes_ru": "НОВОЕ из дайджеста Funda 18-06. 1185 AN Амстелвен (Kruiskerk/Bankras). Верхняя квартира, 75 м2, 1960. Запрос EUR 399 тыс. k.k. (СНИЖЕНО с EUR 419 тыс.) = EUR 5.320/м2 (самая низкая цена за метр в подборке). ЦЕНА: WOZ EUR 367 тыс. (2025, woningstats/LV-WOZ); запрос +8.7% к WOZ. Ожидаемая цена продажи woningstats EUR 394 тыс. = -1.3% НИЖЕ запроса -> переторг не ожидается; слабый спрос, мотивированный продавец (снижение цены). КОНФЛИКТ: спальни - Funda '4 комнаты' (=>3 спальни) против реестра '2 спальни'; записано 2, ПРОВЕРИТЬ на просмотре. Класс не зарегистрирован (оценочно E, 1960) -> умеренный апсайд. Собственная земля (уточнить). VvE оценочно EUR 130/мес. Состояние: 1960, считать косметическим/устаревшим. Велосипед ~9 мин Emmakade, ~16 мин Zuidas (оценка). Лучшая цена входа в подборке (низкая цена за метр + снижение). | Статус Funda 2026-06-29: Onder bod (под предложением) — перенесено в проданные. Под предложением — НЕ окончательно; следить за возвратом, если сделка сорвётся. | [2026-07-06] ⚠ ФЛАГ: СНОВА В ПРОДАЖЕ — статус на Funda снова Beschikbaar (доступно); предыдущая сделка onder_bod сорвалась. Снова в активном списке — стоит пересмотреть. [2026-07-15] Статус изменён на Funda: теперь Onder bod (предложение принято, сделка не финальна). Перемещено из активных в проданные (не финально).",
     "sources": {
       "woz": {
         "value": 367000,
@@ -4498,10 +4500,10 @@
     "viewing": "No",
     "date_found": "2026-06-18",
     "source": "digest",
-    "sold": false,
-    "sold_status": "",
-    "sold_date": "",
-    "status_checked": "2026-07-14"
+    "sold": true,
+    "sold_status": "onder_bod",
+    "sold_date": "2026-07-15",
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Rozenoord 91, Amstelveen (Elsrijk)",
@@ -4566,7 +4568,7 @@
     "viewing": "No",
     "date_found": "2026-06-18",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Van Boshuizenstraat 501, Amsterdam (Buitenveldert)",
@@ -4631,7 +4633,7 @@
     "viewing": "No",
     "date_found": "2026-06-18",
     "source": "digest",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "off_funda",
     "sold_date": "2026-07-01",
@@ -4714,7 +4716,7 @@
     "sold": true,
     "sold_status": "off_funda",
     "sold_date": "2026-07-10",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -4800,7 +4802,7 @@
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-06-28",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -4869,7 +4871,7 @@
     "viewing": "No",
     "date_found": "2026-06-18",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Franciscus van Assisiëlaan 27, Amstelveen (Keizer Karelpark-Oost)",
@@ -4969,7 +4971,7 @@
     "date_found": "2026-06-21",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Turfschip 229, Amstelveen (Waardhuizen)",
@@ -5053,7 +5055,7 @@
     "date_found": "2026-06-21",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "family_adj": 1,
     "family_adj_reason": "master easily splits into 2 → 3 bedrooms (per listing)",
     "value_v4": true,
@@ -5162,7 +5164,7 @@
     "date_found": "2026-06-21",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-10",
@@ -5259,7 +5261,7 @@
     "date_found": "2026-06-21",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Populierenlaan 385, Amstelveen (Populierenbuurt)",
@@ -5341,7 +5343,7 @@
     "date_found": "2026-06-24",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Newa 69, Amstelveen (Groenelaan)",
@@ -5424,7 +5426,7 @@
     "sold": false,
     "sold_status": null,
     "sold_date": null,
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Camera Obscuralaan 314, Amstelveen (Boekenbuurt)",
@@ -5508,7 +5510,7 @@
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-13",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Van Nijenrodeweg 824, Amsterdam (Buitenveldert-West)",
@@ -5592,7 +5594,7 @@
     "date_found": "2026-06-24",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-05",
@@ -5680,7 +5682,7 @@
     "date_found": "2026-06-24",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Mr. F.A. van Hallweg 56, Amstelveen (Elsrijk)",
@@ -5762,7 +5764,7 @@
     "date_found": "2026-06-24",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-06",
@@ -5850,7 +5852,7 @@
     "date_found": "2026-06-24",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-10",
@@ -5938,7 +5940,7 @@
     "date_found": "2026-06-24",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-06",
@@ -6027,7 +6029,7 @@
     "date_found": "2026-06-24",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-08",
@@ -6115,7 +6117,7 @@
     "date_found": "2026-06-25",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Bijdorp 91, Amstelveen (Elsrijk)",
@@ -6202,7 +6204,7 @@
     "date_found": "2026-06-25",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "heating_advance": 90,
     "comps": [
       {
@@ -6317,7 +6319,7 @@
     "date_found": "2026-06-25",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Spangenhof 39, Amsterdam (Buitenveldert-Oost)",
@@ -6398,7 +6400,7 @@
     "date_found": "2026-06-25",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-13"
@@ -6483,7 +6485,7 @@
     "date_found": "2026-06-28",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Eyckenstein 79, Amstelveen (Bovenkerk-Westwijk Noord)",
@@ -6571,7 +6573,7 @@
     "date_found": "2026-06-28",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Amberlaan 68, Amstelveen (Keizer Karelpark)",
@@ -6653,7 +6655,7 @@
     "date_found": "2026-06-28",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Dr. Willem Dreesweg 438, Amstelveen (Middenhoven)",
@@ -6735,7 +6737,7 @@
     "date_found": "2026-06-28",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": false,
     "sold_status": null,
     "sold_date": null,
@@ -6829,7 +6831,7 @@
     "date_found": "2026-06-28",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sale_history": [
       {
         "date": "2024-08-01",
@@ -6944,7 +6946,7 @@
     "date_found": "2026-07-01",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Kierkegaardstraat 24, Amstelveen (Van der Leekbuurt)",
@@ -7026,7 +7028,7 @@
     "date_found": "2026-07-01",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-10",
@@ -7115,7 +7117,7 @@
     "date_found": "2026-07-01",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Rembrandtweg 559, Amstelveen (Stadshart)",
@@ -7203,7 +7205,7 @@
     "date_found": "2026-07-01",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": true,
     "sold_status": "onder_bod",
     "sold_date": "2026-07-10",
@@ -7292,7 +7294,7 @@
     "date_found": "2026-07-01",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Meander 543, Amstelveen (Stadshart)",
@@ -7374,7 +7376,7 @@
     "date_found": "2026-07-04",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Bos en Vaartlaan 45, Amstelveen (Randwijck)",
@@ -7462,7 +7464,7 @@
     "date_found": "2026-07-04",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Mr. G. Groen van Prinstererlaan 137, Amstelveen (Elsrijk-Oost)",
@@ -7550,7 +7552,7 @@
     "date_found": "2026-07-05",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold": false,
     "sold_status": null,
     "sold_date": null,
@@ -7638,7 +7640,7 @@
     "date_found": "2026-07-03",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Duivelandselaan 35, Amstelveen (Elsrijk-Oost)",
@@ -7727,7 +7729,7 @@
     "date_found": "2026-07-02",
     "source": "digest",
     "viewing": "Visited 2026-07-10",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "vve_reserve_ok": true,
     "sale_history": [
       {
@@ -7840,7 +7842,7 @@
     "date_found": "2026-07-02",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Bulgerstein 8, Amsterdam (Buitenveldert-Oost)",
@@ -7920,7 +7922,7 @@
     "date_found": "2026-07-04",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Brittenburg 19, Amsterdam (Buitenveldert-Oost)",
@@ -8002,7 +8004,7 @@
     "date_found": "2026-07-04",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Giessenburg 40, Amsterdam (Buitenveldert-Oost)",
@@ -8084,7 +8086,7 @@
     "date_found": "2026-07-05",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Frieslandstraat 131, Amsterdam (Buitenveldert-West)",
@@ -8173,7 +8175,7 @@
     "date_found": "2026-07-03",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Oldengaarde 52, Amsterdam (Buitenveldert-Oost)",
@@ -8255,7 +8257,7 @@
     "date_found": "2026-07-05",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Meander 997, Amstelveen (Stadshart)",
@@ -8345,7 +8347,7 @@
     "date_found": "2026-07-07",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "William Boothlaan 4, Amstelveen (Augustinuspark)",
@@ -8377,8 +8379,8 @@
       "condition": 9,
       "legal": 8
     },
-    "notes": "NEW via Funda digest 07-Jul-2026 (id 44427118), Amstelveen 1185 NP (Augustinuspark). VERIFIED via Funda Kenmerken: 69 m2, 3 kamers (=2 slaapkamers), bouwjaar 1963, energielabel B, eigen grond (geen erfpacht, explicitly confirmed in listing text). GOOD legal: Funda's VvE checklist shows ALL SIX items 'Ja' — KvK-registered, annual meeting held, periodic contribution, reserve fund present, maintenance plan (MJOP) in place, and the building is insured. Healthy, well-run VvE — a strong positive signal for a 1963 complex. Servicekosten €168.47/mo. CONDITION: fully renovated/modernised — new CV-ketel (2021), new glazing (2021), airconditioning (2025), electric sun awning; listing states 'volledig instapklaar'. Complex has a lift. FLAG price: asking €6,159/m2 is ~16% above the Augustinuspark buurt average (€5,323/m2 per Funda), but the extensive recent renovation and clean VvE partly justify the premium. WOZ ESTIMATED at ~€350k (comp-based on nearby Keizer Karelpark-area units already in this DB, ~€5,068/m2 average, scaled to 69 m2; NOT yet confirmed via WOZ-waardeloket) -> implied premium ~21% over estimated WOZ. Quiet, green location on park/water per Funda buurt description -> location_adj +1 (same rationale as Frieslandstraat 131 in this DB). Emmakade ~10 / Zuidas ~19 (est., interpolated between Stadshart and Keizer Karelpark comps already in DB). No viewing yet.",
-    "notes_ru": "НОВОЕ из рассылки Funda 07-июл-2026 (id 44427118), Амстелвеен 1185 NP (Augustinuspark). ПРОВЕРЕНО по Funda Kenmerken: 69 м2, 3 комнаты (=2 спальни), год постройки 1963, класс энергоэффективности B, собственная земля (без эрфпахта, явно указано в листинге). ПРОВЕРЕНО юридически: в чек-листе VvE на Funda все шесть пунктов 'Да' — зарегистрирована в ТПП, проводятся ежегодные собрания, есть регулярные взносы, есть резервный фонд, есть план обслуживания (MJOP), здание застраховано. Здоровый, хорошо управляемый VvE — сильный позитивный сигнал для дома 1963 года. Сервисный сбор €168.47/мес. СОСТОЯНИЕ: полностью отремонтирована/модернизирована — новый котёл (2021), новые стеклопакеты (2021), кондиционер (2025), электрический маркиз; в объявлении указано 'полностью готово к заселению'. В доме есть лифт. ФЛАГ цена: запрос €6.159/м2 примерно на 16% выше среднего по району Augustinuspark (€5.323/м2 по Funda), но капитальный ремонт и здоровый VvE частично оправдывают премию. WOZ ОЦЕНЕНА приблизительно в ~€350тыс. (на основе близких объектов района Keizer Karelpark в базе, ~€5.068/м2 в среднем, масштабировано на 69 м2; ПОКА НЕ ПОДТВЕРЖДЕНО через WOZ-waardeloket) -> премия к WOZ ~21%. Тихий, зелёный район у парка/воды по описанию района на Funda -> location_adj +1 (та же логика, что и для Frieslandstraat 131 в базе). Emmakade ~10 / Zuidas ~19 (оценка, интерполяция между Stadshart и Keizer Karelpark в базе). Осмотра ещё не было.",
+    "notes": "NEW via Funda digest 07-Jul-2026 (id 44427118), Amstelveen 1185 NP (Augustinuspark). VERIFIED via Funda Kenmerken: 69 m2, 3 kamers (=2 slaapkamers), bouwjaar 1963, energielabel B, eigen grond (geen erfpacht, explicitly confirmed in listing text). GOOD legal: Funda's VvE checklist shows ALL SIX items 'Ja' — KvK-registered, annual meeting held, periodic contribution, reserve fund present, maintenance plan (MJOP) in place, and the building is insured. Healthy, well-run VvE — a strong positive signal for a 1963 complex. Servicekosten €168.47/mo. CONDITION: fully renovated/modernised — new CV-ketel (2021), new glazing (2021), airconditioning (2025), electric sun awning; listing states 'volledig instapklaar'. Complex has a lift. FLAG price: asking €6,159/m2 is ~16% above the Augustinuspark buurt average (€5,323/m2 per Funda), but the extensive recent renovation and clean VvE partly justify the premium. WOZ ESTIMATED at ~€350k (comp-based on nearby Keizer Karelpark-area units already in this DB, ~€5,068/m2 average, scaled to 69 m2; NOT yet confirmed via WOZ-waardeloket) -> implied premium ~21% over estimated WOZ. Quiet, green location on park/water per Funda buurt description -> location_adj +1 (same rationale as Frieslandstraat 131 in this DB). Emmakade ~10 / Zuidas ~19 (est., interpolated between Stadshart and Keizer Karelpark comps already in DB). No viewing yet. [2026-07-15] Status changed on Funda: now Onder bod (under bid). Moved from active to sold-pile (non-final).",
+    "notes_ru": "НОВОЕ из рассылки Funda 07-июл-2026 (id 44427118), Амстелвеен 1185 NP (Augustinuspark). ПРОВЕРЕНО по Funda Kenmerken: 69 м2, 3 комнаты (=2 спальни), год постройки 1963, класс энергоэффективности B, собственная земля (без эрфпахта, явно указано в листинге). ПРОВЕРЕНО юридически: в чек-листе VvE на Funda все шесть пунктов 'Да' — зарегистрирована в ТПП, проводятся ежегодные собрания, есть регулярные взносы, есть резервный фонд, есть план обслуживания (MJOP), здание застраховано. Здоровый, хорошо управляемый VvE — сильный позитивный сигнал для дома 1963 года. Сервисный сбор €168.47/мес. СОСТОЯНИЕ: полностью отремонтирована/модернизирована — новый котёл (2021), новые стеклопакеты (2021), кондиционер (2025), электрический маркиз; в объявлении указано 'полностью готово к заселению'. В доме есть лифт. ФЛАГ цена: запрос €6.159/м2 примерно на 16% выше среднего по району Augustinuspark (€5.323/м2 по Funda), но капитальный ремонт и здоровый VvE частично оправдывают премию. WOZ ОЦЕНЕНА приблизительно в ~€350тыс. (на основе близких объектов района Keizer Karelpark в базе, ~€5.068/м2 в среднем, масштабировано на 69 м2; ПОКА НЕ ПОДТВЕРЖДЕНО через WOZ-waardeloket) -> премия к WOZ ~21%. Тихий, зелёный район у парка/воды по описанию района на Funda -> location_adj +1 (та же логика, что и для Frieslandstraat 131 в базе). Emmakade ~10 / Zuidas ~19 (оценка, интерполяция между Stadshart и Keizer Karelpark в базе). Осмотра ещё не было. [2026-07-15] Статус изменён на Funda: теперь Onder bod (предложение принято, сделка не финальна). Перемещено из активных в проданные (не финально).",
     "sources": {
       "price": {
         "value": 425000,
@@ -8434,7 +8436,10 @@
     "date_found": "2026-07-07",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15",
+    "sold": true,
+    "sold_status": "onder_bod",
+    "sold_date": "2026-07-15"
   },
   {
     "address": "Zonnestein 73, Amstelveen (Elsrijk-Oost)",
@@ -8512,7 +8517,7 @@
     "viewing": "No",
     "date_found": "2026-07-08",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "William Boothlaan 336, Amstelveen (Augustinuspark)",
@@ -8590,7 +8595,7 @@
     "viewing": "No",
     "date_found": "2026-07-08",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "De Boelelaan 373, Amsterdam (Buitenveldert-West)",
@@ -8666,7 +8671,7 @@
     "viewing": "No",
     "date_found": "2026-07-08",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Meander 159, Amstelveen (Stadshart)",
@@ -8746,7 +8751,7 @@
     "viewing": "No",
     "date_found": "2026-07-08",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Frieslandstraat 143, Amsterdam (Buitenveldert-West)",
@@ -8840,7 +8845,7 @@
     "sold": true,
     "sold_status": "off_funda",
     "sold_date": "2026-07-09",
-    "status_checked": "2026-07-14",
+    "status_checked": "2026-07-15",
     "sold_price": null,
     "sold_price_checked": "2026-07-10",
     "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -8934,7 +8939,7 @@
     "viewing": "No",
     "date_found": "2026-07-09",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Logger 230, Amstelveen (Waardhuizen)",
@@ -9026,7 +9031,7 @@
     "viewing": "No",
     "date_found": "2026-07-09",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Van Nijenrodeweg 35, Amsterdam (Buitenveldert-Zuidoost)",
@@ -9116,7 +9121,7 @@
     "viewing": "No",
     "date_found": "2026-07-09",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Van Leijenberghlaan 415-3, Amsterdam (Buitenveldert-Zuidoost)",
@@ -9205,7 +9210,7 @@
     "viewing": "No",
     "date_found": "2026-07-10",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Goereesepad 115, Amstelveen (Randwijck-Oost)",
@@ -9293,7 +9298,7 @@
     "viewing": "No",
     "date_found": "2026-07-10",
     "source": "digest",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Van Heuven Goedhartlaan 494, Amstelveen (Elsrijk)",
@@ -9381,7 +9386,7 @@
     "date_found": "2026-07-12",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Loevestein 140, Amsterdam (Buitenveldert)",
@@ -9476,7 +9481,7 @@
     "date_found": "2026-07-12",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Lindenlaan 523, Amstelveen",
@@ -9543,7 +9548,7 @@
     "date_found": "2026-07-12",
     "source": "digest",
     "viewing": "No",
-    "status_checked": "2026-07-14"
+    "status_checked": "2026-07-15"
   },
   {
     "address": "Van Nijenrodeweg 421, Amsterdam (Buitenveldert)",
@@ -9617,6 +9622,158 @@
     "date_found": "2026-07-14",
     "source": "digest",
     "viewing": "No",
-    "status_checked": null
+    "status_checked": "2026-07-15"
+  },
+  {
+    "address": "Erasmuslaan 32, Amstelveen (Keizer Karelpark)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-erasmuslaan-32/44437824/",
+    "price": 450000,
+    "price_estimated": false,
+    "area": 83,
+    "area_estimated": false,
+    "bedrooms": 3,
+    "bedrooms_verified": true,
+    "woz": 434000,
+    "woz_year": 2025,
+    "woz_estimated": false,
+    "build_year": 1960,
+    "build_year_estimated": false,
+    "energy_label": "E",
+    "energy_estimated": false,
+    "ground": "Eigen grond (aanname, niet bevestigd)",
+    "ground_verified": false,
+    "vve_costs": 291,
+    "vve_estimated": false,
+    "dist_emmakade_min": 10,
+    "dist_zuidas_min": 20,
+    "scores": {
+      "price": 8,
+      "legal": 6,
+      "dist_emmakade": 8,
+      "energy": 4,
+      "dist_zuidas": 5,
+      "renovation": 8
+    },
+    "notes": "NEW via Funda digest 15-Jul-2026 (id 44437824). VERIFIED via Huispedia aggregator (mirrors live Funda listing, checked 2026-07-15): 4-kamer/3-slaapkamer portiekflat, 83 m², bouwjaar 1960, energielabel E, 4e verdieping, Keizer Karelpark. Vraagprijs EUR450,000 k.k. (EUR5,422/m²) -- PRICE FLAG (positive): listing was taken off market 09-06-2026, relisted 15-06-2026, then price-reduced again 14-07-2026 to the current EUR450k; Huispedia's own valuation model puts the realistic range at EUR479k-557k, i.e. this asking sits ~16% BELOW their estimate ('onder de waarde') and only +3.7% over the WOZ (EUR434k, peildatum 2025-01-01) -- unusually tight WOZ-to-ask gap for this market, good value on paper. FLAG (legal/risk): repeated relist-and-cut pattern in five weeks is atypical -- worth asking the agent directly why (financing fall-through vs genuine price correction vs undisclosed issue) before making an offer. Ground ownership NOT explicitly stated in the aggregator scrape -- Amstelveen private stock is overwhelmingly eigen grond (freehold), unlike Amsterdam, but this must be confirmed via the Kadaster/BAG akte before offer, not assumed. VvE EUR291/mo (reasonable for 83m²) + EUR95/mo voorschot stookkosten (heating advance, separate). Interior described as modern (moderne keuken/badkamer, kunststof kozijnen dubbel glas) -- move-in ready, scores well on condition. Energy label E is the weak point; as an apartment in a VvE complex, any real upgrade (facade/roof insulation) needs building-wide VvE action, not a solo renovation -- check VvE MJOP for planned verduurzaming. Distances estimated from Keizer Karelpub neighbourhood comps already tracked (Amberlaan 68: 12/21, Populierenlaan 583: 13/22, Franciscus van Assisielaan 27: 9/20) -- Erasmuslaan sits centrally near Stadshart, hence slightly lower dist_emmakade estimate. ACTION: confirm ground ownership via Kadaster akte, ask agent for relist history/reason, request VvE jaarrekening + MJOP (reserve fund health, any planned insulation works), verify energy label via ep-online.nl.",
+    "notes_ru": "НОВОЕ из рассылки Funda 15-июл-2026 (id 44437824). ПРОВЕРЕНО через агрегатор Huispedia (зеркалит живой листинг Funda, проверено 2026-07-15): 4-комнатная квартира с 3 спальнями, 83 м², 1960 г. постройки, класс E, 4-й этаж, район Keizer Karelpark. Цена EUR450 000 k.k. (EUR5 422/м²) -- ФЛАГ (позитивный): объект снимали с продажи 09-06-2026, выставили заново 15-06-2026, затем ещё раз снизили цену 14-07-2026 до текущих EUR450k; собственная модель оценки Huispedia даёт реалистичный диапазон EUR479-557k, т.е. текущая цена примерно на 16% НИЖЕ их оценки ('ниже рыночной') и всего на +3,7% выше WOZ (EUR434k, на 01-01-2025) -- необычно узкий разрыв между WOZ и ценой для этого рынка, хорошая цена на бумаге. ФЛАГ (юридический риск): повторный цикл 'снятие-перевыставление-снижение цены' за пять недель нетипичен -- стоит напрямую спросить агента о причине (сорвалось финансирование покупателя vs реальная коррекция цены vs нераскрытая проблема) до оффера. Форма владения землёй явно не указана в данных агрегатора -- частный жилой фонд Амстелвена почти весь на собственной земле (в отличие от Амстердама), но это нужно подтвердить по акту Kadaster/BAG, а не считать по умолчанию. VvE EUR291/мес (разумно для 83м²) + EUR95/мес аванс на отопление (отдельно). Интерьер описан как современный (современная кухня/ванная, пластиковые рамы с двойным остеклением) -- можно въезжать сразу, хорошая оценка по состоянию. Слабое место -- класс энергоэффективности E; поскольку это квартира в комплексе VvE, реальное улучшение (утепление фасада/крыши) требует решения всего VvE, а не индивидуального ремонта -- проверить план MJOP VvE на предмет запланированного 'озеленения'. Расстояния оценены по уже отслеживаемым объектам в Keizer Karelpark (Amberlaan 68: 12/21, Populierenlaan 583: 13/22, Franciscus van Assisielaan 27: 9/20) -- Erasmuslaan расположена более центрально рядом со Stadshart, отсюда чуть меньшая оценка расстояния до Emmakade. ДЕЙСТВИЕ: подтвердить форму владения землёй по акту Kadaster, спросить агента про историю перевыставления, запросить годовой отчёт VvE + MJOP (состояние резервного фонда, запланированные работы по утеплению), проверить класс энергоэффективности на ep-online.nl.",
+    "sources": {
+      "price": {
+        "value": 450000,
+        "src": "Huispedia (aggregator mirroring live Funda listing)",
+        "url": "https://huispedia.nl/amstelveen/1185bh/erasmuslaan/32",
+        "checked": "2026-07-15",
+        "status": "unconfirmed",
+        "note": "Not cross-checked directly on funda.nl (JS/bot-gated). Aggregator shows relist 15-06-2026 + price cut 14-07-2026 to EUR450k."
+      },
+      "woz": {
+        "value": 434000,
+        "src": "Huispedia (WOZ-loket derived)",
+        "url": "https://huispedia.nl/amstelveen/1185bh/erasmuslaan/32",
+        "checked": "2026-07-15",
+        "status": "unconfirmed",
+        "peildatum": "2025-01-01"
+      },
+      "energy_label": {
+        "value": "E",
+        "src": "Huispedia aggregator",
+        "url": "https://huispedia.nl/amstelveen/1185bh/erasmuslaan/32",
+        "checked": "2026-07-15",
+        "status": "unconfirmed",
+        "note": "Recommend direct EP-Online (ep-online.nl) verification."
+      },
+      "ground": {
+        "value": "Eigen grond (aanname, niet bevestigd)",
+        "src": "Assumption based on Amstelveen norm; not stated in aggregator scrape",
+        "url": "https://huispedia.nl/amstelveen/1185bh/erasmuslaan/32",
+        "checked": "2026-07-15",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-07-15",
+    "source": "digest",
+    "viewing": "No"
+  },
+  {
+    "address": "Frieslandstraat 79, Amsterdam (Buitenveldert-West)",
+    "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-frieslandstraat-79/44436565/",
+    "price": 575000,
+    "price_estimated": true,
+    "area": 70,
+    "area_estimated": false,
+    "bedrooms": 2,
+    "bedrooms_verified": false,
+    "woz": 521000,
+    "woz_year": 2025,
+    "woz_estimated": false,
+    "build_year": 1964,
+    "build_year_estimated": false,
+    "energy_label": "F",
+    "energy_estimated": false,
+    "ground": "Erfpacht eeuwigdurend (canon afgekocht t/m 2037, daarna geindexeerd)",
+    "ground_verified": false,
+    "vve_costs": 220,
+    "vve_estimated": true,
+    "dist_emmakade_min": 14,
+    "dist_zuidas_min": 7,
+    "scores": {
+      "price": 5,
+      "legal": 5,
+      "dist_emmakade": 5,
+      "energy": 2,
+      "dist_zuidas": 9,
+      "renovation": 5
+    },
+    "notes": "NEW via Funda digest 15-Jul-2026 (id 44436565). CONFLICT/FLAG: listing is too new to be indexed by aggregators or search -- Funda itself is bot/JS-gated, so NO CONFIRMED ASKING PRICE was obtainable. Area, build year and energy label are VERIFIED via authoritative BAG register (kadastralekaart.com, sourced from Basisregistratie Adressen en Gebouwen + RVO energylabel database, checked 2026-07-15): gebruiksoppervlakte 70 m² (largest unit on this street; street average is only 47 m²), bouwjaar 1964, energielabel F (registered 21-01-2026, definitief; a preliminary label had estimated E but the definitive registration came in lower at F). WOZ 2025 (drimble.nl, LV-WOZ derived): EUR521,000, up 16.6% from EUR447,000 in 2024 -- a notable jump, suggests the municipality revalued the unit (possibly reflecting the larger-than-typical 70m² footprint) or area-wide appreciation. Price ESTIMATED at ~EUR575k based on WOZ + street comps (Frieslandstraat 67 sold EUR525k, Frieslandstraat 75 sold EUR530k, Frieslandstraat 53 sold EUR495k -- sizes of comps not confirmed to match 70m²) -- TREAT AS ROUGH ONLY, do not use for any offer decision without checking the live Funda listing. FLAG (legal/risk): ground lease (erfpacht) -- a comp on the same street/complex (Frieslandstraat 57) shows canon prepaid through 15-09-2037 under Amsterdam's Algemene Bepalingen 2016, after which an indexed canon (currently ~EUR297/mo equivalent for that unit) applies in perpetuity (eeuwigdurend). This is recorded as an ASSUMPTION for #79 (same street/likely same VvE/erfpacht contract cohort) and MUST be confirmed per-unit via the Amsterdam erfpacht map (AVA) / akte before any offer -- canon terms can vary unit-by-unit even on the same block. Energy label F is poor (bottom quartile) -- as a leasehold apartment in an older (1964) complex, any real insulation upgrade needs VvE-wide action; budget for this or negotiate accordingly. Bedroom count NOT confirmed -- 70 m² suggests 3-4 kamers (2-3 bedrooms) by Buitenveldert norms, estimated conservatively at 2. VvE costs estimated from nearby comps (Frieslandstraat 131: EUR269/mo, Frieslandstraat 167: ~EUR153/mo) scaled for unit size. Distances estimated from already-tracked Frieslandstraat 131 (14 min Emmakade / 7 min Zuidas) -- same street, should be near-identical. ACTION: re-check the live Funda listing in 24-48h once indexed for actual asking price, bedroom count and photos; verify erfpacht canon/expiry specifically for #79 via AVA; request VvE jaarrekening + MJOP; verify energy label F via ep-online.nl (already a registered, not provisional, label so high confidence).",
+    "notes_ru": "НОВОЕ из рассылки Funda 15-июл-2026 (id 44436565). КОНФЛИКТ/ФЛАГ: листинг слишком новый и не проиндексирован агрегаторами или поиском -- сама Funda закрыта для ботов/JS, поэтому ПОДТВЕРЖДЁННОЙ ЦЕНЫ ПРОДАЖИ ПОЛУЧИТЬ НЕ УДАЛОСЬ. Площадь, год постройки и класс энергоэффективности ПРОВЕРЕНЫ через официальный регистр BAG (kadastralekaart.com, источник -- Basisregistratie Adressen en Gebouwen + база энергопаспортов RVO, проверено 2026-07-15): полезная площадь 70 м² (самая большая квартира на этой улице; средняя по улице всего 47 м²), год постройки 1964, класс энергоэффективности F (зарегистрирован 21-01-2026, окончательный; предварительный класс оценивался как E, но окончательная регистрация оказалась ниже -- F). WOZ 2025 (drimble.nl, на основе LV-WOZ): EUR521 000, рост на 16,6% с EUR447 000 в 2024 г. -- заметный скачок, возможно переоценка муниципалитетом (учитывая нетипично большую площадь 70м²) или общее подорожание района. Цена ОЦЕНОЧНО ~EUR575k на основе WOZ и аналогов по улице (Frieslandstraat 67 продан за EUR525k, Frieslandstraat 75 -- за EUR530k, Frieslandstraat 53 -- за EUR495k -- площади аналогов не подтверждены как совпадающие с 70м²) -- СЧИТАТЬ ЛИШЬ ГРУБОЙ ОЦЕНКОЙ, не использовать для решений по офферу без проверки живого листинга Funda. ФЛАГ (юридический риск): право застройки (erfpacht) -- аналог на той же улице/в том же комплексе (Frieslandstraat 57) показывает канон, выкупленный до 15-09-2037 по Общим условиям Амстердама 2016 г., после чего применяется индексируемый канон (сейчас ~EUR297/мес для того объекта) бессрочно (eeuwigdurend). Для #79 это ДОПУЩЕНИЕ (та же улица/вероятно та же когорта договоров erfpacht/VvE) и ДОЛЖНО быть подтверждено индивидуально через карту эрфпахта Амстердама (AVA) / акт до оффера -- условия канона могут различаться даже в пределах одного квартала. Класс энергоэффективности F слабый (нижний квартиль) -- поскольку это квартира на арендованной земле в старом комплексе (1964 г.), реальное утепление требует решения всего VvE; закладывать это в бюджет или торговаться. Число спален НЕ подтверждено -- 70 м² предполагает 3-4 комнаты (2-3 спальни) по нормам Buitenveldert, консервативно оценено как 2. Взносы VvE оценены по соседним аналогам (Frieslandstraat 131: EUR269/мес, Frieslandstraat 167: ~EUR153/мес) с масштабированием под размер квартиры. Расстояния оценены по уже отслеживаемому Frieslandstraat 131 (14 мин до Emmakade / 7 мин до Zuidas) -- та же улица, должно быть почти идентично. ДЕЙСТВИЕ: перепроверить живой листинг Funda через 24-48 часов после индексации на предмет реальной цены, числа спален и фото; подтвердить канон/срок эрфпахта именно для #79 через AVA; запросить годовой отчёт VvE + MJOP; проверить класс F на ep-online.nl (уже зарегистрированный, не предварительный класс, поэтому высокая достоверность).",
+    "sources": {
+      "area": {
+        "value": 70,
+        "src": "BAG via kadastralekaart.com",
+        "url": "https://kadastralekaart.com/adres/amsterdam-frieslandstraat-79/0363200000102789",
+        "checked": "2026-07-15",
+        "status": "verified"
+      },
+      "build_year": {
+        "value": 1964,
+        "src": "BAG via kadastralekaart.com",
+        "url": "https://kadastralekaart.com/adres/amsterdam-frieslandstraat-79/0363200000102789",
+        "checked": "2026-07-15",
+        "status": "verified"
+      },
+      "energy_label": {
+        "value": "F",
+        "src": "RVO/EP-Online registered label via kadastralekaart.com",
+        "url": "https://kadastralekaart.com/adres/amsterdam-frieslandstraat-79/0363200000102789",
+        "checked": "2026-07-15",
+        "status": "verified",
+        "note": "Definitief label, geregistreerd 21-01-2026. Earlier provisional estimate had been E."
+      },
+      "woz": {
+        "value": 521000,
+        "src": "Drimble (LV-WOZ derived)",
+        "url": "https://drimble.nl/adres/amsterdam/1082TL/frieslandstraat-79.html",
+        "checked": "2026-07-15",
+        "status": "verified",
+        "peildatum": "2025-01-01",
+        "history": "2025:521k 2024:447k 2023:432k 2022:447k 2021:402k"
+      },
+      "price": {
+        "value": 575000,
+        "src": "Estimated from WOZ (EUR521k) + street comps (F'straat 67 sold EUR525k, 75 sold EUR530k, 53 sold EUR495k)",
+        "url": "https://drimble.nl/postcode/1082TL/",
+        "checked": "2026-07-15",
+        "status": "unconfirmed"
+      },
+      "ground": {
+        "value": "Erfpacht eeuwigdurend (canon afgekocht t/m 2037)",
+        "src": "Comp Frieslandstraat 57 (same street/complex) -- not #79-specific",
+        "url": "https://frieslandstraat57.nl/",
+        "checked": "2026-07-15",
+        "status": "unconfirmed"
+      }
+    },
+    "date_found": "2026-07-15",
+    "source": "digest",
+    "viewing": "No"
   }
 ]
