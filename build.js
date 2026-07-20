@@ -7,6 +7,8 @@
  *   - property_summary_ru.html (Russian summary; reuses existing RU note translations,
  *                               keyed by address, so numbers stay in sync without
  *                               machine-translating notes on every build)
+ *   - property_summary_amstelveen.html (Amstelveen-only view; Russian by default
+ *                                       per buyer's request 2026-07-20)
  *
  * Run: node build.js
  *
@@ -77,17 +79,29 @@ const TENURE_SCORE = {
   'Eigen grond': 10,
   'Eigen grond (per listing)': 8,
   'Eigen grond (te verifieren)': 8,
+  'Eigen grond (te verifiëren)': 8,
+  'Eigen grond (aanname, niet bevestigd)': 8,
+  'Eigen grond (aanname o.b.v. buren op straat, niet bevestigd)': 8,
+  'Eigen grond (gemeld in eerdere advertentie, niet herbevestigd)': 8,
   'Erfpacht eeuwigdurend afgekocht': 9,
   'Erfpacht voortdurend (AB 1994), canon afgekocht tot 31-05-2088': 8,
   'Erfpacht (afgekocht tot 2051)': 7,
+  'Erfpacht (afgekocht tot 2058)': 7,
+  'Erfpacht (afgekocht tot 2059)': 7,
+  'Erfpacht (afgekocht tot 21-11-2061)': 7,
+  // afgekocht only ~11 yrs, indexed canon after — between fixed-term afgekocht (7) and vastgeklikt (5)
+  'Erfpacht eeuwigdurend (canon afgekocht t/m 2037, daarna geindexeerd)': 6,
   'Erfpacht afgekocht': 7,
   'Erfpacht (afkoop aangevraagd)': 5,
   'Erfpacht lopend (vastgeklikt €1.865/jr na 2036)': 5,
+  'Erfpacht (canon bevroren tot 2036)': 5,
   'Erfpacht lopend': 4,
   'Erfpacht (tijdvak tot 2039)': 4,
   'Erfpacht (vermoedelijk lopend, ~2036)': 4,
   'Erfpacht (tijdvak, te verifieren)': 3,
+  'Erfpacht (tijdvak, te verifiëren)': 3,
   'Erfpacht (status te verifieren)': 3,
+  'Erfpacht (status te verifiëren)': 3,
   'Erfpacht (te verifieren)': 3,
   'Erfpacht (status onbekend)': 3,
 };
@@ -269,6 +283,17 @@ const GROUND_RU = {
   'Eigen grond (per listing)': 'Собственный участок (согласно объявлению)',
   'Erfpacht (status onbekend)': 'Аренда земли (статус неизвестен)',
   'Erfpacht (vermoedelijk lopend, ~2036)': 'Аренда земли (предположительно действующая, ~2036)',
+  'Eigen grond (te verifiëren)': 'Собственный участок (требует проверки)',
+  'Eigen grond (aanname, niet bevestigd)': 'Собственный участок (предположение, не подтверждено)',
+  'Eigen grond (aanname o.b.v. buren op straat, niet bevestigd)': 'Собственный участок (предположение по соседним домам, не подтверждено)',
+  'Eigen grond (gemeld in eerdere advertentie, niet herbevestigd)': 'Собственный участок (указан в прежнем объявлении, не подтверждён повторно)',
+  'Erfpacht (afgekocht tot 2058)': 'Аренда земли (выкуплена до 2058)',
+  'Erfpacht (afgekocht tot 2059)': 'Аренда земли (выкуплена до 2059)',
+  'Erfpacht (afgekocht tot 21-11-2061)': 'Аренда земли (выкуплена до 21-11-2061)',
+  'Erfpacht eeuwigdurend (canon afgekocht t/m 2037, daarna geindexeerd)': 'Аренда земли (вечная; канон выкуплен до 2037, далее индексируется)',
+  'Erfpacht (canon bevroren tot 2036)': 'Аренда земли (канон заморожен до 2036)',
+  'Erfpacht (tijdvak, te verifiëren)': 'Аренда земли (срок требует проверки)',
+  'Erfpacht (status te verifiëren)': 'Аренда земли (статус требует проверки)',
 };
 // outdoor_space canonical token → Russian (exact match; falls back to original if unmapped)
 const OUTDOOR_RU = {
@@ -477,7 +502,7 @@ function critDetail(p, key, T) {
       if (p.energy_upgrade) bits.push(`+${p.energy_upgrade === 'easy' ? '1' : '0.5'} ${T.upgrade}`);
       return bits.join(' · ');
     }
-    case 'tenure': return p.ground || '';
+    case 'tenure': return p.ground ? T.grnd(p.ground) : '';
     case 'costs': {
       const m = monthlyAllIn(p);
       if (m == null) return '';
@@ -921,10 +946,15 @@ function buildIndex() {
 const isAmstelveen = p => /,\s*Amstelveen\b/i.test(p.address || '');
 fs.writeFileSync(path.join(DIR, 'property_summary.html'), buildSummary('en'));
 fs.writeFileSync(path.join(DIR, 'property_summary_ru.html'), buildSummary('ru'));
+// RU by default (buyer's request 2026-07-20); ruPlural picks the right form of "объект".
+const ruPlural = n => { const m10 = n % 10, m100 = n % 100;
+  if (m10 === 1 && m100 !== 11) return 'объект';
+  if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return 'объекта';
+  return 'объектов'; };
 fs.writeFileSync(path.join(DIR, 'property_summary_amstelveen.html'),
-  buildSummary('en', isAmstelveen,
-    n => `Amstelveen only · all sizes · verified vs official Funda + a second source · ${n} properties · Generated ${GEN_DATE}`,
-    'Dream House — Amstelveen'));
+  buildSummary('ru', isAmstelveen,
+    n => `Только Амстелвен · все площади · проверено по Funda + второй источник · ${n} ${ruPlural(n)} · Сформировано ${GEN_DATE.split('-').reverse().join('.')}`,
+    'Dream House — Амстелвен'));
 const buildVer = buildIndex();
 
 // ---- self-check ----
