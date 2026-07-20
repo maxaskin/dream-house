@@ -91,6 +91,8 @@ const TENURE_SCORE = {
   'Erfpacht (afgekocht tot 21-11-2061)': 7,
   // afgekocht only ~11 yrs, indexed canon after — between fixed-term afgekocht (7) and vastgeklikt (5)
   'Erfpacht eeuwigdurend (canon afgekocht t/m 2037, daarna geindexeerd)': 6,
+  // cheap perpetual buyout on offer (€13.5k → eeuwigdurend afgekocht 9); pending per-unit akte
+  'Erfpacht eeuwigdurend (canon afgekocht t/m 2037; volledige afkoop mogelijk voor €13.501)': 7,
   'Erfpacht afgekocht': 7,
   'Erfpacht (afkoop aangevraagd)': 5,
   'Erfpacht lopend (vastgeklikt €1.865/jr na 2036)': 5,
@@ -291,6 +293,7 @@ const GROUND_RU = {
   'Erfpacht (afgekocht tot 2059)': 'Аренда земли (выкуплена до 2059)',
   'Erfpacht (afgekocht tot 21-11-2061)': 'Аренда земли (выкуплена до 21-11-2061)',
   'Erfpacht eeuwigdurend (canon afgekocht t/m 2037, daarna geindexeerd)': 'Аренда земли (вечная; канон выкуплен до 2037, далее индексируется)',
+  'Erfpacht eeuwigdurend (canon afgekocht t/m 2037; volledige afkoop mogelijk voor €13.501)': 'Аренда земли (вечная; канон выкуплен до 2037, полный выкуп возможен за €13.501)',
   'Erfpacht (canon bevroren tot 2036)': 'Аренда земли (канон заморожен до 2036)',
   'Erfpacht (tijdvak, te verifiëren)': 'Аренда земли (срок требует проверки)',
   'Erfpacht (status te verifiëren)': 'Аренда земли (статус требует проверки)',

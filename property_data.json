@@ -9758,11 +9758,11 @@
  {
   "address": "Frieslandstraat 79, Amsterdam (Buitenveldert-West)",
   "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-frieslandstraat-79/44436565/",
-  "price": 575000,
-  "price_estimated": true,
+  "price": 500000,
+  "price_estimated": false,
   "area": 70,
   "area_estimated": false,
-  "bedrooms": 2,
+  "bedrooms": 3,
   "bedrooms_verified": false,
   "woz": 521000,
   "woz_year": 2025,
@@ -9771,29 +9771,27 @@
   "build_year_estimated": false,
   "energy_label": "F",
   "energy_estimated": false,
-  "ground": "Erfpacht eeuwigdurend (canon afgekocht t/m 2037, daarna geindexeerd)",
+  "ground": "Erfpacht eeuwigdurend (canon afgekocht t/m 2037; volledige afkoop mogelijk voor €13.501)",
   "ground_verified": false,
-  "vve_costs": 220,
-  "vve_estimated": true,
+  "vve_costs": 273,
+  "vve_estimated": false,
   "dist_emmakade_min": 14,
   "dist_zuidas_min": 7,
   "scores": {
-   "price": 5,
-   "legal": 5,
-   "dist_emmakade": 5,
-   "energy": 2,
-   "dist_zuidas": 9,
-   "renovation": 5
+   "value": 6,
+   "condition": 6,
+   "legal": 7
   },
-  "notes": "NEW via Funda digest 15-Jul-2026 (id 44436565). CONFLICT/FLAG: listing is too new to be indexed by aggregators or search -- Funda itself is bot/JS-gated, so NO CONFIRMED ASKING PRICE was obtainable. Area, build year and energy label are VERIFIED via authoritative BAG register (kadastralekaart.com, sourced from Basisregistratie Adressen en Gebouwen + RVO energylabel database, checked 2026-07-15): gebruiksoppervlakte 70 m² (largest unit on this street; street average is only 47 m²), bouwjaar 1964, energielabel F (registered 21-01-2026, definitief; a preliminary label had estimated E but the definitive registration came in lower at F). WOZ 2025 (drimble.nl, LV-WOZ derived): EUR521,000, up 16.6% from EUR447,000 in 2024 -- a notable jump, suggests the municipality revalued the unit (possibly reflecting the larger-than-typical 70m² footprint) or area-wide appreciation. Price ESTIMATED at ~EUR575k based on WOZ + street comps (Frieslandstraat 67 sold EUR525k, Frieslandstraat 75 sold EUR530k, Frieslandstraat 53 sold EUR495k -- sizes of comps not confirmed to match 70m²) -- TREAT AS ROUGH ONLY, do not use for any offer decision without checking the live Funda listing. FLAG (legal/risk): ground lease (erfpacht) -- a comp on the same street/complex (Frieslandstraat 57) shows canon prepaid through 15-09-2037 under Amsterdam's Algemene Bepalingen 2016, after which an indexed canon (currently ~EUR297/mo equivalent for that unit) applies in perpetuity (eeuwigdurend). This is recorded as an ASSUMPTION for #79 (same street/likely same VvE/erfpacht contract cohort) and MUST be confirmed per-unit via the Amsterdam erfpacht map (AVA) / akte before any offer -- canon terms can vary unit-by-unit even on the same block. Energy label F is poor (bottom quartile) -- as a leasehold apartment in an older (1964) complex, any real insulation upgrade needs VvE-wide action; budget for this or negotiate accordingly. Bedroom count NOT confirmed -- 70 m² suggests 3-4 kamers (2-3 bedrooms) by Buitenveldert norms, estimated conservatively at 2. VvE costs estimated from nearby comps (Frieslandstraat 131: EUR269/mo, Frieslandstraat 167: ~EUR153/mo) scaled for unit size. Distances estimated from already-tracked Frieslandstraat 131 (14 min Emmakade / 7 min Zuidas) -- same street, should be near-identical. ACTION: re-check the live Funda listing in 24-48h once indexed for actual asking price, bedroom count and photos; verify erfpacht canon/expiry specifically for #79 via AVA; request VvE jaarrekening + MJOP; verify energy label F via ep-online.nl (already a registered, not provisional, label so high confidence).",
-  "notes_ru": "НОВОЕ из рассылки Funda 15-июл-2026 (id 44436565). КОНФЛИКТ/ФЛАГ: листинг слишком новый и не проиндексирован агрегаторами или поиском -- сама Funda закрыта для ботов/JS, поэтому ПОДТВЕРЖДЁННОЙ ЦЕНЫ ПРОДАЖИ ПОЛУЧИТЬ НЕ УДАЛОСЬ. Площадь, год постройки и класс энергоэффективности ПРОВЕРЕНЫ через официальный регистр BAG (kadastralekaart.com, источник -- Basisregistratie Adressen en Gebouwen + база энергопаспортов RVO, проверено 2026-07-15): полезная площадь 70 м² (самая большая квартира на этой улице; средняя по улице всего 47 м²), год постройки 1964, класс энергоэффективности F (зарегистрирован 21-01-2026, окончательный; предварительный класс оценивался как E, но окончательная регистрация оказалась ниже -- F). WOZ 2025 (drimble.nl, на основе LV-WOZ): EUR521 000, рост на 16,6% с EUR447 000 в 2024 г. -- заметный скачок, возможно переоценка муниципалитетом (учитывая нетипично большую площадь 70м²) или общее подорожание района. Цена ОЦЕНОЧНО ~EUR575k на основе WOZ и аналогов по улице (Frieslandstraat 67 продан за EUR525k, Frieslandstraat 75 -- за EUR530k, Frieslandstraat 53 -- за EUR495k -- площади аналогов не подтверждены как совпадающие с 70м²) -- СЧИТАТЬ ЛИШЬ ГРУБОЙ ОЦЕНКОЙ, не использовать для решений по офферу без проверки живого листинга Funda. ФЛАГ (юридический риск): право застройки (erfpacht) -- аналог на той же улице/в том же комплексе (Frieslandstraat 57) показывает канон, выкупленный до 15-09-2037 по Общим условиям Амстердама 2016 г., после чего применяется индексируемый канон (сейчас ~EUR297/мес для того объекта) бессрочно (eeuwigdurend). Для #79 это ДОПУЩЕНИЕ (та же улица/вероятно та же когорта договоров erfpacht/VvE) и ДОЛЖНО быть подтверждено индивидуально через карту эрфпахта Амстердама (AVA) / акт до оффера -- условия канона могут различаться даже в пределах одного квартала. Класс энергоэффективности F слабый (нижний квартиль) -- поскольку это квартира на арендованной земле в старом комплексе (1964 г.), реальное утепление требует решения всего VvE; закладывать это в бюджет или торговаться. Число спален НЕ подтверждено -- 70 м² предполагает 3-4 комнаты (2-3 спальни) по нормам Buitenveldert, консервативно оценено как 2. Взносы VvE оценены по соседним аналогам (Frieslandstraat 131: EUR269/мес, Frieslandstraat 167: ~EUR153/мес) с масштабированием под размер квартиры. Расстояния оценены по уже отслеживаемому Frieslandstraat 131 (14 мин до Emmakade / 7 мин до Zuidas) -- та же улица, должно быть почти идентично. ДЕЙСТВИЕ: перепроверить живой листинг Funda через 24-48 часов после индексации на предмет реальной цены, числа спален и фото; подтвердить канон/срок эрфпахта именно для #79 через AVA; запросить годовой отчёт VvE + MJOP; проверить класс F на ep-online.nl (уже зарегистрированный, не предварительный класс, поэтому высокая достоверность).",
+  "notes": "NEW via Funda digest 15-Jul-2026 (id 44436565). CONFLICT/FLAG: listing is too new to be indexed by aggregators or search -- Funda itself is bot/JS-gated, so NO CONFIRMED ASKING PRICE was obtainable. Area, build year and energy label are VERIFIED via authoritative BAG register (kadastralekaart.com, sourced from Basisregistratie Adressen en Gebouwen + RVO energylabel database, checked 2026-07-15): gebruiksoppervlakte 70 m² (largest unit on this street; street average is only 47 m²), bouwjaar 1964, energielabel F (registered 21-01-2026, definitief; a preliminary label had estimated E but the definitive registration came in lower at F). WOZ 2025 (drimble.nl, LV-WOZ derived): EUR521,000, up 16.6% from EUR447,000 in 2024 -- a notable jump, suggests the municipality revalued the unit (possibly reflecting the larger-than-typical 70m² footprint) or area-wide appreciation. Price ESTIMATED at ~EUR575k based on WOZ + street comps (Frieslandstraat 67 sold EUR525k, Frieslandstraat 75 sold EUR530k, Frieslandstraat 53 sold EUR495k -- sizes of comps not confirmed to match 70m²) -- TREAT AS ROUGH ONLY, do not use for any offer decision without checking the live Funda listing. FLAG (legal/risk): ground lease (erfpacht) -- a comp on the same street/complex (Frieslandstraat 57) shows canon prepaid through 15-09-2037 under Amsterdam's Algemene Bepalingen 2016, after which an indexed canon (currently ~EUR297/mo equivalent for that unit) applies in perpetuity (eeuwigdurend). This is recorded as an ASSUMPTION for #79 (same street/likely same VvE/erfpacht contract cohort) and MUST be confirmed per-unit via the Amsterdam erfpacht map (AVA) / akte before any offer -- canon terms can vary unit-by-unit even on the same block. Energy label F is poor (bottom quartile) -- as a leasehold apartment in an older (1964) complex, any real insulation upgrade needs VvE-wide action; budget for this or negotiate accordingly. Bedroom count NOT confirmed -- 70 m² suggests 3-4 kamers (2-3 bedrooms) by Buitenveldert norms, estimated conservatively at 2. VvE costs estimated from nearby comps (Frieslandstraat 131: EUR269/mo, Frieslandstraat 167: ~EUR153/mo) scaled for unit size. Distances estimated from already-tracked Frieslandstraat 131 (14 min Emmakade / 7 min Zuidas) -- same street, should be near-identical. ACTION: re-check the live Funda listing in 24-48h once indexed for actual asking price, bedroom count and photos; verify erfpacht canon/expiry specifically for #79 via AVA; request VvE jaarrekening + MJOP; verify energy label F via ep-online.nl (already a registered, not provisional, label so high confidence). UPDATE 20-Jul-2026 (live Funda listing now indexed): ASKING €500,000 k.k. CONFIRMED (was estimated €575k -> budget gate lifted; ask is BELOW WOZ €521k and below street comps €495-530k -- possible bid-bait pricing, 1.062 views/39 saves in first week; value scored 6 accordingly). 3 BEDROOMS confirmed (4 kamers, was conservatively 2) -- strong family fit at 70 m² BAG. CONFLICT (area): Funda advertises 73 m² vs BAG 70 m² -- BAG used, request NEN2580. Fully renovated end-2010 (elektra + piping renewed), modern kitchen, travertin bathroom, CV-ketel 2024, induction hob 2025, outer wall additionally insulated post-renovation -- condition scored 6 (good but renovation now 16 yrs old); label F despite wall insulation is odd -- re-check EP-Online, possible easy upgrade via glazing/registration. Erfpacht: Kenmerken says 'eeuwigdurend afgekocht' BUT bijzonderheden offer full perpetual buyout for €13,501 ('gunstige voorwaarden overgestapt') -- contradictory; likely canon prepaid to 2037 with cheap perpetual buyout available (a plus: ~€13.5k converts to eeuwigdurend afgekocht). Verify per-unit via AVA/akte. VvE €272,59/mo + €54,96 heating CONFIRMED; VvE checklist all green (KvK, reserve fund, MJOP, opstal). South balcony 4 m², open view over green/water; berging 6 m² with electricity. Legal scored 7 (documented VvE, pending per-unit erfpacht akte).",
+  "notes_ru": "НОВОЕ из рассылки Funda 15-июл-2026 (id 44436565). КОНФЛИКТ/ФЛАГ: листинг слишком новый и не проиндексирован агрегаторами или поиском -- сама Funda закрыта для ботов/JS, поэтому ПОДТВЕРЖДЁННОЙ ЦЕНЫ ПРОДАЖИ ПОЛУЧИТЬ НЕ УДАЛОСЬ. Площадь, год постройки и класс энергоэффективности ПРОВЕРЕНЫ через официальный регистр BAG (kadastralekaart.com, источник -- Basisregistratie Adressen en Gebouwen + база энергопаспортов RVO, проверено 2026-07-15): полезная площадь 70 м² (самая большая квартира на этой улице; средняя по улице всего 47 м²), год постройки 1964, класс энергоэффективности F (зарегистрирован 21-01-2026, окончательный; предварительный класс оценивался как E, но окончательная регистрация оказалась ниже -- F). WOZ 2025 (drimble.nl, на основе LV-WOZ): EUR521 000, рост на 16,6% с EUR447 000 в 2024 г. -- заметный скачок, возможно переоценка муниципалитетом (учитывая нетипично большую площадь 70м²) или общее подорожание района. Цена ОЦЕНОЧНО ~EUR575k на основе WOZ и аналогов по улице (Frieslandstraat 67 продан за EUR525k, Frieslandstraat 75 -- за EUR530k, Frieslandstraat 53 -- за EUR495k -- площади аналогов не подтверждены как совпадающие с 70м²) -- СЧИТАТЬ ЛИШЬ ГРУБОЙ ОЦЕНКОЙ, не использовать для решений по офферу без проверки живого листинга Funda. ФЛАГ (юридический риск): право застройки (erfpacht) -- аналог на той же улице/в том же комплексе (Frieslandstraat 57) показывает канон, выкупленный до 15-09-2037 по Общим условиям Амстердама 2016 г., после чего применяется индексируемый канон (сейчас ~EUR297/мес для того объекта) бессрочно (eeuwigdurend). Для #79 это ДОПУЩЕНИЕ (та же улица/вероятно та же когорта договоров erfpacht/VvE) и ДОЛЖНО быть подтверждено индивидуально через карту эрфпахта Амстердама (AVA) / акт до оффера -- условия канона могут различаться даже в пределах одного квартала. Класс энергоэффективности F слабый (нижний квартиль) -- поскольку это квартира на арендованной земле в старом комплексе (1964 г.), реальное утепление требует решения всего VvE; закладывать это в бюджет или торговаться. Число спален НЕ подтверждено -- 70 м² предполагает 3-4 комнаты (2-3 спальни) по нормам Buitenveldert, консервативно оценено как 2. Взносы VvE оценены по соседним аналогам (Frieslandstraat 131: EUR269/мес, Frieslandstraat 167: ~EUR153/мес) с масштабированием под размер квартиры. Расстояния оценены по уже отслеживаемому Frieslandstraat 131 (14 мин до Emmakade / 7 мин до Zuidas) -- та же улица, должно быть почти идентично. ДЕЙСТВИЕ: перепроверить живой листинг Funda через 24-48 часов после индексации на предмет реальной цены, числа спален и фото; подтвердить канон/срок эрфпахта именно для #79 через AVA; запросить годовой отчёт VvE + MJOP; проверить класс F на ep-online.nl (уже зарегистрированный, не предварительный класс, поэтому высокая достоверность). ОБНОВЛЕНИЕ 20-июл-2026 (листинг Funda проиндексирован): ЦЕНА €500 000 k.k. ПОДТВЕРЖДЕНА (была оценка €575k -> бюджетный фильтр снят; запрос НИЖЕ WOZ €521k и ниже аналогов по улице €495-530k -- возможна заниженная цена под торги, 1 062 просмотра/39 сохранений за первую неделю; оценка value 6 с учётом этого). 3 СПАЛЬНИ подтверждены (4 комнаты, было консервативно 2) -- отличный вариант для семьи при 70 м² по BAG. КОНФЛИКТ (площадь): Funda заявляет 73 м² против 70 м² BAG -- используется BAG, запросить NEN2580. Полная реновация конца 2010 (заменены электрика и трубы), современная кухня, ванная с травертином, котёл 2024, индукционная плита 2025, наружная стена дополнительно утеплена -- состояние 6 (хорошее, но реновации уже 16 лет); класс F при утеплённой стене странен -- перепроверить EP-Online, возможно лёгкое улучшение (стеклопакеты/перерегистрация). Эрфпахт: в Kenmerken указано 'eeuwigdurend afgekocht', НО в описании предлагается полный вечный выкуп за €13 501 ('переход на выгодных условиях') -- противоречие; вероятно канон выкуплен до 2037 с дешёвым вечным выкупом (плюс: ~€13,5k переводит в 'вечно выкуплен'). Проверить по акту/AVA для конкретной квартиры. VvE €272,59/мес + €54,96 отопление ПОДТВЕРЖДЕНО; чек-лист VvE весь зелёный (KvK, резервный фонд, MJOP, страховка). Южный балкон 4 м², открытый вид на зелень и воду; кладовая 6 м² с электричеством. Юр. оценка 7 (документированный VvE, ожидается акт эрфпахта по квартире).",
   "sources": {
    "area": {
     "value": 70,
     "src": "BAG via kadastralekaart.com",
     "url": "https://kadastralekaart.com/adres/amsterdam-frieslandstraat-79/0363200000102789",
     "checked": "2026-07-15",
-    "status": "verified"
+    "status": "conflict",
+    "note": "Funda advertises 73 m² wonen vs BAG 70 m² — BAG figure used; request NEN2580 meetrapport at viewing."
    },
    "build_year": {
     "value": 1964,
@@ -9820,24 +9818,76 @@
     "history": "2025:521k 2024:447k 2023:432k 2022:447k 2021:402k"
    },
    "price": {
-    "value": 575000,
-    "src": "Estimated from WOZ (EUR521k) + street comps (F'straat 67 sold EUR525k, 75 sold EUR530k, 53 sold EUR495k)",
-    "url": "https://drimble.nl/postcode/1082TL/",
-    "checked": "2026-07-15",
-    "status": "unconfirmed"
+    "value": 500000,
+    "src": "Funda listing (asking, k.k.)",
+    "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-frieslandstraat-79/44436565/",
+    "checked": "2026-07-20",
+    "status": "verified"
    },
    "ground": {
-    "value": "Erfpacht eeuwigdurend (canon afgekocht t/m 2037)",
-    "src": "Comp Frieslandstraat 57 (same street/complex) -- not #79-specific",
-    "url": "https://frieslandstraat57.nl/",
-    "checked": "2026-07-15",
+    "value": "Erfpacht eeuwigdurend (canon afgekocht t/m 2037; volledige afkoop mogelijk voor €13.501)",
+    "src": "Funda listing: 'eeuwigdurend afgekocht' in Kenmerken but bijzonderheden offer full buyout for €13.501 — contradictory; comp #57 shows canon prepaid to 15-09-2037",
+    "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-frieslandstraat-79/44436565/",
+    "checked": "2026-07-20",
+    "status": "conflict"
+   },
+   "bedrooms": {
+    "value": 3,
+    "src": "Funda listing (4 kamers, 3 slaapkamers)",
+    "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-frieslandstraat-79/44436565/",
+    "checked": "2026-07-20",
     "status": "unconfirmed"
+   },
+   "vve_costs": {
+    "value": 273,
+    "src": "Funda listing (€272,59 VvE + €54,96 stookkosten)",
+    "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-frieslandstraat-79/44436565/",
+    "checked": "2026-07-20",
+    "status": "verified"
    }
   },
   "date_found": "2026-07-15",
   "source": "digest",
   "viewing": "No",
-  "status_checked": "2026-07-18"
+  "status_checked": "2026-07-20",
+  "vve_reserve_ok": true,
+  "heating_advance": 55,
+  "outdoor_space": "balcony ~4 m² (south)",
+  "value_v4": true,
+  "sale_history": [
+   {
+    "date": "2026-07-14",
+    "price": 500000,
+    "event": "listed",
+    "src": "Funda"
+   }
+  ],
+  "comps": [
+   {
+    "address": "Frieslandstraat 67",
+    "price": 525000,
+    "date": null,
+    "area": null,
+    "kind": "sold",
+    "note": "street comp, size unconfirmed"
+   },
+   {
+    "address": "Frieslandstraat 75",
+    "price": 530000,
+    "date": null,
+    "area": null,
+    "kind": "sold",
+    "note": "street comp, size unconfirmed"
+   },
+   {
+    "address": "Frieslandstraat 53",
+    "price": 495000,
+    "date": null,
+    "area": null,
+    "kind": "sold",
+    "note": "street comp, size unconfirmed"
+   }
+  ]
  },
  {
   "address": "Groenhof 72, Amstelveen (Kringloopbuurt)",
