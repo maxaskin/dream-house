@@ -10453,75 +10453,93 @@
  {
   "address": "Meander 47, Amstelveen (Stadshart)",
   "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-meander-47/44433344/",
-  "price": 465000,
-  "price_estimated": true,
-  "area": 106,
+  "price": 500000,
+  "price_estimated": false,
+  "area": 107,
   "area_estimated": false,
   "bedrooms": 2,
-  "bedrooms_verified": false,
+  "bedrooms_verified": true,
   "woz": 468000,
   "woz_year": 2025,
   "woz_estimated": true,
   "build_year": 1961,
   "build_year_estimated": false,
-  "energy_label": "B",
-  "energy_estimated": true,
-  "ground": "Eigen grond (aanname, niet bevestigd)",
+  "energy_label": "D",
+  "energy_estimated": false,
+  "ground": "Zie akte (niet 'volle eigendom' vermeld — onbevestigd)",
   "ground_verified": false,
-  "vve_costs": 250,
-  "vve_estimated": true,
+  "vve_costs": 274,
+  "vve_estimated": false,
   "dist_emmakade_min": 7,
   "dist_zuidas_min": 16,
   "scores": {
-   "price": 5,
-   "legal": 5,
+   "price": 6,
+   "legal": 4,
    "dist_emmakade": 7,
-   "energy": 6,
+   "energy": 5,
    "dist_zuidas": 4,
-   "renovation": 5
+   "renovation": 4
   },
-  "notes": "NEW via Funda digest 22-Jul-2026 (id 44433344), Stadshart, 1181 WD (Meander complex). AREA/BUILD YEAR VERIFIED via official BAG (kadastralekaart.com address record 0362200000022037): 106 m² gebruiksoppervlakte, pand from 1961 — well above the 50m² floor, one of the larger units in this street. FLAG — LOW-CONFIDENCE on price/WOZ/energy/VvE: this listing is too new to be indexed by Funda-adjacent search or Huispedia's own address page (only kadastraal/BAG data was retrievable directly; Funda itself is bot-gated for a listing this fresh). No energy label is registered for this specific address in BAG (RVO/EP-Online record absent) — estimated label B by analogy to Meander 381, a same-era (1961), same-size (106 m², 3-kamer 'bovenwoning' in the same street) unit that IS registered at label B. Price (€465,000) and WOZ (€468,000) are both ESTIMATES anchored to comps in the same complex: Meander 381 WOZ €468,000 (peildatum 2025-01-01, per Huispedia); Meander 1023 (108 m²) recently listed ~€450,000; Meander 1101 (100 m², same street, already in this database) sold at €395,000 (11% under WOZ €445,000, an outlier low). At the estimated price/WOZ, this reads roughly at-market (~€4,390/m²) — no clear bargain signal, but genuinely uncertain both ways. Ground assumed eigen grond by analogy to Meander 1101 (verified eigen grond, same street) — not confirmed for this unit. VvE cost estimated from Meander 1101's €282/mo (excl. ~€125/mo stadsverwarming advance) — this building likely also uses stadsverwarming (blokverwarming), which locks out a future HR-ketel upgrade; confirm at viewing. Bike distances copied from Meander 1101 (same street/complex) — should be accurate. TREAT AS PLACEHOLDER: do not act without pulling the live Funda listing (link above) to confirm real vraagprijs, kamers, energielabel and VvE — recheck in 2-3 days once Funda/Huispedia index the listing.",
-  "notes_ru": "НОВОЕ из дайджеста Funda от 22.07.2026 (id 44433344), Stadshart, 1181 WD (комплекс Meander). ПЛОЩАДЬ/ГОД ПОСТРОЙКИ ПРОВЕРЕНЫ через официальный BAG (kadastralekaart.com, адрес 0362200000022037): 106 м² полезной площади, здание 1961 года — значительно выше порога 50 м², один из крупнейших объектов на этой улице. ФЛАГ — НИЗКАЯ УВЕРЕННОСТЬ по цене/WOZ/энергометке/VvE: листинг слишком новый, не проиндексирован ни поисковиками, ни страницей адреса Huispedia (удалось получить только кадастровые/BAG данные напрямую; сам Funda защищён от ботов для настолько свежего объявления). Энергометка для этого конкретного адреса в BAG не зарегистрирована (запись RVO/EP-Online отсутствует) — метка B оценена по аналогии с Meander 381, объектом той же эпохи (1961), того же размера (106 м², 3-комнатная 'bovenwoning' на той же улице), у которого метка B зарегистрирована официально. Цена (€465 000) и WOZ (€468 000) — ОЦЕНКИ, привязанные к аналогам в том же комплексе: Meander 381 WOZ €468 000 (пейлдатум 01-01-2025, по Huispedia); Meander 1023 (108 м²) недавно выставлен за ~€450 000; Meander 1101 (100 м², та же улица, уже есть в базе) продан за €395 000 (на 11% ниже WOZ €445 000 — выброс вниз). При оценочной цене/WOZ это примерно рыночный уровень (~€4 390/м²) — явного признака выгодной сделки нет, но неопределённость велика в обе стороны. Собственная земля предполагается по аналогии с Meander 1101 (подтверждено, та же улица) — для этого объекта не подтверждено. Взнос VvE оценён по Meander 1101 (€282/мес без учёта ~€125/мес аванса на теплоснабжение) — вероятно, здесь тоже блочное отопление (stadsverwarming/blokverwarming), что исключает переход на собственный газовый котёл — уточнить на просмотре. Велодистанции скопированы с Meander 1101 (та же улица/комплекс) — должны быть точными. СЧИТАТЬ ЗАГЛУШКОЙ: не действовать без проверки живого листинга на Funda (ссылка выше) для подтверждения реальной цены, числа комнат, энергометки и VvE — перепроверить через 2-3 дня, когда Funda/Huispedia проиндексируют объявление.",
+  "notes": "CORRECTED 2026-07-22 (Max flagged a price mismatch — the listing is now live/indexed on Funda, replacing yesterday's comp-based placeholder). VERIFIED directly on Funda (id 44433344): vraagprijs €500,000 k.k. (was estimated €465,000 — 7.5% low), 107 m² (was 106 from BAG — minor BAG/Funda NEN measurement gap, immaterial), 3 kamers/2 bedrooms confirmed, energy label D (was estimated B by analogy to Meander 381 — WRONG, corrected), VvE bijdrage €274/mo + €106/mo stookkostenvoorschot (blokverwarming; was estimated €250). €4,673/m² — ~20% below the Stadshart-buurt average asking €5,859/m², a real discount, though against the still-unverified WOZ estimate (€468k, borrowed from comp Meander 381) this reads as a modest ~6.8% premium — recheck WOZ once wozwaardeloket/Huispedia index this address. FLAGS: (1) Ground status shown as 'Zie akte' (see deed) rather than 'Volle eigendom' as on comparable Meander 37/1101 — ambiguous, could be erfpacht or a split/complex title; get the akte before offering. (2) Listing explicitly states 'Niet-zelfbewoning, ouderdom en asbestclausule van toepassing' — non-owner-occupancy clause (may restrict buy-to-let or immediate self-occupancy — clarify), standard age clause (1961 build) and asbestos clause. (3) VvE has started a sustainability (verduurzaming) project starting Q4 2026, explicitly financed via a LOAN — check the MJOP/VvE notulen for the expected monthly levy increase or special assessment (suppletie) tied to this loan before offering. Condition reads as needing updating ('naar eigen smaak in te richten' = 'to furnish to your own taste') — renovation score lowered accordingly. Bike distances unchanged/estimated from same-street comp Meander 37/1101.",
+  "notes_ru": "ИСПРАВЛЕНО 22.07.2026 (Макс указал на несоответствие цены — объявление теперь проиндексировано на Funda, заменяет вчерашнюю оценку по аналогам). ПРОВЕРЕНО напрямую на Funda (id 44433344): цена €500 000 k.k. (была оценка €465 000 — на 7,5% ниже реальной), 107 м² (было 106 по BAG — небольшое расхождение BAG/Funda в замере, не существенно), 3 комнаты/2 спальни подтверждены, энергометка D (была оценка B по аналогии с Meander 381 — ОШИБКА, исправлено), взнос VvE €274/мес + €106/мес аванс на отопление (блочное отопление; была оценка €250). €4 673/м² — примерно на 20% ниже среднего по району Stadshart (€5 859/м²), реальная скидка, хотя относительно всё ещё неподтверждённой оценки WOZ (€468к, взято у аналога Meander 381) это скорее умеренная надбавка ~6,8% — перепроверить WOZ, когда этот адрес появится в wozwaardeloket/Huispedia. ФЛАГИ: (1) Статус земли указан как 'Zie akte' (см. акт), а не 'Volle eigendom' (полная собственность), как у аналогов Meander 37/1101 — неоднозначно, может быть эрфпахт или разделённый титул — запросить акт перед предложением цены. (2) В объявлении прямо указано: применяются оговорки о непроживании собственника, возрасте здания и асбесте — уточнить, не ограничивает ли это немедленное заселение/сдачу в аренду. (3) VvE запустил проект энергомодернизации с началом в 4 кв. 2026, финансируемый ЗАЙМОМ — проверить протоколы VvE/MJOP на предмет повышения взноса или разового сбора (suppletie), связанного с этим займом, до подачи предложения. Судя по формулировке ('обустроить по своему вкусу'), состояние требует обновления — оценка ремонта снижена. Велодистанции без изменений (оценка по аналогам Meander 37/1101).",
   "sources": {
    "area": {
-    "value": 106,
-    "src": "BAG (via kadastralekaart.com)",
-    "url": "https://kadastralekaart.com/adres/amstelveen-meander-47/0362200000022037",
+    "value": 107,
+    "src": "Funda listing (official, Kenmerken)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-meander-47/44433344/",
     "checked": "2026-07-22",
-    "status": "verified"
+    "status": "corrected",
+    "note": "BAG (kadastralekaart.com) showed 106 m²; Funda's own Kenmerken field (107 m²) preferred as primary/current source."
    },
    "build_year": {
     "value": 1961,
-    "src": "BAG (via kadastralekaart.com)",
+    "src": "Funda listing + BAG (via kadastralekaart.com)",
     "url": "https://kadastralekaart.com/adres/amstelveen-meander-47/0362200000022037",
     "checked": "2026-07-22",
     "status": "verified"
    },
    "energy_label": {
-    "value": "B",
-    "src": "Comp analogy (Meander 381, same building era/size)",
-    "url": "https://huispedia.nl/amstelveen/1181wn/meander/381",
+    "value": "D",
+    "src": "Funda listing (official)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-meander-47/44433344/",
     "checked": "2026-07-22",
-    "status": "unconfirmed",
-    "note": "BAG shows no energy label registered for Meander 47 itself; Meander 381 (same street, same 1961 build, same 106 m²) is registered at label B."
+    "status": "corrected",
+    "note": "Previous estimate (B, by analogy to Meander 381) was incorrect — live Funda listing states label D."
    },
    "woz": {
     "value": 468000,
-    "src": "Comp analogy (Meander 381)",
+    "src": "Comp analogy (Meander 381) — still unverified",
     "url": "https://huispedia.nl/amstelveen/1181wn/meander/381",
     "checked": "2026-07-22",
     "status": "unconfirmed",
     "peildatum": "2025-01-01"
    },
    "price": {
-    "value": 465000,
-    "src": "Comp estimate (Meander 381/1023/1101)",
+    "value": 500000,
+    "src": "Funda listing (official)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-meander-47/44433344/",
+    "checked": "2026-07-22",
+    "status": "corrected",
+    "note": "Previous placeholder estimate (€465,000) replaced with live Funda vraagprijs (€500,000) once the listing became indexed/fetchable."
+   },
+   "vve_costs": {
+    "value": 274,
+    "src": "Funda listing (official)",
+    "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-meander-47/44433344/",
+    "checked": "2026-07-22",
+    "status": "corrected",
+    "note": "Excl. €106/mo stookkostenvoorschot (blokverwarming). Previous estimate was €250."
+   },
+   "ground": {
+    "value": "Zie akte",
+    "src": "Funda listing (Eigendomssituatie field)",
     "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-meander-47/44433344/",
     "checked": "2026-07-22",
     "status": "unconfirmed",
-    "note": "Live Funda vraagprijs not yet retrievable (listing too new to be indexed); verify directly on Funda."
+    "note": "Unlike comps Meander 37/1101 which state 'Volle eigendom', this listing's Eigendomssituatie field says 'Zie akte' — ambiguous, request the akte."
    }
   },
+  "heating_advance": 106,
   "viewing": "No",
   "date_found": "2026-07-22",
   "source": "digest"
