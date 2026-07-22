@@ -106,6 +106,7 @@ const TENURE_SCORE = {
   'Erfpacht (status te verifiëren)': 3,
   'Erfpacht (te verifieren)': 3,
   'Erfpacht (status onbekend)': 3,
+  "Zie akte (niet 'volle eigendom' vermeld — onbevestigd)": 4,
 };
 function calcTenure(p) {
   if (p.ground == null) return null;
@@ -284,6 +285,7 @@ const GROUND_RU = {
   'Erfpacht eeuwigdurend afgekocht': 'Аренда земли (вечная, выкуплена)',
   'Eigen grond (per listing)': 'Собственный участок (согласно объявлению)',
   'Erfpacht (status onbekend)': 'Аренда земли (статус неизвестен)',
+  "Zie akte (niet 'volle eigendom' vermeld — onbevestigd)": 'См. акт о собственности (не указано «полная собственность» — не подтверждено)',
   'Erfpacht (vermoedelijk lopend, ~2036)': 'Аренда земли (предположительно действующая, ~2036)',
   'Eigen grond (te verifiëren)': 'Собственный участок (требует проверки)',
   'Eigen grond (aanname, niet bevestigd)': 'Собственный участок (предположение, не подтверждено)',
