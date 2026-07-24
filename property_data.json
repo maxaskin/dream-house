@@ -10543,5 +10543,180 @@
   "viewing": "No",
   "date_found": "2026-07-22",
   "source": "digest"
+ },
+ {
+  "address": "Camera Obscuralaan 276, Amstelveen (Boekenbuurt)",
+  "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-camera-obscuralaan-276/44446156/",
+  "price": 400000,
+  "area": 73,
+  "area_estimated": false,
+  "bedrooms": 2,
+  "bedrooms_verified": true,
+  "woz": 405000,
+  "woz_year": 2025,
+  "woz_estimated": false,
+  "build_year": 1966,
+  "build_year_estimated": false,
+  "energy_label": "E",
+  "energy_estimated": false,
+  "ground": "Eigen grond (aanname, niet bevestigd)",
+  "ground_verified": false,
+  "vve_costs": 148,
+  "vve_estimated": false,
+  "dist_emmakade_min": 8,
+  "dist_zuidas_min": 14,
+  "scores": {
+   "price": 8,
+   "legal": 7,
+   "dist_emmakade": 9,
+   "energy": 4,
+   "dist_zuidas": 5,
+   "renovation": 6
+  },
+  "notes": "NEW via Funda digest 24-Jul-2026 (id 44446156). 1183 KE, Bankras-Kostverloren/Boekenbuurt. Listed 1 day ago (23-07-2026) via Lunshof Makelaardij Amstelveen. VERIFIED via Huispedia (BAG/Kadaster-sourced, mirrors the live Funda listing): EUR400,000 k.k., 73 m^2 (BAG gebruiksoppervlakte), 3 kamers (=2 slaapkamers), top-floor corner unit in a small complex, balcony on the east, own ground-floor storage (berging), ample street parking. Build year 1966 (BAG) -- CORRECTED from an earlier rough web snippet that said 1960. Energy label E (BAG/RVO -- confirmed independently by both Huispedia and KadastraleKaart) -- CORRECTED from a separate aggregator (Miljoenhuizen) that showed F, which is stale; treat E as authoritative. VvE service costs EUR148/mo plus a ~EUR75/mo stookkosten voorschot, both taken directly from the listing text (verified, not estimated). WOZ EUR405,000 (peildatum 01-01-2025, Huispedia via Kadaster Waardeloket) -- CONFLICTS with an earlier unrelated aggregator snippet showing EUR368,000; treat EUR405k as authoritative (it states its peildatum and matches the pattern of the other Camera Obscuralaan unit already on the shortlist, #378, also EUR405k). PRICE SIGNAL: asking EUR400k is ~1% BELOW WOZ and about 12% below the street's average recent EUR/m^2 (EUR5,479/m^2 here vs EUR6,227/m^2 for comparable sales) -- Huispedia's own model flags the home as 'laag in de markt gezet' (deliberately underpriced), realistic value band EUR424k-493k, and notes 100% of comparable homes in the buurt sold above asking recently -- EXPECT A BIDDING WAR, budget above asking. Ground assumed eigen grond (Amstelveen norm, unlike Amsterdam) but NOT verified on this specific listing -- confirm before offering. Building has double glazing plus spouwmuurisolatie and a renewed 3-phase meter cupboard -- reasonably well-kept, not a full renovation; original layout had a 3rd bedroom that could be reinstated. Third property now on the shortlist from this same street (alongside #314 and #378), useful cross-reference for pricing and negotiation.",
+  "notes_ru": "НОВОЕ из дайджеста Funda 24-июл-2026 (id 44446156). 1183 KE, Bankras-Kostverloren/Boekenbuurt. Выставлено 1 день назад (23-07-2026), маклер Lunshof Makelaardij Amstelveen. ПРОВЕРЕНО через Huispedia (данные BAG/Kadaster, зеркалит живое объявление Funda): EUR400.000 k.k., 73 м² (BAG), 3 комнаты (=2 спальни), угловая квартира на верхнем этаже небольшого комплекса, балкон на восток, собственная кладовая на первом этаже, парковка у дома. Год постройки 1966 (BAG) — ИСПРАВЛЕНО: ранее в грубом веб-сниппете значился 1960. Класс энергоэффективности E (BAG/RVO — подтверждено независимо Huispedia и KadastraleKaart) — ИСПРАВЛЕНО: другой агрегатор (Miljoenhuizen) показывал F — устаревшие данные; считать E достоверным. Взнос VvE EUR148/мес плюс ~EUR75/мес аванс на отопление — оба показателя взяты прямо из текста объявления (проверено, не оценка). WOZ EUR405.000 (на 01.01.2025, Huispedia через Kadaster Waardeloket) — РАСХОЖДЕНИЕ с более ранним сниппетом другого агрегатора (EUR368.000); считать EUR405k достоверным (указана дата пелдатум, совпадает с другим объектом на этой же улице в шорт-листе, #378, тоже EUR405k). ЦЕНОВОЙ СИГНАЛ: цена EUR400k примерно на 1% НИЖЕ WOZ и примерно на 12% ниже среднего €/м² по недавним сравнимым продажам на улице (EUR5.479/м² против EUR6.227/м²) — по собственной модели Huispedia жильё 'занижено в цене', реалистичная стоимость EUR424k–493k, и 100% сравнимых домов в районе недавно продавались выше цены предложения — ОЖИДАЕТСЯ ТОРГ ВВЕРХ, закладывайте бюджет выше цены предложения. Земля предположительно собственная (норма для Амстелвейна, не Амстердама), но НЕ подтверждено именно для этого объекта — проверить перед предложением. В доме двойное остекление и утепление стен, обновлённый 3-фазный электрощит — в целом ухожено, но не капитальный ремонт; изначальная планировка имела 3-ю спальню, которую можно восстановить. Уже третий объект в шорт-листе с этой улицы (наряду с #314 и #378) — полезно для сравнения цен и переговоров.",
+  "sources": {
+   "price": {
+    "value": 400000,
+    "src": "Huispedia (mirrors live Funda listing)",
+    "url": "https://huispedia.nl/amstelveen/1183ke/camera-obscuralaan/276",
+    "checked": "2026-07-24",
+    "status": "verified"
+   },
+   "area": {
+    "value": 73,
+    "src": "Huispedia / KadastraleKaart (BAG)",
+    "url": "https://kadastralekaart.com/adres/amstelveen-camera-obscuralaan-276/0362200000005437",
+    "checked": "2026-07-24",
+    "status": "verified"
+   },
+   "energy_label": {
+    "value": "E",
+    "src": "KadastraleKaart (BAG/RVO)",
+    "url": "https://kadastralekaart.com/adres/amstelveen-camera-obscuralaan-276/0362200000005437",
+    "checked": "2026-07-24",
+    "status": "corrected",
+    "note": "Miljoenhuizen showed F (stale); BAG + Huispedia agree on E"
+   },
+   "build_year": {
+    "value": 1966,
+    "src": "KadastraleKaart (BAG)",
+    "url": "https://kadastralekaart.com/adres/amstelveen-camera-obscuralaan-276/0362200000005437",
+    "checked": "2026-07-24",
+    "status": "corrected",
+    "note": "initial snippet had said 1960"
+   },
+   "woz": {
+    "value": 405000,
+    "src": "Huispedia (Kadaster Waardeloket)",
+    "url": "https://huispedia.nl/amstelveen/1183ke/camera-obscuralaan/276",
+    "checked": "2026-07-24",
+    "status": "verified",
+    "peildatum": "2025-01-01"
+   },
+   "vve_costs": {
+    "value": 148,
+    "src": "Huispedia (listing text)",
+    "url": "https://huispedia.nl/amstelveen/1183ke/camera-obscuralaan/276",
+    "checked": "2026-07-24",
+    "status": "verified"
+   },
+   "ground": {
+    "value": "Eigen grond (aanname)",
+    "src": "Amstelveen norm; unverified for this address",
+    "url": "https://huispedia.nl/amstelveen/1183ke/camera-obscuralaan/276",
+    "checked": "2026-07-24",
+    "status": "unconfirmed"
+   }
+  },
+  "viewing": "No",
+  "date_found": "2026-07-24",
+  "source": "digest"
+ },
+ {
+  "address": "Bolestein 184, Amsterdam (Buitenveldert-Zuidwest)",
+  "url": "https://www.funda.nl/detail/koop/amsterdam/appartement-bolestein-184/80800772/",
+  "price": 575000,
+  "area": 93,
+  "area_estimated": false,
+  "bedrooms": 2,
+  "bedrooms_verified": true,
+  "woz": 590000,
+  "woz_year": 2025,
+  "woz_estimated": true,
+  "build_year": 1969,
+  "build_year_estimated": false,
+  "energy_label": "F",
+  "energy_estimated": false,
+  "ground": "Erfpacht (aanname, status niet bevestigd)",
+  "ground_verified": false,
+  "vve_costs": 180,
+  "vve_estimated": true,
+  "dist_emmakade_min": 13,
+  "dist_zuidas_min": 9,
+  "scores": {
+   "price": 6,
+   "legal": 3,
+   "dist_emmakade": 6,
+   "energy": 3,
+   "dist_zuidas": 9,
+   "renovation": 4
+  },
+  "notes": "NEW via Funda digest 24-Jul-2026 (id 80800772, listed 23-07-2026). 1081EA Amsterdam, buurt Buitenveldert-Zuidwest (wijk Buitenveldert-West). VERIFIED via Miljoenhuizen (Kadaster/CBS-sourced, confirms this is the live Funda listing): EUR575,000 te koop, 93 m^2 wonen (241 m^3), bouwjaar 1969, 4 kamers (2 slaapkamers), 1 badkamer, berging (box). Energielabel F -- worse than the street's most common label (BAG street stats: C=166 units is most common, F=51, only G=14 is worse). FLAG - GROUND/ERFPACHT: this is Amsterdam (Buitenveldert), where erfpacht (leasehold) is the norm rather than eigen grond -- COULD NOT CONFIRM erfpacht status (afgekocht vs lopend, canon amount, revision/expiry date) from any free source for this specific address; this is a MATERIAL unknown that could mean a large ongoing annual canon or an expensive upcoming revision -- do NOT offer without pulling the Amsterdam erfpacht dossier (erfpachtdossier) for this address first. WOZ shown (EUR590,000, 2025) is an ESTIMATE by comparison to a similarly-sized neighbour, Bolestein 238 (92 m^2, WOZ EUR590,000 per Drimble) -- NOT this address's own WOZ figure; verify via wozwaardeloket.nl before relying on it. VvE contribution UNKNOWN for this address -- estimated ~EUR180/mo by comparison to Bolestein 13-B (EUR150/mo confirmed for a smaller 52 m^2 unit); request the VvE jaarrekening/MJOP before any offer -- older (1969) complexes can carry a large maintenance backlog. Distances to Emmakade 33 and Zuidas are ESTIMATED from the postcode only (not individually route-checked), anchored to the already-verified nearby unit Bolestein 13-B (dist_emmakade 14, dist_zuidas 8) adjusted slightly for this address being further along the street. Price per m^2 (EUR6,183) is roughly in line with the street-wide average WOZ/m^2 (~EUR6,621, derived from the published street average of EUR480,000 WOZ over 72.5 m^2 avg area) -- not obviously over- or under-priced on that rough basis, but this must be re-checked once the real WOZ is confirmed. No condition/renovation details were available from any source -- given the 1969 build and label F, assume a dated/original interior pending verification; treat the renovation score as cautious/placeholder.",
+  "notes_ru": "НОВОЕ из дайджеста Funda 24-июл-2026 (id 80800772, выставлено 23-07-2026). 1081EA Амстердам, район Buitenveldert-Zuidwest (вейк Buitenveldert-West). ПРОВЕРЕНО через Miljoenhuizen (данные Kadaster/CBS, подтверждает, что это то же самое живое объявление на Funda): EUR575.000 цена предложения, 93 м² жилой площади (241 м³), год постройки 1969, 4 комнаты (2 спальни), 1 ванная, кладовая (box). Класс энергоэффективности F — хуже самого распространённого класса на улице (по статистике BAG: C=166 квартир самый частый, F=51, хуже только G=14). ФЛАГ — ЗЕМЛЯ/ЭРФПАХТ: это Амстердам (Buitenveldert), где эрфпахт (аренда земли) — норма, а не собственная земля, как в Амстелвейне. НЕ УДАЛОСЬ подтвердить статус эрфпахта (выкуплен ли, действующий ли, размер канона, дата пересмотра/истечения) ни по одному бесплатному источнику для этого конкретного адреса — это СУЩЕСТВЕННЫЙ неизвестный риск, может означать крупный ежегодный канон или дорогой предстоящий пересмотр — НЕ делать предложение без запроса амстердамского erfpachtdossier по этому адресу. Указанный WOZ (EUR590.000, 2025) — ОЦЕНКА по аналогии с похожим по размеру соседом Bolestein 238 (92 м², WOZ EUR590.000 по данным Drimble) — это НЕ собственный WOZ этого адреса; проверить через wozwaardeloket.nl. Взнос VvE НЕИЗВЕСТЕН для этого адреса — оценка ~EUR180/мес по аналогии с Bolestein 13-B (подтверждённые EUR150/мес для меньшей квартиры 52 м²); запросить годовой отчёт VvE/MJOP перед предложением — в домах 1969 года постройки часто накапливается большой ремонтный долг. Расстояния до Emmakade 33 и Zuidas — ОЦЕНКА только по почтовому индексу (маршрут не проверялся индивидуально), на основе уже проверенного соседнего объекта Bolestein 13-B (dist_emmakade 14, dist_zuidas 8), слегка скорректировано под положение этого дома дальше по улице. Цена за м² (EUR6.183) примерно соответствует среднему WOZ/м² по улице (~EUR6.621, из публикуемого среднего WOZ EUR480.000 на среднюю площадь 72.5 м²) — на первый взгляд не завышена и не занижена, но требует перепроверки после подтверждения реального WOZ. Данных о состоянии/ремонте нет ни из одного источника — учитывая год постройки 1969 и класс F, предполагается изначальная/устаревшая отделка до проверки; оценка за состояние — осторожная/предварительная.",
+  "sources": {
+   "price": {
+    "value": 575000,
+    "src": "Miljoenhuizen (confirms live Funda listing)",
+    "url": "https://www.miljoenhuizen.nl/amsterdam/1081ea/bolestein/184",
+    "checked": "2026-07-24",
+    "status": "verified"
+   },
+   "area": {
+    "value": 93,
+    "src": "Miljoenhuizen",
+    "url": "https://www.miljoenhuizen.nl/amsterdam/1081ea/bolestein/184",
+    "checked": "2026-07-24",
+    "status": "verified"
+   },
+   "energy_label": {
+    "value": "F",
+    "src": "Miljoenhuizen",
+    "url": "https://www.miljoenhuizen.nl/amsterdam/1081ea/bolestein/184",
+    "checked": "2026-07-24",
+    "status": "verified"
+   },
+   "build_year": {
+    "value": 1969,
+    "src": "Miljoenhuizen",
+    "url": "https://www.miljoenhuizen.nl/amsterdam/1081ea/bolestein/184",
+    "checked": "2026-07-24",
+    "status": "verified"
+   },
+   "woz": {
+    "value": 590000,
+    "src": "Estimated via comparable Bolestein 238 (92 m^2, WOZ EUR590k)",
+    "url": "https://drimble.nl/adres/amsterdam/1081EB/bolestein-238.html",
+    "checked": "2026-07-24",
+    "status": "unconfirmed"
+   },
+   "ground": {
+    "value": "Erfpacht (aanname, Amsterdam norm)",
+    "src": "Unverified -- Amsterdam erfpachtdossier not checked",
+    "url": "",
+    "checked": "2026-07-24",
+    "status": "unconfirmed"
+   },
+   "vve_costs": {
+    "value": 180,
+    "src": "Estimated from comparable Bolestein 13-B (EUR150/mo, 52 m^2)",
+    "url": "",
+    "checked": "2026-07-24",
+    "status": "unconfirmed"
+   }
+  },
+  "viewing": "No",
+  "date_found": "2026-07-24",
+  "source": "digest"
  }
 ]
