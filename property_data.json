@@ -84,8 +84,8 @@
    "condition": 6,
    "legal": 6
   },
-  "notes": "CORRECTED via Funda (id 44475595, te koop): 89 m² (not 90), 2 bed not 3 (3rd bedroom converted to bathroom 2023), label D not C, VvE €162.54 confirmed. Stadshart maisonette, eigen grond. €5,449/m². DOCS REVIEWED 2026-06-03 (18 stukken, full DD in Documents/Ferdinand Bolweg 35/): NEN2580 confirms 89 m²; seller bought 01-2023 for €410k; brochure asking was €540k (now €485k); VvE dormant since 2022, charges restarted 1-1-2026 only, reserve €8,291; 2022 MJOP works (~€28k) possibly never executed (~€10k share risk); berging in use ≠ splitsingsakte; wooden piles: Fase 0 low risk but area indication 'ernstig'. Offer guidance: open ~€455k, walk-away €480k. VALUE re-checked per v4 rubric 06-07-2026: 7 confirmed (motivated seller: €540k→€485k cut, ≈WOZ; dormant VvE already in legal). | [2026-07-18] STATUS: Under bid (Onder bod). Moved to sold pile.",
-  "notes_ru": "ИСПРАВЛЕНО через Funda (id 44475595, к продаже): 89 м² (не 90), 2 спальни, а не 3 (3-я переоборудована в ванную в 2023 г.), класс D, а не C, ТСЖ €162.54 подтверждён. Мезонет в Stadshart, собственный участок. €5.449/м². ДОКУМЕНТЫ ИЗУЧЕНЫ 03-06-2026 (18 шт., полный отчёт в Documents/Ferdinand Bolweg 35/): NEN2580 подтверждает 89 м²; продавец купил в 01-2023 за €410k; в брошюре цена была €540k (сейчас €485k); ТСЖ «спало» с 2022 г., взносы возобновлены только с 01-01-2026, резерв €8.291; работы по плану 2022 (~€28k), возможно, не выполнены (риск ~€10k на долю); кладовка в пользовании ≠ акту раздела; деревянные сваи: Fase 0 — низкий риск, но индикация района «серьёзная». Рекомендация: старт ~€455k, предел €480k. Экспертная цена подтверждена по рубрике v4 (06-07-2026): 7. | [2026-07-18] СТАТУС: Есть предложение цены (Onder bod). Перенесено в проданные.",
+  "notes": "CORRECTED via Funda (id 44475595, te koop): 89 m² (not 90), 2 bed not 3 (3rd bedroom converted to bathroom 2023), label D not C, VvE €162.54 confirmed. Stadshart maisonette, eigen grond. €5,449/m². DOCS REVIEWED 2026-06-03 (18 stukken, full DD in Documents/Ferdinand Bolweg 35/): NEN2580 confirms 89 m²; seller bought 01-2023 for €410k; brochure asking was €540k (now €485k); VvE dormant since 2022, charges restarted 1-1-2026 only, reserve €8,291; 2022 MJOP works (~€28k) possibly never executed (~€10k share risk); berging in use ≠ splitsingsakte; wooden piles: Fase 0 low risk but area indication 'ernstig'. Offer guidance: open ~€455k, walk-away €480k. VALUE re-checked per v4 rubric 06-07-2026: 7 confirmed (motivated seller: €540k→€485k cut, ≈WOZ; dormant VvE already in legal). | [2026-07-18] STATUS: Under bid (Onder bod). Moved to sold pile.\n[2026-07-25] ⚠ REACTIVATED — Funda status now Beschikbaar (available); prior onder_bod deal fell through. Back on active shortlist. Price: €485.000.",
+  "notes_ru": "ИСПРАВЛЕНО через Funda (id 44475595, к продаже): 89 м² (не 90), 2 спальни, а не 3 (3-я переоборудована в ванную в 2023 г.), класс D, а не C, ТСЖ €162.54 подтверждён. Мезонет в Stadshart, собственный участок. €5.449/м². ДОКУМЕНТЫ ИЗУЧЕНЫ 03-06-2026 (18 шт., полный отчёт в Documents/Ferdinand Bolweg 35/): NEN2580 подтверждает 89 м²; продавец купил в 01-2023 за €410k; в брошюре цена была €540k (сейчас €485k); ТСЖ «спало» с 2022 г., взносы возобновлены только с 01-01-2026, резерв €8.291; работы по плану 2022 (~€28k), возможно, не выполнены (риск ~€10k на долю); кладовка в пользовании ≠ акту раздела; деревянные сваи: Fase 0 — низкий риск, но индикация района «серьёзная». Рекомендация: старт ~€455k, предел €480k. Экспертная цена подтверждена по рубрике v4 (06-07-2026): 7. | [2026-07-18] СТАТУС: Есть предложение цены (Onder bod). Перенесено в проданные.\n[2026-07-25] ⚠ СНОВА В ПРОДАЖЕ — Funda показывает Beschikbaar (доступен); сделка «onder_bod» сорвалась. Возвращён в активный список. Цена: €485.000.",
   "sources": {
    "woz": {
     "value": 482000,
@@ -155,11 +155,9 @@
    }
   ],
   "energy_upgrade": "moderate",
-  "status_checked": "2026-07-21",
+  "status_checked": "2026-07-25",
   "value_v4": true,
-  "sold": true,
-  "sold_status": "onder_bod",
-  "sold_date": "2026-07-18"
+  "sold": false
  },
  {
   "address": "Laanhorn 2, Amstelveen",
@@ -571,7 +569,7 @@
   },
   "date_found": "2026-05-24",
   "source": "reaction",
-  "viewing": "Scheduled 2026-07-22",
+  "viewing": "Visited 2026-07-22",
   "comps": [
    {
     "address": "Mr. Troelstralaan 24",
@@ -669,8 +667,8 @@
    "condition": 4,
    "legal": 5
   },
-  "notes": "VERIFIED (Huispedia): 65 m², 2 bed, 1962, label D, WOZ €371k (2025, official). Small gallery flat on busy arterial. €6,077/m² high for size/label. Not currently listed; €395k from reaction. | Funda status 2026-06-28: Onder bod (under bid) — moved to sold pile. | [2026-07-07] STATUS: Funda re-checked, still under bid (Onder bod). No change.",
-  "notes_ru": "ПРОВЕРЕНО (Huispedia): 65 м², 2 спальни, 1962 г., класс D, WOZ €371к (2025, офиц.). Небольшой галерейный дом на оживлённой магистрали. €6.077/м² высоко для площади/класса. В настоящее время не выставлен; €395к по реакции. | Статус Funda 2026-06-28: Onder bod (под предложением) — перенесено в проданные. | [2026-07-07] СТАТУС: повторная проверка Funda, всё ещё под предложением (Onder bod). Без изменений.",
+  "notes": "VERIFIED (Huispedia): 65 m², 2 bed, 1962, label D, WOZ €371k (2025, official). Small gallery flat on busy arterial. €6,077/m² high for size/label. Not currently listed; €395k from reaction. | Funda status 2026-06-28: Onder bod (under bid) — moved to sold pile. | [2026-07-07] STATUS: Funda re-checked, still under bid (Onder bod). No change.\n[2026-07-25] STATUS: Progressed to fully Verkocht (sold). Transfer date 25-06-2026 shown on Funda.",
+  "notes_ru": "ПРОВЕРЕНО (Huispedia): 65 м², 2 спальни, 1962 г., класс D, WOZ €371к (2025, офиц.). Небольшой галерейный дом на оживлённой магистрали. €6.077/м² высоко для площади/класса. В настоящее время не выставлен; €395к по реакции. | Статус Funda 2026-06-28: Onder bod (под предложением) — перенесено в проданные. | [2026-07-07] СТАТУС: повторная проверка Funda, всё ещё под предложением (Onder bod). Без изменений.\n[2026-07-25] СТАТУС: Перешёл в Verkocht (продано). Дата передачи 25-06-2026 указана на Funda.",
   "sources": {
    "woz": {
     "value": 371000,
@@ -688,9 +686,9 @@
   "viewing": "Visited 2026-06-02",
   "location_adj": -1,
   "sold": true,
-  "sold_status": "onder_bod",
-  "sold_date": "2026-06-28",
-  "status_checked": "2026-07-21",
+  "sold_status": "sold",
+  "sold_date": "2026-06-25",
+  "status_checked": "2026-07-25",
   "sold_price": null,
   "sold_price_checked": "2026-07-10",
   "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -1569,8 +1567,8 @@
    "condition": 5,
    "legal": 5
   },
-  "notes": "NEW via Funda digest 03-Jun-2026 (id 80835925). Buitenveldert, 1082 HM. Area 87 m2, build year 1965, energy label C and 2 bedrooms (3 kamers) VERIFIED via kadasterdata.nl (BAG/energielabel). Same building block as Van Nijenrodeweg 276 already in DB (1966, label D, erfpacht tijdvak to 2039) - 487 is slightly better (label C). WOZ: kadasterdata shows EUR449.000 at 2020 peildatum only; current 2025 WOZ ESTIMATED ~EUR500.000 (neighbour 276 = EUR505k 2025) - confirm at WOZ-waardeloket. ASK PRICE ESTIMATED EUR465.000 (Funda JS/bot-gated) - benchmarked off near-identical neighbours on kadasterdata: nr 491 (87 m2) EUR465.000 and nr 171 (86 m2) EUR475.000. At ~EUR5.345/m2 the ask sits BELOW the estimated WOZ - attractive on paper. RISK/FLAG: Amsterdam erfpacht - by analogy with nr 276 likely a running tijdvak (276 ends 15-01-2039, canon resets to market after) NOT afgekocht/eeuwigdurend - material future cost, verify current erfpacht/overstap status with selling makelaar + Amsterdam map. Label C (plus): step to B feasible (glass/ventilation) given individual rather than block heating - some easy-upgrade upside. VvE EUR236/mo ESTIMATED (276 figure). FLAG: 1965 building -> ouderdoms-/asbestclausule, likely dated interior (budget cosmetic). Distances reused from 276 comp: ~13 min bike to Emmakade 33, ~7 min to Zuidas.",
-  "notes_ru": "НОВОЕ из рассылки Funda 03-июн-2026 (id 80835925). Buitenveldert, 1082 HM. ПРОВЕРЕНО (kadasterdata): 87 м2, 1965 г., энергокласс C, 2 спальни (3 комнаты). Тот же блок, что и Van Nijenrodeweg 276 в базе (1966, класс D) - у 487 класс лучше (C). WOZ: kadasterdata даёт EUR449.000 только на 2020; текущий 2025 WOZ ОЦЕНКА ~EUR500.000 (сосед 276 = EUR505k) - подтвердить на WOZ-waardeloket. Цена EUR465.000 - ОЦЕНКА (Funda закрыта), ориентиры: соседние 491 (87 м2) EUR465.000 и 171 (86 м2) EUR475.000. ~EUR5.345/м2, НИЖЕ оценочного WOZ - привлекательно. РИСК/ФЛАГ: erfpacht Amsterdam - по аналогии с 276 вероятно идущий срок (у 276 до 15-01-2039, потом канон по рынку), НЕ выкуплен/не вечный - существенные расходы, уточнить статус/переход. Класс C (плюс): возможен шаг до B (индивидуальное, не блочное отопление) - есть потенциал лёгкого апгрейда. VvE EUR236/мес - ОЦЕНКА. ФЛАГ: дом 1965 -> оговорка о возрасте/асбесте, устаревший интерьер. До Emmakade 33 ~13 мин, до Zuidas ~7 мин.",
+  "notes": "NEW via Funda digest 03-Jun-2026 (id 80835925). Buitenveldert, 1082 HM. Area 87 m2, build year 1965, energy label C and 2 bedrooms (3 kamers) VERIFIED via kadasterdata.nl (BAG/energielabel). Same building block as Van Nijenrodeweg 276 already in DB (1966, label D, erfpacht tijdvak to 2039) - 487 is slightly better (label C). WOZ: kadasterdata shows EUR449.000 at 2020 peildatum only; current 2025 WOZ ESTIMATED ~EUR500.000 (neighbour 276 = EUR505k 2025) - confirm at WOZ-waardeloket. ASK PRICE ESTIMATED EUR465.000 (Funda JS/bot-gated) - benchmarked off near-identical neighbours on kadasterdata: nr 491 (87 m2) EUR465.000 and nr 171 (86 m2) EUR475.000. At ~EUR5.345/m2 the ask sits BELOW the estimated WOZ - attractive on paper. RISK/FLAG: Amsterdam erfpacht - by analogy with nr 276 likely a running tijdvak (276 ends 15-01-2039, canon resets to market after) NOT afgekocht/eeuwigdurend - material future cost, verify current erfpacht/overstap status with selling makelaar + Amsterdam map. Label C (plus): step to B feasible (glass/ventilation) given individual rather than block heating - some easy-upgrade upside. VvE EUR236/mo ESTIMATED (276 figure). FLAG: 1965 building -> ouderdoms-/asbestclausule, likely dated interior (budget cosmetic). Distances reused from 276 comp: ~13 min bike to Emmakade 33, ~7 min to Zuidas.\n[2026-07-25] STATUS: Funda shows Verkocht onder voorbehoud — moved to sold pile (NOT final; deal may still collapse).",
+  "notes_ru": "НОВОЕ из рассылки Funda 03-июн-2026 (id 80835925). Buitenveldert, 1082 HM. ПРОВЕРЕНО (kadasterdata): 87 м2, 1965 г., энергокласс C, 2 спальни (3 комнаты). Тот же блок, что и Van Nijenrodeweg 276 в базе (1966, класс D) - у 487 класс лучше (C). WOZ: kadasterdata даёт EUR449.000 только на 2020; текущий 2025 WOZ ОЦЕНКА ~EUR500.000 (сосед 276 = EUR505k) - подтвердить на WOZ-waardeloket. Цена EUR465.000 - ОЦЕНКА (Funda закрыта), ориентиры: соседние 491 (87 м2) EUR465.000 и 171 (86 м2) EUR475.000. ~EUR5.345/м2, НИЖЕ оценочного WOZ - привлекательно. РИСК/ФЛАГ: erfpacht Amsterdam - по аналогии с 276 вероятно идущий срок (у 276 до 15-01-2039, потом канон по рынку), НЕ выкуплен/не вечный - существенные расходы, уточнить статус/переход. Класс C (плюс): возможен шаг до B (индивидуальное, не блочное отопление) - есть потенциал лёгкого апгрейда. VvE EUR236/мес - ОЦЕНКА. ФЛАГ: дом 1965 -> оговорка о возрасте/асбесте, устаревший интерьер. До Emmakade 33 ~13 мин, до Zuidas ~7 мин.\n[2026-07-25] СТАТУС: Funda показывает Verkocht onder voorbehoud — перенесено в проданные (НЕ окончательно; сделка может ещё сорваться).",
   "sources": {
    "area": {
     "value": 87,
@@ -1638,7 +1636,10 @@
    }
   ],
   "location_adj": -1,
-  "status_checked": "2026-07-18"
+  "status_checked": "2026-07-25",
+  "sold": true,
+  "sold_status": "verkocht_ov",
+  "sold_date": "2026-07-25"
  },
  {
   "address": "Van Heenvlietlaan 284-K, Amsterdam (Buitenveldert)",
@@ -1991,8 +1992,8 @@
    "condition": 9,
    "legal": 5
   },
-  "notes": "NEW via Funda digest 05-Jun-2026 (id 44486700). Buitenveldert-West (Midden Zuid), 1082 CH. 83 m2 (BAG + listing) + 7 m2 balkon + INSULATED ATTIC ROOM on 4th floor with private door (potential 3rd bedroom, permit needed), 2e verdieping walk-up (no lift). VERIFIED: 2 bed (3 kamers), 1961, label C REGISTERED (drimble/RVO; old voorlopig E superseded), VvE EUR284/mo (active, healthy), WOZ EUR515k (peildatum 01-01-2025, drimble). VALUE: EUR489k = EUR5.892/m2 - 5% BELOW WOZ and ~11% under comparable sales (huispedia model) - strongest value of the 05-06 batch. Relisted 04-06 at lowered price after EUR500k initial (30-04) and withdrawal 24-05 - possible failed earlier sale = negotiating leverage; but buurt overbid culture (72% above ask). MOVE-IN READY: brand-new kitchen Mar-2026, modern bathroom (bath+shower), CV-ketel Intergas HRE 2023, insulated attic (roof+walls). ERFPACHT: afgekocht tot 01-09-2051 - no canon for 25 yrs but NOT eeuwigdurend - revision at 2051; ask whether overstap to eeuwigdurend was locked in (vastklik). FLAG: sold via Zelfverkopen.nl (self-sale, no professional selling agent) - extra diligence on documentation/VvE stukken/splitsingsakte. FLAG: VvE plans complex-wide verduurzaming 2028 (facade insulation + HR++ glass) - possible levy/suppletie BUT also energy-label upside beyond C. Schiphol noise zone (minor). 1961 build - expect ouderdoms-/asbestclausule. Distances ESTIMATED from 1082 CH: ~12 min bike Emmakade 33, ~9 min Zuidas. | Funda status 2026-06-30: Verkocht onder voorbehoud (sold subject to conditions) — \"Verkocht onder voorbehoud\" badge on the street for-sale card — moved to sold pile. Not final; watch for reactivation if it falls through. | [2026-07-01] ⚠ REACTIVATED: Marked sold 2026-06-30 but Funda now shows BESCHIKBAAR (available) again – verified TWICE today. Sale/bid fell through (or prior mark erroneous). Returned to ACTIVE pile. 2-bed – MATCHES BRIEF (Buitenveldert). | [2026-07-06] STATUS: Funda now shows Onder bod (under bid) — moved to sold pile. NOT final; watch for reactivation if deal collapses. | [2026-07-07] STATUS: Funda re-checked, still under bid (Onder bod). No change.",
-  "notes_ru": "НОВОЕ из рассылки Funda 05-июн-2026 (id 44486700). Buitenveldert-West (Midden Zuid), 1082 CH. 83 м2 (BAG + объявление) + балкон 7 м2 + УТЕПЛЁННАЯ МАНСАРДНАЯ КОМНАТА на 4-м этаже с отдельной дверью (потенциальная 3-я спальня, нужно разрешение), 2-й этаж без лифта. ПРОВЕРЕНО: 2 спальни (3 комнаты), 1961 г., класс C ЗАРЕГИСТРИРОВАН, VvE €284/мес (активный, здоровый), WOZ €515к (на 01-01-2025). ЦЕННОСТЬ: €489к = €5.892/м2 - на 5% НИЖЕ WOZ и ~11% ниже сопоставимых продаж - лучшая ценность партии 05-06. Перевыставлен 04-06 со снижением цены после €500к (30-04) и снятия 24-05 - возможна сорвавшаяся сделка = рычаг в переговорах; но в районе культура перебивок (72% выше запроса). ГОТОВА К ЗАСЕЛЕНИЮ: новая кухня март-2026, современная ванная, котёл Intergas 2023, утеплённая мансарда. ЭРФПАХТ: выкуплен до 01-09-2051 - без канона 25 лет, но НЕ бессрочный - пересмотр в 2051; узнать, зафиксирован ли переход на бессрочный. ФЛАГ: продажа через Zelfverkopen.nl (без профессионального маклера продавца) - повышенная проверка документов/VvE/акта разделения. ФЛАГ: VvE планирует утепление комплекса в 2028 (фасады + HR++) - возможен доп. взнос, НО и потенциал улучшения класса выше C. Зона шума Схипхола (незначительно). Дом 1961 г. - ожидать оговорки о возрасте/асбесте. Расстояния - ОЦЕНКА: ~12 мин до Emmakade 33, ~9 мин до Zuidas. | Статус Funda 2026-06-30: Verkocht onder voorbehoud (продано под условием) — бейдж на карточке в результатах продажи по улице — перенесено в проданные. Не окончательно; следить за возвратом, если сделка сорвётся. | [2026-07-01] ⚠ РЕАКТИВИРОВАНО: Был отмечен проданным 2026-06-30, но Funda снова показывает BESCHIKBAAR (доступно) – проверено ДВАЖДЫ сегодня. Сделка/ставка сорвалась (или прошлая отметка ошибочна). Возвращено в АКТИВНЫЕ. | [2026-07-06] СТАТУС: На Funda теперь Onder bod (под предложением) — перенесено в проданные. НЕ окончательно; следить за возвратом, если сделка сорвётся. | [2026-07-07] СТАТУС: повторная проверка Funda, всё ещё под предложением (Onder bod). Без изменений.",
+  "notes": "NEW via Funda digest 05-Jun-2026 (id 44486700). Buitenveldert-West (Midden Zuid), 1082 CH. 83 m2 (BAG + listing) + 7 m2 balkon + INSULATED ATTIC ROOM on 4th floor with private door (potential 3rd bedroom, permit needed), 2e verdieping walk-up (no lift). VERIFIED: 2 bed (3 kamers), 1961, label C REGISTERED (drimble/RVO; old voorlopig E superseded), VvE EUR284/mo (active, healthy), WOZ EUR515k (peildatum 01-01-2025, drimble). VALUE: EUR489k = EUR5.892/m2 - 5% BELOW WOZ and ~11% under comparable sales (huispedia model) - strongest value of the 05-06 batch. Relisted 04-06 at lowered price after EUR500k initial (30-04) and withdrawal 24-05 - possible failed earlier sale = negotiating leverage; but buurt overbid culture (72% above ask). MOVE-IN READY: brand-new kitchen Mar-2026, modern bathroom (bath+shower), CV-ketel Intergas HRE 2023, insulated attic (roof+walls). ERFPACHT: afgekocht tot 01-09-2051 - no canon for 25 yrs but NOT eeuwigdurend - revision at 2051; ask whether overstap to eeuwigdurend was locked in (vastklik). FLAG: sold via Zelfverkopen.nl (self-sale, no professional selling agent) - extra diligence on documentation/VvE stukken/splitsingsakte. FLAG: VvE plans complex-wide verduurzaming 2028 (facade insulation + HR++ glass) - possible levy/suppletie BUT also energy-label upside beyond C. Schiphol noise zone (minor). 1961 build - expect ouderdoms-/asbestclausule. Distances ESTIMATED from 1082 CH: ~12 min bike Emmakade 33, ~9 min Zuidas. | Funda status 2026-06-30: Verkocht onder voorbehoud (sold subject to conditions) — \"Verkocht onder voorbehoud\" badge on the street for-sale card — moved to sold pile. Not final; watch for reactivation if it falls through. | [2026-07-01] ⚠ REACTIVATED: Marked sold 2026-06-30 but Funda now shows BESCHIKBAAR (available) again – verified TWICE today. Sale/bid fell through (or prior mark erroneous). Returned to ACTIVE pile. 2-bed – MATCHES BRIEF (Buitenveldert). | [2026-07-06] STATUS: Funda now shows Onder bod (under bid) — moved to sold pile. NOT final; watch for reactivation if deal collapses. | [2026-07-07] STATUS: Funda re-checked, still under bid (Onder bod). No change.\n[2026-07-25] STATUS: Progressed from Onder bod to Verkocht onder voorbehoud.",
+  "notes_ru": "НОВОЕ из рассылки Funda 05-июн-2026 (id 44486700). Buitenveldert-West (Midden Zuid), 1082 CH. 83 м2 (BAG + объявление) + балкон 7 м2 + УТЕПЛЁННАЯ МАНСАРДНАЯ КОМНАТА на 4-м этаже с отдельной дверью (потенциальная 3-я спальня, нужно разрешение), 2-й этаж без лифта. ПРОВЕРЕНО: 2 спальни (3 комнаты), 1961 г., класс C ЗАРЕГИСТРИРОВАН, VvE €284/мес (активный, здоровый), WOZ €515к (на 01-01-2025). ЦЕННОСТЬ: €489к = €5.892/м2 - на 5% НИЖЕ WOZ и ~11% ниже сопоставимых продаж - лучшая ценность партии 05-06. Перевыставлен 04-06 со снижением цены после €500к (30-04) и снятия 24-05 - возможна сорвавшаяся сделка = рычаг в переговорах; но в районе культура перебивок (72% выше запроса). ГОТОВА К ЗАСЕЛЕНИЮ: новая кухня март-2026, современная ванная, котёл Intergas 2023, утеплённая мансарда. ЭРФПАХТ: выкуплен до 01-09-2051 - без канона 25 лет, но НЕ бессрочный - пересмотр в 2051; узнать, зафиксирован ли переход на бессрочный. ФЛАГ: продажа через Zelfverkopen.nl (без профессионального маклера продавца) - повышенная проверка документов/VvE/акта разделения. ФЛАГ: VvE планирует утепление комплекса в 2028 (фасады + HR++) - возможен доп. взнос, НО и потенциал улучшения класса выше C. Зона шума Схипхола (незначительно). Дом 1961 г. - ожидать оговорки о возрасте/асбесте. Расстояния - ОЦЕНКА: ~12 мин до Emmakade 33, ~9 мин до Zuidas. | Статус Funda 2026-06-30: Verkocht onder voorbehoud (продано под условием) — бейдж на карточке в результатах продажи по улице — перенесено в проданные. Не окончательно; следить за возвратом, если сделка сорвётся. | [2026-07-01] ⚠ РЕАКТИВИРОВАНО: Был отмечен проданным 2026-06-30, но Funda снова показывает BESCHIKBAAR (доступно) – проверено ДВАЖДЫ сегодня. Сделка/ставка сорвалась (или прошлая отметка ошибочна). Возвращено в АКТИВНЫЕ. | [2026-07-06] СТАТУС: На Funda теперь Onder bod (под предложением) — перенесено в проданные. НЕ окончательно; следить за возвратом, если сделка сорвётся. | [2026-07-07] СТАТУС: повторная проверка Funda, всё ещё под предложением (Onder bod). Без изменений.\n[2026-07-25] СТАТУС: Перешёл с Onder bod на Verkocht onder voorbehoud.",
   "sources": {
    "woz": {
     "value": 515000,
@@ -2053,9 +2054,9 @@
   "family_adj": 1,
   "family_adj_reason": "insulated attic room = documented 3rd-bedroom potential",
   "sold": true,
-  "sold_status": "onder_bod",
+  "sold_status": "verkocht_ov",
   "sold_date": "2026-07-06",
-  "status_checked": "2026-07-21",
+  "status_checked": "2026-07-25",
   "sold_price": null,
   "sold_price_checked": "2026-07-10",
   "sold_price_note": "Kadaster koopsom not yet registered (deed lag ~2-3 months after transfer); free sources checked 2026-07-10 (Huispedia now paywalls final prices). Recheck Sep-Oct 2026.",
@@ -3177,8 +3178,8 @@
    "dist_zuidas": 8,
    "renovation": 4
   },
-  "notes": "NEW from Funda digest 12-06. 1083 AR (Buitenveldert-Oost — kept in scope per existing DB precedent for 1083, postcode outside the 1081/1082/1077 list). 73 m², 3 kamers (2 bed), 1962. €6,781/m². WOZ €494k peildatum 01-01-2025 (drimble/LV-WOZ feed) — asking ≈ WOZ, fair on paper. FLAG: REGISTERED label G (drimble; voorlopig was also low) — worst label in the pipeline; big energy-upgrade upside but budget insulation+glazing+installations. Neighbour comp: nr 65 sold Jul 2025 (ask €485k, 1083 AR). RISK: Amsterdam erfpacht — status (afgekocht/lopend, canon, revision date) NOT verified; check Amsterdam erfpacht map + akte before any offer. VvE €/mo unknown (estimated €150). Condition unknown — label G suggests dated interior (renovation score estimated). Bike: ~15 min Emmakade, ~7 min Zuidas (estimated from postcode).",
-  "notes_ru": "НОВОЕ из дайджеста Funda 12-06. 1083 AR (Buitenveldert-Oost — оставлено в зоне поиска по прецеденту базы для 1083). 73 м², 3 комнаты (2 спальни), 1962 г. €6.781/м². WOZ €494 тыс. на 01-01-2025 — цена ≈ WOZ, на бумаге справедливо. ФЛАГ: зарегистрированный класс G (drimble) — худший в подборке; большой потенциал улучшения, но заложить бюджет на утепление/стеклопакеты/установки. Сосед №65 продан в июле 2025 (запрос €485 тыс.). РИСК: эрфпахт Амстердама — статус (выкуплен/действует, канон, дата пересмотра) НЕ проверен; проверить карту эрфпахта и акт до оферты. Взнос VvE неизвестен (оценка €150). Состояние неизвестно — класс G намекает на устаревший интерьер. Велосипед: ~15 мин до Emmakade, ~7 мин до Zuidas (оценка).",
+  "notes": "NEW from Funda digest 12-06. 1083 AR (Buitenveldert-Oost — kept in scope per existing DB precedent for 1083, postcode outside the 1081/1082/1077 list). 73 m², 3 kamers (2 bed), 1962. €6,781/m². WOZ €494k peildatum 01-01-2025 (drimble/LV-WOZ feed) — asking ≈ WOZ, fair on paper. FLAG: REGISTERED label G (drimble; voorlopig was also low) — worst label in the pipeline; big energy-upgrade upside but budget insulation+glazing+installations. Neighbour comp: nr 65 sold Jul 2025 (ask €485k, 1083 AR). RISK: Amsterdam erfpacht — status (afgekocht/lopend, canon, revision date) NOT verified; check Amsterdam erfpacht map + akte before any offer. VvE €/mo unknown (estimated €150). Condition unknown — label G suggests dated interior (renovation score estimated). Bike: ~15 min Emmakade, ~7 min Zuidas (estimated from postcode).\n[2026-07-25] STATUS: Funda shows Onder bod (under bid) — moved to sold pile. NOT final.",
+  "notes_ru": "НОВОЕ из дайджеста Funda 12-06. 1083 AR (Buitenveldert-Oost — оставлено в зоне поиска по прецеденту базы для 1083). 73 м², 3 комнаты (2 спальни), 1962 г. €6.781/м². WOZ €494 тыс. на 01-01-2025 — цена ≈ WOZ, на бумаге справедливо. ФЛАГ: зарегистрированный класс G (drimble) — худший в подборке; большой потенциал улучшения, но заложить бюджет на утепление/стеклопакеты/установки. Сосед №65 продан в июле 2025 (запрос €485 тыс.). РИСК: эрфпахт Амстердама — статус (выкуплен/действует, канон, дата пересмотра) НЕ проверен; проверить карту эрфпахта и акт до оферты. Взнос VvE неизвестен (оценка €150). Состояние неизвестно — класс G намекает на устаревший интерьер. Велосипед: ~15 мин до Emmakade, ~7 мин до Zuidas (оценка).\n[2026-07-25] СТАТУС: Funda показывает Onder bod (под предложением) — перенесено в проданные. НЕ окончательно.",
   "area_estimated": false,
   "energy_estimated": false,
   "sources": {
@@ -3218,7 +3219,10 @@
   "viewing": "No",
   "date_found": "2026-06-12",
   "source": "digest",
-  "status_checked": "2026-07-18"
+  "status_checked": "2026-07-25",
+  "sold": true,
+  "sold_status": "onder_bod",
+  "sold_date": "2026-07-25"
  },
  {
   "address": "Schierstins 47, Amsterdam (Buitenveldert)",
@@ -3411,8 +3415,8 @@
    "dist_zuidas": 9,
    "renovation": 9
   },
-  "notes": "NEW from Funda digest 12-06. 1083 BS (Buitenveldert-Oost — kept in scope per DB precedent for 1083). Bovenwoning 2nd floor, 64 m², 3 kamers (2 bed), 1959. €7,031/m². WOZ €447k peildatum 01-01-2025 (huispedia) — asking ≈ WOZ. STRONG LEGAL POSITION: erfpacht EEUWIGDUREND AFGEKOCHT (verified in listing text); VvE active, professional beheer, MJOP present, €153/mo confirmed. MOVE-IN READY: kitchen 2015 + vloerverwarming, bathroom+toilet 2021, exterior paint 2022, rookgasafvoer 2025, meterkast 2026. Label C (dubbel glas HR+/HR++, CV 2012 — CV replacement due soon). Extras: 2 bergingen (13 m² with electricity on 4th floor — usable as office + 8 m² ground floor), balcony E + French balcony W. FLAGS: vliegtuiggeluid zone (Buitenveldert flight path); gewilde buurt — 85% sells over asking, huispedia comp-based expectation ~€480k → don't anchor on €450k; CV-ketel 2012 aging. 5 min bike Zuidas / RAI; ~14 min Emmakade (est). Quality-and-certainty pick of the batch: small but zero erfpacht/VvE/condition risk. | [2026-07-21] STATUS: Verkocht onder voorbehoud (sold subject to conditions). Moved to sold pile. NOT final — watch for reactivation if deal collapses.",
-  "notes_ru": "НОВОЕ из дайджеста Funda 12-06. 1083 BS (Buitenveldert-Oost). Верхняя квартира на 2-м этаже, 64 м², 3 комнаты (2 спальни), 1959 г. €7.031/м². WOZ €447 тыс. (01-01-2025) — запрос ≈ WOZ. СИЛЬНАЯ ЮРИДИЧЕСКАЯ ПОЗИЦИЯ: эрфпахт ВЫКУПЛЕН БЕССРОЧНО (подтверждено текстом объявления); VvE активно, профуправление, есть MJOP, €153/мес подтверждено. ГОТОВО К ЗАСЕЛЕНИЮ: кухня 2015 + тёплый пол, ванная+туалет 2021, наружная покраска 2022, дымоход 2025, щиток 2026. Класс C (стеклопакеты HR+/HR++, котёл 2012 — скоро замена). Бонусы: 2 кладовые (13 м² с электричеством на 4-м этаже — можно кабинет + 8 м² на первом), балкон на восток + французский на запад. ФЛАГИ: зона авиашума (трасса над Buitenveldert); востребованный район — 85% продаж выше запроса, ожидание по аналогам ~€480 тыс. → не ориентироваться на €450 тыс.; котёл 2012 стареет. 5 мин на велосипеде до Zuidas/RAI; ~14 мин до Emmakade (оценка). Выбор партии по качеству и определённости: компактно, но без рисков эрфпахта/VvE/состояния. | [2026-07-21] СТАТУС: Verkocht onder voorbehoud (продано под условием). Перенесено в проданные. НЕ окончательно — следить за возвратом, если сделка сорвётся.",
+  "notes": "NEW from Funda digest 12-06. 1083 BS (Buitenveldert-Oost — kept in scope per DB precedent for 1083). Bovenwoning 2nd floor, 64 m², 3 kamers (2 bed), 1959. €7,031/m². WOZ €447k peildatum 01-01-2025 (huispedia) — asking ≈ WOZ. STRONG LEGAL POSITION: erfpacht EEUWIGDUREND AFGEKOCHT (verified in listing text); VvE active, professional beheer, MJOP present, €153/mo confirmed. MOVE-IN READY: kitchen 2015 + vloerverwarming, bathroom+toilet 2021, exterior paint 2022, rookgasafvoer 2025, meterkast 2026. Label C (dubbel glas HR+/HR++, CV 2012 — CV replacement due soon). Extras: 2 bergingen (13 m² with electricity on 4th floor — usable as office + 8 m² ground floor), balcony E + French balcony W. FLAGS: vliegtuiggeluid zone (Buitenveldert flight path); gewilde buurt — 85% sells over asking, huispedia comp-based expectation ~€480k → don't anchor on €450k; CV-ketel 2012 aging. 5 min bike Zuidas / RAI; ~14 min Emmakade (est). Quality-and-certainty pick of the batch: small but zero erfpacht/VvE/condition risk. | [2026-07-21] STATUS: Verkocht onder voorbehoud (sold subject to conditions). Moved to sold pile. NOT final — watch for reactivation if deal collapses.\n[2026-07-25] STATUS: Progressed to fully Verkocht (sold). Transfer date 20-07-2026 shown on Funda.",
+  "notes_ru": "НОВОЕ из дайджеста Funda 12-06. 1083 BS (Buitenveldert-Oost). Верхняя квартира на 2-м этаже, 64 м², 3 комнаты (2 спальни), 1959 г. €7.031/м². WOZ €447 тыс. (01-01-2025) — запрос ≈ WOZ. СИЛЬНАЯ ЮРИДИЧЕСКАЯ ПОЗИЦИЯ: эрфпахт ВЫКУПЛЕН БЕССРОЧНО (подтверждено текстом объявления); VvE активно, профуправление, есть MJOP, €153/мес подтверждено. ГОТОВО К ЗАСЕЛЕНИЮ: кухня 2015 + тёплый пол, ванная+туалет 2021, наружная покраска 2022, дымоход 2025, щиток 2026. Класс C (стеклопакеты HR+/HR++, котёл 2012 — скоро замена). Бонусы: 2 кладовые (13 м² с электричеством на 4-м этаже — можно кабинет + 8 м² на первом), балкон на восток + французский на запад. ФЛАГИ: зона авиашума (трасса над Buitenveldert); востребованный район — 85% продаж выше запроса, ожидание по аналогам ~€480 тыс. → не ориентироваться на €450 тыс.; котёл 2012 стареет. 5 мин на велосипеде до Zuidas/RAI; ~14 мин до Emmakade (оценка). Выбор партии по качеству и определённости: компактно, но без рисков эрфпахта/VvE/состояния. | [2026-07-21] СТАТУС: Verkocht onder voorbehoud (продано под условием). Перенесено в проданные. НЕ окончательно — следить за возвратом, если сделка сорвётся.\n[2026-07-25] СТАТУС: Перешёл в Verkocht (продано). Дата передачи 20-07-2026 указана на Funda.",
   "energy_estimated": false,
   "sources": {
    "woz": {
@@ -3449,10 +3453,10 @@
   "viewing": "No",
   "date_found": "2026-06-12",
   "source": "digest",
-  "status_checked": "2026-07-21",
+  "status_checked": "2026-07-25",
   "sold": true,
-  "sold_status": "verkocht_ov",
-  "sold_date": "2026-07-21"
+  "sold_status": "sold",
+  "sold_date": "2026-07-20"
  },
  {
   "address": "Ferdinand Bolweg 81, Amstelveen",
@@ -6896,7 +6900,7 @@
   },
   "date_found": "2026-06-28",
   "source": "digest",
-  "viewing": "No",
+  "viewing": "Visited 2026-07-23",
   "status_checked": "2026-07-18",
   "sale_history": [
    {
@@ -6961,8 +6965,8 @@
    "condition": 6,
    "legal": 5
   },
-  "notes": "NEW via Funda digest 01-Jul-2026 (id 44411248), appartement, Buitenveldert-Oost. 1082 NK Amsterdam; agent Van de Steege. PROVEN from digest card: EUR525.000 k.k., 79 m^2, 3 kamers (=2 slaapkamers) = EUR6.646/m^2. VERIFIED woz-waarde/BAG: bouwjaar 1986, 78 m^2 (BAG), WOZ EUR508.000 (ingang 2025, peildatum 01-01-2024). FLAG WOZ peildatum: the newer 2026 WOZ (peildatum 01-01-2025) is not yet public on woz-waarde; same-building Bulgerstein 24 (78 m^2, 1986) 2026-WOZ = EUR569.000 -> true current WOZ ~EUR560-570k, so EUR525k asking is AT/BELOW current WOZ (value case stronger than +3% vs the 2024 WOZ suggests). Energielabel C (EST: same 1986 complex as #24 which is C; street avg B). Huispedia tags #36 'binnen de waarde'; Buitenveldert-Oost 78 m^2 3-kamer comps sold EUR500-575k (Geervliet 55 EUR525k, Crack-State 47 EUR525k, Oldengaarde 45 EUR500k). RISK erfpacht: Amsterdam ground lease - afkoop/eeuwigdurend status NOT verified (recorded 'Erfpacht (status te verifieren)'); confirm canon vs afgekocht before bidding (key legal item). VvE ~EUR150/mo (est). Bike ~16 min Emmakade, ~7 min Zuidas (est; ~1 km to Amsterdam Zuid station). Condition ~6 (dated-but-livable, unseen). No viewing yet.",
-  "notes_ru": "НОВОЕ из рассылки Funda 01-июл-2026 (id 44411248), квартира, Buitenveldert-Oost. 1082 NK Амстердам; агент Van de Steege. ПРОВЕРЕНО по карточке: €525.000, 79 м^2, 3 комнаты (=2 спальни) = €6.646/м^2. ПРОВЕРЕНО woz-waarde/BAG: год 1986, 78 м^2 (BAG), WOZ €508.000 (действ. 2025, оценочная дата 01-01-2024). ФЛАГ по WOZ: новая WOZ-2026 (оц. дата 01-01-2025) ещё не опубликована; в том же доме Bulgerstein 24 (78 м^2, 1986) WOZ-2026 = €569.000 -> реальная текущая WOZ ~€560-570k, значит запрос €525k НА уровне/НИЖЕ WOZ (аргумент по цене сильнее, чем +3% к WOZ-2024). Класс C (ОЦЕНКА: тот же дом 1986 г., #24 = C; среднее по улице B). Huispedia: #36 'в пределах стоимости'; сопоставимые продажи Buitenveldert-Oost 78 м^2 3-комн. €500-575k. РИСК эрфпахт: аренда земли Амстердама — статус выкупа/бессрочности НЕ подтверждён ('Erfpacht (status te verifieren)'); проверить канон/выкуп до ставки (ключевой юридический пункт). VvE ~€150/мес (оценка). Велосипед ~16 мин Emmakade, ~7 мин Zuidas (оценка; ~1 км до ст. Amsterdam Zuid). Состояние ~6 (устаревшее, но пригодное; не осмотрено). Осмотра ещё не было.",
+  "notes": "NEW via Funda digest 01-Jul-2026 (id 44411248), appartement, Buitenveldert-Oost. 1082 NK Amsterdam; agent Van de Steege. PROVEN from digest card: EUR525.000 k.k., 79 m^2, 3 kamers (=2 slaapkamers) = EUR6.646/m^2. VERIFIED woz-waarde/BAG: bouwjaar 1986, 78 m^2 (BAG), WOZ EUR508.000 (ingang 2025, peildatum 01-01-2024). FLAG WOZ peildatum: the newer 2026 WOZ (peildatum 01-01-2025) is not yet public on woz-waarde; same-building Bulgerstein 24 (78 m^2, 1986) 2026-WOZ = EUR569.000 -> true current WOZ ~EUR560-570k, so EUR525k asking is AT/BELOW current WOZ (value case stronger than +3% vs the 2024 WOZ suggests). Energielabel C (EST: same 1986 complex as #24 which is C; street avg B). Huispedia tags #36 'binnen de waarde'; Buitenveldert-Oost 78 m^2 3-kamer comps sold EUR500-575k (Geervliet 55 EUR525k, Crack-State 47 EUR525k, Oldengaarde 45 EUR500k). RISK erfpacht: Amsterdam ground lease - afkoop/eeuwigdurend status NOT verified (recorded 'Erfpacht (status te verifieren)'); confirm canon vs afgekocht before bidding (key legal item). VvE ~EUR150/mo (est). Bike ~16 min Emmakade, ~7 min Zuidas (est; ~1 km to Amsterdam Zuid station). Condition ~6 (dated-but-livable, unseen). No viewing yet.\n[2026-07-25] STATUS: Funda shows Onder bod (under bid) — moved to sold pile. NOT final.",
+  "notes_ru": "НОВОЕ из рассылки Funda 01-июл-2026 (id 44411248), квартира, Buitenveldert-Oost. 1082 NK Амстердам; агент Van de Steege. ПРОВЕРЕНО по карточке: €525.000, 79 м^2, 3 комнаты (=2 спальни) = €6.646/м^2. ПРОВЕРЕНО woz-waarde/BAG: год 1986, 78 м^2 (BAG), WOZ €508.000 (действ. 2025, оценочная дата 01-01-2024). ФЛАГ по WOZ: новая WOZ-2026 (оц. дата 01-01-2025) ещё не опубликована; в том же доме Bulgerstein 24 (78 м^2, 1986) WOZ-2026 = €569.000 -> реальная текущая WOZ ~€560-570k, значит запрос €525k НА уровне/НИЖЕ WOZ (аргумент по цене сильнее, чем +3% к WOZ-2024). Класс C (ОЦЕНКА: тот же дом 1986 г., #24 = C; среднее по улице B). Huispedia: #36 'в пределах стоимости'; сопоставимые продажи Buitenveldert-Oost 78 м^2 3-комн. €500-575k. РИСК эрфпахт: аренда земли Амстердама — статус выкупа/бессрочности НЕ подтверждён ('Erfpacht (status te verifieren)'); проверить канон/выкуп до ставки (ключевой юридический пункт). VvE ~€150/мес (оценка). Велосипед ~16 мин Emmakade, ~7 мин Zuidas (оценка; ~1 км до ст. Amsterdam Zuid). Состояние ~6 (устаревшее, но пригодное; не осмотрено). Осмотра ещё не было.\n[2026-07-25] СТАТУС: Funda показывает Onder bod — перенесено в проданные. НЕ окончательно.",
   "sources": {
    "price": {
     "value": 525000,
@@ -7012,7 +7016,10 @@
   "date_found": "2026-07-01",
   "source": "digest",
   "viewing": "No",
-  "status_checked": "2026-07-18"
+  "status_checked": "2026-07-25",
+  "sold": true,
+  "sold_status": "onder_bod",
+  "sold_date": "2026-07-25"
  },
  {
   "address": "Kierkegaardstraat 24, Amstelveen (Van der Leekbuurt)",
@@ -7132,8 +7139,8 @@
    "condition": 5,
    "legal": 7
   },
-  "notes": "NEW via Funda digest 01-Jul-2026 (id 44411089), Amstelveen 1181 TT (Elsrijk-Oost/Kruiskerk). PROVEN from card: EUR385.000 k.k., 66 m^2, 4 kamers (=3 slaapkamers) = EUR5.833/m^2. VERIFIED woz-waarde/BAG: bouwjaar 1962, WOZ EUR353.000 (ingang 2025, peildatum 01-01-2024; 2026 hidden). CONFLICT area: BAG oppervlakte 62 m^2 vs Funda 66 m^2 - recorded 66 (marketed). 4 kamers in ~62-66 m^2 = compact / chopped-up 3-bed (small rooms) - tempers family fit despite the room count. Ask +9% over WOZ - modest absolute price, the cheapest of the batch. Energielabel D (EST: 1962 walk-up, likely unrenovated; easy-label upside if modernised, but apartment upgrades are VvE-collective). Eigen grond (te verifieren) - Amstelveen. VvE ~EUR120/mo (est). Bike ~7 min Emmakade, ~15 min Zuidas (est). Condition ~5 (1962, dated - unseen). No viewing yet.\n[2026-07-20] Status changed to Onder bod (under bid). Checked live on Funda.",
-  "notes_ru": "НОВОЕ из рассылки Funda 01-июл-2026 (id 44411089), Амстелвен 1181 TT (Elsrijk-Oost/Kruiskerk). ПРОВЕРЕНО по карточке: €385.000, 66 м^2, 4 комнаты (=3 спальни) = €5.833/м^2. ПРОВЕРЕНО woz-waarde/BAG: год 1962, WOZ €353.000 (действ. 2025, оц. дата 01-01-2024; 2026 скрыта). РАСХОЖДЕНИЕ по площади: BAG 62 м^2 против Funda 66 м^2 — записано 66 (по объявлению). 4 комнаты в ~62-66 м^2 = компактная/перегороженная 3-спальная (маленькие комнаты) — снижает семейную пригодность несмотря на число комнат. Запрос +9% к WOZ — умеренная абсолютная цена, самый дешёвый в партии. Класс D (ОЦЕНКА: дом 1962 г., вероятно без ремонта; апсайд по классу при модернизации, но улучшения в квартире — через VvE). Собственная земля (требует проверки) — Амстелвен. VvE ~€120/мес (оценка). Велосипед ~7 мин Emmakade, ~15 мин Zuidas (оценка). Состояние ~5 (1962, устаревшее — не осмотрено). Осмотра ещё не было.\n[2026-07-20] Статус изменён на «Под предложением» (получено предложение). Проверено на Funda.",
+  "notes": "NEW via Funda digest 01-Jul-2026 (id 44411089), Amstelveen 1181 TT (Elsrijk-Oost/Kruiskerk). PROVEN from card: EUR385.000 k.k., 66 m^2, 4 kamers (=3 slaapkamers) = EUR5.833/m^2. VERIFIED woz-waarde/BAG: bouwjaar 1962, WOZ EUR353.000 (ingang 2025, peildatum 01-01-2024; 2026 hidden). CONFLICT area: BAG oppervlakte 62 m^2 vs Funda 66 m^2 - recorded 66 (marketed). 4 kamers in ~62-66 m^2 = compact / chopped-up 3-bed (small rooms) - tempers family fit despite the room count. Ask +9% over WOZ - modest absolute price, the cheapest of the batch. Energielabel D (EST: 1962 walk-up, likely unrenovated; easy-label upside if modernised, but apartment upgrades are VvE-collective). Eigen grond (te verifieren) - Amstelveen. VvE ~EUR120/mo (est). Bike ~7 min Emmakade, ~15 min Zuidas (est). Condition ~5 (1962, dated - unseen). No viewing yet.\n[2026-07-20] Status changed to Onder bod (under bid). Checked live on Funda.\n[2026-07-25] ⚠ REACTIVATED — Funda status now Beschikbaar (available); prior onder_bod deal fell through. Back on active shortlist. Price: €385.000.",
+  "notes_ru": "НОВОЕ из рассылки Funda 01-июл-2026 (id 44411089), Амстелвен 1181 TT (Elsrijk-Oost/Kruiskerk). ПРОВЕРЕНО по карточке: €385.000, 66 м^2, 4 комнаты (=3 спальни) = €5.833/м^2. ПРОВЕРЕНО woz-waarde/BAG: год 1962, WOZ €353.000 (действ. 2025, оц. дата 01-01-2024; 2026 скрыта). РАСХОЖДЕНИЕ по площади: BAG 62 м^2 против Funda 66 м^2 — записано 66 (по объявлению). 4 комнаты в ~62-66 м^2 = компактная/перегороженная 3-спальная (маленькие комнаты) — снижает семейную пригодность несмотря на число комнат. Запрос +9% к WOZ — умеренная абсолютная цена, самый дешёвый в партии. Класс D (ОЦЕНКА: дом 1962 г., вероятно без ремонта; апсайд по классу при модернизации, но улучшения в квартире — через VvE). Собственная земля (требует проверки) — Амстелвен. VvE ~€120/мес (оценка). Велосипед ~7 мин Emmakade, ~15 мин Zuidas (оценка). Состояние ~5 (1962, устаревшее — не осмотрено). Осмотра ещё не было.\n[2026-07-20] Статус изменён на «Под предложением» (получено предложение). Проверено на Funda.\n[2026-07-25] ⚠ СНОВА В ПРОДАЖЕ — Funda показывает Beschikbaar; сделка «onder_bod» сорвалась. Возвращён в активный список. Цена: €385.000.",
   "sources": {
    "price": {
     "value": 385000,
@@ -7183,10 +7190,8 @@
   "date_found": "2026-07-01",
   "source": "digest",
   "viewing": "No",
-  "status_checked": "2026-07-21",
-  "sold": true,
-  "sold_status": "onder_bod",
-  "sold_date": "2026-07-20"
+  "status_checked": "2026-07-25",
+  "sold": false
  },
  {
   "address": "Rembrandtweg 559, Amstelveen (Stadshart)",
@@ -7477,8 +7482,8 @@
    "condition": 8,
    "legal": 8
   },
-  "notes": "NEW via Funda digest 04-Jul-2026 (id 44426958), Amstelveen 1181 AC (Randwijck), galerijflat 'Bos en Vaart' (1965, secured entry, video intercom, 2 lifts). VERIFIED Funda + woz-waarde: 55 m2 usable (NEN2580; register 56), 2 kamers (=1 slaapkamer), bouwjaar 1965, energielabel C (EP-Online, opname 15-02-2022; earlier voorlopig E), WOZ EUR376.000 (ingang 2025, peildatum 01-01-2025). EUR/m2 = EUR6.818 on 55 m2. Asking EUR375k is essentially AT the newest WOZ (EUR376k). Eigen grond (Funda 'Volle eigendom'). VvE EUR201/mo + ~EUR67/mo stookkosten voorschot. Move-in ready: kitchen/flooring/meter cupboard renewed 2023, bathroom + separate toilet renewed 2026 -> high condition. Royaal ZUID balkon ~4 m2 (access from living room + bedroom). RISK: only 1 bedroom at EUR6.818/m2 -> small-household fit, space score low despite quality; asbestclausule (1965). Emmakade ~11 / Zuidas ~11 min (est). No viewing yet.",
-  "notes_ru": "НОВОЕ из рассылки Funda 04-июл-2026 (id 44426958), Амстелвен 1181 AC (Randwijck), галерейный дом 'Bos en Vaart' (1965, закрытый вход, видеодомофон, 2 лифта). ПРОВЕРЕНО Funda + woz-waarde: 55 м2 полезной (NEN2580; регистр 56), 2 комнаты (=1 спальня), год 1965, класс C (EP-Online, замер 15-02-2022; ранее предв. E), WOZ EUR376.000 (действ. 2025, оц. 01-01-2025). EUR/м2 = EUR6.818 на 55 м2. Запрос EUR375k практически РАВЕН свежему WOZ (EUR376k). Собственная земля (Funda 'Volle eigendom'). VvE EUR201/мес + ~EUR67/мес аванс на отопление. Заезжай-живи: кухня/полы/щиток обновлены 2023, ванная и отдельный туалет 2026 -> высокое состояние. Просторный ЮЖНЫЙ балкон ~4 м2 (выход из гостиной и спальни). РИСК: всего 1 спальня при EUR6.818/м2 -> для небольшого домохозяйства, балл площади низкий несмотря на качество; асбест-оговорка (1965). Emmakade ~11 / Zuidas ~11 мин (оценка). Осмотра ещё не было.",
+  "notes": "NEW via Funda digest 04-Jul-2026 (id 44426958), Amstelveen 1181 AC (Randwijck), galerijflat 'Bos en Vaart' (1965, secured entry, video intercom, 2 lifts). VERIFIED Funda + woz-waarde: 55 m2 usable (NEN2580; register 56), 2 kamers (=1 slaapkamer), bouwjaar 1965, energielabel C (EP-Online, opname 15-02-2022; earlier voorlopig E), WOZ EUR376.000 (ingang 2025, peildatum 01-01-2025). EUR/m2 = EUR6.818 on 55 m2. Asking EUR375k is essentially AT the newest WOZ (EUR376k). Eigen grond (Funda 'Volle eigendom'). VvE EUR201/mo + ~EUR67/mo stookkosten voorschot. Move-in ready: kitchen/flooring/meter cupboard renewed 2023, bathroom + separate toilet renewed 2026 -> high condition. Royaal ZUID balkon ~4 m2 (access from living room + bedroom). RISK: only 1 bedroom at EUR6.818/m2 -> small-household fit, space score low despite quality; asbestclausule (1965). Emmakade ~11 / Zuidas ~11 min (est). No viewing yet.\n[2026-07-25] STATUS: Funda shows Onder bod (under bid) — moved to sold pile. NOT final.",
+  "notes_ru": "НОВОЕ из рассылки Funda 04-июл-2026 (id 44426958), Амстелвен 1181 AC (Randwijck), галерейный дом 'Bos en Vaart' (1965, закрытый вход, видеодомофон, 2 лифта). ПРОВЕРЕНО Funda + woz-waarde: 55 м2 полезной (NEN2580; регистр 56), 2 комнаты (=1 спальня), год 1965, класс C (EP-Online, замер 15-02-2022; ранее предв. E), WOZ EUR376.000 (действ. 2025, оц. 01-01-2025). EUR/м2 = EUR6.818 на 55 м2. Запрос EUR375k практически РАВЕН свежему WOZ (EUR376k). Собственная земля (Funda 'Volle eigendom'). VvE EUR201/мес + ~EUR67/мес аванс на отопление. Заезжай-живи: кухня/полы/щиток обновлены 2023, ванная и отдельный туалет 2026 -> высокое состояние. Просторный ЮЖНЫЙ балкон ~4 м2 (выход из гостиной и спальни). РИСК: всего 1 спальня при EUR6.818/м2 -> для небольшого домохозяйства, балл площади низкий несмотря на качество; асбест-оговорка (1965). Emmakade ~11 / Zuidas ~11 мин (оценка). Осмотра ещё не было.\n[2026-07-25] СТАТУС: Funda показывает Onder bod — перенесено в проданные. НЕ окончательно.",
   "sources": {
    "price": {
     "value": 375000,
@@ -7533,7 +7538,10 @@
   "date_found": "2026-07-04",
   "source": "digest",
   "viewing": "No",
-  "status_checked": "2026-07-18"
+  "status_checked": "2026-07-25",
+  "sold": true,
+  "sold_status": "onder_bod",
+  "sold_date": "2026-07-25"
  },
  {
   "address": "Mr. G. Groen van Prinstererlaan 137, Amstelveen (Elsrijk-Oost)",
@@ -7942,8 +7950,8 @@
    "condition": 7,
    "legal": 5
   },
-  "notes": "NEW via Funda digest 04-Jul-2026 (id 44426429), Amsterdam 1082 NK (Buitenveldert-Oost, Kastelenbuurt), 1986 portiekflat with lift. VERIFIED Kadaster/WOZ: 85 m2 (card ~86), 3 kamers (=2 slaapkamers), bouwjaar 1986, registered energielabel A (opname 31-03-2022, up from voorlopig C), WOZ EUR603.000 (ingang 2025, peildatum 01-01-2025). EUR/m2 = EUR6.765 on 85 m2. VALUE: asking EUR575k = ~5% BELOW WOZ EUR603k; 1986 build + label A = the most modern/efficient of the Amsterdam batch -> good condition, near Zuidas (~7 min, est). RISK legal (erfpacht): Amsterdam gemeentelijke erfpacht near-certain; afkoop/eeuwigdurend status and canon NOT verified (no live listing fetchable) -> 'Erfpacht (status te verifieren)'; a running canon could partly explain the sub-WOZ ask -> verify afkoop/tijdvak before bidding. VvE ~EUR150/mo (est; Bulgerstein 36 comp EUR150). Balcony assumed (1986 portiekflats here have balconies). Emmakade ~16 / Zuidas ~7 (est). No viewing yet.",
-  "notes_ru": "НОВОЕ из рассылки Funda 04-июл-2026 (id 44426429), Амстердам 1082 NK (Buitenveldert-Oost, Kastelenbuurt), подъездный дом 1986 г. с лифтом. ПРОВЕРЕНО Kadaster/WOZ: 85 м2 (карточка ~86), 3 комнаты (=2 спальни), год 1986, зарегистрированный класс A (замер 31-03-2022, повышен с предв. C), WOZ EUR603.000 (действ. 2025, оц. 01-01-2025). EUR/м2 = EUR6.765 на 85 м2. ЦЕНА: запрос EUR575k = ~5% НИЖЕ WOZ EUR603k; постройка 1986 + класс A = самая современная/эффективная в амстердамской партии -> хорошее состояние, рядом Zuidas (~7 мин, оценка). РИСК юридический (эрфпахт): муниципальная аренда земли Амстердама почти наверняка; статус выкупа/бессрочности и канон НЕ проверены (живое объявление недоступно) -> 'статус требует проверки'; действующий канон может частично объяснять цену ниже WOZ -> проверить выкуп/срок до ставки. VvE ~EUR150/мес (оценка; аналог Bulgerstein 36 EUR150). Балкон предполагается (у домов 1986 г. здесь есть балконы). Emmakade ~16 / Zuidas ~7 (оценка). Осмотра ещё не было.",
+  "notes": "NEW via Funda digest 04-Jul-2026 (id 44426429), Amsterdam 1082 NK (Buitenveldert-Oost, Kastelenbuurt), 1986 portiekflat with lift. VERIFIED Kadaster/WOZ: 85 m2 (card ~86), 3 kamers (=2 slaapkamers), bouwjaar 1986, registered energielabel A (opname 31-03-2022, up from voorlopig C), WOZ EUR603.000 (ingang 2025, peildatum 01-01-2025). EUR/m2 = EUR6.765 on 85 m2. VALUE: asking EUR575k = ~5% BELOW WOZ EUR603k; 1986 build + label A = the most modern/efficient of the Amsterdam batch -> good condition, near Zuidas (~7 min, est). RISK legal (erfpacht): Amsterdam gemeentelijke erfpacht near-certain; afkoop/eeuwigdurend status and canon NOT verified (no live listing fetchable) -> 'Erfpacht (status te verifieren)'; a running canon could partly explain the sub-WOZ ask -> verify afkoop/tijdvak before bidding. VvE ~EUR150/mo (est; Bulgerstein 36 comp EUR150). Balcony assumed (1986 portiekflats here have balconies). Emmakade ~16 / Zuidas ~7 (est). No viewing yet.\n[2026-07-25] STATUS: Funda shows Onder bod (under bid) — moved to sold pile. NOT final.",
+  "notes_ru": "НОВОЕ из рассылки Funda 04-июл-2026 (id 44426429), Амстердам 1082 NK (Buitenveldert-Oost, Kastelenbuurt), подъездный дом 1986 г. с лифтом. ПРОВЕРЕНО Kadaster/WOZ: 85 м2 (карточка ~86), 3 комнаты (=2 спальни), год 1986, зарегистрированный класс A (замер 31-03-2022, повышен с предв. C), WOZ EUR603.000 (действ. 2025, оц. 01-01-2025). EUR/м2 = EUR6.765 на 85 м2. ЦЕНА: запрос EUR575k = ~5% НИЖЕ WOZ EUR603k; постройка 1986 + класс A = самая современная/эффективная в амстердамской партии -> хорошее состояние, рядом Zuidas (~7 мин, оценка). РИСК юридический (эрфпахт): муниципальная аренда земли Амстердама почти наверняка; статус выкупа/бессрочности и канон НЕ проверены (живое объявление недоступно) -> 'статус требует проверки'; действующий канон может частично объяснять цену ниже WOZ -> проверить выкуп/срок до ставки. VvE ~EUR150/мес (оценка; аналог Bulgerstein 36 EUR150). Балкон предполагается (у домов 1986 г. здесь есть балконы). Emmakade ~16 / Zuidas ~7 (оценка). Осмотра ещё не было.\n[2026-07-25] СТАТУС: Funda показывает Onder bod — перенесено в проданные. НЕ окончательно.",
   "sources": {
    "price": {
     "value": 575000,
@@ -7991,7 +7999,10 @@
   "date_found": "2026-07-04",
   "source": "digest",
   "viewing": "No",
-  "status_checked": "2026-07-18"
+  "status_checked": "2026-07-25",
+  "sold": true,
+  "sold_status": "onder_bod",
+  "sold_date": "2026-07-25"
  },
  {
   "address": "Brittenburg 19, Amsterdam (Buitenveldert-Oost)",
@@ -8361,8 +8372,8 @@
    "condition": 5,
    "legal": 3
   },
-  "notes": "NEW via Funda digest 07-Jul-2026 (id 44428831), Amstelveen 1181 WP (Stadshart). VERIFIED via Funda Kenmerken: 89 m2 official NEN-measured area (marketing text says ca. 91 m2 — minor CONFLICT, official register figure used), 3 kamers (=2 slaapkamers), bouwjaar 1961, energielabel D, eigendomssituatie volle eigendom (own land, no erfpacht). Servicekosten €224.78/mo + voorschot stookkosten (blokverwarming) €150/mo. RISK legal: Funda's VvE checklist shows ALL SIX items 'Nee' — no KvK registration, no annual meeting, no periodic contribution, no reserve fund, no maintenance plan, and critically NO BUILDING INSURANCE (opstalverzekering). Serious flag for a 1961 complex; do not proceed without seeing VvE financials/notulen and confirming the building is actually insured — legal score set to 3 (gates the overall total in build.js). FLAG price: asking €6,180/m2 is well above both the Stadshart buurt average (€5,859/m2 per Funda) and the three other Meander units already in this database on the same street (€3,950-4,682/m2) — looks overpriced relative to direct comps. WOZ ESTIMATED at ~€420k (comp-based on same-street/same-era Meander units in this DB, scaled down for the smaller 89 m2 vs their 96-110 m2; NOT yet confirmed via WOZ-waardeloket) -> implied premium ~31% over estimated WOZ. Heating is collective (blokverwarming) + individual gas boiler for hot water — no easy individual upgrade path to a better label since it depends on the building system. Context: the A9 motorway between Schiphol-Holendrecht is being widened/lowered/covered near this building — construction disruption near-term, quieter/greener promised long-term. Emmakade ~7 / Zuidas ~16 (est., matches other Meander/Stadshart units already in DB). No viewing yet.",
-  "notes_ru": "НОВОЕ из рассылки Funda 07-июл-2026 (id 44428831), Амстелвеен 1181 WP (Stadshart). ПРОВЕРЕНО по Funda Kenmerken: 89 м2 официальная площадь NEN (в тексте описания указано ~91 м2 — небольшое РАСХОЖДЕНИЕ, использована официальная цифра), 3 комнаты (=2 спальни), год постройки 1961, класс энергоэффективности D, полная собственность (собственная земля, без эрфпахта). Сервисный сбор €224.78/мес + аванс на отопление (блок-отопление) €150/мес. РИСК юридический: в чек-листе VvE на Funda все шесть пунктов 'Нет' — нет регистрации в ТПП, нет ежегодного собрания, нет регулярных взносов, нет резервного фонда, нет плана обслуживания и, что критично, НЕТ СТРАХОВАНИЯ ЗДАНИЯ. Серьёзный флаг для дома 1961 года; не двигаться без проверки финансов/протоколов VvE и подтверждения страховки здания — балл юридический поставлен 3 (ограничивает итоговый балл в build.js). ФЛАГ цена: запрос €6.180/м2 заметно выше среднего по району Stadshart (€5.859/м2 по Funda) и выше трёх других объектов на той же улице в базе (€3.950-4.682/м2) — выглядит дорого относительно прямых аналогов. WOZ ОЦЕНЕНА приблизительно в ~€420тыс. (на основе аналогичных объектов той же эпохи/улицы Meander в базе, скорректировано вниз из-за меньшей площади 89 м2 против 96-110 м2; ПОКА НЕ ПОДТВЕРЖДЕНО через WOZ-waardeloket) -> премия к WOZ ~31%. Отопление коллективное (блок-отопление) + индивидуальный газовый бойлер для горячей воды — легкого индивидуального пути улучшения класса нет, т.к. это зависит от системы здания. Контекст: рядом с зданием расширяют/заглубляют/накрывают шоссе A9 между Схипол и Holendrecht — в ближайшее время шум стройки, в будущем — тише и зеленее. Emmakade ~7 / Zuidas ~16 (оценка, совпадает с другими объектами Meander/Stadshart в базе). Осмотра ещё не было.",
+  "notes": "NEW via Funda digest 07-Jul-2026 (id 44428831), Amstelveen 1181 WP (Stadshart). VERIFIED via Funda Kenmerken: 89 m2 official NEN-measured area (marketing text says ca. 91 m2 — minor CONFLICT, official register figure used), 3 kamers (=2 slaapkamers), bouwjaar 1961, energielabel D, eigendomssituatie volle eigendom (own land, no erfpacht). Servicekosten €224.78/mo + voorschot stookkosten (blokverwarming) €150/mo. RISK legal: Funda's VvE checklist shows ALL SIX items 'Nee' — no KvK registration, no annual meeting, no periodic contribution, no reserve fund, no maintenance plan, and critically NO BUILDING INSURANCE (opstalverzekering). Serious flag for a 1961 complex; do not proceed without seeing VvE financials/notulen and confirming the building is actually insured — legal score set to 3 (gates the overall total in build.js). FLAG price: asking €6,180/m2 is well above both the Stadshart buurt average (€5,859/m2 per Funda) and the three other Meander units already in this database on the same street (€3,950-4,682/m2) — looks overpriced relative to direct comps. WOZ ESTIMATED at ~€420k (comp-based on same-street/same-era Meander units in this DB, scaled down for the smaller 89 m2 vs their 96-110 m2; NOT yet confirmed via WOZ-waardeloket) -> implied premium ~31% over estimated WOZ. Heating is collective (blokverwarming) + individual gas boiler for hot water — no easy individual upgrade path to a better label since it depends on the building system. Context: the A9 motorway between Schiphol-Holendrecht is being widened/lowered/covered near this building — construction disruption near-term, quieter/greener promised long-term. Emmakade ~7 / Zuidas ~16 (est., matches other Meander/Stadshart units already in DB). No viewing yet.\n[2026-07-25] STATUS: Listing page returns 404 / not found on Funda — moved to sold pile as off_funda.",
+  "notes_ru": "НОВОЕ из рассылки Funda 07-июл-2026 (id 44428831), Амстелвеен 1181 WP (Stadshart). ПРОВЕРЕНО по Funda Kenmerken: 89 м2 официальная площадь NEN (в тексте описания указано ~91 м2 — небольшое РАСХОЖДЕНИЕ, использована официальная цифра), 3 комнаты (=2 спальни), год постройки 1961, класс энергоэффективности D, полная собственность (собственная земля, без эрфпахта). Сервисный сбор €224.78/мес + аванс на отопление (блок-отопление) €150/мес. РИСК юридический: в чек-листе VvE на Funda все шесть пунктов 'Нет' — нет регистрации в ТПП, нет ежегодного собрания, нет регулярных взносов, нет резервного фонда, нет плана обслуживания и, что критично, НЕТ СТРАХОВАНИЯ ЗДАНИЯ. Серьёзный флаг для дома 1961 года; не двигаться без проверки финансов/протоколов VvE и подтверждения страховки здания — балл юридический поставлен 3 (ограничивает итоговый балл в build.js). ФЛАГ цена: запрос €6.180/м2 заметно выше среднего по району Stadshart (€5.859/м2 по Funda) и выше трёх других объектов на той же улице в базе (€3.950-4.682/м2) — выглядит дорого относительно прямых аналогов. WOZ ОЦЕНЕНА приблизительно в ~€420тыс. (на основе аналогичных объектов той же эпохи/улицы Meander в базе, скорректировано вниз из-за меньшей площади 89 м2 против 96-110 м2; ПОКА НЕ ПОДТВЕРЖДЕНО через WOZ-waardeloket) -> премия к WOZ ~31%. Отопление коллективное (блок-отопление) + индивидуальный газовый бойлер для горячей воды — легкого индивидуального пути улучшения класса нет, т.к. это зависит от системы здания. Контекст: рядом с зданием расширяют/заглубляют/накрывают шоссе A9 между Схипол и Holendrecht — в ближайшее время шум стройки, в будущем — тише и зеленее. Emmakade ~7 / Zuidas ~16 (оценка, совпадает с другими объектами Meander/Stadshart в базе). Осмотра ещё не было.\n[2026-07-25] СТАТУС: Страница объявления возвращает 404 / не найдено на Funda — перенесено в проданные со статусом off_funda.",
   "sources": {
    "price": {
     "value": 550000,
@@ -8419,7 +8430,10 @@
   "date_found": "2026-07-07",
   "source": "digest",
   "viewing": "No",
-  "status_checked": "2026-07-18"
+  "status_checked": "2026-07-25",
+  "sold": true,
+  "sold_status": "off_funda",
+  "sold_date": "2026-07-25"
  },
  {
   "address": "William Boothlaan 4, Amstelveen (Augustinuspark)",
@@ -8542,8 +8556,8 @@
    "condition": 5,
    "legal": 5
   },
-  "notes": "NEW via Funda digest 08-Jul-2026 (id 44429459), Amstelveen 1181 LT (Elsrijk-Oost). VERIFIED via Funda listing card: 87 m2, 3 kamers (=2 slaapkamers), energielabel E, asking EUR400.000 (EUR4.598/m2 -- well below the Amstelveen-wide average of ~EUR6.582/m2). Street (Zonnestein) average bouwjaar is 1965 (galerijflat-style, oldest 1956/newest 2022) -> build_year_estimated (unit-specific year not confirmed). FLAG energy: label E is the weakest in this batch -> likely dated glazing/heating, a real running-cost and upgrade-cost consideration despite the attractive EUR/m2. WOZ ESTIMATED at ~EUR380k (comp-based on nearby Zonnestein WOZ figures of EUR326k-442k for similar units; NOT yet confirmed via WOZ-waardeloket) -> implied premium ~5% over estimated WOZ, i.e. reasonably priced. RISK legal: tenure (eigen grond vs erfpacht) and VvE health not yet confirmed via the Funda Kenmerken/VvE-checklist page -> ground and VvE costs (~EUR200/mo) are both estimates; do not proceed without verifying. Outdoor space assumed balcony (typical for a 1960s Elsrijk galerijflat) -- not confirmed. Emmakade ~6 / Zuidas ~15 (est., Elsrijk sits between Stadshart and Randwijck). No viewing yet.",
-  "notes_ru": "НОВОЕ из рассылки Funda 08-июл-2026 (id 44429459), Амстелвеен 1181 LT (Elsrijk-Oost). ПРОВЕРЕНО по карточке Funda: 87 м2, 3 комнаты (=2 спальни), класс энергоэффективности E, цена EUR400.000 (EUR4.598/м2 -- заметно ниже среднего по Амстелвену ~EUR6.582/м2). Средний год постройки на улице Zonnestein -- 1965 (галерейные дома, самый старый 1956/самый новый 2022) -> год для конкретной квартиры не подтверждён (оценка). ФЛАГ энергия: класс E самый слабый в этой партии -> вероятно устаревшее остекление/отопление, реальный фактор эксплуатационных расходов несмотря на привлекательную цену за м2. WOZ ОЦЕНКА ~EUR380k (по соседним объектам на Zonnestein, WOZ EUR326k-442k; НЕ подтверждено через WOZ-waardeloket) -> подразумеваемая наценка ~5% к оценочной WOZ, то есть цена разумная. РИСК юридический: тип владения (собственная земля vs эрфпахт) и состояние VvE не подтверждены через страницу Kenmerken/чек-лист VvE Funda -> и тип земли, и взнос VvE (~EUR200/мес) являются оценками; не продолжать без проверки. Балкон предполагается (типично для галерейного дома 1960-х в Elsrijk) -- не подтверждено. Emmakade ~6 / Zuidas ~15 (оценка, Elsrijk между Stadshart и Randwijck). Осмотра ещё не было.",
+  "notes": "NEW via Funda digest 08-Jul-2026 (id 44429459), Amstelveen 1181 LT (Elsrijk-Oost). VERIFIED via Funda listing card: 87 m2, 3 kamers (=2 slaapkamers), energielabel E, asking EUR400.000 (EUR4.598/m2 -- well below the Amstelveen-wide average of ~EUR6.582/m2). Street (Zonnestein) average bouwjaar is 1965 (galerijflat-style, oldest 1956/newest 2022) -> build_year_estimated (unit-specific year not confirmed). FLAG energy: label E is the weakest in this batch -> likely dated glazing/heating, a real running-cost and upgrade-cost consideration despite the attractive EUR/m2. WOZ ESTIMATED at ~EUR380k (comp-based on nearby Zonnestein WOZ figures of EUR326k-442k for similar units; NOT yet confirmed via WOZ-waardeloket) -> implied premium ~5% over estimated WOZ, i.e. reasonably priced. RISK legal: tenure (eigen grond vs erfpacht) and VvE health not yet confirmed via the Funda Kenmerken/VvE-checklist page -> ground and VvE costs (~EUR200/mo) are both estimates; do not proceed without verifying. Outdoor space assumed balcony (typical for a 1960s Elsrijk galerijflat) -- not confirmed. Emmakade ~6 / Zuidas ~15 (est., Elsrijk sits between Stadshart and Randwijck). No viewing yet.\n[2026-07-25] STATUS: Funda shows Onder bod (under bid) — moved to sold pile. NOT final.",
+  "notes_ru": "НОВОЕ из рассылки Funda 08-июл-2026 (id 44429459), Амстелвеен 1181 LT (Elsrijk-Oost). ПРОВЕРЕНО по карточке Funda: 87 м2, 3 комнаты (=2 спальни), класс энергоэффективности E, цена EUR400.000 (EUR4.598/м2 -- заметно ниже среднего по Амстелвену ~EUR6.582/м2). Средний год постройки на улице Zonnestein -- 1965 (галерейные дома, самый старый 1956/самый новый 2022) -> год для конкретной квартиры не подтверждён (оценка). ФЛАГ энергия: класс E самый слабый в этой партии -> вероятно устаревшее остекление/отопление, реальный фактор эксплуатационных расходов несмотря на привлекательную цену за м2. WOZ ОЦЕНКА ~EUR380k (по соседним объектам на Zonnestein, WOZ EUR326k-442k; НЕ подтверждено через WOZ-waardeloket) -> подразумеваемая наценка ~5% к оценочной WOZ, то есть цена разумная. РИСК юридический: тип владения (собственная земля vs эрфпахт) и состояние VvE не подтверждены через страницу Kenmerken/чек-лист VvE Funda -> и тип земли, и взнос VvE (~EUR200/мес) являются оценками; не продолжать без проверки. Балкон предполагается (типично для галерейного дома 1960-х в Elsrijk) -- не подтверждено. Emmakade ~6 / Zuidas ~15 (оценка, Elsrijk между Stadshart и Randwijck). Осмотра ещё не было.\n[2026-07-25] СТАТУС: Funda показывает Onder bod — перенесено в проданные. НЕ окончательно.",
   "sources": {
    "price": {
     "value": 400000,
@@ -8589,7 +8603,10 @@
   "viewing": "No",
   "date_found": "2026-07-08",
   "source": "digest",
-  "status_checked": "2026-07-18"
+  "status_checked": "2026-07-25",
+  "sold": true,
+  "sold_status": "onder_bod",
+  "sold_date": "2026-07-25"
  },
  {
   "address": "William Boothlaan 336, Amstelveen (Augustinuspark)",
@@ -9033,7 +9050,7 @@
   "energy_estimated": true,
   "ground": "Eigen grond",
   "ground_verified": true,
-  "vve_costs": 275.0,
+  "vve_costs": 275,
   "vve_estimated": false,
   "vve_reserve_ok": true,
   "outdoor_space": "balcony",
@@ -9126,7 +9143,7 @@
   "ground": "Erfpacht (tijdvak tot 2039)",
   "ground_verified": true,
   "canon_month": 11.94,
-  "vve_costs": 324.0,
+  "vve_costs": 324,
   "vve_estimated": false,
   "outdoor_space": "balcony (2x)",
   "dist_emmakade_min": 13,
@@ -9227,8 +9244,8 @@
    "condition": 7,
    "legal": 4
   },
-  "notes": "NEW via Funda digest 10-Jul-2026 (id 44423542), Amsterdam 1082 GL (Buitenveldert-Zuidoost / Gelderlandpleinbuurt). VERIFIED via official BAG/Kadaster records (kadastralekaart.com + woz-waarde.nl): 77 m2 (BAG gebruiksoppervlakte), bouwjaar 1966, energielabel A (RVO/EP-Online registered -- notably rare for a 1966 building, suggests a completed deep energy retrofit: likely HR++ glazing / extra insulation / possibly a heat pump -- a genuine easy-upgrade-already-done signal). CONFLICT: Funda's own digest states 81 m2 for this unit, but BAG and the WOZ register both independently agree on 77 m2 -- used the official 77 m2 figure (matches WOZ source exactly); verify at viewing via floor plan / NEN meetrapport. WOZ (woz-waarde.nl, gemeente Amsterdam, 2025 waarde / peildatum 2024) = EUR473.000 -> asking EUR525.000 is +11% over WOZ; on the 77m2 BAG figure that's EUR6.818/m2 (on Funda's own 81m2 claim it would be EUR6.481/m2) -- notably above the pinned Amsterdam relvalue baseline (city median premium ~1.008), so this prices somewhat rich relative to WOZ despite the strong energy label. RISK erfpacht: every other tracked Buitenveldert unit in this DB sits on erfpacht (voortdurend/lopend, various tijdvak/canon stages) and no eigendomssituatie was visible in the digest for this address, so ground is FLAGGED as 'Erfpacht (status te verifieren)' pending the actual erfpachtakte/canon check via mijnerfpacht.amsterdam.nl before any offer; a lopend erfpacht here would add a real un-costed monthly carrying charge (canon_month left at 0/unknown -- do not treat the ownership cost as complete until confirmed). VvE: no service-cost figure was shown in the digest; ESTIMATED at ~EUR275/mo from nearby Van Leijenberghlaan comps in this DB/market (range EUR250-360/mo across sibling units, e.g. 425-4 EUR249.93, 2-T EUR358.79) -- get the actual VvE jaarrekening/MJOP/notulen before an offer (checklist NOT yet confirmed for this specific unit -> legal score docked). Emmakade ~13 / Zuidas ~7 (est., matches Van Nijenrodeweg 35 in the same Buitenveldert-Zuidoost buurt already in this DB). No viewing yet.",
-  "notes_ru": "НОВОЕ из рассылки Funda 10-июл-2026 (id 44423542), Амстердам 1082 GL (Buitenveldert-Zuidoost / Gelderlandpleinbuurt). ПРОВЕРЕНО по официальным данным BAG/Kadaster (kadastralekaart.com + woz-waarde.nl): 77 м2 (жилая площадь по BAG), год постройки 1966, класс энергоэффективности A (зарегистрирован в RVO/EP-Online -- редкость для дома 1966 года, указывает на завершённую глубокую энергомодернизацию: вероятно HR++ стеклопакеты / доп. утепление / возможно тепловой насос -- реальный признак того, что модернизация уже сделана). РАСХОЖДЕНИЕ: в самой рассылке Funda указано 81 м2 для этой квартиры, но BAG и реестр WOZ независимо друг от друга показывают 77 м2 -- использована официальная цифра 77 м2 (точно совпадает с источником WOZ); проверить на просмотре по плану этажа / отчёту NEN. WOZ (woz-waarde.nl, муниципалитет Амстердам, оценка 2025 / на дату 2024) = EUR473.000 -> цена EUR525.000 на 11% выше WOZ; по официальным 77 м2 это EUR6.818/м2 (по заявленным Funda 81 м2 было бы EUR6.481/м2) -- заметно выше зафиксированного базового уровня относительной ценности для Амстердама (медианная надбавка по городу ~1.008), то есть цена довольно высокая относительно WOZ, несмотря на сильный класс энергоэффективности. РИСК эрфпахт: все остальные отслеживаемые объекты Buitenveldert в этой базе находятся на эрфпахт (бессрочная/действующая, на разных стадиях срока/канона), а статус собственности для этого адреса в рассылке не показан -- поэтому статус земли отмечен ФЛАГОМ как 'Erfpacht (статус требует проверки)' до проверки самого erfpachtakte/канона через mijnerfpacht.amsterdam.nl перед предложением цены; действующий эрфпахт добавил бы реальную неучтённую ежемесячную нагрузку (canon_month оставлен как 0/неизвестно -- не считать расходы на владение полными до подтверждения). VvE: точная сумма взносов не показана в рассылке; ОЦЕНКА ~EUR275/мес по соседним объектам на Van Leijenberghlaan в этой базе/на рынке (диапазон EUR250-360/мес среди соседних квартир, напр. 425-4 EUR249,93, 2-T EUR358,79) -- перед предложением получить фактическую годовую отчётность VvE/MJOP/протоколы (чек-лист для этой конкретной квартиры пока НЕ подтверждён -> юридический балл снижен). Emmakade ~13 / Zuidas ~7 (оценка, как у Van Nijenrodeweg 35 в том же районе Buitenveldert-Zuidoost в этой базе). Осмотра ещё не было.",
+  "notes": "NEW via Funda digest 10-Jul-2026 (id 44423542), Amsterdam 1082 GL (Buitenveldert-Zuidoost / Gelderlandpleinbuurt). VERIFIED via official BAG/Kadaster records (kadastralekaart.com + woz-waarde.nl): 77 m2 (BAG gebruiksoppervlakte), bouwjaar 1966, energielabel A (RVO/EP-Online registered -- notably rare for a 1966 building, suggests a completed deep energy retrofit: likely HR++ glazing / extra insulation / possibly a heat pump -- a genuine easy-upgrade-already-done signal). CONFLICT: Funda's own digest states 81 m2 for this unit, but BAG and the WOZ register both independently agree on 77 m2 -- used the official 77 m2 figure (matches WOZ source exactly); verify at viewing via floor plan / NEN meetrapport. WOZ (woz-waarde.nl, gemeente Amsterdam, 2025 waarde / peildatum 2024) = EUR473.000 -> asking EUR525.000 is +11% over WOZ; on the 77m2 BAG figure that's EUR6.818/m2 (on Funda's own 81m2 claim it would be EUR6.481/m2) -- notably above the pinned Amsterdam relvalue baseline (city median premium ~1.008), so this prices somewhat rich relative to WOZ despite the strong energy label. RISK erfpacht: every other tracked Buitenveldert unit in this DB sits on erfpacht (voortdurend/lopend, various tijdvak/canon stages) and no eigendomssituatie was visible in the digest for this address, so ground is FLAGGED as 'Erfpacht (status te verifieren)' pending the actual erfpachtakte/canon check via mijnerfpacht.amsterdam.nl before any offer; a lopend erfpacht here would add a real un-costed monthly carrying charge (canon_month left at 0/unknown -- do not treat the ownership cost as complete until confirmed). VvE: no service-cost figure was shown in the digest; ESTIMATED at ~EUR275/mo from nearby Van Leijenberghlaan comps in this DB/market (range EUR250-360/mo across sibling units, e.g. 425-4 EUR249.93, 2-T EUR358.79) -- get the actual VvE jaarrekening/MJOP/notulen before an offer (checklist NOT yet confirmed for this specific unit -> legal score docked). Emmakade ~13 / Zuidas ~7 (est., matches Van Nijenrodeweg 35 in the same Buitenveldert-Zuidoost buurt already in this DB). No viewing yet.\n[2026-07-25] STATUS: Funda shows Onder bod (under bid) — moved to sold pile. NOT final.",
+  "notes_ru": "НОВОЕ из рассылки Funda 10-июл-2026 (id 44423542), Амстердам 1082 GL (Buitenveldert-Zuidoost / Gelderlandpleinbuurt). ПРОВЕРЕНО по официальным данным BAG/Kadaster (kadastralekaart.com + woz-waarde.nl): 77 м2 (жилая площадь по BAG), год постройки 1966, класс энергоэффективности A (зарегистрирован в RVO/EP-Online -- редкость для дома 1966 года, указывает на завершённую глубокую энергомодернизацию: вероятно HR++ стеклопакеты / доп. утепление / возможно тепловой насос -- реальный признак того, что модернизация уже сделана). РАСХОЖДЕНИЕ: в самой рассылке Funda указано 81 м2 для этой квартиры, но BAG и реестр WOZ независимо друг от друга показывают 77 м2 -- использована официальная цифра 77 м2 (точно совпадает с источником WOZ); проверить на просмотре по плану этажа / отчёту NEN. WOZ (woz-waarde.nl, муниципалитет Амстердам, оценка 2025 / на дату 2024) = EUR473.000 -> цена EUR525.000 на 11% выше WOZ; по официальным 77 м2 это EUR6.818/м2 (по заявленным Funda 81 м2 было бы EUR6.481/м2) -- заметно выше зафиксированного базового уровня относительной ценности для Амстердама (медианная надбавка по городу ~1.008), то есть цена довольно высокая относительно WOZ, несмотря на сильный класс энергоэффективности. РИСК эрфпахт: все остальные отслеживаемые объекты Buitenveldert в этой базе находятся на эрфпахт (бессрочная/действующая, на разных стадиях срока/канона), а статус собственности для этого адреса в рассылке не показан -- поэтому статус земли отмечен ФЛАГОМ как 'Erfpacht (статус требует проверки)' до проверки самого erfpachtakte/канона через mijnerfpacht.amsterdam.nl перед предложением цены; действующий эрфпахт добавил бы реальную неучтённую ежемесячную нагрузку (canon_month оставлен как 0/неизвестно -- не считать расходы на владение полными до подтверждения). VvE: точная сумма взносов не показана в рассылке; ОЦЕНКА ~EUR275/мес по соседним объектам на Van Leijenberghlaan в этой базе/на рынке (диапазон EUR250-360/мес среди соседних квартир, напр. 425-4 EUR249,93, 2-T EUR358,79) -- перед предложением получить фактическую годовую отчётность VvE/MJOP/протоколы (чек-лист для этой конкретной квартиры пока НЕ подтверждён -> юридический балл снижен). Emmakade ~13 / Zuidas ~7 (оценка, как у Van Nijenrodeweg 35 в том же районе Buitenveldert-Zuidoost в этой базе). Осмотра ещё не было.\n[2026-07-25] СТАТУС: Funda показывает Onder bod — перенесено в проданные. НЕ окончательно.",
   "sources": {
    "price": {
     "value": 525000,
@@ -9285,7 +9302,10 @@
   "viewing": "No",
   "date_found": "2026-07-10",
   "source": "digest",
-  "status_checked": "2026-07-18"
+  "status_checked": "2026-07-25",
+  "sold": true,
+  "sold_status": "onder_bod",
+  "sold_date": "2026-07-25"
  },
  {
   "address": "Goereesepad 115, Amstelveen (Randwijck-Oost)",
@@ -9493,8 +9513,8 @@
    "dist_zuidas": 9,
    "renovation": 6
   },
-  "notes": "NEW via Funda digest 12-Jul-2026 (id 44424024, KRK Makelaars, listed as 'Nieuw'). Buitenveldert / Gelderlandpleinbuurt, 1082 XM, next to Groot Gelderlandplein. VERIFIED via KRK Makelaars listing (fetched directly): EUR400,000 k.k., 64 m², 4 kamers waarvan 3 slaapkamers, bouwjaar 1963, energielabel E, servicekosten 2026 EUR183.17 + EUR14.56 berging = ~EUR197/mo, onderhoud binnen/buiten 'redelijk tot goed'. EUR6,250/m². FLAG (ground): erfpacht, canon AFGEKOCHT (prepaid) tot en met 15-07-2059 — no near-term canon cost, but a revision falls due in 33 years; note for long-hold buyers. FLAG (legal, top risk): this is a FORMER ALLIANTIE SOCIAL-HOUSING RENTAL sold with (1) an anti-speculatiebeding — buyer may not rent out or resell for 2 years, (2) a self-use requirement (buyer or first-degree family must live there as main residence), (3) a VOORRANGSREGELING giving existing Alliantie social tenants priority in the bidding/allocation process over open-market buyers, even at a lower bid — this materially reduces Max's odds of winning this property regardless of offer price, and priority forfeits if bidding below asking. Also standard niet-bewoning/asbest/ouderdomsclausule apply (typical for 1963 stock). POSITIVE: active VvE, professionally managed (Alliantie VVE Diensten), participating in a 10-VvE Buitenveldert-wide sustainability project — realistic path to improve the E label via building-level measures (roof/facade), some upside. WOZ ESTIMATED ~EUR380k (2025) via per-m² comp from Loevestein 36 (EUR457k/77m² = EUR5,935/m², same street/era) — verify on wozwaardeloket.nl. At EUR400k that's ~+5% over estimated WOZ, roughly fair. Distances reused from Loevestein 36 (same block): ~11 min bike Emmakade 33, ~8 min Zuidas.",
-  "notes_ru": "НОВОЕ из рассылки Funda 12-июл-2026 (id 44424024, KRK Makelaars, отмечен как 'Nieuw'). Buitenveldert / Gelderlandpleinbuurt, 1082 XM, рядом с Groot Gelderlandplein. ПРОВЕРЕНО через листинг KRK Makelaars (получен напрямую): €400.000 к.к., 64 м², 4 комнаты из них 3 спальни, год постройки 1963, энергокласс E, сервисные расходы 2026 €183,17 + €14,56 кладовая = ~€197/мес, состояние внутри/снаружи 'от приемлемого до хорошего'. €6.250/м². ФЛАГ (земля): erfpacht, канон ВЫКУПЛЕН (предоплачен) до 15-07-2059 включительно — в ближайшей перспективе доплат нет, но пересмотр наступит через 33 года; учитывать при долгосрочном владении. ФЛАГ (юридический, главный риск): это БЫВШЕЕ СОЦИАЛЬНОЕ ЖИЛЬЁ Alliantie, продаётся с (1) антиспекулятивной оговоркой — нельзя сдавать в аренду или перепродавать 2 года, (2) требованием личного проживания (покупатель или родственник первой степени должен там прописаться как основное жильё), (3) СХЕМОЙ ПРИОРИТЕТА, дающей существующим социальным арендаторам Alliantie преимущество в торгах/распределении перед покупателями с открытого рынка, даже при более низкой ставке — это существенно снижает шансы Макса выиграть этот объект независимо от предложенной цены, а приоритет теряется при ставке ниже запрашиваемой цены. Также действуют стандартные оговорки о непроживании/асбесте/возрасте (типично для домов 1963 г.). ПЛЮС: активный VvE, профессионально управляется (Alliantie VVE Diensten), участвует в общем проекте устойчивого развития 10 VvE района Buitenveldert — реальный путь улучшить класс E через меры на уровне здания (крыша/фасад), есть потенциал. WOZ — ОЦЕНКА ~€380к (2025) через сравнение €/м² с Loevestein 36 (€457к/77м² = €5.935/м², та же улица/эпоха) — проверить на wozwaardeloket.nl. При €400к это ~+5% к оценочной WOZ, примерно справедливо. Расстояния взяты по аналогии с Loevestein 36 (тот же квартал): ~11 мин до Emmakade 33, ~8 мин до Zuidas.",
+  "notes": "NEW via Funda digest 12-Jul-2026 (id 44424024, KRK Makelaars, listed as 'Nieuw'). Buitenveldert / Gelderlandpleinbuurt, 1082 XM, next to Groot Gelderlandplein. VERIFIED via KRK Makelaars listing (fetched directly): EUR400,000 k.k., 64 m², 4 kamers waarvan 3 slaapkamers, bouwjaar 1963, energielabel E, servicekosten 2026 EUR183.17 + EUR14.56 berging = ~EUR197/mo, onderhoud binnen/buiten 'redelijk tot goed'. EUR6,250/m². FLAG (ground): erfpacht, canon AFGEKOCHT (prepaid) tot en met 15-07-2059 — no near-term canon cost, but a revision falls due in 33 years; note for long-hold buyers. FLAG (legal, top risk): this is a FORMER ALLIANTIE SOCIAL-HOUSING RENTAL sold with (1) an anti-speculatiebeding — buyer may not rent out or resell for 2 years, (2) a self-use requirement (buyer or first-degree family must live there as main residence), (3) a VOORRANGSREGELING giving existing Alliantie social tenants priority in the bidding/allocation process over open-market buyers, even at a lower bid — this materially reduces Max's odds of winning this property regardless of offer price, and priority forfeits if bidding below asking. Also standard niet-bewoning/asbest/ouderdomsclausule apply (typical for 1963 stock). POSITIVE: active VvE, professionally managed (Alliantie VVE Diensten), participating in a 10-VvE Buitenveldert-wide sustainability project — realistic path to improve the E label via building-level measures (roof/facade), some upside. WOZ ESTIMATED ~EUR380k (2025) via per-m² comp from Loevestein 36 (EUR457k/77m² = EUR5,935/m², same street/era) — verify on wozwaardeloket.nl. At EUR400k that's ~+5% over estimated WOZ, roughly fair. Distances reused from Loevestein 36 (same block): ~11 min bike Emmakade 33, ~8 min Zuidas.\n[2026-07-25] STATUS: Funda shows Verkocht onder voorbehoud — moved to sold pile. NOT final.",
+  "notes_ru": "НОВОЕ из рассылки Funda 12-июл-2026 (id 44424024, KRK Makelaars, отмечен как 'Nieuw'). Buitenveldert / Gelderlandpleinbuurt, 1082 XM, рядом с Groot Gelderlandplein. ПРОВЕРЕНО через листинг KRK Makelaars (получен напрямую): €400.000 к.к., 64 м², 4 комнаты из них 3 спальни, год постройки 1963, энергокласс E, сервисные расходы 2026 €183,17 + €14,56 кладовая = ~€197/мес, состояние внутри/снаружи 'от приемлемого до хорошего'. €6.250/м². ФЛАГ (земля): erfpacht, канон ВЫКУПЛЕН (предоплачен) до 15-07-2059 включительно — в ближайшей перспективе доплат нет, но пересмотр наступит через 33 года; учитывать при долгосрочном владении. ФЛАГ (юридический, главный риск): это БЫВШЕЕ СОЦИАЛЬНОЕ ЖИЛЬЁ Alliantie, продаётся с (1) антиспекулятивной оговоркой — нельзя сдавать в аренду или перепродавать 2 года, (2) требованием личного проживания (покупатель или родственник первой степени должен там прописаться как основное жильё), (3) СХЕМОЙ ПРИОРИТЕТА, дающей существующим социальным арендаторам Alliantie преимущество в торгах/распределении перед покупателями с открытого рынка, даже при более низкой ставке — это существенно снижает шансы Макса выиграть этот объект независимо от предложенной цены, а приоритет теряется при ставке ниже запрашиваемой цены. Также действуют стандартные оговорки о непроживании/асбесте/возрасте (типично для домов 1963 г.). ПЛЮС: активный VvE, профессионально управляется (Alliantie VVE Diensten), участвует в общем проекте устойчивого развития 10 VvE района Buitenveldert — реальный путь улучшить класс E через меры на уровне здания (крыша/фасад), есть потенциал. WOZ — ОЦЕНКА ~€380к (2025) через сравнение €/м² с Loevestein 36 (€457к/77м² = €5.935/м², та же улица/эпоха) — проверить на wozwaardeloket.nl. При €400к это ~+5% к оценочной WOZ, примерно справедливо. Расстояния взяты по аналогии с Loevestein 36 (тот же квартал): ~11 мин до Emmakade 33, ~8 мин до Zuidas.\n[2026-07-25] СТАТУС: Funda показывает Verkocht onder voorbehoud — перенесено в проданные. НЕ окончательно.",
   "sources": {
    "price": {
     "value": 400000,
@@ -9556,7 +9576,10 @@
   "date_found": "2026-07-12",
   "source": "digest",
   "viewing": "No",
-  "status_checked": "2026-07-18"
+  "status_checked": "2026-07-25",
+  "sold": true,
+  "sold_status": "verkocht_ov",
+  "sold_date": "2026-07-25"
  },
  {
   "address": "Lindenlaan 523, Amstelveen",
@@ -10106,7 +10129,7 @@
     "status": "verified"
    }
   },
-  "viewing": "Scheduled 2026-07-23",
+  "viewing": "Visited 2026-07-23",
   "date_found": "2026-07-18",
   "source": "digest"
  },
@@ -10249,7 +10272,7 @@
   "notes": "NEW via Funda digest 17-Jul-2026 (id 44439483). FLAG -- LOWEST-CONFIDENCE entry in this batch: no unit-specific data could be found anywhere (search engines have not indexed this brand-new listing, and direct Funda/Huispedia fetches for this exact address returned nothing). Postcode confirmed as 1181 WK, neighbourhood Elsrijk(-Oost) (corrected from an initial guess of 'Randwijck'). Every numeric field above (price, area, bedrooms, WOZ, energy label, build year, VvE) is a ROUGH PLACEHOLDER ESTIMATE based on two already-tracked Elsrijk apartment comps on Mr. F.A. van Hallweg (#56: 59m2/WOZ 285k; #112: 80m2/WOZ 391k) and general street-era construction (~1960). Street-wide average price data found (EUR585,000) was NOT used directly since it is dominated by single-family houses on this street, not apartments. TREAT THIS ENTRY AS A PLACEHOLDER -- do not act on it without first pulling up the live Funda listing directly to confirm real price, m2, kamers, energy label and ground status.",
   "notes_ru": "НОВОЕ из дайджеста Funda 17-июл-2026 (id 44439483). ФЛАГ -- запись с САМОЙ НИЗКОЙ уверенностью в этой партии: никаких данных по конкретной квартире найти не удалось (поисковики ещё не проиндексировали этот совсем новый листинг, прямые запросы к Funda/Huispedia по этому адресу ничего не вернули). Индекс подтверждён как 1181 WK, район Elsrijk(-Oost) (исправлено с первоначального предположения 'Randwijck'). Все числовые поля выше (цена, площадь, спальни, WOZ, класс энергоэффективности, год постройки, VvE) -- ГРУБАЯ ОЦЕНКА-ЗАГЛУШКА на основе двух уже отслеживаемых аналогов в Elsrijk на Mr. F.A. van Hallweg (#56: 59м2/WOZ 285k; #112: 80м2/WOZ 391k) и общего периода застройки улицы (~1960). Средняя цена по улице (EUR585 000) НЕ использовалась напрямую, так как на улице преобладают отдельные дома, а не квартиры. СЧИТАТЬ ЭТУ ЗАПИСЬ ЗАГЛУШКОЙ -- не действовать без предварительной проверки живого листинга на Funda для подтверждения реальной цены, площади, числа комнат, класса энергоэффективности и статуса земли.",
   "sources": {},
-  "viewing": "Scheduled 2026-07-21",
+  "viewing": "Visited 2026-07-21",
   "date_found": "2026-07-18",
   "source": "digest"
  },
@@ -10717,6 +10740,222 @@
   },
   "viewing": "No",
   "date_found": "2026-07-24",
+  "source": "digest"
+ },
+ {
+  "address": "Noorderkroon 32, Amstelveen (Hemellichamenbuurt)",
+  "url": "https://www.funda.nl/detail/koop/amstelveen/huis-noorderkroon-32/44447569/",
+  "price": 520000,
+  "area": 100,
+  "area_estimated": true,
+  "bedrooms": 3,
+  "bedrooms_verified": false,
+  "woz": 470000,
+  "woz_year": 2025,
+  "woz_estimated": true,
+  "build_year": 1984,
+  "build_year_estimated": true,
+  "energy_label": "D",
+  "energy_estimated": true,
+  "ground": "Eigen grond (aanname, Amstelveen-norm)",
+  "ground_verified": false,
+  "vve_costs": 0,
+  "vve_estimated": true,
+  "dist_emmakade_min": 14,
+  "dist_zuidas_min": 23,
+  "scores": {
+   "price": 4,
+   "legal": 4,
+   "dist_emmakade": 5,
+   "energy": 5,
+   "dist_zuidas": 4,
+   "renovation": 4
+  },
+  "notes": "NEW via Funda digest 25-Jul-2026 (id 44447569, huis/eengezinswoning). Postcode 1188AC Amstelveen, buurt Hemellichamenbuurt (wijk Waardhuizen, Middenhoven) -- confirmed via postcode lookup (postcodebijadres.nl: Noorderkroon 2-34 = 1188AC). FLAG -- DATA GAP: this listing is too new to appear on any accessible aggregator (Huispedia, Miljoenhuizen, Kadasterdata, Drimble, WOZ-waarde.nl all lack a dedicated page for #32 specifically); Funda's own detail page is bot-gated and could not be fetched directly, and it was not yet indexed by web search. ALL figures below are ESTIMATES derived from Noorderkroon street-wide statistics (AlleCijfers/KadastraleKaart: 66 houses on the street, gemiddeld bouwjaar 1984, gemiddelde oppervlakte 102 m^2, average WOZ ~EUR455,765 in 2023) -- treat price, area, WOZ, energy label and bedroom count as PLACEHOLDERS pending a follow-up check once the listing is indexed (usually within 1-2 days) or a manual Funda visit. Area estimated at 100 m^2 (street avg 102 m^2; comparable Noorderkroon 16 = 118 m^2/3 bedrooms, Noorderkroon 62 = ~105 m^2) -- meets the 50 m^2 minimum on this estimate but NOT independently confirmed for this specific unit. WOZ estimated at EUR470,000 (2023 street avg EUR455,765 inflated ~3%/yr to 2025) -- NOT this address's own figure. Asking price estimated at EUR520,000 using a typical Amstelveen house price/WOZ premium (~10-15%, per comparable street-level entries already in this database) -- HIGH UNCERTAINTY, do not use for any offer calculation. Energy label guessed as D (typical for unrenovated 1980s Amstelveen housing stock); the one confirmed comparable, Noorderkroon 40 (label A), is explicitly described as extensively renovated/extended and is NOT representative of a baseline unit, so it was not used to anchor this guess. Ground assumed eigen grond (Amstelveen norm, no Amsterdam-style erfpacht risk expected) but unverified for this specific parcel. VvE assumed EUR0/none (standalone eengezinswoning), but unconfirmed -- if part of a VvE (shared driveway/parking association) this needs checking. Distances to Emmakade 33 and Zuidas are ESTIMATED, anchored to same-wijk comparables (Dr. Willem Dreesweg, Logger -- both Waardhuizen/Middenhoven, dist_emmakade 14-15, dist_zuidas 22-24). RECOMMENDATION: re-run enrichment on this address in 1-2 days once Funda/aggregators index it, or have Max pull the listing directly, before treating any of these numbers as decision-grade.",
+  "notes_ru": "НОВОЕ из дайджеста Funda 25-июл-2026 (id 44447569, отдельный дом). Индекс 1188AC Амстелвейн, район Hemellichamenbuurt (вейк Waardhuizen, Middenhoven) -- подтверждено по индексу (postcodebijadres.nl: Noorderkroon 2-34 = 1188AC). ФЛАГ -- ПРОБЕЛ В ДАННЫХ: объявление слишком новое, ни один агрегатор (Huispedia, Miljoenhuizen, Kadasterdata, Drimble, WOZ-waarde.nl) ещё не проиндексировал именно дом №32; собственная страница Funda защищена от ботов и не открылась напрямую, поиск её тоже пока не нашёл. ВСЕ цифры ниже -- ОЦЕНКИ по статистике улицы Noorderkroon в целом (AlleCijfers/KadastraleKaart: 66 домов на улице, средний год постройки 1984, средняя площадь 102 м², средний WOZ ~EUR455.765 в 2023) -- считать цену, площадь, WOZ, класс энергоэффективности и число спален ПРЕДВАРИТЕЛЬНЫМИ до повторной проверки через 1-2 дня или ручного просмотра на Funda. Площадь оценена в 100 м² (средняя по улице 102 м²; сосед Noorderkroon 16 = 118 м²/3 спальни, Noorderkroon 62 = ~105 м²) -- формально проходит минимум 50 м², но НЕ подтверждено именно для этого дома. WOZ оценен в EUR470.000 (средний по улице EUR455.765 в 2023, проиндексировано на ~3%/год до 2025) -- это НЕ собственное значение этого адреса. Цена предложения оценена в EUR520.000 по типичной для Амстелвейна наценке цена/WOZ (~10-15%, по сравнимым объектам этой улицы в базе) -- ВЫСОКАЯ НЕОПРЕДЕЛЁННОСТЬ, не использовать для расчёта предложения. Класс энергоэффективности предположительно D (типично для непеределанного жилого фонда Амстелвейна 1980-х); единственный подтверждённый сосед Noorderkroon 40 (класс A) явно описан как масштабно отремонтированный/расширенный, поэтому не репрезентативен для базового объекта и не использовался как ориентир. Земля предположительно собственная (норма для Амстелвейна, риска эрфпахта по-амстердамски не ожидается), но не подтверждено для этого конкретного участка. VvE предположительно EUR0/отсутствует (отдельностоящий дом), но не подтверждено -- если есть общая VvE (подъездная дорога/парковка), нужно проверить. Расстояния до Emmakade 33 и Zuidas -- ОЦЕНКА, по аналогии с соседними объектами в том же вейке (Dr. Willem Dreesweg, Logger -- Waardhuizen/Middenhoven, dist_emmakade 14-15, dist_zuidas 22-24). РЕКОМЕНДАЦИЯ: повторить проверку через 1-2 дня, когда объявление проиндексируется, или попросить Макса открыть Funda напрямую, прежде чем опираться на эти цифры.",
+  "sources": {
+   "postcode_buurt": {
+    "value": "1188AC / Hemellichamenbuurt",
+    "src": "postcodebijadres.nl + drimble.nl",
+    "url": "https://postcodebijadres.nl/amstelveen/noorderkroon/2-34",
+    "checked": "2026-07-25",
+    "status": "verified"
+   },
+   "area": {
+    "value": 100,
+    "src": "Street average (AlleCijfers/KadastraleKaart), NOT address-specific",
+    "url": "https://allecijfers.nl/weg/noorderkroon-amstelveen/",
+    "checked": "2026-07-25",
+    "status": "unconfirmed"
+   },
+   "price": {
+    "value": 520000,
+    "src": "Estimated from street WOZ/price averages",
+    "url": "",
+    "checked": "2026-07-25",
+    "status": "unconfirmed"
+   },
+   "woz": {
+    "value": 470000,
+    "src": "Street average WOZ 2023 (kadasterdata.nl), inflated to 2025",
+    "url": "https://www.kadasterdata.nl/amstelveen/noorderkroon",
+    "checked": "2026-07-25",
+    "status": "unconfirmed"
+   },
+   "energy_label": {
+    "value": "D",
+    "src": "Guessed from typical 1980s Amstelveen stock -- no address-specific source found",
+    "url": "",
+    "checked": "2026-07-25",
+    "status": "unconfirmed"
+   }
+  },
+  "viewing": "No",
+  "date_found": "2026-07-25",
+  "source": "digest"
+ },
+ {
+  "address": "Dr. Willem Dreesweg 301, Amstelveen (Middenhoven)",
+  "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-dr-willem-dreesweg-301/44447327/",
+  "price": 415000,
+  "area": 71,
+  "area_estimated": false,
+  "bedrooms": 2,
+  "bedrooms_verified": false,
+  "woz": 363000,
+  "woz_year": 2025,
+  "woz_estimated": false,
+  "build_year": 1988,
+  "build_year_estimated": false,
+  "energy_label": "C",
+  "energy_estimated": true,
+  "ground": "Eigen grond (aanname, te verifieren)",
+  "ground_verified": false,
+  "vve_costs": 160,
+  "vve_estimated": true,
+  "dist_emmakade_min": 14,
+  "dist_zuidas_min": 22,
+  "scores": {
+   "price": 5,
+   "legal": 5,
+   "dist_emmakade": 5,
+   "energy": 6,
+   "dist_zuidas": 3,
+   "renovation": 4
+  },
+  "notes": "NEW via Funda digest 25-Jul-2026 (id 44447327, appartement). VERIFIED via the official WOZ-waardeloket (woz-waarde.nl, address_id 0362010002007216): Dr. Willem Dreesweg 301, 1188 KH Amstelveen, bouwjaar 1988, oppervlakte 71 m^2, WOZ-waarde 2025 (peildatum 01-01-2024) = EUR363,000 -- history shows steady rises from EUR155,000 (2015) to EUR363,000 (2025). Buurt = Molenbuurt, wijk Waardhuizen/Middenhoven (drimble.nl postcode lookup). FLAG -- PRICE NOT CONFIRMED: the asking price could not be retrieved from Funda (bot-gated) or any aggregator -- too new to be indexed elsewhere. Price of EUR415,000 shown here is an ESTIMATE, applying the price/WOZ premium seen on two already-verified same-street comparables in this database (Dr. Willem Dreesweg 462: EUR400k ask / EUR334k WOZ = 1.20x; Dr. Willem Dreesweg 438: EUR465k ask / EUR430k WOZ = 1.08x; avg ~1.14x) to this address's confirmed WOZ of EUR363,000 -- treat as indicative only, verify against the real Funda asking price before any offer. Energy label estimated C by comparison to the two same-street comparables (both built 1990, label C); this building is slightly older (1988) so C is a reasonable but unverified guess -- could plausibly be D, request the EP-Online certificate. Bedrooms estimated at 2, interpolating between comparable units (462: 62 m^2/1 bedroom, 438: 86 m^2/2 bedrooms) for this 71 m^2 unit. Ground assumed eigen grond (Amstelveen norm; both same-street comparables confirm eigen grond) but not individually verified for this parcel -- Amstelveen erfpacht cases are rare but not impossible, confirm before any offer. VvE estimated at ~EUR160/mo from the two comparables (EUR158, EUR165) -- request the actual VvE jaarrekening/MJOP, especially given the building's age (38 years). Distances to Emmakade 33 and Zuidas are ESTIMATED, matching the two already-verified same-street units (dist_emmakade 14, dist_zuidas 22). No condition/renovation details available from any source -- renovation score is a cautious placeholder pending photos or a viewing.",
+  "notes_ru": "НОВОЕ из дайджеста Funda 25-июл-2026 (id 44447327, квартира). ПРОВЕРЕНО через официальный WOZ-waardeloket (woz-waarde.nl, address_id 0362010002007216): Dr. Willem Dreesweg 301, 1188 KH Амстелвейн, год постройки 1988, площадь 71 м², WOZ 2025 (на 01-01-2024) = EUR363.000 -- история показывает рост с EUR155.000 (2015) до EUR363.000 (2025). Район Molenbuurt, вейк Waardhuizen/Middenhoven (по данным drimble.nl). ФЛАГ -- ЦЕНА НЕ ПОДТВЕРЖДЕНА: цену предложения не удалось найти ни на Funda (защита от ботов), ни на агрегаторах -- объявление слишком новое. Указанная цена EUR415.000 -- ОЦЕНКА, полученная применением наценки цена/WOZ с двух уже проверенных соседних объектов на этой же улице в базе (Dr. Willem Dreesweg 462: EUR400k / EUR334k WOZ = 1.20x; Dr. Willem Dreesweg 438: EUR465k / EUR430k WOZ = 1.08x; среднее ~1.14x) к подтверждённому WOZ EUR363.000 -- считать ориентировочной, проверить реальную цену на Funda перед предложением. Класс энергоэффективности оценён как C по аналогии с двумя соседними объектами (постройка 1990, класс C); этот дом чуть старше (1988), поэтому C -- разумное, но не подтверждённое предположение, возможен и D, нужен сертификат EP-Online. Число спален оценено в 2 путём интерполяции между соседними объектами (462: 62 м²/1 спальня, 438: 86 м²/2 спальни) для этой квартиры 71 м². Земля предположительно собственная (норма Амстелвейна, оба соседних объекта подтверждают собственную землю), но не проверено индивидуально для этого участка -- эрфпахт в Амстелвейне редок, но не исключён, проверить перед предложением. VvE оценён в ~EUR160/мес по двум соседям (EUR158, EUR165) -- запросить годовой отчёт VvE/MJOP, учитывая возраст дома (38 лет). Расстояния до Emmakade 33 и Zuidas -- ОЦЕНКА, по аналогии с уже проверенными соседними объектами (dist_emmakade 14, dist_zuidas 22). Данных о состоянии/ремонте нет ни из одного источника -- оценка за состояние осторожная и предварительная.",
+  "sources": {
+   "woz": {
+    "value": 363000,
+    "src": "WOZ-waardeloket (woz-waarde.nl), official register",
+    "url": "https://www.woz-waarde.nl/Resultaat/?address_id=0362010002007216&token=6d840354510ba7fdf8d91884e822f537",
+    "checked": "2026-07-25",
+    "status": "verified"
+   },
+   "area": {
+    "value": 71,
+    "src": "WOZ-waardeloket (woz-waarde.nl), official register",
+    "url": "https://www.woz-waarde.nl/Resultaat/?address_id=0362010002007216&token=6d840354510ba7fdf8d91884e822f537",
+    "checked": "2026-07-25",
+    "status": "verified"
+   },
+   "build_year": {
+    "value": 1988,
+    "src": "WOZ-waardeloket (woz-waarde.nl), official register",
+    "url": "https://www.woz-waarde.nl/Resultaat/?address_id=0362010002007216&token=6d840354510ba7fdf8d91884e822f537",
+    "checked": "2026-07-25",
+    "status": "verified"
+   },
+   "price": {
+    "value": 415000,
+    "src": "Estimated from same-street price/WOZ ratio (comparables #462, #438 in this database)",
+    "url": "",
+    "checked": "2026-07-25",
+    "status": "unconfirmed"
+   },
+   "energy_label": {
+    "value": "C",
+    "src": "Estimated from same-street comparables #462/#438 (both label C)",
+    "url": "",
+    "checked": "2026-07-25",
+    "status": "unconfirmed"
+   }
+  },
+  "viewing": "No",
+  "date_found": "2026-07-25",
+  "source": "digest"
+ },
+ {
+  "address": "Mr. G. Groen van Prinstererlaan 301, Amstelveen (Stadshart)",
+  "url": "https://www.funda.nl/detail/koop/amstelveen/appartement-mr-g-groen-van-prinstererlaan-301/44446145/",
+  "price": 360000,
+  "area": 62,
+  "area_estimated": false,
+  "bedrooms": 2,
+  "bedrooms_verified": false,
+  "woz": 344000,
+  "woz_year": 2025,
+  "woz_estimated": false,
+  "build_year": 1962,
+  "build_year_estimated": false,
+  "energy_label": "D",
+  "energy_estimated": true,
+  "ground": "Eigen grond (aanname, te verifieren)",
+  "ground_verified": false,
+  "vve_costs": 125,
+  "vve_estimated": true,
+  "dist_emmakade_min": 7,
+  "dist_zuidas_min": 16,
+  "scores": {
+   "price": 6,
+   "legal": 5,
+   "dist_emmakade": 7,
+   "energy": 5,
+   "dist_zuidas": 5,
+   "renovation": 4
+  },
+  "notes": "NEW via Funda digest 25-Jul-2026 (id 44446145, appartement). VERIFIED via the official WOZ-waardeloket (woz-waarde.nl, address_id 0362010002010987): Mr. G. Groen van Prinstererlaan 301, 1181 TV Amstelveen, bouwjaar 1962, oppervlakte 62 m^2, WOZ-waarde 2025 (peildatum 01-01-2024) = EUR344,000 -- history rose steadily from EUR156,000 (2015) to EUR344,000 (2025). Buurt = Stadshart, wijk Stadshart (drimble.nl postcode lookup for 1181TV) -- NOTE this is a different sub-area of the same street to the already-verified #199/#137 entries in this database (tagged Elsrijk-Oost); #301 sits closer to Amstelveen's Stadshart centre, hence the shorter dist_emmakade estimate below. CORRECTED: a web search initially surfaced a Koops Makelaardij listing (ca. 65-74 m^2, EUR390,000, bouwjaar 1962, eigen grond) on this street that looked like a plausible match for #301 -- cross-checking against a dedicated marketing microsite (mrggroenvanprinstererlaan325.nl) showed that listing is actually for #325, a DIFFERENT unit. That data was discarded and is NOT used here, to avoid misattributing a neighbour's price/specs to this address. FLAG -- PRICE NOT CONFIRMED: no genuine #301 asking price could be found (Funda bot-gated, too new for aggregators). Price of EUR360,000 is an ESTIMATE, applying the price/WOZ premium from two already-verified same-street comparables (#199: EUR385k/EUR353k WOZ = 1.09x; #137: EUR385k/EUR386k WOZ = 1.00x; avg ~1.04x) to this address's confirmed WOZ of EUR344,000 -- verify against the real asking price before any offer. Energy label estimated D, splitting the difference between the two comparables (#199=D, #137=E), both 1962-built like this unit. Bedrooms estimated at 2 (comparables are 66 m^2/2-3 bedrooms; this slightly smaller 62 m^2 unit likely has 2). Ground assumed eigen grond (Amstelveen norm, matches both comparables) but unverified for this parcel. VvE estimated ~EUR125/mo (comparables EUR120, EUR150, scaled down slightly for the smaller unit) -- request the actual VvE jaarrekening/MJOP, especially given the 1962 build (63 years old, possible maintenance backlog -- this is a FLAG worth raising before any offer). Distances estimated from the Stadshart buurt tag, matching already-verified Stadshart-area units in this database (dist_emmakade 7, dist_zuidas 16) -- notably closer to Emmakade than the Elsrijk-Oost end of the same street. No condition/renovation details available -- renovation score is a cautious placeholder.",
+  "notes_ru": "НОВОЕ из дайджеста Funda 25-июл-2026 (id 44446145, квартира). ПРОВЕРЕНО через официальный WOZ-waardeloket (woz-waarde.nl, address_id 0362010002010987): Mr. G. Groen van Prinstererlaan 301, 1181 TV Амстелвейн, год постройки 1962, площадь 62 м², WOZ 2025 (на 01-01-2024) = EUR344.000 -- история роста с EUR156.000 (2015) до EUR344.000 (2025). Район Stadshart, вейк Stadshart (по индексу 1181TV на drimble.nl) -- ВАЖНО: это другая часть той же улицы по сравнению с уже проверенными объектами №199/№137 в базе (район Elsrijk-Oost); дом №301 находится ближе к центру Amstelveen (Stadshart), отсюда более короткая оценка расстояния до Emmakade ниже. ИСПРАВЛЕНО: поиск изначально нашёл объявление Koops Makelaardij на этой улице (~65-74 м², EUR390.000, год постройки 1962, собственная земля), похожее на дом №301 -- но сверка с отдельным сайтом объявления (mrggroenvanprinstererlaan325.nl) показала, что это объявление на самом деле относится к дому №325, ДРУГОЙ квартире. Эти данные отброшены и НЕ использованы здесь, чтобы не приписать этому адресу чужие цену/характеристики. ФЛАГ -- ЦЕНА НЕ ПОДТВЕРЖДЕНА: реальную цену предложения для №301 найти не удалось (Funda защищена от ботов, агрегаторы ещё не проиндексировали). Указанная цена EUR360.000 -- ОЦЕНКА по наценке цена/WOZ с двух уже проверенных соседей на той же улице (№199: EUR385k/EUR353k WOZ = 1.09x; №137: EUR385k/EUR386k WOZ = 1.00x; среднее ~1.04x) к подтверждённому WOZ EUR344.000 -- проверить против реальной цены перед предложением. Класс энергоэффективности оценён как D, среднее между двумя соседями (№199=D, №137=E), оба построены в 1962 году, как и этот дом. Число спален оценено в 2 (соседи 66 м²/2-3 спальни; этот чуть меньший дом 62 м² вероятно имеет 2). Земля предположительно собственная (норма Амстелвейна, совпадает с обоими соседями), но не подтверждено для этого участка. VvE оценён в ~EUR125/мес (соседи EUR120, EUR150, немного снижено для меньшей площади) -- запросить годовой отчёт VvE/MJOP, особенно учитывая год постройки 1962 (63 года, возможен ремонтный долг -- это РИСК, который стоит поднять перед предложением). Расстояния оценены по району Stadshart, совпадают с уже проверенными объектами этого района в базе (dist_emmakade 7, dist_zuidas 16) -- заметно ближе к Emmakade, чем участок Elsrijk-Oost той же улицы. Данных о состоянии/ремонте нет -- оценка за состояние осторожная и предварительная.",
+  "sources": {
+   "woz": {
+    "value": 344000,
+    "src": "WOZ-waardeloket (woz-waarde.nl), official register",
+    "url": "https://www.woz-waarde.nl/Resultaat/?address_id=0362010002010987&token=f2e09882df3603d3f9c778c141c50de8",
+    "checked": "2026-07-25",
+    "status": "verified"
+   },
+   "area": {
+    "value": 62,
+    "src": "WOZ-waardeloket (woz-waarde.nl), official register",
+    "url": "https://www.woz-waarde.nl/Resultaat/?address_id=0362010002010987&token=f2e09882df3603d3f9c778c141c50de8",
+    "checked": "2026-07-25",
+    "status": "verified"
+   },
+   "build_year": {
+    "value": 1962,
+    "src": "WOZ-waardeloket (woz-waarde.nl), official register",
+    "url": "https://www.woz-waarde.nl/Resultaat/?address_id=0362010002010987&token=f2e09882df3603d3f9c778c141c50de8",
+    "checked": "2026-07-25",
+    "status": "verified"
+   },
+   "price": {
+    "value": 360000,
+    "src": "Estimated from same-street price/WOZ ratio (comparables #199, #137 in this database)",
+    "url": "",
+    "checked": "2026-07-25",
+    "status": "unconfirmed"
+   },
+   "ground": {
+    "value": "Eigen grond (aanname)",
+    "src": "Discarded a mismatched #325 listing during verification; no #301-specific confirmation found",
+    "url": "",
+    "checked": "2026-07-25",
+    "status": "unconfirmed"
+   }
+  },
+  "viewing": "No",
+  "date_found": "2026-07-25",
   "source": "digest"
  }
 ]
