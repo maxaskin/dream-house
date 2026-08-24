@@ -1,0 +1,21 @@
+FB81: agent answers + keuring/meetrapport/jaarrekening/akte evaluated; DB updated (Build 128)
+
+- property_data.json (FB81): fall-through confirmed buyer-side (koopakte never
+  signed); WoonKeur keuring INS-1462 digested (MATIG, EUR 19.095 indicative,
+  ~7-8k private incl. CV 2012 + non-conform rookgasafvoer; kruipruimte not
+  accessible); area verified 89,4 m2 via BBMI/NEN2580 meetrapport (Boykeys
+  19-05-2026) - area dispute closed; vve_reserve updated 73.252 -> 112.269
+  (jaarrekening 2025 per 31-12-2025, arrears EUR 311); splitsingsakte-
+  rectificatie 1983: FB81 = index 21 (1980 akte had 18) - koopakte must cite
+  both deeds; Vragenlijst signed (Melis 02-06-2026). Open: flue inspection,
+  standleidingen offers/portiek, polisblad 2026 + appartementenclausule,
+  zero-arrears verklaring, leveringsakte.
+- Updated bid: open 467,5-470k / target 475-480k / ceiling 490k; slim
+  conditions, drop general keuring condition (INS-1462 valid to 27-01-2027).
+- doc_review_FerdinandBolweg81_answers_2026-08-04.md: full evaluation
+- doc_review_FerdinandBolweg81_relisting_2026-08-03.md + agent Q&A emails
+  (EN/NL): prior relisting review (if not yet committed)
+- Rebuilt summary pages + index (Build 128, 87 active)
+
+Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_014RPLwm3fqHayssmKBisSij

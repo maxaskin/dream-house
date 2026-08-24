@@ -106,11 +106,6 @@ const TENURE_SCORE = {
   'Erfpacht (status te verifiëren)': 3,
   'Erfpacht (te verifieren)': 3,
   'Erfpacht (status onbekend)': 3,
-  'Eigen grond (aanname, te verifieren)': 8,
-  'Eigen grond (aanname, niet geverifieerd)': 8,
-  'Eigen grond (aanname o.b.v. buurpand 422, niet bevestigd)': 8,
-  'Erfpacht (afgekocht t/m 30-06-2035)': 7,
-  'Erfpacht (aanname, status niet bevestigd)': 3,
   "Zie akte (niet 'volle eigendom' vermeld — onbevestigd)": 4,
 };
 function calcTenure(p) {
@@ -304,11 +299,6 @@ const GROUND_RU = {
   'Erfpacht (canon bevroren tot 2036)': 'Аренда земли (канон заморожен до 2036)',
   'Erfpacht (tijdvak, te verifiëren)': 'Аренда земли (срок требует проверки)',
   'Erfpacht (status te verifiëren)': 'Аренда земли (статус требует проверки)',
-  'Eigen grond (aanname, te verifieren)': 'Собственный участок (предположение, требует проверки)',
-  'Eigen grond (aanname, niet geverifieerd)': 'Собственный участок (предположение, не проверено)',
-  'Eigen grond (aanname o.b.v. buurpand 422, niet bevestigd)': 'Собственный участок (предположение по соседнему дому 422, не подтверждено)',
-  'Erfpacht (afgekocht t/m 30-06-2035)': 'Аренда земли (выкуплена до 30-06-2035)',
-  'Erfpacht (aanname, status niet bevestigd)': 'Аренда земли (предположение, статус не подтверждён)',
 };
 // outdoor_space canonical token → Russian (exact match; falls back to original if unmapped)
 const OUTDOOR_RU = {

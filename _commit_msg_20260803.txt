@@ -1,0 +1,34 @@
+FB81 relisting re-review + NK32 signed Vragenlijst B verification (Builds 126-127)
+
+FB81 relisting: reactivate in tracker, full 9-doc re-review, agent emails (EN/NL)
+
+- property_data.json: Ferdinand Bolweg 81 back to active (onder-bod deal fell
+  through 10-07); appended 2026-08-03 reactivation + document re-review notes
+  (EN/RU); sold_* fields cleared per FB35 convention
+- doc_review_FerdinandBolweg81_relisting_2026-08-03.md: full re-read of the
+  9-doc seller pack. New: rookgaskanaal-inspection/CV-2012 bottleneck, summer
+  overheating HOOG, 86/89/95 m2 area discrepancy (NEN2580 required), 2022 polis
+  verified without appartementenclausule, standleidingen still unquantified
+  (extra ALV pending). Fair value EUR 485-500k; open 465-470k, target 475-482k,
+  ceiling 490k, conditional on keuring + fall-through answers
+- email_questions_FerdinandBolweg81_relisting_2026-08-03.md (+ _NL version):
+  questions to Bert van Vulpen — fall-through reason, dissolution of prior
+  koopovereenkomst, prior keuring (mededelingsplicht), NEN2580, VvE capex,
+  polis 2026, title docs
+- Rebuilt summary pages + index (Build 126, 87 active properties)
+
+Noorderkroon 32: signed Vragenlijst Deel B re-verified field-by-field vs DB
+
+- property_data.json: signed PDF (Move.nl, 30-07-2026, S. Keijzer-Onrust)
+  checked field-by-field against the entry — zero discrepancies vs the 31-07
+  review; entry stamped (status_checked 03-08, signed_original_verified,
+  sources.vragenlijst_b.reverified); notes/notes_ru appended (EN/RU).
+  No score changes (value 5 / condition 4 / legal 7, energy_upgrade moderate)
+- SCORING_RUBRIC.md: 01-08 incident-log/consistency edits (uncommitted 01-08)
+- Rebuilt summary pages + index (Build 127, dated 2026-08-03)
+- backups: pre-change snapshots of property_data.json (fb81_reactivation,
+  predocreview, signedB_reverify)
+
+Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_014RPLwm3fqHayssmKBisSij
+Claude-Session: https://claude.ai/code/session_01ApKaaj6czb5znAuiS8shGR
