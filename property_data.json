@@ -3604,6 +3604,7 @@
     "status_checked": "2026-08-24",
     "value_v4": true,
     "sold": true,
+    "purchased": true,
     "sold_status": "verkocht_ov",
     "sold_date": "2026-08-08",
     "ground_verified": true,

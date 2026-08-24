@@ -616,6 +616,24 @@ ${sourcesHtml(p, T)}
 </tbody>`;
 }
 
+// Prominent banner for a property we actually bought (distinct from the dimmed
+// "sold — reference comps" pile below: this one stays visible, not excluded).
+function purchasedBanner(p, T, lang) {
+  const lbl = p.energy_label
+    ? `<span style="background:${labelColor(p.energy_label)};color:#fff;padding:2px 8px;border-radius:8px;font-weight:700;font-size:0.9em">${p.energy_label}</span>` : '—';
+  const note = (lang === 'ru' && p.sold_price_note_ru) ? p.sold_price_note_ru : p.sold_price_note;
+  return `<div style="background:linear-gradient(135deg,#ecfdf5,#f0fdf4);border:2px solid #16a34a;border-radius:14px;padding:16px 20px;margin-bottom:20px">
+<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+<span style="background:#16a34a;color:#fff;padding:3px 10px;border-radius:9px;font-size:0.85em;font-weight:700">🏆 ${T.purchasedBadge}</span>
+<a href="${p.url}" target="_blank" style="color:#166534;text-decoration:none;font-weight:700;font-size:1.1em">${esc(p.address)}</a>
+</div>
+<div style="margin-top:8px;font-size:0.92em;color:#166534">
+€${fmt(p.sold_price ?? p.price)} · ${p.area ?? '—'} m² · ${p.bedrooms ?? '—'} ${T.hBeds} · ${p.build_year ?? '—'} · ${lbl}${p.sold_date ? ' · ' + T.purchasedOn + ' ' + p.sold_date : ''}
+</div>
+${note ? `<div style="margin-top:6px;font-size:0.85em;color:#3f6b52">${esc(note)}</div>` : ''}
+</div>`;
+}
+
 // Compact reference row for a sold listing (no score; dimmed; "Sold" badge).
 function soldRow(p, T) {
   const lbl = p.energy_label
@@ -692,6 +710,8 @@ function buildSummary(lang, filter, subtitleFn, titleOverride) {
   const rk = filter ? ranked.filter(r => filter(r.p)) : ranked;
   const activeF = filter ? active.filter(filter) : active;
   const soldF = filter ? sold.filter(filter) : sold;
+  const purchasedF = filter ? sold.filter(filter).filter(p => p.purchased) : sold.filter(p => p.purchased);
+  const purchasedSection = purchasedF.map(p => purchasedBanner(p, T, lang)).join('');
   const cards = rk.slice(0, 3).map((r, i) => card(r, i, T)).join('');
   const rows = rk.map((r, i) => propGroup(r, i, T, lang)).join('');
   const soldSection = soldF.length ? `
@@ -775,6 +795,8 @@ tbody.prop.open .note-clamp{color:#94a3b8}
 <body>
 <h1>🏠 ${title}</h1>
 <div class="subtitle">${(subtitleFn || T.subtitle)(activeF.length)}</div>
+
+${purchasedSection}
 
 <div class="legend">
 ${WEIGHTS.map(c => `<div class="legend-item">${T.leg[c.key]} <strong>${Math.round(c.w * 100)}%</strong></div>`).join('\n')}
@@ -902,6 +924,7 @@ const STR = {
     salesNote: 'Prior transactions, relistings and comparable sold/asking prices — extracted from the notes. WOZ history (in the table) is annual tax assessment, not sales.',
     soldTitle: 'Sold — reference comps', soldStatus: 'Sold',
     soldNote: 'Kept in the database for statistics only — excluded from the active ranking above.',
+    purchasedBadge: 'Purchased', purchasedOn: 'completing',
     price: 'Price', area: 'Area', beds: 'Beds', label: 'Label', ground: 'Ground', viewing: 'Viewing',
     grnd: g => g || '—',
     outdoor: t => t,
@@ -929,6 +952,7 @@ const STR = {
     salesNote: 'Прошлые сделки, перевыставления и сопоставимые цены продаж/запроса — извлечены из заметок. История WOZ (в таблице) — это ежегодная оценка для налога, не сделки.',
     soldTitle: 'Проданные — для статистики', soldStatus: 'Продано',
     soldNote: 'Оставлено в базе только для статистики — исключено из активного рейтинга выше.',
+    purchasedBadge: 'Куплено', purchasedOn: 'передача',
     price: 'Цена', area: 'Площадь', beds: 'Спальни', label: 'Метка', ground: 'Земля', viewing: 'Просмотр',
     grnd: g => g ? (GROUND_RU[g] || g) : '—',
     outdoor: t => OUTDOOR_RU[t] || t,
