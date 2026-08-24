@@ -636,29 +636,46 @@ function purchasedBanner(p, T, lang) {
     const kind = cc.kind === 'sold' ? T.sold2 : T.asked;
     return `€${fmt(cc.price)} <small style="color:#888">(${esc(String(cc.address).replace(/,.*$/, ''))}${cc.area ? ', ' + cc.area + ' m²' : ''}, ${kind})</small>`;
   }).join(' · ');
-  return `<div style="background:linear-gradient(135deg,#ecfdf5,#f0fdf4);border:2px solid #16a34a;border-radius:14px;padding:18px 22px;margin-bottom:20px">
+  const plan = lang === 'ru' ? (p.maintenance_plan_ru || p.maintenance_plan) : p.maintenance_plan;
+  const planSection = (plan && plan.length) ? `
+<div style="margin-top:14px;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px">
+<div style="font-weight:700;font-size:0.85em;color:#92400e;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px">🔧 ${T.maintPlan}</div>
+<ol style="margin:0;padding-left:1.3em;font-size:0.88em;line-height:1.6;color:#78350f">
+${plan.map(item => `<li style="margin-bottom:4px">${esc(item)}</li>`).join('')}
+</ol>
+</div>` : '';
+  const stat = (label, value) => `<div><div style="font-size:0.72em;color:#3f6b52;text-transform:uppercase;letter-spacing:0.03em">${label}</div><div style="font-size:0.95em;color:#14532d;font-weight:600">${value}</div></div>`;
+  const stats = [
+    stat(T.hPrice, `€${fmt(p.sold_price ?? p.price)}`),
+    stat('€/m²', `€${fmt(eurM2(p))}`),
+    stat('WOZ', `€${fmt(p.woz)}`),
+    stat(T.area, `${p.area ?? '—'} m²`),
+    stat(T.hBeds, p.bedrooms ?? '—'),
+    stat(T.hBuilt, p.build_year ?? '—'),
+    stat(T.hLabel, lbl),
+    stat(T.hGround, esc(T.grnd(p.ground))),
+    stat(T.hOutdoor, outdoorCell(p, T)),
+    stat(T.hVve, vveCell(p)),
+    stat('→ Emmakade', `${p.dist_emmakade_min ?? '—'} min`),
+    stat('→ Zuidas', `${p.dist_zuidas_min ?? '—'} min`),
+  ].join('');
+  return `<div style="background:linear-gradient(135deg,#ecfdf5,#f0fdf4);border:2px solid #16a34a;border-radius:14px;padding:18px 22px;margin-bottom:20px;box-shadow:0 1px 3px rgba(22,101,52,0.12)">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-<span style="background:#16a34a;color:#fff;padding:3px 10px;border-radius:9px;font-size:0.85em;font-weight:700">🏆 ${T.purchasedBadge}</span>
+<span style="background:#16a34a;color:#fff;padding:3px 10px;border-radius:9px;font-size:0.85em;font-weight:700;white-space:nowrap">🏆 ${T.purchasedBadge}</span>
 <a href="${p.url}" target="_blank" style="color:#166534;text-decoration:none;font-weight:700;font-size:1.15em">${esc(p.address)}</a>
 <span style="background:${scoreColor(t)};color:#fff;padding:3px 10px;border-radius:12px;font-weight:700;font-size:0.95em">${scoreStr(t)}</span>
-${p.sold_date ? `<span style="font-size:0.82em;color:#3f6b52">${T.purchasedOn} ${p.sold_date}</span>` : ''}
+${p.sold_date ? `<span style="font-size:0.82em;color:#3f6b52;margin-left:auto;white-space:nowrap">${T.purchasedOn} ${p.sold_date}</span>` : ''}
 </div>
-<div style="margin-top:10px;font-size:0.92em;color:#166534;display:flex;flex-wrap:wrap;gap:14px 22px">
-<span><strong>${T.hPrice}:</strong> €${fmt(p.sold_price ?? p.price)}</span>
-<span><strong>€/m²:</strong> €${fmt(eurM2(p))}</span>
-<span><strong>WOZ:</strong> €${fmt(p.woz)}</span>
-<span><strong>${T.area}:</strong> ${p.area ?? '—'} m²</span>
-<span><strong>${T.hBeds}:</strong> ${p.bedrooms ?? '—'}</span>
-<span><strong>${T.hBuilt}:</strong> ${p.build_year ?? '—'}</span>
-<span><strong>${T.hLabel}:</strong> ${lbl}</span>
-<span><strong>${T.hGround}:</strong> ${esc(T.grnd(p.ground))}</span>
-<span><strong>${T.hOutdoor}:</strong> ${outdoorCell(p, T)}</span>
-<span><strong>${T.hVve}:</strong> ${vveCell(p)}</span>
-<span><strong>→Emmakade:</strong> ${p.dist_emmakade_min ?? '—'} min</span>
-<span><strong>→Zuidas:</strong> ${p.dist_zuidas_min ?? '—'} min</span>
+${dealNote ? `<div style="margin-top:8px;font-size:0.88em;color:#3f6b52">${esc(dealNote)}</div>` : ''}
+${planSection}
+<div style="margin-top:14px;padding-top:14px;border-top:1px solid #bbf7d0;display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:12px 16px">
+${stats}
 </div>
-${dealNote ? `<div style="margin-top:10px;padding:8px 10px;background:#dcfce7;border-radius:8px;font-size:0.85em;color:#166534"><strong>${T.purchasedBadge}:</strong> ${esc(dealNote)}</div>` : ''}
-<div style="margin-top:14px;background:#fff;border:1px solid #d1fae5;border-radius:10px;padding:12px 14px">
+<details style="margin-top:14px">
+<summary style="cursor:pointer;font-size:0.85em;font-weight:600;color:#166534;list-style:none;display:flex;align-items:center;gap:4px">
+<span class="purch-arrow" style="font-size:0.8em">▶</span> ${T.fullDetails}
+</summary>
+<div style="margin-top:12px;background:#fff;border:1px solid #d1fae5;border-radius:10px;padding:12px 14px">
 <div class="dt-grid">
 <div class="dt-block"><div class="dt-title">${T.breakdown}</div>${breakdownHtml(r, T)}</div>
 <div>
@@ -668,6 +685,7 @@ ${sourcesHtml(p, T)}
 </div>
 </div>
 </div>
+</details>
 </div>`;
 }
 
@@ -778,6 +796,9 @@ ${soldF.map(p => soldRow(p, T)).join('')}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#1a202c;padding:24px;color-scheme:light}
 h1{font-size:1.6em;font-weight:800;margin-bottom:4px}
 .subtitle{color:#555;margin-bottom:20px;font-size:0.95em}
+.purch-arrow{display:inline-block;transition:transform 0.15s}
+details[open] .purch-arrow{transform:rotate(90deg)}
+details summary::-webkit-details-marker{display:none}
 .legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;font-size:0.85em}
 .legend-item{background:#fff;border:1px solid #e6e9ef;border-radius:8px;padding:5px 12px}
 .legend-item strong{color:#1d4ed8}
@@ -961,7 +982,7 @@ const STR = {
     salesNote: 'Prior transactions, relistings and comparable sold/asking prices — extracted from the notes. WOZ history (in the table) is annual tax assessment, not sales.',
     soldTitle: 'Sold — reference comps', soldStatus: 'Sold',
     soldNote: 'Kept in the database for statistics only — excluded from the active ranking above.',
-    purchasedBadge: 'Purchased', purchasedOn: 'completing',
+    purchasedBadge: 'Purchased', purchasedOn: 'completing', maintPlan: 'Maintenance plan — what to do first', fullDetails: 'Full score breakdown, notes &amp; sources',
     price: 'Price', area: 'Area', beds: 'Beds', label: 'Label', ground: 'Ground', viewing: 'Viewing',
     grnd: g => g || '—',
     outdoor: t => t,
@@ -989,7 +1010,7 @@ const STR = {
     salesNote: 'Прошлые сделки, перевыставления и сопоставимые цены продаж/запроса — извлечены из заметок. История WOZ (в таблице) — это ежегодная оценка для налога, не сделки.',
     soldTitle: 'Проданные — для статистики', soldStatus: 'Продано',
     soldNote: 'Оставлено в базе только для статистики — исключено из активного рейтинга выше.',
-    purchasedBadge: 'Куплено', purchasedOn: 'передача',
+    purchasedBadge: 'Куплено', purchasedOn: 'передача', maintPlan: 'План обслуживания — что сделать в первую очередь', fullDetails: 'Полный разбор балла, заметки и источники',
     price: 'Цена', area: 'Площадь', beds: 'Спальни', label: 'Метка', ground: 'Земля', viewing: 'Просмотр',
     grnd: g => g ? (GROUND_RU[g] || g) : '—',
     outdoor: t => OUTDOOR_RU[t] || t,

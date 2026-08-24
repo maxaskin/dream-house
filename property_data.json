@@ -3610,7 +3610,27 @@
     "ground_verified": true,
     "sold_price": 480000,
     "sold_price_note": "PURCHASED BY US at EUR 480,000 — final koopakte 77265GT verified; levering 06-10-2026 12:00 (notaris Bellaar)",
-    "sold_price_note_ru": "КУПЛЕНО НАМИ за EUR 480.000 — финальная koopakte 77265GT проверена; передача 06-10-2026 12:00 (нотариус Bellaar)"
+    "sold_price_note_ru": "КУПЛЕНО НАМИ за EUR 480.000 — финальная koopakte 77265GT проверена; передача 06-10-2026 12:00 (нотариус Bellaar)",
+    "maintenance_plan": [
+      "Safety first: stucplafond in the rear bedroom is loose (valgevaar) — get it fixed immediately after levering, ~€760 (Perfectkeur keuring 571170).",
+      "Chase the VvE for the rookgaskanaal (flue) inspection result before touching the CV-ketel — flagged open since Aug and blocks any boiler swap on the collective flue.",
+      "Budget a CV-ketel replacement soon — Vaillant unit is from 2012 (~14 yrs by levering), flagged verouderd in the keuring (~€2,400).",
+      "Request the 2026 VvE polisblad and confirm the appartementenclausule is added — 2022 policy on file has none.",
+      "File a zero-arrears verklaring request with VvE Beheer Groep and confirm current reserve (was €112,269 at 31-12-2025) before/at levering.",
+      "Track the standleidingen (cast-iron riser) replacement decision — one portiek already defective, no ALV budget agreed yet; keep €5,000–15,000 contingency.",
+      "Minor near-term repairs from the keuring: dakkapel loodwerk/leak (~€888), trespa ventilation (~€866), bathroom kit/ventilation (~€2,066), dated WC (~€1,100) — schedule within year 1.",
+      "Medium-term: steel kozijnen replacement is anticipated ~2028 (VvE-wide) — no action needed yet, just budget awareness."
+    ],
+    "maintenance_plan_ru": [
+      "В первую очередь — безопасность: отслаивающийся потолок в задней спальне (риск падения) — устранить сразу после передачи, ~€760 (экспертиза Perfectkeur 571170).",
+      "Запросить у VvE результат инспекции дымоходного канала до любых работ с котлом — вопрос открыт с августа и блокирует замену котла на общем канале.",
+      "Заложить бюджет на замену котла в ближайшее время — Vaillant 2012 г. (~14 лет к передаче), в экспертизе отмечен как устаревший (~€2.400).",
+      "Запросить полис VvE за 2026 г. и подтвердить наличие appartementenclausule — в полисе 2022 г. её нет.",
+      "Подать запрос в VvE Beheer Groep на справку об отсутствии задолженности и подтвердить текущий резерв (был €112.269 на 31-12-2025) до/при передаче.",
+      "Следить за решением по замене чугунных стояков — в одном подъезде уже дефект, бюджет на ALV ещё не утверждён; держать резерв €5.000–15.000.",
+      "Мелкий ремонт по итогам экспертизы: протечка/свинец на дормере (~€888), вентиляция trespa (~€866), герметик/вентиляция ванной (~€2.066), устаревший унитаз (~€1.100) — в течение первого года.",
+      "В среднесрочной перспективе: замена стальных рам ожидается ~2028 г. (по всему VvE) — пока действий не требуется, только учитывать в бюджете."
+    ]
   },
   {
     "address": "Heringa-State 38, Amsterdam (Buitenveldert)",
