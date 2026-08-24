@@ -616,21 +616,58 @@ ${sourcesHtml(p, T)}
 </tbody>`;
 }
 
-// Prominent banner for a property we actually bought (distinct from the dimmed
-// "sold — reference comps" pile below: this one stays visible, not excluded).
+// Prominent, fully-detailed banner for a property we actually bought (distinct
+// from the dimmed "sold — reference comps" pile below: this one stays visible,
+// not excluded, and carries the same score breakdown/notes/sources as an active row).
 function purchasedBanner(p, T, lang) {
+  const r = { p, total: gatedTotal(p), raw: weightedTotal(p), gates: gateReasons(p), eff: effectiveScores(p) };
+  const t = r.total;
   const lbl = p.energy_label
-    ? `<span style="background:${labelColor(p.energy_label)};color:#fff;padding:2px 8px;border-radius:8px;font-weight:700;font-size:0.9em">${p.energy_label}</span>` : '—';
-  const note = (lang === 'ru' && p.sold_price_note_ru) ? p.sold_price_note_ru : p.sold_price_note;
-  return `<div style="background:linear-gradient(135deg,#ecfdf5,#f0fdf4);border:2px solid #16a34a;border-radius:14px;padding:16px 20px;margin-bottom:20px">
+    ? `<span style="background:${labelColor(p.energy_label)};color:#fff;padding:2px 8px;border-radius:8px;font-weight:700;font-size:0.9em">${p.energy_label}${p.energy_upgrade ? '<span title="' + T.upgrade + '" style="font-size:0.85em">↑</span>' : ''}</span>` : '—';
+  const note = lang === 'ru' ? (p.notes_ru ? noteHtmlRu(p.notes_ru) : noteHtml(p.notes)) : noteHtml(p.notes);
+  const dealNote = (lang === 'ru' && p.sold_price_note_ru) ? p.sold_price_note_ru : p.sold_price_note;
+  const histo = (p.sale_history && p.sale_history.length) || (p.comps && p.comps.length);
+  const timeline = (p.sale_history || []).map(h => {
+    const ev = (EV[h.event] && EV[h.event][lang]) || h.event;
+    const mo = String(h.date || '').length > 4 ? String(h.date).slice(0, 7) : String(h.date || '');
+    return `<span style="white-space:nowrap">${h.price != null ? '€' + fmt(h.price) + ' ' : ''}<small style="color:#888">${ev}${mo ? ' ' + mo : ''}</small></span>`;
+  }).join(' <span style="color:#bbb">→</span> ');
+  const comps = (p.comps || []).map(cc => {
+    const kind = cc.kind === 'sold' ? T.sold2 : T.asked;
+    return `€${fmt(cc.price)} <small style="color:#888">(${esc(String(cc.address).replace(/,.*$/, ''))}${cc.area ? ', ' + cc.area + ' m²' : ''}, ${kind})</small>`;
+  }).join(' · ');
+  return `<div style="background:linear-gradient(135deg,#ecfdf5,#f0fdf4);border:2px solid #16a34a;border-radius:14px;padding:18px 22px;margin-bottom:20px">
 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
 <span style="background:#16a34a;color:#fff;padding:3px 10px;border-radius:9px;font-size:0.85em;font-weight:700">🏆 ${T.purchasedBadge}</span>
-<a href="${p.url}" target="_blank" style="color:#166534;text-decoration:none;font-weight:700;font-size:1.1em">${esc(p.address)}</a>
+<a href="${p.url}" target="_blank" style="color:#166534;text-decoration:none;font-weight:700;font-size:1.15em">${esc(p.address)}</a>
+<span style="background:${scoreColor(t)};color:#fff;padding:3px 10px;border-radius:12px;font-weight:700;font-size:0.95em">${scoreStr(t)}</span>
+${p.sold_date ? `<span style="font-size:0.82em;color:#3f6b52">${T.purchasedOn} ${p.sold_date}</span>` : ''}
 </div>
-<div style="margin-top:8px;font-size:0.92em;color:#166534">
-€${fmt(p.sold_price ?? p.price)} · ${p.area ?? '—'} m² · ${p.bedrooms ?? '—'} ${T.hBeds} · ${p.build_year ?? '—'} · ${lbl}${p.sold_date ? ' · ' + T.purchasedOn + ' ' + p.sold_date : ''}
+<div style="margin-top:10px;font-size:0.92em;color:#166534;display:flex;flex-wrap:wrap;gap:14px 22px">
+<span><strong>${T.hPrice}:</strong> €${fmt(p.sold_price ?? p.price)}</span>
+<span><strong>€/m²:</strong> €${fmt(eurM2(p))}</span>
+<span><strong>WOZ:</strong> €${fmt(p.woz)}</span>
+<span><strong>${T.area}:</strong> ${p.area ?? '—'} m²</span>
+<span><strong>${T.hBeds}:</strong> ${p.bedrooms ?? '—'}</span>
+<span><strong>${T.hBuilt}:</strong> ${p.build_year ?? '—'}</span>
+<span><strong>${T.hLabel}:</strong> ${lbl}</span>
+<span><strong>${T.hGround}:</strong> ${esc(T.grnd(p.ground))}</span>
+<span><strong>${T.hOutdoor}:</strong> ${outdoorCell(p, T)}</span>
+<span><strong>${T.hVve}:</strong> ${vveCell(p)}</span>
+<span><strong>→Emmakade:</strong> ${p.dist_emmakade_min ?? '—'} min</span>
+<span><strong>→Zuidas:</strong> ${p.dist_zuidas_min ?? '—'} min</span>
 </div>
-${note ? `<div style="margin-top:6px;font-size:0.85em;color:#3f6b52">${esc(note)}</div>` : ''}
+${dealNote ? `<div style="margin-top:10px;padding:8px 10px;background:#dcfce7;border-radius:8px;font-size:0.85em;color:#166534"><strong>${T.purchasedBadge}:</strong> ${esc(dealNote)}</div>` : ''}
+<div style="margin-top:14px;background:#fff;border:1px solid #d1fae5;border-radius:10px;padding:12px 14px">
+<div class="dt-grid">
+<div class="dt-block"><div class="dt-title">${T.breakdown}</div>${breakdownHtml(r, T)}</div>
+<div>
+<div class="dt-block"><div class="dt-title">${T.hNotes}</div><div class="dt-note">${note}</div></div>
+${histo ? `<div class="dt-block"><div class="dt-title">${T.salesTitle}</div>${timeline ? `<div style="font-size:0.9em;margin-bottom:4px">${timeline}</div>` : ''}${comps ? `<div style="font-size:0.9em">${T.comps}: ${comps}</div>` : ''}</div>` : ''}
+${sourcesHtml(p, T)}
+</div>
+</div>
+</div>
 </div>`;
 }
 
