@@ -28,7 +28,7 @@ This document is the single source of truth for the new project. Every fact belo
 | Layout | Living layer: entree + separate toilet, living room front, dining rear, galley kitchen (2015, gas hob, all appliances) → balcony. Sleeping layer: bedroom front ~16 m², bedroom rear ~12 m² (both under sloped roof with dormers), bathroom ~10 m² (duo bath + walk-in shower, 2003 but fresh), internal washok/berging strip. Vliering (attic) 4 m deep, <1.50 m, storage only | brochure, plans, viewing 25-06 |
 | Energy label | **C**, registered nr **934743733**, valid **17-01-2025 → 17-01-2035**; heat demand 154.65 kWh/m² (fails "Standaard"); renewables 0%; natural ventilation; summer overheating risk **HOOG** | energielabel |
 | Actual energy use (seller) | gas **411 m³/yr**, electricity **1,126 kWh/yr** (≈ €80/month total) | vragenlijst B |
-| Insulation done | cavity walls (VvE), roof renewed 2015 (tiles, vapour-open foil, zinc), attic floor, ground floor post-insulated, double glazing throughout (plastic frames) | vragenlijst; keuring |
+| Insulation — **verified 02-09-2026 against the registered label (RC/U-values)** | **Cavity walls insulated** (VvE, RC 1.25 on ~39 m²; dormer side walls/small parts uninsulated RC 0.43, ~8 m²) · **Sloped roof NOT insulated** (RC 0.35 on 45.8 m² — the 2015 VvE roof renewal was tiles + vapour-open foil + gutters only; seller: "geen isolatiematerialen"); dormer flat roofs RC 0.86 (14.3 m²) · **Floor not thermally insulated** (RC 0.15; only 5.3 m² counts; seller's "vloerisolatie ja" = laminate underlay) · **Plain double glazing UW 2.30** throughout (not HR++) · front door Ud 3.40 · natural ventilation, no PV. The earlier notes "roof 2015 with insulation" and "ground floor post-insulated" were wrong. | energielabel 934743733 (isolatie tables); vragenlijst B; taxatie opnamestaat |
 | Heating | Vaillant ecoTEC plus (2012), owned, **Feenstra full service contract — transferable** | vragenlijst; keuring |
 | WOZ | **€471,000** (tax year 2026, peildatum 1-1-2025); trajectory €418k (2024) → €471k → expect ~€500k next | koopakte art. 2o; gemeente aanslag |
 | Municipal charges 2026 | OZB (eigenaar) €289.38 · watersysteemheffing €83.15 · rioolheffing (eigenaar) €213.75 | koopakte art. 2o |
@@ -161,11 +161,12 @@ Deadlines run from the **signing date (S)**. Fill in S once known.
 
 ## 9. Energy-label & improvement roadmap (owner's discretion)
 
-Baseline: label C, heat demand 154.65 kWh/m², renewables 0%, gas 411 m³/yr — cheap wins already done, so upgrades are label/comfort/value plays, not payback plays.
+Baseline: label C, heat demand 154.65 kWh/m², renewables 0%, gas 411 m³/yr. **Correction (02-09-2026): the cheapest big win is NOT done — the sloped roof (45.8 m², RC 0.35) is uninsulated and is roughly half of the unit's transmission heat loss; it is also the direct cause of the label's "HOOG" summer-overheating score (both bedrooms lie under it).** Roof insulation from the inside (between/under the rafters with a vapour barrier, VvE notification/consent because the roof is communal; ~€3–5k for ~46 m²; ISDE dakisolatie + Amstelveen €16/m² max €1,500) is therefore the #1 measure — before solar or a heat pump — and alone likely moves C → B. Next: HR++ glass in the existing frames (UW 2.30 → ~1.1; Amstelveen €25/m²), then solar, then hybrid. Floor insulation is a minor lever (5.3 m² counted).
 
 | Measure | Effect | Constraint | Subsidy (2026 rules; Amstelveen pot reopens each January) |
 |---|---|---|---|
-| Solar panels (6–8) | Biggest label jump (C→B likely) | Communal roof → VvE consent (individual with use agreement, or collective) | 0% VAT; gemeente €50/panel (max €500); VvE route: SVVE |
+| **Sloped-roof insulation from inside (~46 m², to RC ≥ 3.5)** | **Largest single gain: ~half of transmission loss; fixes bedroom overheating; C→B on its own likely** | Roof is communal → notify/consent VvE; vapour barrier + ventilation per label warning | ISDE dakisolatie (≥20 m²) + Amstelveen €16/m² (max €1,500); mortgage energy budget usable |
+| Solar panels (6–8) | Large label jump (renewables 0% → >0) | Communal roof → VvE consent (individual with use agreement, or collective) | 0% VAT; gemeente €50/panel (max €500); VvE route: SVVE |
 | Hybrid heat pump | Renewable share, lower gas; comfort | Outdoor unit rules (rear/dormer, boxed, ≤48 dB, kettingbeding); flue/VvE kanaal first | ISDE ~€2,100 (label ≥D ✓; apply ≤12 months after install) + Amstelveen 30% max €750 |
 | Air-to-air multisplit (heating+cooling) | Fixes HOOG overheating; shoulder-season heating | Same outdoor-unit rules | — |
 | Glazing HR++/triple | Heat demand | Frames plastic (own) / steel kozijnen communal 2028 | Amstelveen triple €110/m² (max €2,000); VvE via SVVE |
